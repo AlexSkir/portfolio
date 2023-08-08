@@ -26,7 +26,7 @@ const blockWrapper = {
 const contactItemBox = {
   position: 'relative',
   width: '256px',
-  '&:hover': { '.side-block__copy-button': { visibility: 'visible' } },
+  '&:hover': { '.side-block__copy-button': { opacity: '0.5' } },
 };
 
 const buttonCopy = {
@@ -40,8 +40,7 @@ const buttonCopy = {
   top: 0,
   right: 0,
   color: 'primary.contrastText',
-  opacity: '0.5',
-  visibility: 'hidden',
+  opacity: '0',
 };
 
 const linkItem = {
