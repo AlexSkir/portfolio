@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Layout, PageHeader } from 'antd';
-
-const { Content } = Layout;
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 const PageLayout = ({ title, children }) => {
   return (
     <>
-      <PageHeader title={title} />
-      <Content className="page-content">{children}</Content>
+      <Box className="page-content__title">{title}</Box>
+      <Container className="page-content__content">{children}</Container>
     </>
   );
 };

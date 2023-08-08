@@ -1,5 +1,5 @@
 import React from 'react';
-import PageLayout from '../PageLayout';
+import PageLayout from '../../common/PageLayout';
 import Card from '../../common/ExampleCard';
 
 const About = () => {

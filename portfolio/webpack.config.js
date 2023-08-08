@@ -1,6 +1,6 @@
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -89,6 +89,13 @@ const config = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/fonts/[name][ext][query]',
+        },
+      },
+      {
+        test: /\.(pdf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/files/[name][ext][query]',
         },
       },
     ],

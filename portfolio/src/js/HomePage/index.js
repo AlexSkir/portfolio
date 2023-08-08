@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PageLayout from '../../common/PageLayout';
-import SEO from '../../common/SEO';
+import PageLayout from '../common/PageLayout';
+import SEO from '../common/SEO';
 
 const Home = ({ location: { pathname } }) => {
-  if (pathname !== '/') {
+  if (pathname !== '/' && pathname !== '/Home') {
     return null;
   }
   return (
@@ -16,9 +16,8 @@ const Home = ({ location: { pathname } }) => {
           name="Awesome Company name."
           type="article"
         />
-        <h3 className="h3-demo">Home page</h3>
         <main>
-          <section className="medium-container" />
+          <section className="medium-container">home-page content</section>
         </main>
       </>
     </PageLayout>
