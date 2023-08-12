@@ -63,6 +63,7 @@ const Home = ({ location: { pathname } }) => {
               icon={<App fill={theme.palette.secondary.main} />}
               title="App Development"
               color="blue"
+              mr={false}
             >
               As a developer, I find myself most captivated by the power and flexibility of
               React.js. I&#39;m always eager to dive into new projects that leverage React.js,
@@ -87,6 +88,7 @@ const Home = ({ location: { pathname } }) => {
               icon={<GTranslateIcon sx={{ color: theme.palette.secondary.dark }} />}
               title="Localization (ru/en)"
               color="pink"
+              mr={false}
             >
               I also love using different techniques to localize apps and websites from Russian into
               English and vice versa, to promote the product and allow more people to enjoy it.
