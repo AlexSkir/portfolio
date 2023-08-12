@@ -10,20 +10,24 @@ import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
 import LibraryAddCheckRoundedIcon from '@mui/icons-material/LibraryAddCheckRounded';
+import Typography from '@mui/material/Typography';
 
-import Typography from '../common/typography';
 import PhoneIcon from './PhoneIconGradient';
 import resume from '../../assets/files/map.pdf';
 
 const blockWrapper = {
-  width: '350px',
-  height: '350px',
-  p: '30px',
+  display: 'flex',
+  flexDirection: 'column',
+  width: { xs: '100%', md: '350px' },
+  height: { xs: 'auto', md: '350px' },
+  p: { xs: '0', md: '30px' },
   justifyContent: 'space-between',
-  backgroundColor: 'primary.main',
+  backgroundColor: { xs: 'primary.paper', md: 'primary.main' },
 };
 
 const contactItemBox = {
+  display: { xs: 'none', md: 'flex' },
+  flexDirection: 'row',
   position: 'relative',
   width: '256px',
   '&:hover': { '.side-block__copy-button': { opacity: '0.5' } },
@@ -33,9 +37,6 @@ const buttonCopy = {
   width: '30px',
   height: '30px',
   minWidth: '30px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
   position: 'absolute',
   top: 0,
   right: 0,
@@ -50,12 +51,22 @@ const linkItem = {
   alignItems: 'center',
 };
 
-const iconWrapper = {
-  width: '44px',
-  height: '44px',
+const dividerEl = {
+  display: { xs: 'none', md: 'block' },
+  width: '256px',
+  backgroundColor: '#E3E3E3',
+};
+
+const flexCol = {
   display: 'flex',
+  flexDirection: 'column',
+};
+const flexCenter = {
   justifyContent: 'center',
   alignItems: 'center',
+};
+const alignStart = {
+  alignItems: 'start',
 };
 
 export default function ContactBlock() {
@@ -85,15 +96,15 @@ export default function ContactBlock() {
   };
 
   return (
-    <Box className="side-block__contact-card flex-col border-radius-20" sx={blockWrapper}>
-      <Box className="side-block__contact-item flex-row" sx={contactItemBox}>
+    <Box className="side-block__contact-card border-radius-20" sx={blockWrapper}>
+      <Box className="side-block__contact-item" sx={contactItemBox}>
         <Tooltip title="Call">
           <Link href="tel:+79771456716" sx={linkItem}>
-            <Box sx={iconWrapper}>
+            <Box width="44px" height="44px" sx={{ ...flexCol, ...flexCenter }}>
               <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+            <Box sx={{ ...flexCol, ...alignStart }}>
               <Typography variant="body3" sx={{ opacity: '0.5' }}>
                 Phone
               </Typography>
@@ -113,16 +124,16 @@ export default function ContactBlock() {
         </Tooltip>
       </Box>
 
-      <Divider sx={{ width: '256px', backgroundColor: '#E3E3E3' }} />
+      <Divider sx={dividerEl} />
 
-      <Box className="side-block__contact-item flex-row" sx={contactItemBox}>
+      <Box className="side-block__contact-item" sx={contactItemBox}>
         <Tooltip title="Message">
           <Link href="mailto:a.skirnevskaia@gmail.com" sx={linkItem}>
-            <Box sx={iconWrapper}>
+            <Box sx={{ ...flexCol, ...flexCenter }} width="44px" height="44px">
               <DraftsOutlinedIcon sx={{ color: 'secondary.main' }} />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+            <Box sx={{ ...flexCol, ...alignStart }}>
               <Typography variant="body3" sx={{ opacity: '0.5' }}>
                 Email
               </Typography>
@@ -142,20 +153,20 @@ export default function ContactBlock() {
         </Tooltip>
       </Box>
 
-      <Divider sx={{ width: '256px', backgroundColor: '#E3E3E3' }} />
+      <Divider sx={dividerEl} />
 
-      <Box className="side-block__contact-item flex-row" sx={contactItemBox}>
-        <Tooltip title="On map">
+      <Box className="side-block__contact-item" sx={contactItemBox}>
+        <Tooltip title="Show on map">
           <Link
             href="https://www.google.com/maps/search/?api=1&query=55.840399,37.490859"
             target="_blank"
             sx={linkItem}
           >
-            <Box sx={iconWrapper}>
+            <Box sx={{ ...flexCol, ...flexCenter }} width="44px" height="44px">
               <LocationOnOutlinedIcon sx={{ color: 'secondary.dark' }} />
             </Box>
 
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start' }}>
+            <Box sx={{ ...flexCol, ...alignStart }}>
               <Typography variant="body3" sx={{ opacity: '0.5' }}>
                 Location
               </Typography>
@@ -175,11 +186,11 @@ export default function ContactBlock() {
         </Tooltip>
       </Box>
 
-      <Divider sx={{ width: '256px', backgroundColor: '#E3E3E3' }} />
+      <Divider sx={dividerEl} />
 
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
         <Button
-          className="button_isActive_true"
+          className="button_isActive_true border-radius-20"
           sx={{ width: '185px', height: '44px', color: 'secondary.contrastText' }}
           onClick={handleDownloadResume}
         >

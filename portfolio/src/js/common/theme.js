@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { createTheme } from '@mui/material/styles';
 import { green, grey, red } from '@mui/material/colors';
 
 const rawTheme = {
@@ -14,6 +13,9 @@ const rawTheme = {
       contrastText: '#F2F7FC',
       contrastTextActive: '#FFFFFF',
       contrastTextInactive: 'rgba(26, 16, 3, 0.5)',
+      pinkBox: '#FFEBD1',
+      blueBox: '#F2F7FC',
+      textBox: '#000000',
     },
     warning: {
       light: '#ffdfba',
@@ -32,27 +34,26 @@ const rawTheme = {
     },
   },
   typography: {
+    fontFamily: [
+      '"Raleway"', '"Poppins"', '"Pacifico"', 'san-serif'
+    ].join(','),
     body: {
       fontFamily: "'Raleway', san-serif",
       fontWeight: 400,
-      color: 'black',
       fontSize: '14px',
     },
     header: {
       fontFamily: "'Poppins', san-serif",
       fontWeight: 500,
-      color: 'black',
     },
     logo: {
       fontFamily: "'Pacifico', cursive",
-      color: 'black',
       fontWeight: 400,
       fontSize: '24px',
     },
     button: {
       fontFamily: "'Raleway', san-serif",
       fontWeight: 600,
-      color: 'black',
       fontSize: '12px',
       textTransform: 'initial',
     }
@@ -64,15 +65,16 @@ const typography = {
   h1: {
     ...rawTheme.typography.logo,
     letterSpacing: 0,
-    color: 'black',
   },
   h2: {
-    color: rawTheme.typography.header,
+    ...rawTheme.typography.header,
     fontSize: 40,
   },
   h3: {
-    ...rawTheme.typography.body,
-    fontSize: 42,
+    ...rawTheme.typography.header,
+    fontSize: '32px',
+    fontWeight: 500,
+    lineHeight: '40px',
   },
   h4: {
     ...rawTheme.typography.body,
@@ -80,27 +82,32 @@ const typography = {
     fontWeight: 700,
   },
   h5: {
-    ...rawTheme.typography.body,
-    fontSize: 20,
-    fontWeight: 300,
+    ...rawTheme.typography.header,
+    fontSize: 24,
+    fontWeight: 600,
   },
   h6: {
     ...rawTheme.typography.body,
-    fontSize: 18,
+    fontSize: 20,
+    fontWeight: 600,
   },
   subtitle1: {
     ...rawTheme.typography.body,
-    fontSize: 18,
+    fontSize: 14,
+    fontWeight: 600,
   },
   body1: {
     ...rawTheme.typography.body,
     fontSize: 14,
     fontWeight: 400,
+    lineHeight: '20px',
+    letterSpacing: '0.35px',
   },
   body2: {
     ...rawTheme.typography.body,
     fontSize: 16,
-    fontWeight: 500
+    fontWeight: 500,
+    lineHeight: '30px',
   },
   body3: {
     ...rawTheme.typography.body,
@@ -143,11 +150,11 @@ export const darkTheme = {
   palette: {
     mode: 'dark',
     primary: {
-      lighter: '#777777',
-      light: '#444444',
-      main: '#000000',
-      dark: '#000000',
-      contrastText: 'white',
+      paper: '#444444',
+      light: '#232323',
+      main: '#232323',
+      accent: '#333333',
+      contrastText: '#e1e3e6',
     },
     ...rawTheme.palette,
     background: {
@@ -166,10 +173,10 @@ export const lightTheme = {
   palette: {
     mode: 'light',
     primary: {
-      lighter: '#FFF',
+      paper: '#FFF',
       light: '#F2F7FC',
       main: '#F2F5F9',
-      dark: '#E1E8EF',
+      accent: '#E1E8EF',
       contrastText: 'black',
     },
     ...rawTheme.palette,

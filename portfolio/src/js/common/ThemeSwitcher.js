@@ -1,99 +1,49 @@
 /* eslint-disable max-len */
-import React, { useState, useMemo } from 'react';
-import { ThemeProvider, createTheme, useTheme, styled } from '@mui/material/styles';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+import React from 'react';
+import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
+import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import BedtimeOutlinedIcon from '@mui/icons-material/BedtimeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import { lightTheme, darkTheme } from './theme';
 
 import CustomSection from './CustomSection';
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-  width: 62,
-  height: 34,
-  padding: 7,
-  '& .MuiSwitch-switchBase': {
-    margin: 1,
-    padding: 0,
-    transform: 'translateX(6px)',
-    '&.Mui-checked': {
-      color: theme.palette.warning,
-      transform: 'translateX(22px)',
-      '& .MuiSwitch-thumb:before': {
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
-          '#fff',
-        )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
-      },
-      '& + .MuiSwitch-track': {
-        opacity: 1,
-        backgroundColor: theme.palette.primary.lighter || theme.palette.primary.light,
-      },
-    },
-  },
-  '& .MuiSwitch-thumb': {
-    backgroundColor:
-      theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.warning.main,
-    width: 32,
-    height: 32,
-    '&:before': {
-      content: "''",
-      position: 'absolute',
-      width: '100%',
-      height: '100%',
-      left: 0,
-      top: 0,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
-        '#fff',
-      )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
-    },
-  },
-  '& .MuiSwitch-track': {
-    opacity: 1,
-    backgroundColor:
-      theme.palette.mode === 'dark' ? theme.palette.primary.light : theme.palette.warning.light,
-    borderRadius: 20 / 2,
-  },
-}));
-
 // eslint-disable-next-line prettier/prettier
 const ColorModeContext = React.createContext({ toggleColorMode: () => { } });
+
+const switchWrapper = {
+  position: 'absolute',
+  top: '25px',
+  right: '0',
+  zIndex: '100',
+  width: '56px',
+  height: '56px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: 'primary.accent',
+  borderRadius: '50%',
+  boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)',
+};
 
 export function MyThemeSwitch() {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
   return (
-    <Box
-      className="theme-switch-section"
-      sx={{ position: 'absolute', top: '25px', right: '0', zIndex: '100' }}
-    >
-      <FormGroup className="theme-switch-section_FormGroup">
-        <FormControlLabel
-          className="theme-switch-section_FormLabel"
-          // eslint-disable-next-line prettier/prettier
-          control={(
-            <MaterialUISwitch
-              className="theme-switch-section_Switch"
-              sx={{ m: 1 }}
-              defaultChecked={false}
-              onClick={colorMode.toggleColorMode}
-            />
-            // eslint-disable-next-line prettier/prettier
-          )}
-          label=""
-        />
-      </FormGroup>
+    <Box className="theme-switch-section" sx={switchWrapper}>
+      <IconButton sx={{ m: 0, p: '20px' }} onClick={colorMode.toggleColorMode} color="inherit">
+        {theme.palette.mode === 'dark' ? <LightModeOutlinedIcon /> : <BedtimeOutlinedIcon />}
+      </IconButton>
     </Box>
   );
 }
 
 export function ThemeSwitcher(Component) {
   function ThemeSwitcher(props) {
-    const [mode, setMode] = useState('light');
-    const colorMode = useMemo(
+    const [mode, setMode] = React.useState('light');
+    const colorMode = React.useMemo(
       () => ({
         toggleColorMode: () => {
           setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));

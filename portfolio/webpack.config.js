@@ -145,13 +145,13 @@ module.exports = (env, argv) => {
       splitChunks: {
         cacheGroups: {
           vendors: {
-            test: /node_modules\/(?!(antd|bootstrap)\/).*/,
+            test: /node_modules\/(?!(mui|bootstrap)\/).*/,
             name: 'vendors',
             chunks: 'all',
           },
-          antd: {
-            test: /node_modules\/(antd\/).*/,
-            name: 'antd',
+          mui: {
+            test: /node_modules\/(mui\/).*/,
+            name: 'mui',
             chunks: 'all',
           },
           bootstrap: {

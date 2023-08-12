@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
-import Typography from '../common/typography';
 import SocialIconsBlock from './SocialIconsBlock';
 import ContactBlock from './ContactBlock';
 import avatarBase from '../../assets/images/avatar-base.png';
@@ -11,14 +11,17 @@ import avatarOk from '../../assets/images/avatar-ok.png';
 import avatarHi from '../../assets/images/avatar-hi.png';
 
 const sectionWrapper = {
-  width: '400px',
-  minWidth: '400px',
-  height: '700px',
-  display: { xs: 'none', md: 'flex' },
+  width: { xs: '100%', md: '400px' },
+  minWidth: { xs: '100%', md: '400px' },
+  height: 'auto',
+  minHeight: { xs: '200px', md: '700px' },
+  display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: 'primary.lighter',
+  backgroundColor: 'primary.paper',
   mr: '20px',
+  mb: { xs: '20px', md: 0 },
+  p: { xs: '20px', md: '30px' },
 };
 
 const avatarBlock = {
@@ -30,6 +33,7 @@ const avatarBlock = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
+  display: { xs: 'none', md: 'block' },
 };
 
 export default function SideBlock({ location: { pathname } }) {
@@ -53,7 +57,7 @@ export default function SideBlock({ location: { pathname } }) {
         className="side-block__avatar border-radius-20"
         sx={{ ...avatarBlock, backgroundImage: `url(${avatar})` }}
       />
-      <Typography variant="h4" component="h4" sx={{ m: '15px 0' }}>
+      <Typography variant="h4" component="h4" align="center" sx={{ m: '15px 0' }}>
         Aleksandra Skirnevskaia
       </Typography>
       <Typography variant="body2" sx={{ opacity: '0.5' }}>
