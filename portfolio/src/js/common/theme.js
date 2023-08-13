@@ -116,36 +116,6 @@ const typography = {
   },
 }
 
-/* const themeModeEx = (mode) => ({
-  palette: {
-    mode,
-    ...(mode === 'dark'
-      ? {
-        primary: {
-          light: '#d2393a',
-          main: '#000000',
-          dark: '#333333',
-        },
-        ...palette,
-      }
-      : {
-        primary: {
-          light: 'white',
-          main: '#1003c70',
-          dark: 'gray',
-        },
-        ...palette,
-      }),
-  },
-  typography: {
-    fontFamily: "'Work Sans', sans-serif",
-    fontSize: 14,
-    fontWeightLight: 300, // Work Sans
-    fontWeightRegular: 400, // Work Sans
-    fontWeightMedium: 700, // Roboto Condensed
-  },
-}); */
-
 export const darkTheme = {
   palette: {
     mode: 'dark',

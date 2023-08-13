@@ -61,7 +61,6 @@ function ResponsiveAppBar() {
 
   React.useEffect(() => {
     const curPage = window.location.pathname;
-    console.log(curPage);
     setLocation(curPage);
   }, [handleOpenNavMenu]);
 

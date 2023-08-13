@@ -13,6 +13,11 @@ import Seo from '../../assets/images/seo.svg';
 
 import ActivityItem from './Activity';
 
+const descr = `I am a Front-end developer with a keen interest in Web and App Development.
+I love using React.js, Redux, Mui/Bootstrap and other libraries to create reliable, 
+fast, scalable, and user-friendly products. I also enjoy doing SEO optimization and 
+internationalization.`;
+
 const rowWrapper = {
   display: 'flex',
   flexDirection: { xs: 'column', lg: 'row' },
@@ -27,12 +32,7 @@ const Home = ({ location: { pathname } }) => {
   return (
     <PageLayout title="About me">
       <>
-        <SEO
-          title="About me"
-          description="SEO tags with React Helmet."
-          name="Awesome Company name."
-          type="article"
-        />
+        <SEO title="Aleksandra Skirnevskaia - About me" description={descr} />
         <Box>
           <Typography variant="body2">
             Hello there! I&#39;m thrilled to welcome you to my portfolio. I am a passionate and
