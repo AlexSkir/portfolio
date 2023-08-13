@@ -30,7 +30,7 @@ const appbarWrapper = {
 const pages = [
   { name: 'Home', icon: <HomeOutlinedIcon /> },
   { name: 'Resume', icon: <ArticleOutlinedIcon /> },
-  { name: 'Work', icon: <WorkOutlineOutlinedIcon /> },
+  { name: 'Projects', icon: <WorkOutlineOutlinedIcon /> },
   { name: 'Contact', icon: <ContactMailOutlinedIcon /> },
 ];
 

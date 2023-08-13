@@ -92,9 +92,16 @@ const typography = {
     fontWeight: 600,
   },
   subtitle1: {
-    ...rawTheme.typography.body,
-    fontSize: 14,
-    fontWeight: 600,
+    ...rawTheme.typography.header,
+    fontSize: 28,
+    fontWeight: 500,
+    letterSpacing: '0.693px',
+  },
+  subtitle2: {
+    ...rawTheme.typography.header,
+    fontSize: 16,
+    fontWeight: 500,
+    letterSpacing: '0px',
   },
   body1: {
     ...rawTheme.typography.body,
