@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
 function CardItem(props) {
-  const { date, position, place, color, link, techs, projectUrl } = props;
+  const { date, position, place, color, link, techs, projectUrl, CTA } = props;
   return (
     <Card
       className="resume-section__resume-item border-radius-8"
@@ -26,7 +26,12 @@ function CardItem(props) {
         </Typography>
         <Typography variant="body3">{position}</Typography>
         {link ? (
-          <Link className="resume-section__link" href={link} sx={{ color: 'primary.contrastText' }}>
+          <Link
+            className="resume-section__link"
+            href={link}
+            target="_blank"
+            sx={{ color: 'primary.contrastText' }}
+          >
             <Typography variant="body1">{place}</Typography>
           </Link>
         ) : (
@@ -41,9 +46,10 @@ function CardItem(props) {
       <CardActions sx={{ mt: '10px', p: 0 }}>
         <Link
           href={projectUrl}
+          target="_blank"
           sx={{ color: 'secondary.dark', textTransform: 'uppercase', cursor: 'pointer' }}
         >
-          <Typography variant="subtitle2">view project</Typography>
+          <Typography variant="subtitle2">{CTA}</Typography>
         </Link>
       </CardActions>
     </Card>
@@ -58,10 +64,12 @@ CardItem.propTypes = {
   projectUrl: PropTypes.string.isRequired,
   techs: PropTypes.string.isRequired,
   link: PropTypes.string,
+  CTA: PropTypes.string,
 };
 
 CardItem.defaultProps = {
   link: false,
+  CTA: 'Open project',
 };
 
 export default CardItem;

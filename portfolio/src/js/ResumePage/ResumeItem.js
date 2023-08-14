@@ -27,7 +27,12 @@ function ResumeItem(props) {
       </Typography>
       <Typography variant="body3">{position}</Typography>
       {link ? (
-        <Link className="resume-section__link" href={link} sx={{ color: 'primary.contrastText' }}>
+        <Link
+          className="resume-section__link"
+          href={link}
+          target="_blank"
+          sx={{ color: 'primary.contrastText' }}
+        >
           <Typography variant="body1">{place}</Typography>
         </Link>
       ) : (
