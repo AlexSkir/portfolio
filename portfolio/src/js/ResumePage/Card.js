@@ -68,7 +68,7 @@ CardItem.propTypes = {
 };
 
 CardItem.defaultProps = {
-  link: false,
+  link: '',
   CTA: 'Open project',
 };
 
