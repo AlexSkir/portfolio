@@ -4,6 +4,7 @@ import MainLayout from './MainLayout/index';
 import RouteWithSubRoutes from './RouteWithSubRoutes';
 
 const Home = lazy(() => import('./HomePage/index'));
+const Resume = lazy(() => import('./ResumePage/index'));
 /* const About = lazy(() => import('./app/pages/About'));
 const Contact = lazy(() => import('./app/pages/Contact')); */
 
@@ -12,11 +13,11 @@ const routes = [
     path: '/Home',
     component: Home,
   },
-  /* {
-    path: '/about',
-    component: About,
-  },
   {
+    path: '/Resume',
+    component: Resume,
+  },
+  /* {
     path: '/contact',
     component: Contact,
   }, */

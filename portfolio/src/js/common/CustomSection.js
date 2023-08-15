@@ -28,6 +28,15 @@ const styles = ({ theme }) => ({
   [` .about-section__activity-item`]: {
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
   },
+  [` .resume-section__resume-item`]: {
+    backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
+  },
+  [` .resume-section__link`]: {
+    textDecorationColor: theme.palette.primary.contrastText,
+    '&:hover': {
+      opacity: '0.8',
+    },
+  },
   [` div, h1`]: {
     color: theme.palette.primary.contrastText,
   },
