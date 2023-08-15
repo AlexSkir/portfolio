@@ -5,8 +5,8 @@ import RouteWithSubRoutes from './RouteWithSubRoutes';
 
 const Home = lazy(() => import('./HomePage/index'));
 const Resume = lazy(() => import('./ResumePage/index'));
-/* const About = lazy(() => import('./app/pages/About'));
-const Contact = lazy(() => import('./app/pages/Contact')); */
+const Portfolio = lazy(() => import('./PortfolioPage/index'));
+/* const Contact = lazy(() => import('./app/pages/Contact')); */
 
 const routes = [
   {
@@ -17,10 +17,10 @@ const routes = [
     path: '/Resume',
     component: Resume,
   },
-  /* {
-    path: '/contact',
-    component: Contact,
-  }, */
+  {
+    path: '/Portfolio',
+    component: Portfolio,
+  },
 ];
 
 const AppRouter = () => {
