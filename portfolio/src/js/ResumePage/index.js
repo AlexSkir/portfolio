@@ -76,7 +76,8 @@ const softSkills = [
   'Attention to details',
 ];
 
-const Resume = ({ location: { pathname } }) => {
+function Resume(props) {
+  const { pathname } = props;
   if (pathname !== '/Resume') {
     return null;
   }
@@ -179,10 +180,10 @@ const Resume = ({ location: { pathname } }) => {
       </>
     </PageLayout>
   );
-};
+}
 
 Resume.propTypes = {
-  location: PropTypes.object.isRequired,
+  pathname: PropTypes.string.isRequired,
 };
 
 export default Resume;

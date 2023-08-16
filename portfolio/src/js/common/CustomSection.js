@@ -94,6 +94,22 @@ const styles = ({ theme }) => ({
       opacity: '0.7',
     },
   },
+  ' .projects-list__item-wrapper': {
+    backgroundColor: '#FFF4E5',
+  },
+  [` .MuiImageListItemBar-title`]: {
+    fontFamily: 'Poppins',
+    fontSize: '10px',
+    fontWeight: '400',
+    color: 'rgba(26, 16, 3, 0.50)',
+  },
+  [` .MuiImageListItemBar-subtitle`]: {
+    fontFamily: 'Poppins',
+    fontSize: '16px',
+    fontWeight: '400',
+    color: '#1A1003',
+    whiteSpace: 'wrap',
+  },
 });
 
 function CustomSection(props) {

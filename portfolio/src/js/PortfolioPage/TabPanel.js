@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
 const tabWrapper = {
   width: '100%',
-  display: 'flex',
+  height: '100%',
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: { xs: 'center', lg: 'space-between' },
@@ -15,19 +15,16 @@ function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
-    <div
+    <Box
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
+      sx={{ display: value !== index ? 'none' : 'flex' }}
       {...other}
     >
-      {value === index && (
-        <Box sx={tabWrapper}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
+      {value === index && <Box>{children}</Box>}
+    </Box>
   );
 }
 

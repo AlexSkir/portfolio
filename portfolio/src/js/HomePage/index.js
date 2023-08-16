@@ -24,10 +24,13 @@ const rowWrapper = {
   justifyContent: 'center',
 };
 
-const Home = ({ location: { pathname } }) => {
-  if (pathname !== '/' && pathname !== '/Home') {
+function Home(props) {
+  const { pathname } = props;
+
+  if (pathname !== '/') {
     return null;
   }
+
   const theme = useTheme();
   return (
     <PageLayout title="About me">
@@ -98,10 +101,10 @@ const Home = ({ location: { pathname } }) => {
       </>
     </PageLayout>
   );
-};
+}
 
 Home.propTypes = {
-  location: PropTypes.object.isRequired,
+  pathname: PropTypes.string.isRequired,
 };
 
 export default Home;

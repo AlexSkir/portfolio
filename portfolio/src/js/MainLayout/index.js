@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import ResponsiveAppBar from './Navbar';
@@ -33,7 +34,7 @@ const contentWrapper = {
 };
 
 function MainLayout(props) {
-  const { children } = props;
+  const { pathname } = props;
 
   return (
     <>
@@ -42,12 +43,17 @@ function MainLayout(props) {
         <ResponsiveAppBar />
 
         <Box className="container-mainWrapper__main-layout" sx={mainLayout}>
-          <SideBlock location={location} />
+          <SideBlock pathname={pathname} />
           <Box
             className="container-mainWrapper__content-wrapper border-radius-20"
             sx={contentWrapper}
           >
-            <Box className="container-mainWrapper__page-wrapper">{children}</Box>
+            <Box
+              className="container-mainWrapper__page-wrapper"
+              sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+            >
+              <Outlet />
+            </Box>
           </Box>
         </Box>
         <Footer />
@@ -57,7 +63,7 @@ function MainLayout(props) {
 }
 
 MainLayout.propTypes = {
-  children: PropTypes.element.isRequired,
+  pathname: PropTypes.string.isRequired,
 };
 
 export default ThemeSwitcher(MainLayout);

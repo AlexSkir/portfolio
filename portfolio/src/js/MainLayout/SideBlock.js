@@ -9,6 +9,7 @@ import avatarBase from '../../assets/images/avatar-base.png';
 import avatarHeart from '../../assets/images/avatar-heart.png';
 import avatarOk from '../../assets/images/avatar-ok.png';
 import avatarHi from '../../assets/images/avatar-hi.png';
+import avatar4042 from '../../assets/images/avatar-404.2.png';
 
 const sectionWrapper = {
   width: { xs: '100%', md: '400px' },
@@ -36,18 +37,24 @@ const avatarBlock = {
   display: { xs: 'none', md: 'block' },
 };
 
-export default function SideBlock({ location: { pathname } }) {
+const projects = ['/Portfolio', '/Portfolio/Fesco', '/Portfolio/Zoo'];
+
+export default function SideBlock(props) {
+  const { pathname } = props;
   const [avatar, setAvatar] = React.useState(avatarHi);
+  console.log('sideblock', pathname);
 
   React.useEffect(() => {
     if (pathname === '/Resume') {
       setAvatar(avatarBase);
-    } else if (pathname === '/Work') {
+    } else if (projects.includes(pathname)) {
       setAvatar(avatarOk);
     } else if (pathname === '/Contact') {
       setAvatar(avatarHeart);
-    } else {
+    } else if (pathname === '/') {
       setAvatar(avatarHi);
+    } else {
+      setAvatar(avatar4042);
     }
   });
 
@@ -70,5 +77,5 @@ export default function SideBlock({ location: { pathname } }) {
 }
 
 SideBlock.propTypes = {
-  location: PropTypes.object.isRequired,
+  pathname: PropTypes.string.isRequired,
 };

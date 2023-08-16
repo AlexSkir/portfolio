@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Outlet } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
@@ -30,14 +31,24 @@ const PageLayout = ({ title, children }) => {
         </Typography>
         <Box className="page-content__divider" sx={{ mt: { xs: '10px', md: '0' } }} />
       </Box>
-      <Box className="page-content__content">{children}</Box>
+      <Box
+        className="page-content__content"
+        sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+      >
+        <Outlet />
+        {children}
+      </Box>
     </>
   );
 };
 
 PageLayout.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+};
+
+PageLayout.defaultProps = {
+  children: <></>,
 };
 
 export default PageLayout;

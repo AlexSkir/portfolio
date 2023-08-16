@@ -28,24 +28,36 @@ const appbarWrapper = {
 };
 
 const pages = [
-  { name: 'Home', icon: <HomeOutlinedIcon /> },
-  { name: 'Resume', icon: <ArticleOutlinedIcon /> },
-  { name: 'Portfolio', icon: <WorkOutlineOutlinedIcon /> },
-  { name: 'Contact', icon: <ContactMailOutlinedIcon /> },
+  { name: 'Home', path: '/', icon: <HomeOutlinedIcon /> },
+  { name: 'Resume', path: '/Resume', icon: <ArticleOutlinedIcon /> },
+  { name: 'Portfolio', path: '/Portfolio', icon: <WorkOutlineOutlinedIcon /> },
+  { name: 'Contact', path: '/Contact', icon: <ContactMailOutlinedIcon /> },
+];
+
+const projects = [
+  '/Portfolio',
+  '/Portfolio/Fesco',
+  '/Portfolio/Zoo',
+  '/Portfolio/Culture-Portal',
+  '/Portfolio/Awesome-Chat',
+  '/Portfolio/Youtube',
+  '/Portfolio/Piskel',
+  '/Portfolio/Alexis',
+  '/Portfolio/Hexal',
 ];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [location, setLocation] = React.useState('/Home');
+  const [location, setLocation] = React.useState('/');
 
   const theme = useTheme();
 
-  const menuItemBG = (page, theme) => {
-    return location === `/${page}` ? { background: theme.palette.secondary.gradientBG } : {};
+  const menuItemBG = (path, theme) => {
+    return location === path ? { background: theme.palette.secondary.gradientBG } : {};
   };
 
-  const menuItemColor = (page, theme) => {
-    return location === `/${page}`
+  const menuItemColor = (path, theme) => {
+    return location === path
       ? { color: theme.palette.secondary.contrastText }
       : { color: 'primary.contrastText' };
   };
@@ -62,6 +74,9 @@ function ResponsiveAppBar() {
   React.useEffect(() => {
     const curPage = window.location.pathname;
     setLocation(curPage);
+    if (projects.includes(location)) {
+      setLocation('/Portfolio');
+    }
   }, [handleOpenNavMenu]);
 
   return (
@@ -113,15 +128,15 @@ function ResponsiveAppBar() {
               <MenuItem
                 key={page.name}
                 onClick={handleCloseNavMenu}
-                sx={menuItemBG(page.name, theme)}
+                sx={menuItemBG(page.path, theme)}
               >
                 <Link
                   title={page.name}
                   onClick={handleOpenNavMenu}
-                  href={`/${page.name}`}
+                  href={page.path}
                   underline="none"
                 >
-                  <Typography variant="button" sx={menuItemColor(page.name, theme)}>
+                  <Typography variant="button" sx={menuItemColor(page.path, theme)}>
                     {page.name}
                   </Typography>
                 </Link>
@@ -139,8 +154,8 @@ function ResponsiveAppBar() {
               key={page.name}
               title={page.name}
               handleClick={handleOpenNavMenu}
-              href={`/${page.name}`}
-              status={location === `/${page.name}`}
+              href={page.path}
+              status={location === page.path}
             >
               {page.icon}
             </NavbarButton>
