@@ -6,13 +6,6 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
-
 function ProjectsListGallery(props) {
   const { itemData } = props;
   return (
@@ -20,7 +13,8 @@ function ProjectsListGallery(props) {
       cols={1}
       rowHeight={265}
       sx={{
-        width: { xs: '300px', lg: '700px' },
+        width: '100%',
+        maxWidth: '700px',
         height: '500px',
         overflowY: 'scroll',
         display: 'flex',
@@ -30,10 +24,14 @@ function ProjectsListGallery(props) {
       }}
     >
       {itemData.map((item) => (
-        <Link key={item.name} href={`/Portfolio/${item.path}`}>
+        <Link
+          key={item.name}
+          href={`/Portfolio/${item.path}`}
+          sx={{ width: { xs: '300px', lg: '330px' } }}
+        >
           <ImageListItem
             className="projects-list__item-wrapper"
-            sx={{ p: '8px', mb: '15px', borderRadius: '8px', width: { xs: '300px', lg: '330px' } }}
+            sx={{ p: '8px', mb: '15px', borderRadius: '8px', width: '100%' }}
           >
             <Box
               loading="lazy"
@@ -46,8 +44,8 @@ function ProjectsListGallery(props) {
             />
             <ImageListItemBar
               position="below"
-              title={item.description}
-              subtitle={item.technologies.join(` • `)}
+              title={item.type}
+              subtitle={item.mainTool.join(` • `)}
             />
           </ImageListItem>
         </Link>

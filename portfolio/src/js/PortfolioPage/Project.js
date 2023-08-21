@@ -11,3 +11,7 @@ export default function ProjectsList(props) {
     </Box>
   );
 }
+
+ProjectsList.propTypes = {
+  data: PropTypes.object.isRequired,
+};
