@@ -14,13 +14,11 @@ function ProjectsListGallery(props) {
       rowHeight={265}
       sx={{
         width: '100%',
-        maxWidth: '700px',
-        height: '500px',
-        overflowY: 'scroll',
+        overflowY: 'visible',
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
-        justifyContent: { xs: 'center', lg: 'space-between' },
+        justifyContent: 'flex-start',
       }}
     >
       {itemData.map((item) => (

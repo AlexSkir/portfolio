@@ -5,7 +5,10 @@ import YoutubeImg from '../../assets/images/projects/youtube.webp';
 import PiskelImg from '../../assets/images/projects/piskel.webp';
 import CultureImg from '../../assets/images/projects/culturePortal.webp';
 import ChatImg from '../../assets/images/projects/chat.webp';
-import ZooGallery from '../../assets/images/projects/zoo/ZooExports';
+import zooImage from '../../assets/images/projects/zoo.webp';
+import reactIcon from '../../assets/images/react.svg';
+import sassIcon from '../../assets/images/sass.png';
+import jsIcon from '../../assets/images/js.svg';
 
 const projectArr = {
   zoo: {
@@ -15,13 +18,16 @@ const projectArr = {
       The breakpoints are 1600px, 1000px and 640px.`,
     tabs: ['all', 'landings'],
     mainTool: ['SASS', 'Adaptive layout'],
+    mainToolIcon: sassIcon,
     technologies: ['HTML', 'SASS', 'jQuery', 'Adaptive layout', 'Perfect Pixel'],
     type: 'Landing page',
     path: 'Zoo',
-    image: ZooGallery[0],
-    code: 'https://github.com/AlexSkir/online-zoo',
-    demo: 'https://alexskir.github.io/online-zoo/index.html',
-    gallery: ZooGallery,
+    image: zooImage,
+    links: [
+      { name: 'demo', url: 'https://alexskir.github.io/online-zoo/index.html' },
+      { name: 'figma', url: 'https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online' },
+      { name: 'github', url: 'https://github.com/AlexSkir/online-zoo' },
+    ],
   },
   culturePortal: {
     name: 'Culture Portal',

@@ -26,7 +26,6 @@ const contentWrapper = {
   backgroundColor: 'primary.paper',
   width: '100%',
   minWidth: '50%',
-  maxWidth: '820px',
   height: 'auto',
   minHeight: '700px',
   position: 'relative',
