@@ -15,7 +15,7 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 
 import NavbarButton from './NavbarButton';
-import projectArr from '../PortfolioPage/projectsArray';
+import projectArr from '../common/projectsArray';
 
 const appbarWrapper = {
   width: '90%',

@@ -3,7 +3,7 @@ import SEO from '../common/SEO';
 import CustomStyledTabs from './StyledTabs';
 import TabPanel from './TabPanel';
 import ProjectsListGallery from './Gallery';
-import projectArr from './projectsArray';
+import projectArr from '../common/projectsArray';
 import PageLayout from '../PageLayout/index';
 
 const tabs = ['all', 'landings', 'app', 'cms', 'rss'];

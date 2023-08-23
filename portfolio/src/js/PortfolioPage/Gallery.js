@@ -5,6 +5,7 @@ import Link from '@mui/material/Link';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
+import Typography from '@mui/material/Typography';
 
 function ProjectsListGallery(props) {
   const { itemData } = props;
@@ -42,7 +43,7 @@ function ProjectsListGallery(props) {
             />
             <ImageListItemBar
               position="below"
-              title={item.type}
+              title={<Typography variant="body3">{item.type}</Typography>}
               subtitle={item.mainTool.join(` • `)}
             />
           </ImageListItem>

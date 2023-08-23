@@ -1,3 +1,4 @@
+import React from 'react';
 import fescoImg from '../../assets/images/projects/fesco.webp';
 import AlexisImg from '../../assets/images/projects/alexis.webp';
 import HexalImg from '../../assets/images/projects/hexal.webp';
@@ -5,6 +6,8 @@ import YoutubeImg from '../../assets/images/projects/youtube.webp';
 import PiskelImg from '../../assets/images/projects/piskel.webp';
 import CultureImg from '../../assets/images/projects/culturePortal.webp';
 import ChatImg1 from '../../assets/images/projects/chat1.webp';
+import GofuckImg from '../../assets/images/projects/gofuck.webp';
+import GritellaImg from '../../assets/images/projects/gritella.webp';
 import zooImage from '../../assets/images/projects/zoo.webp';
 import yagoImage from '../../assets/images/projects/yago.webp';
 import reactIcon from '../../assets/images/react.png';
@@ -15,6 +18,9 @@ import jqueryIcon from '../../assets/images/jquery.png';
 import pixelIcon from '../../assets/images/pixel.png';
 import htmlIcon from '../../assets/images/html.png';
 import cssIcon from '../../assets/images/css.png';
+import wpIcon from '../../assets/images/wordpress.png';
+
+import GritellaProject from '../PortfolioPage/ProjectPage/Gritella';
 
 const projectArr = {
   yandexGo: {
@@ -35,7 +41,7 @@ const projectArr = {
       { name: 'demo', url: 'https://alexskir.github.io/yago/' },
       { name: 'github', url: 'https://github.com/AlexSkir/yago' },
       {
-        name: 'demo editor X',
+        name: 'demo (editor X)',
         url: 'https://askirnevskaia.editorx.io/yago',
       },
     ],
@@ -196,6 +202,50 @@ const projectArr = {
       { name: 'demo', url: 'https://alexskir.github.io/hexal/' },
       { name: 'github', url: 'https://github.com/AlexSkir/hexal/tree/gh-pages' },
     ],
+  },
+  gofuck: {
+    name: 'GoFuckBiz Forum',
+    description: `GoFuckBiz.com - Forum of successful webmasters. The main objective was 
+    to create wireless CSS for PHP template with layout for mobile devices.`,
+    tabs: ['all'],
+    mainTool: ['CSS', 'PHP template'],
+    avatar: cssIcon,
+    technologies: ['CSS', 'Mobile layout', 'PHP template'],
+    type: 'Forum',
+    path: 'Gofuck',
+    image: GofuckImg,
+    links: [
+      { name: 'website', url: 'https://www.gofuckbiz.com/' },
+      { name: 'github', url: 'https://github.com/AlexSkir/gofuck/blob/master/wireless_css.txt' },
+    ],
+  },
+  gritella: {
+    name: 'Gritella lingerie',
+    description: `Gritella lingerie is an eCommerce website which is made on WordPress with 
+    WooCommerce plugin. Available options: shop, user account, WishList, order info, email
+    notification, CMS, etc.`,
+    warning: `The project was closed in Aug 2021, the website is now stored 
+    on free web hosting and some functionality can be unavailable.`,
+    tabs: ['all', 'cms'],
+    mainTool: ['WordPress', 'WooCommerce'],
+    avatar: wpIcon,
+    technologies: [
+      'WordPress',
+      'WooCommerce',
+      'CMS',
+      'PHP',
+      'JavaScript',
+      'Google login',
+      'ReCaptcha',
+    ],
+    type: 'eCommerce website',
+    path: 'Gritella',
+    image: GritellaImg,
+    links: [
+      { name: 'demo', url: 'http://d97714j6.beget.tech/' },
+      { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
+    ],
+    more: <GritellaProject />,
   },
 };
 

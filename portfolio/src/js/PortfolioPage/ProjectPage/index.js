@@ -13,7 +13,7 @@ import CardActions from '@mui/material/CardActions';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
-import PageLayout from '../PageLayout';
+import PageLayout from '../../PageLayout';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -50,6 +50,13 @@ export default function Project(props) {
             {data.technologies.join(' • ')}
           </Typography>
           <Typography variant="body2">{data.description}</Typography>
+          {data.warning ? (
+            <Typography variant="body3" sx={{ backgroundColor: 'warning.light' }}>
+              {data.warning}
+            </Typography>
+          ) : (
+            <></>
+          )}
         </CardContent>
         <CardActions sx={{ p: '16px' }}>
           {data.links.map((item) => (
@@ -78,7 +85,7 @@ export default function Project(props) {
           )}
         </CardActions>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>{children}</CardContent>
+          <CardContent>{data.more}</CardContent>
         </Collapse>
       </Card>
     </PageLayout>

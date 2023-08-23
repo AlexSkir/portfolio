@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import PageLayout from '../PageLayout';
 import SEO from '../common/SEO';
@@ -59,11 +60,19 @@ const workSkills = [
   'SCSS',
   'MUI',
   'Bootstrap',
+  <Link
+    href="https://www.npmjs.com/package/alexskir-reactplate"
+    sx={{ color: 'primary.contrastText', textDecoration: 'underline' }}
+  >
+    Webpack
+  </Link>,
+  'Babel',
   'Figma',
   'Photoshop',
   'GIT',
   'PHP',
   'MySQL',
+  'Docker',
 ];
 const softSkills = [
   'Positive attitude',
@@ -73,6 +82,9 @@ const softSkills = [
   'Fast learner',
   'Problem solving',
   'Attention to details',
+  'Hard working',
+  'Open-minded',
+  'Tolerant',
 ];
 
 function Resume() {
@@ -102,7 +114,7 @@ function Resume() {
             link="https://rs.school/"
             color="pink"
             techs={rssTechs}
-            projectUrl="#"
+            projectUrl="/Portfolio"
             CTA="watch portfolio"
           />
           <ResumeItem
@@ -134,7 +146,7 @@ function Resume() {
             link="http://d97714j6.beget.tech/"
             color="blue"
             techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
-            projectUrl="#"
+            projectUrl="/Portfolio/Gritella"
           />
           <CardItem
             date="2019"
@@ -143,7 +155,7 @@ function Resume() {
             link="https://www.gofuckbiz.com/"
             color="blue"
             techs="Wireless CSS for PHP template, cross-browser responsive design"
-            projectUrl="#"
+            projectUrl="/Portfolio/Gofuck"
           />
         </Box>
       </Box>

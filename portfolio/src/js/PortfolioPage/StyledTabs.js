@@ -61,7 +61,7 @@ function CustomStyledTabs(props) {
         <Tab label="Landings" {...a11yProps('landings')} />
         <Tab label="Apps" {...a11yProps('app')} />
         <Tab label="CMS" {...a11yProps('cms')} />
-        <Tab label="RSS projects" {...a11yProps('rss')} />
+        <Tab label="School" {...a11yProps('rss')} />
       </StyledTabs>
     </Box>
   );
