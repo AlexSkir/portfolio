@@ -15,6 +15,7 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 
 import NavbarButton from './NavbarButton';
+import projectArr from '../PortfolioPage/projectsArray';
 
 const appbarWrapper = {
   width: '90%',
@@ -34,19 +35,7 @@ const pages = [
   { name: 'Contact', path: '/Contact', icon: <ContactMailOutlinedIcon /> },
 ];
 
-const projects = [
-  '/Portfolio',
-  '/Portfolio/Fesco',
-  '/Portfolio/Zoo',
-  '/Portfolio/Culture-Portal',
-  '/Portfolio/Awesome-Chat',
-  '/Portfolio/Youtube',
-  '/Portfolio/Piskel',
-  '/Portfolio/Alexis',
-  '/Portfolio/Hexal',
-];
-
-function ResponsiveAppBar() {
+function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [location, setLocation] = React.useState('/');
 
@@ -74,7 +63,7 @@ function ResponsiveAppBar() {
   React.useEffect(() => {
     const curPage = window.location.pathname;
     setLocation(curPage);
-    if (projects.includes(location)) {
+    if (location.includes('Portfolio')) {
       setLocation('/Portfolio');
     }
   }, [handleOpenNavMenu]);
@@ -165,4 +154,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default NavBar;

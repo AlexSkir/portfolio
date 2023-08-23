@@ -37,21 +37,18 @@ const avatarBlock = {
   display: { xs: 'none', md: 'block' },
 };
 
-const projects = ['/Portfolio', '/Portfolio/Fesco', '/Portfolio/Zoo'];
-
 export default function SideBlock(props) {
-  const { pathname } = props;
-  const [avatar, setAvatar] = React.useState(avatarHi);
-  console.log('sideblock', pathname);
+  const { avatar } = props;
+  const [avatarImg, setAvatar] = React.useState(avatarHi);
 
   React.useEffect(() => {
-    if (pathname === '/Resume') {
+    if (avatar === 'base') {
       setAvatar(avatarBase);
-    } else if (projects.includes(pathname)) {
+    } else if (avatar === 'ok') {
       setAvatar(avatarOk);
-    } else if (pathname === '/Contact') {
+    } else if (avatar === 'heart') {
       setAvatar(avatarHeart);
-    } else if (pathname === '/') {
+    } else if (avatar === 'hi') {
       setAvatar(avatarHi);
     } else {
       setAvatar(avatar4042);
@@ -62,7 +59,7 @@ export default function SideBlock(props) {
     <Box className="side-block-section border-radius-20" sx={sectionWrapper}>
       <Box
         className="side-block__avatar border-radius-20"
-        sx={{ ...avatarBlock, backgroundImage: `url(${avatar})` }}
+        sx={{ ...avatarBlock, backgroundImage: `url(${avatarImg})` }}
       />
       <Typography variant="h4" component="h4" align="center" sx={{ m: '15px 0' }}>
         Aleksandra Skirnevskaia
@@ -77,5 +74,5 @@ export default function SideBlock(props) {
 }
 
 SideBlock.propTypes = {
-  pathname: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
 };
