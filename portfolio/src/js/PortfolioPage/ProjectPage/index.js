@@ -49,7 +49,6 @@ export default function Project(props) {
           <Typography variant="h5" sx={{ fontWeight: '500', m: '10px 0' }}>
             {data.technologies.join(' • ')}
           </Typography>
-          <Typography variant="body2">{data.description}</Typography>
           {data.warning ? (
             <Typography variant="body3" sx={{ backgroundColor: 'warning.light' }}>
               {data.warning}
@@ -57,6 +56,9 @@ export default function Project(props) {
           ) : (
             <></>
           )}
+          <Typography variant="body2" sx={{ mt: '10px' }}>
+            {data.description}
+          </Typography>
         </CardContent>
         <CardActions sx={{ p: '16px' }}>
           {data.links.map((item) => (

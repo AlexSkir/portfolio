@@ -13,10 +13,6 @@ import yagoImage from '../../assets/images/projects/yago.webp';
 import reactIcon from '../../assets/images/react.png';
 import sassIcon from '../../assets/images/sass.png';
 import jsIcon from '../../assets/images/js.svg';
-import reduxIcon from '../../assets/images/redux.png';
-import jqueryIcon from '../../assets/images/jquery.png';
-import pixelIcon from '../../assets/images/pixel.png';
-import htmlIcon from '../../assets/images/html.png';
 import cssIcon from '../../assets/images/css.png';
 import wpIcon from '../../assets/images/wordpress.png';
 
@@ -30,10 +26,18 @@ const projectArr = {
     For smaller screens images are arranged into a slider, controlled by simple 
     jQuery scripts called with on-click events. There is also a copy of this web page
     created using Editor X advanced creation platform for website development.`,
-    tabs: ['all', 'landings'],
+    tabs: ['all', 'landings', 'cms'],
     mainTool: ['SASS', 'Adaptive layout'],
     avatar: sassIcon,
-    technologies: ['HTML', 'SASS', 'jQuery', 'Adaptive layout', 'Perfect Pixel', 'Web constructor'],
+    technologies: [
+      'HTML',
+      'SASS',
+      'jQuery',
+      'Adaptive layout',
+      'Perfect Pixel',
+      'Web constructor',
+      'CMS',
+    ],
     type: 'Landing page',
     path: 'Yandex-Go',
     image: yagoImage,
@@ -222,8 +226,8 @@ const projectArr = {
   gritella: {
     name: 'Gritella lingerie',
     description: `Gritella lingerie is an eCommerce website which is made on WordPress with 
-    WooCommerce plugin. Available options: shop, user account, WishList, order info, email
-    notification, CMS, etc.`,
+    WooCommerce plugin. Content is manageable through CMS admin panel of the website. Main 
+    features: ...`,
     warning: `The project was closed in Aug 2021, the website is now stored 
     on free web hosting and some functionality can be unavailable.`,
     tabs: ['all', 'cms'],
