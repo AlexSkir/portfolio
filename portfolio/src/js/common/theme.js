@@ -133,6 +133,7 @@ export const darkTheme = {
       accent: '#333333',
       contrastText: '#e1e3e6',
       background: 'rgb(35 35 35 / 30%)',
+      paleText: 'rgb(255 255 255 / 80%)',
     },
     ...rawTheme.palette,
     background: {
@@ -157,6 +158,7 @@ export const lightTheme = {
       accent: '#E1E8EF',
       contrastText: 'black',
       background: 'rgb(242 245 249 / 30%)',
+      paleText: 'rgb(23 23 23 / 80%)',
     },
     ...rawTheme.palette,
     background: {

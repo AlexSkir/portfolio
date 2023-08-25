@@ -9,6 +9,7 @@ import avatarBase from '../../assets/images/avatar-base.png';
 import avatarHeart from '../../assets/images/avatar-heart.png';
 import avatarOk from '../../assets/images/avatar-ok.png';
 import avatarHi from '../../assets/images/avatar-hi.png';
+import avatar4042 from '../../assets/images/avatar-404.2.png';
 
 const sectionWrapper = {
   width: { xs: '100%', md: '400px' },
@@ -36,18 +37,21 @@ const avatarBlock = {
   display: { xs: 'none', md: 'block' },
 };
 
-export default function SideBlock({ location: { pathname } }) {
-  const [avatar, setAvatar] = React.useState(avatarHi);
+export default function SideBlock(props) {
+  const { avatar } = props;
+  const [avatarImg, setAvatar] = React.useState(avatarHi);
 
   React.useEffect(() => {
-    if (pathname === '/Resume') {
+    if (avatar === 'base') {
       setAvatar(avatarBase);
-    } else if (pathname === '/Work') {
+    } else if (avatar === 'ok') {
       setAvatar(avatarOk);
-    } else if (pathname === '/Contact') {
+    } else if (avatar === 'heart') {
       setAvatar(avatarHeart);
-    } else {
+    } else if (avatar === 'hi') {
       setAvatar(avatarHi);
+    } else {
+      setAvatar(avatar4042);
     }
   });
 
@@ -55,7 +59,7 @@ export default function SideBlock({ location: { pathname } }) {
     <Box className="side-block-section border-radius-20" sx={sectionWrapper}>
       <Box
         className="side-block__avatar border-radius-20"
-        sx={{ ...avatarBlock, backgroundImage: `url(${avatar})` }}
+        sx={{ ...avatarBlock, backgroundImage: `url(${avatarImg})` }}
       />
       <Typography variant="h4" component="h4" align="center" sx={{ m: '15px 0' }}>
         Aleksandra Skirnevskaia
@@ -70,5 +74,5 @@ export default function SideBlock({ location: { pathname } }) {
 }
 
 SideBlock.propTypes = {
-  location: PropTypes.object.isRequired,
+  avatar: PropTypes.string.isRequired,
 };

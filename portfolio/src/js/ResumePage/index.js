@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import PageLayout from '../common/PageLayout';
+import PageLayout from '../PageLayout';
 import SEO from '../common/SEO';
 import HatIcon from './HatGradientIcon';
 import BagIcon from './BagGradientIcon';
@@ -60,11 +60,19 @@ const workSkills = [
   'SCSS',
   'MUI',
   'Bootstrap',
+  <Link
+    href="https://www.npmjs.com/package/alexskir-reactplate"
+    sx={{ color: 'primary.contrastText', textDecoration: 'underline' }}
+  >
+    Webpack
+  </Link>,
+  'Babel',
   'Figma',
   'Photoshop',
   'GIT',
   'PHP',
   'MySQL',
+  'Docker',
 ];
 const softSkills = [
   'Positive attitude',
@@ -74,115 +82,108 @@ const softSkills = [
   'Fast learner',
   'Problem solving',
   'Attention to details',
+  'Hard working',
+  'Open-minded',
+  'Tolerant',
 ];
 
-const Resume = ({ location: { pathname } }) => {
-  if (pathname !== '/Resume') {
-    return null;
-  }
-
+function Resume() {
   const theme = useTheme();
 
   return (
-    <PageLayout title="Resume">
-      <>
-        <SEO title="Aleksandra Skirnevskaia - About me" description={descr} />
-        <Box className="resume-section__info-block" sx={sectionWrapper}>
-          <Box className="resume-section__education-block" sx={blockWrapper}>
-            <Box className="resume-section__block-title" sx={titleWrapper}>
-              <HatIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
-              <Typography variant="subtitle1" sx={{ ml: '10px' }}>
-                Education
-              </Typography>
-            </Box>
-            <ResumeItem
-              date="2019-2020"
-              position="HTML, CSS, JavaScript, React"
-              place="Codecademy, Codewars"
-              color="pink"
-            />
-            <CardItem
-              date="2019"
-              position="JavaScript"
-              place="The Rolling Scopes School"
-              link="https://rs.school/"
-              color="pink"
-              techs={rssTechs}
-              projectUrl="#"
-              CTA="watch portfolio"
-            />
-            <ResumeItem
-              date="2009"
-              position="Engineer (incomplete)"
-              place="Faculty of Radio Design, TUSUR"
-              link="https://tusur.ru/"
-              color="pink"
-            />
+    <PageLayout title="Resume" avatar="base">
+      <SEO title="Aleksandra Skirnevskaia - About me" description={descr} />
+      <Box className="resume-section__info-block" sx={sectionWrapper}>
+        <Box className="resume-section__education-block" sx={blockWrapper}>
+          <Box className="resume-section__block-title" sx={titleWrapper}>
+            <HatIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
+            <Typography variant="subtitle1" sx={{ ml: '10px' }}>
+              Education
+            </Typography>
           </Box>
-
-          <Box className="resume-section__experience-block" sx={blockWrapper}>
-            <Box className="resume-section__block-title" sx={titleWrapper}>
-              <BagIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
-              <Typography variant="subtitle1" sx={{ ml: '10px' }}>
-                Experience
-              </Typography>
-            </Box>
-            <ResumeItem
-              date="2019-Present"
-              position="Freelance Web Developer"
-              place="Frontend development, Refactor, SEO, Maintenance"
-              color="blue"
-            />
-            <CardItem
-              date="2020-2021"
-              position="Freelance Web Developer"
-              place="Gritella lingereie"
-              link="http://d97714j6.beget.tech/"
-              color="blue"
-              techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
-              projectUrl="#"
-            />
-            <CardItem
-              date="2019"
-              position="Freelance Web Developer"
-              place="GoFuckBiz.com"
-              link="https://www.gofuckbiz.com/"
-              color="blue"
-              techs="Wireless CSS for PHP template, cross-browser responsive design"
-              projectUrl="#"
-            />
-          </Box>
+          <ResumeItem
+            date="2019-2020"
+            position="HTML, CSS, JavaScript, React"
+            place="Codecademy, Codewars"
+            color="pink"
+          />
+          <CardItem
+            date="2019"
+            position="JavaScript"
+            place="The Rolling Scopes School"
+            link="https://rs.school/"
+            color="pink"
+            techs={rssTechs}
+            projectUrl="/Portfolio"
+            CTA="watch portfolio"
+          />
+          <ResumeItem
+            date="2009"
+            position="Engineer (incomplete)"
+            place="Faculty of Radio Design, TUSUR"
+            link="https://tusur.ru/"
+            color="pink"
+          />
         </Box>
 
-        <Box className="resume-section__skills-block" sx={{ ...sectionWrapper, ...skillsBlock }}>
-          <Box className="resume-section__work-skills" sx={blockWrapper}>
-            <Typography variant="subtitle1">Work skills</Typography>
-            <Box sx={skillsWrapper}>
-              {workSkills.map((item, i) => (
-                <Box key={i} sx={skillItem}>
-                  {item}
-                </Box>
-              ))}
-            </Box>
+        <Box className="resume-section__experience-block" sx={blockWrapper}>
+          <Box className="resume-section__block-title" sx={titleWrapper}>
+            <BagIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
+            <Typography variant="subtitle1" sx={{ ml: '10px' }}>
+              Experience
+            </Typography>
           </Box>
-          <Box className="resume-section__soft-skills" sx={blockWrapper}>
-            <Typography variant="subtitle1">Soft skills</Typography>
-            <Box sx={skillsWrapper}>
-              {softSkills.map((item, i) => (
-                <Box key={i} sx={skillItem}>
-                  {item}
-                </Box>
-              ))}
-            </Box>
+          <ResumeItem
+            date="2019-Present"
+            position="Freelance Web Developer"
+            place="Frontend development, Refactor, SEO, Maintenance"
+            color="blue"
+          />
+          <CardItem
+            date="2020-2021"
+            position="Freelance Web Developer"
+            place="Gritella lingereie"
+            link="http://d97714j6.beget.tech/"
+            color="blue"
+            techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
+            projectUrl="/Portfolio/Gritella"
+          />
+          <CardItem
+            date="2019"
+            position="Freelance Web Developer"
+            place="GoFuckBiz.com"
+            link="https://www.gofuckbiz.com/"
+            color="blue"
+            techs="Wireless CSS for PHP template, cross-browser responsive design"
+            projectUrl="/Portfolio/Gofuck"
+          />
+        </Box>
+      </Box>
+
+      <Box className="resume-section__skills-block" sx={{ ...sectionWrapper, ...skillsBlock }}>
+        <Box className="resume-section__work-skills" sx={blockWrapper}>
+          <Typography variant="subtitle1">Work skills</Typography>
+          <Box sx={skillsWrapper}>
+            {workSkills.map((item, i) => (
+              <Box key={i} sx={skillItem}>
+                {item}
+              </Box>
+            ))}
           </Box>
         </Box>
-      </>
+        <Box className="resume-section__soft-skills" sx={blockWrapper}>
+          <Typography variant="subtitle1">Soft skills</Typography>
+          <Box sx={skillsWrapper}>
+            {softSkills.map((item, i) => (
+              <Box key={i} sx={skillItem}>
+                {item}
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Box>
     </PageLayout>
   );
-};
-
-Resume.propTypes = {
-  location: PropTypes.object.isRequired,
-};
+}
 
 export default Resume;
