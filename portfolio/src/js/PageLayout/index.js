@@ -11,7 +11,7 @@ const contentWrapper = {
   height: 'auto',
   minHeight: '700px',
   position: 'relative',
-  p: { xs: '30px', lg: '30px 50px 30px 70px' },
+  p: { xs: '15px', lg: '30px 50px 30px 70px' },
 };
 
 const PageLayout = (props) => {

@@ -43,7 +43,7 @@ export default function Form() {
         maxWidth: '630px',
         backgroundColor: 'primary.background',
         borderRadius: '20px',
-        p: '30px',
+        p: { xs: '10px', sm: '30px' },
         mt: '30px',
       }}
       noValidate

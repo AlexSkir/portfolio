@@ -1,18 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 
 import ContactItemCopieble from '../common/ContactItemCopieble';
 import PhoneIcon from '../common/icons/PhoneIconGradient';
-import resume from '../../assets/files/map.pdf';
+import ResumeDownload from '../common/ResumeDownload';
 
 const blockWrapper = {
-  display: 'flex',
   flexDirection: 'column',
   width: { xs: '100%', md: '350px' },
   height: { xs: 'auto', md: '350px' },
@@ -32,20 +30,15 @@ const dividerEl = {
   backgroundColor: '#E3E3E3',
 };
 
-export default function ContactBlock() {
+export default function ContactBlock(props) {
+  const { open } = props;
   const theme = useTheme();
 
-  const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.download = 'Skirnevskaia Resume';
-
-    link.href = resume;
-
-    link.click();
-  };
-
   return (
-    <Box className="side-block__contact-card border-radius-20" sx={blockWrapper}>
+    <Box
+      className="side-block__contact-card border-radius-20"
+      sx={{ ...blockWrapper, display: open ? 'flex' : 'none' }}
+    >
       <Box className="side-block__contact-item" sx={contactItemBox}>
         <ContactItemCopieble
           link="tel:+79771456716"
@@ -85,20 +78,21 @@ export default function ContactBlock() {
       <Divider sx={dividerEl} />
 
       <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Button
-          className="button_isActive_true border-radius-20"
-          sx={{ width: '185px', height: '44px', color: 'secondary.contrastText' }}
-          onClick={handleDownloadResume}
-        >
-          <FileDownloadOutlinedIcon
-            sx={{
-              mr: '10px',
-              color: 'secondary.contrastText',
-            }}
-          />
-          Download Resume
-        </Button>
+        <ResumeDownload
+          title="Download Resume"
+          btnStyle={{
+            width: '185px',
+            height: '44px',
+            color: 'secondary.contrastText',
+            borderRadius: '20px',
+            gap: '10px',
+          }}
+        />
       </Box>
     </Box>
   );
 }
+
+ContactBlock.propTypes = {
+  open: PropTypes.bool.isRequired,
+};
