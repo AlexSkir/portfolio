@@ -110,6 +110,19 @@ const styles = ({ theme }) => ({
     color: '#1A1003',
     whiteSpace: 'wrap',
   },
+  [` .MuiInputLabel-root`]: {
+    color: theme.palette.primary.contrastText,
+    fontSize: '16px',
+    fontWeight: '600',
+
+    [`&.Mui-focused`]: {
+      color: theme.palette.primary.contrastText,
+      fontSize: '16px',
+    },
+  },
+  [` #formText`]: {
+    resize: 'vertical',
+  },
 });
 
 function CustomSection(props) {

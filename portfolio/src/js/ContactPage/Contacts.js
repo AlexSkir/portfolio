@@ -8,8 +8,6 @@ import ContactItemCopieble from '../common/ContactItemCopieble';
 import CallIcon from '../common/icons/CallIconGradient';
 import EmailIcon from '../common/icons/EmailIconGradient';
 
-const descr = `ff`;
-
 const contactItem = {
   display: 'flex',
   alignItems: 'flex-start',
