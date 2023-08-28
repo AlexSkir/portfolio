@@ -6,7 +6,7 @@ const avatarBlock = {
   width: '200px',
   height: '200px',
   backgroundColor: 'secondary.main',
-  mt: '-100px',
+  mt: '-130px',
   boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',

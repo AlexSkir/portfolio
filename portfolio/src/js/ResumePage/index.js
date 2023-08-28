@@ -51,7 +51,7 @@ const skillsBlock = {
   backgroundColor: 'primary.background',
 };
 
-const rssTechs = `Static, Adaptive and Responsive Design; JS, jQuery, AJAX, React; Bootstrap, 
+const schoolTechs = `Static, Adaptive and Responsive Design; JS, jQuery, AJAX, React; Bootstrap, 
 Material-UI; WebSocket; Google, Youtube, Firebase APIs`;
 
 const workSkills = [
@@ -116,7 +116,7 @@ function Resume() {
             place="The Rolling Scopes School"
             link="https://rs.school/"
             color="pink"
-            techs={rssTechs}
+            techs={schoolTechs}
             projectUrl="/Portfolio"
             CTA="watch portfolio"
           />

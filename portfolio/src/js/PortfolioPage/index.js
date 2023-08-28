@@ -6,7 +6,7 @@ import ProjectsListGallery from './Gallery';
 import projectArr from '../common/projectsArray';
 import PageLayout from '../PageLayout/index';
 
-const tabs = ['all', 'landings', 'app', 'cms', 'rss'];
+const tabs = ['all', 'landings', 'app', 'cms', 'school'];
 
 function Portfolio() {
   const [value, setValue] = React.useState('all');

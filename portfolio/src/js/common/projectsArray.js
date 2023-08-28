@@ -72,7 +72,7 @@ const projectArr = {
     name: 'Culture Portal',
     description: `Culture Portal is a multilingual web portal about the culture of Belarus, 
       developed as a team project.`,
-    tabs: ['all', 'app', 'react', 'rss'],
+    tabs: ['all', 'app', 'react', 'school'],
     mainTool: ['React/redux', 'Material-UI'],
     avatar: reactIcon,
     technologies: [
@@ -96,7 +96,7 @@ const projectArr = {
     name: 'Awesome Chat',
     description: `Awesome Chat - Simple WebSocket based Chat-application with push-notifications, 
     content-editable text field and emoticons. Autodeployment from a Github repository to Render.`,
-    tabs: ['all', 'app', 'react', 'rss'],
+    tabs: ['all', 'app', 'react', 'school'],
     mainTool: ['React/redux', 'Material-UI', 'Bootstrap'],
     avatar: reactIcon,
     technologies: ['React', 'Redux', 'WebSocket', 'Material-UI', 'Bootstrap', 'Responsive layout'],
@@ -118,7 +118,7 @@ const projectArr = {
     youtube API, Babel, Webpack. It is a web app for searching the YouTube content by keywords. 
     The search result is presented in the form of cards with the detailed information about 
     the video clips.`,
-    tabs: ['all', 'js', 'app', 'rss'],
+    tabs: ['all', 'js', 'app', 'school'],
     mainTool: ['JS', 'Youtube api'],
     avatar: jsIcon,
     technologies: ['Pure JS', 'AJAX', 'Youtube api', 'HTML', 'CSS', 'Responsive Layout'],
@@ -159,7 +159,7 @@ const projectArr = {
     name: 'Piskel Clone',
     description: `Piskel Clone is a simplified clone of Piskel, a web-based tool for 
     creating animated sprites & pixel art.`,
-    tabs: ['all', 'app', 'react', 'rss'],
+    tabs: ['all', 'app', 'react', 'school'],
     mainTool: ['React/redux', 'API'],
     avatar: reactIcon,
     technologies: ['React', 'Redux', 'jQuery', 'Canvas', 'Google API', 'Firebase DB'],
@@ -195,7 +195,7 @@ const projectArr = {
     name: 'Hexal',
     description: `Hexal is a single page website, product of design experimentations 
     with hexagons and simple animation.`,
-    tabs: ['all', 'landings', 'rss'],
+    tabs: ['all', 'landings', 'school'],
     mainTool: ['CSS', 'Static layout'],
     avatar: cssIcon,
     technologies: ['HTML', 'CSS', 'Static layout', 'Perfect Pixel'],

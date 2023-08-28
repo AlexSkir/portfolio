@@ -105,10 +105,10 @@ export default function SideBlock(props) {
   return (
     <Box className="side-block-section" sx={{ display: { xs: 'none', md: 'block' } }}>
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader sx={{ position: 'absolute', top: 0, right: 0 }}>
+        <DrawerHeader sx={{ position: 'absolute', top: '10px', right: 0 }}>
           {open ? (
             <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon sx={{ color: 'secondary.main' }} />
+              <ChevronLeftIcon sx={{ color: 'secondary.dark', width: '40px', height: '40px' }} />
             </IconButton>
           ) : (
             <IconButton
@@ -117,7 +117,7 @@ export default function SideBlock(props) {
               onClick={handleDrawerOpen}
               edge="start"
             >
-              <ChevronRightIcon sx={{ color: 'secondary.dark' }} />
+              <ChevronRightIcon sx={{ color: 'secondary.main', width: '40px', height: '40px' }} />
             </IconButton>
           )}
         </DrawerHeader>
