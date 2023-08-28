@@ -16,7 +16,7 @@ const containerWrapper = {
 };
 const mainLayout = {
   display: 'flex',
-  flexDirection: { xs: 'column', md: 'row' },
+  flexDirection: 'row',
   justifyContent: 'center',
   mt: { xs: '50px', sm: '150px' },
 };

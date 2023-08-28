@@ -5,6 +5,7 @@ import Home from './HomePage';
 import Resume from './ResumePage';
 import Portfolio from './PortfolioPage';
 import Project from './PortfolioPage/ProjectPage';
+import Contact from './ContactPage';
 import NoMatch from './common/NoMatchPage';
 import projectArr from './common/projectsArray';
 
@@ -21,6 +22,7 @@ const AppRouter = () => {
               <Route key={project.name} path={project.path} element={<Project data={project} />} />
             ))}
           </Route>
+          <Route path="Contact" element={<Contact />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

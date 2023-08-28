@@ -30,7 +30,13 @@ function ProjectsListGallery(props) {
         >
           <ImageListItem
             className="projects-list__item-wrapper"
-            sx={{ p: '8px', mb: '15px', borderRadius: '8px', width: '100%' }}
+            sx={{
+              p: '8px',
+              mb: '15px',
+              borderRadius: '8px',
+              width: '100%',
+              backgroundColor: '#FFF4E5',
+            }}
           >
             <Box
               loading="lazy"
@@ -43,8 +49,29 @@ function ProjectsListGallery(props) {
             />
             <ImageListItemBar
               position="below"
-              title={<Typography variant="body3">{item.type}</Typography>}
-              subtitle={item.mainTool.join(` • `)}
+              title={
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    fontSize: '10px',
+                    fontWeight: '400',
+                    opacity: '0.5',
+                  }}
+                >
+                  {item.type}
+                </Typography>
+              }
+              subtitle={
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    fontWeight: '400',
+                    whiteSpace: 'wrap',
+                  }}
+                >
+                  {item.mainTool.join(` • `)}
+                </Typography>
+              }
             />
           </ImageListItem>
         </Link>

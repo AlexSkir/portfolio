@@ -42,7 +42,12 @@ export function MyThemeSwitch() {
 
 export function ThemeSwitcher(Component) {
   function ThemeSwitcher(props) {
-    const [mode, setMode] = React.useState('light');
+    let defaultTheme = 'light';
+    if (localStorage && localStorage.getItem('myColorMode')) {
+      defaultTheme = localStorage.getItem('myColorMode');
+    }
+
+    const [mode, setMode] = React.useState(defaultTheme);
     const colorMode = React.useMemo(
       () => ({
         toggleColorMode: () => {
@@ -51,6 +56,9 @@ export function ThemeSwitcher(Component) {
       }),
       [],
     );
+    if (localStorage) {
+      localStorage.setItem('myColorMode', mode);
+    }
     const theme = React.useMemo(() => createTheme(mode === 'dark' ? darkTheme : lightTheme), [
       mode,
     ]);

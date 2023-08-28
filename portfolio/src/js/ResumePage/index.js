@@ -9,17 +9,19 @@ import HatIcon from './HatGradientIcon';
 import BagIcon from './BagGradientIcon';
 import ResumeItem from './ResumeItem';
 import CardItem from './Card';
+import ResumeDownload from '../common/ResumeDownload';
 
 const descr = `I am a Front-end developer`;
 
 const sectionWrapper = {
   display: 'flex',
-  flexDirection: { xs: 'column', lg: 'row' },
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  gap: { xs: '20px', md: '60px' },
 };
 const blockWrapper = {
   display: 'flex',
   flexDirection: 'column',
-  mr: { xs: '0', lg: '60px' },
 };
 const titleWrapper = {
   display: 'flex',
@@ -31,7 +33,8 @@ const skillsWrapper = {
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'flex-start',
-  width: '290px',
+  width: '100%',
+  maxWidth: '290px',
 };
 const skillItem = {
   display: 'inline-block',
@@ -48,7 +51,7 @@ const skillsBlock = {
   backgroundColor: 'primary.background',
 };
 
-const rssTechs = `Static, Adaptive and Responsive Design; JS, jQuery, AJAX, React; Bootstrap, 
+const schoolTechs = `Static, Adaptive and Responsive Design; JS, jQuery, AJAX, React; Bootstrap, 
 Material-UI; WebSocket; Google, Youtube, Firebase APIs`;
 
 const workSkills = [
@@ -113,7 +116,7 @@ function Resume() {
             place="The Rolling Scopes School"
             link="https://rs.school/"
             color="pink"
-            techs={rssTechs}
+            techs={schoolTechs}
             projectUrl="/Portfolio"
             CTA="watch portfolio"
           />
@@ -158,6 +161,19 @@ function Resume() {
             projectUrl="/Portfolio/Gofuck"
           />
         </Box>
+      </Box>
+
+      <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+        <ResumeDownload
+          title="Download Resume"
+          btnStyle={{
+            width: '185px',
+            height: '44px',
+            color: 'secondary.contrastText',
+            borderRadius: '20px',
+            gap: '10px',
+          }}
+        />
       </Box>
 
       <Box className="resume-section__skills-block" sx={{ ...sectionWrapper, ...skillsBlock }}>

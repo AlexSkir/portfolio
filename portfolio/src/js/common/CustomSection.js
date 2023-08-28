@@ -25,10 +25,11 @@ const styles = ({ theme }) => ({
       fontSize: '14px',
     },
   },
-  [` .about-section__activity-item`]: {
-    backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
-  },
-  [` .resume-section__resume-item`]: {
+  [` 
+  .resume-section__resume-item, 
+  .about-section__activity-item, 
+  .contact__contact-item, 
+  .projects-list__item-wrapper `]: {
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
   },
   [` .resume-section__link`]: {
@@ -94,21 +95,18 @@ const styles = ({ theme }) => ({
       opacity: '0.7',
     },
   },
-  ' .projects-list__item-wrapper': {
-    backgroundColor: '#FFF4E5',
-  },
-  [` .MuiImageListItemBar-title`]: {
-    fontFamily: 'Poppins',
-    fontSize: '10px',
-    fontWeight: '400',
-    color: 'rgba(26, 16, 3, 0.50)',
-  },
-  [` .MuiImageListItemBar-subtitle`]: {
-    fontFamily: 'Poppins',
+  [` .MuiInputLabel-root`]: {
+    color: theme.palette.primary.contrastText,
     fontSize: '16px',
-    fontWeight: '400',
-    color: '#1A1003',
-    whiteSpace: 'wrap',
+    fontWeight: '600',
+
+    [`&.Mui-focused`]: {
+      color: theme.palette.primary.contrastText,
+      fontSize: '16px',
+    },
+  },
+  [` #formText`]: {
+    resize: 'vertical',
   },
 });
 

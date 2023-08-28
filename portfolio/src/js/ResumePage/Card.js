@@ -12,7 +12,8 @@ function CardItem(props) {
     <Card
       className="resume-section__resume-item border-radius-8"
       sx={{
-        width: '290px',
+        width: '100%',
+        maxWidth: '290px',
         minHeight: '90px',
         p: '10px',
         mb: '25px',
