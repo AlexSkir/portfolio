@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
@@ -38,6 +39,7 @@ const iconWrapper = {
 };
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <Box
       className="container-mainWrapper__footer footer-section border-radius-20"
@@ -55,9 +57,9 @@ export default function Footer() {
           href="https://www.figma.com/community/file/1264680769254941322/Portfolio-Design"
           sx={{ color: 'secondary.main', mr: '10px' }}
         >
-          Portfolio template
+          {t('footer.link1')}
         </Link>
-        is designed by
+        {t('footer.link2')}
         <Link
           className="footer-section__dark-link"
           href="https://www.figma.com/@beatricewambui"
@@ -69,7 +71,7 @@ export default function Footer() {
 
       <Box>
         <Typography variant="h6" align="center">
-          This website was built with:
+          {t('footer.ref')}
         </Typography>
         <Box
           sx={{

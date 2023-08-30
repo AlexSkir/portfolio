@@ -42,15 +42,16 @@
       "subtitle": "Freelance",
       "body": [
         "I also find very interesting to create websites for small businesses of any kind, from",
-        "simple landings and apps to complex online shops with user accounts and admin dashboards."
+        "simple landings and apps to complex online shops with user accounts and admin dashboards.",
+        "New offers are always welcome."
       ]
     },
     "activity4": {
       "subtitle": "SEO optimization",
       "body": [
-        "Nowadays it's hardly possible to build a successful product without search engine",
-        "optimization and social media marketing to increase the chances of having your content",
-        "surfaced to users."
+        "Fast web pages and low Internet traffic improve user experience. Moreover, it increases",
+        "chances of having your content surfaced to users and guarantees presentable layout in",
+        "social networks"
       ]
     },
     "seo": {
@@ -80,7 +81,8 @@
       "unit1": {
         "date": "2019-Present",
         "position": "Freelance Web Developer",
-        "place": "Frontend development, Refactor, SEO, Maintenance"
+        "techs": "Frontend development, Refactor, SEO, Maintenance",
+        "cta": "Watch Portfolio"
       },
       "unit2": {
         "position": "Freelance Web Developer",
@@ -119,6 +121,13 @@
   },
   "portfolio": {
     "title": "Portfolio",
+    "tabs": {
+      "all": "All",
+      "landings": "Landings",
+      "app": "Apps",
+      "cms": "CMS",
+      "school": "School"
+    },
     "seo": {
       "title": "Aleksandra Skirnevskaia - Portfolio",
       "description": ""
@@ -130,8 +139,11 @@
     "position": "Frontend Developer",
     "form": {
       "alertSuccess": "Email sent!",
-      "alertFail": "Try later!",
-      "title": "I am always open to discussing new projects, opportunities in tech world or a feedback.",
+      "alertFail": "Something went wrong, please, try later!",
+      "title": [
+        "I am always open to discussing new projects, opportunities in tech world or offers.",
+        "from potential employers. Any feedbacks are always welcome!"
+      ],
       "name": "Name:",
       "msg": "Message:",
       "btn": "Submit"
@@ -143,11 +155,38 @@
       "whatsup": "Open WhatsApp",
       "telegram": "Open Telegram",
       "gh": "Open GitHub",
-      "hh": "Open resume"
+      "hh": "Open resume",
+      "map": "Show on map",
+      "location": "Location",
+      "address": "Moscow, Russia"
     },
     "seo": {
       "title": "Aleksandra Skirnevskaia - Contact",
       "description": ""
     }
+  },
+  "footer": {
+    "link1": "Portfolio template",
+    "link2": "is designed by",
+    "ref": "This website was built with:"
+  },
+  "navbar": {
+    "home": "Home",
+    "resume": "Resume",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "header": {
+    "name": "Aleksandra",
+    "name2": "Skirnevskaia",
+    "langTooltip": "Change language",
+    "darkTheme": "Use dark color mode",
+    "lightTheme": "Use light color mode"
+  },
+  "sideblock": {
+    "name": "Aleksandra Skirnevskaia",
+    "position": "Frontend Developer",
+    "openBtnTooltip": "Expand",
+    "closeBtnTooltip": "Collapse"
   }
 }

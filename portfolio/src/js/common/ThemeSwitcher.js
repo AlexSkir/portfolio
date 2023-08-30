@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
+import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -29,12 +31,21 @@ const switchWrapper = {
 };
 
 export function MyThemeSwitch() {
+  const { t } = useTranslation();
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
   return (
     <Box className="theme-switch-section" sx={switchWrapper}>
       <IconButton sx={{ m: 0, p: '20px' }} onClick={colorMode.toggleColorMode} color="inherit">
-        {theme.palette.mode === 'dark' ? <LightModeOutlinedIcon /> : <BedtimeOutlinedIcon />}
+        {theme.palette.mode === 'dark' ? (
+          <Tooltip title={t('header.lightTheme')}>
+            <LightModeOutlinedIcon />
+          </Tooltip>
+        ) : (
+          <Tooltip title={t('header.darkTheme')}>
+            <BedtimeOutlinedIcon />
+          </Tooltip>
+        )}
       </IconButton>
     </Box>
   );

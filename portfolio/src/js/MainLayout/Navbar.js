@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useTranslation } from 'react-i18next';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
@@ -15,7 +16,6 @@ import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
 
 import NavbarButton from './NavbarButton';
-import projectArr from '../common/projectsArray';
 
 const appbarWrapper = {
   width: '90%',
@@ -28,18 +28,19 @@ const appbarWrapper = {
   p: { xs: '0 30px', sm: '10px 30px' },
 };
 
-const pages = [
-  { name: 'Home', path: '/', icon: <HomeOutlinedIcon /> },
-  { name: 'Resume', path: '/Resume', icon: <ArticleOutlinedIcon /> },
-  { name: 'Portfolio', path: '/Portfolio', icon: <WorkOutlineOutlinedIcon /> },
-  { name: 'Contact', path: '/Contact', icon: <ContactMailOutlinedIcon /> },
-];
-
 function NavBar() {
+  const { t } = useTranslation();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [location, setLocation] = React.useState('/');
 
   const theme = useTheme();
+
+  const pages = [
+    { name: t('navbar.home'), path: '/', icon: <HomeOutlinedIcon /> },
+    { name: t('navbar.resume'), path: '/Resume', icon: <ArticleOutlinedIcon /> },
+    { name: t('navbar.portfolio'), path: '/Portfolio', icon: <WorkOutlineOutlinedIcon /> },
+    { name: t('navbar.contact'), path: '/Contact', icon: <ContactMailOutlinedIcon /> },
+  ];
 
   const menuItemBG = (path, theme) => {
     return location === path ? { background: theme.palette.secondary.gradientBG } : {};

@@ -37,7 +37,9 @@ function ResumeItem(props) {
           <Typography variant="body1">{place}</Typography>
         </Link>
       ) : (
-        <Typography variant="body1">{place}</Typography>
+        <Typography variant="body1" sx={{ fontStyle: 'italic' }}>
+          {place}
+        </Typography>
       )}
     </Box>
   );

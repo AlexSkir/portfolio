@@ -121,11 +121,14 @@ function Resume() {
               {t('resume.exp.title')}
             </Typography>
           </Box>
-          <ResumeItem
+          <CardItem
             date={t('resume.exp.unit1.date')}
             position={t('resume.exp.unit1.position')}
-            place={t('resume.exp.unit1.place')}
+            place=""
             color="blue"
+            techs={t('resume.exp.unit1.techs')}
+            projectUrl="/Portfolio"
+            CTA={t('resume.exp.unit1.cta')}
           />
           <CardItem
             date="2020-2021"

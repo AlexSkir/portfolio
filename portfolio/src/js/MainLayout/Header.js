@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -6,6 +7,7 @@ import { MyThemeSwitch } from '../common/ThemeSwitcher';
 import LangSwitcher from './langSwitcher';
 
 export default function Header() {
+  const { t } = useTranslation();
   return (
     <Box
       className="container-mainWrapper__header-section"
@@ -32,10 +34,10 @@ export default function Header() {
         }}
       >
         <Typography variant="h1" component="h1" sx={{ mr: '10px' }}>
-          Aleksandra
+          {t('header.name')}
         </Typography>
         <Typography variant="h1" component="h1" className="gradientText">
-          Skirnevskaia
+          {t('header.name2')}
         </Typography>
       </Link>
 

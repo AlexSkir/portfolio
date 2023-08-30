@@ -59,7 +59,7 @@ export default function Form() {
       onSubmit={handleSubmit}
     >
       <Typography sx={{ fontSize: '16px', lineHeight: '30px', p: '10px' }}>
-        {t('contact.form.title')}
+        {t('contact.form.title', { joinArrays: ' ' })}
       </Typography>
       <TextField
         id="formName"

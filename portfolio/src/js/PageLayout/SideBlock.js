@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Tooltip from '@mui/material/Tooltip';
 import MuiDrawer from '@mui/material/Drawer';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -76,6 +78,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function SideBlock(props) {
+  const { t } = useTranslation();
   const { avatar } = props;
   const [avatarImg, setAvatar] = React.useState(avatarHi);
   const [open, setOpen] = React.useState(window.screen.width > 1200);
@@ -107,18 +110,22 @@ export default function SideBlock(props) {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader sx={{ position: 'absolute', top: '10px', right: 0 }}>
           {open ? (
-            <IconButton onClick={handleDrawerClose}>
-              <ChevronLeftIcon sx={{ color: 'secondary.dark', width: '40px', height: '40px' }} />
-            </IconButton>
+            <Tooltip title={t('sideblock.closeBtnTooltip')}>
+              <IconButton onClick={handleDrawerClose}>
+                <ChevronLeftIcon sx={{ color: 'secondary.dark', width: '40px', height: '40px' }} />
+              </IconButton>
+            </Tooltip>
           ) : (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              edge="start"
-            >
-              <ChevronRightIcon sx={{ color: 'secondary.main', width: '40px', height: '40px' }} />
-            </IconButton>
+            <Tooltip title={t('sideblock.openBtnTooltip')}>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+              >
+                <ChevronRightIcon sx={{ color: 'secondary.main', width: '40px', height: '40px' }} />
+              </IconButton>
+            </Tooltip>
           )}
         </DrawerHeader>
         <Avatar img={avatarImg} open={open} />
@@ -128,10 +135,10 @@ export default function SideBlock(props) {
           align="center"
           sx={{ m: '15px 0', display: open ? 'block' : 'none' }}
         >
-          Aleksandra Skirnevskaia
+          {t('sideblock.name')}
         </Typography>
         <Typography variant="body2" sx={{ opacity: '0.5', display: open ? 'block' : 'none' }}>
-          Frontend Developer
+          {t('sideblock.position')}
         </Typography>
         <SocialIconsBlock open={open} />
         <ContactBlock open={open} />
