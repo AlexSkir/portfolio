@@ -1,0 +1,153 @@
+{
+  "common": {
+    "downloadBtn": "Download Resume",
+    "downloadTooltip": "Download resume",
+    "copieble": {
+      "copied": "Copied!",
+      "copy": "Copy"
+    },
+    "nomatch": {
+      "title": "Ops, this page doesn't exist!",
+      "btn": "Go Home"
+    }
+  },
+  "home": {
+    "title": "About me",
+    "intro": [
+      "Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and versatile",
+      "Front-end developer with a keen interest in creating the user friendly apps and websites.",
+      "I enjoy applying both new technologies and learning about the Best Practice solid solutions.",
+      "I constantly strive to enhance my skills and embrace emerging trends in the industry."
+    ],
+    "subtitle": "What I do",
+    "activity1": {
+      "subtitle": "Web Development",
+      "body": [
+        "Crafting visually appealing and intuitive user interfaces that offer a delightful user",
+        "experience is something I'm truly fanatic about. As well as developing new user-facing",
+        "features, optimizing code, building reusable components and using a variety of markup",
+        "languages to create the web pages."
+      ]
+    },
+    "activity2": {
+      "subtitle": "App Development",
+      "body": [
+        "As a developer, I find myself most captivated by the power and flexibility of React.js.",
+        "I'm always eager to dive into new projects that leverage React.js, Redux, Mui/Bootstrap",
+        "and other libraries to discover innovative ways to create reliable, fast, scalable, and",
+        "user-friendly applications."
+      ]
+    },
+    "activity3": {
+      "subtitle": "Freelance",
+      "body": [
+        "I also find very interesting to create websites for small businesses of any kind, from",
+        "simple landings and apps to complex online shops with user accounts and admin dashboards."
+      ]
+    },
+    "activity4": {
+      "subtitle": "SEO optimization",
+      "body": [
+        "Nowadays it's hardly possible to build a successful product without search engine",
+        "optimization and social media marketing to increase the chances of having your content",
+        "surfaced to users."
+      ]
+    },
+    "seo": {
+      "title": "Aleksandra Skirnevskaia - About me",
+      "description": [
+        "I am a Front-end developer with a keen interest in Web and App Development.",
+        "I love using React.js, Redux, Mui/Bootstrap and other libraries to create reliable,",
+        "fast, scalable, and user-friendly products. I also enjoy doing SEO optimization and",
+        "internationalization."
+      ]
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "edu": {
+      "title": "Education",
+      "schoolTechs": [
+        "Static, Adaptive and Responsive Layout; JS, jQuery, AJAX, React; Bootstrap, Material-UI;",
+        "WebSocket; Google, Youtube, Firebase APIs"
+      ],
+      "cta": "Watch Portfolio",
+      "degree": "Engineer (incomplete)",
+      "faculty": "Faculty of Radio Design, TUSUR"
+    },
+    "exp": {
+      "title": "Experience",
+      "unit1": {
+        "date": "2019-Present",
+        "position": "Freelance Web Developer",
+        "place": "Frontend development, Refactor, SEO, Maintenance"
+      },
+      "unit2": {
+        "position": "Freelance Web Developer",
+        "cta": "Open project"
+      },
+      "unit3": {
+        "position": "Freelance Web Developer",
+        "techs": "Wireless CSS for PHP template, cross-browser responsive design",
+        "cta": "Open project"
+      }
+    },
+    "skills": {
+      "work": {
+        "title": "Work skills"
+      },
+      "soft": {
+        "title": "Soft skills",
+        "body": [
+          "Positive attitude",
+          "Self-motivation",
+          "Adaptability",
+          "Dependability",
+          "Fast learner",
+          "Problem solving",
+          "Attention to details",
+          "Hard working",
+          "Open-minded",
+          "Tolerant"
+        ]
+      }
+    },
+    "seo": {
+      "title": "Aleksandra Skirnevskaia - Resume",
+      "description": ""
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "seo": {
+      "title": "Aleksandra Skirnevskaia - Portfolio",
+      "description": ""
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Aleksandra Skirnevskaia",
+    "position": "Frontend Developer",
+    "form": {
+      "alertSuccess": "Email sent!",
+      "alertFail": "Try later!",
+      "title": "I am always open to discussing new projects, opportunities in tech world or a feedback.",
+      "name": "Name:",
+      "msg": "Message:",
+      "btn": "Submit"
+    },
+    "items": {
+      "call": "Call",
+      "phone": "Phone",
+      "message": "Message",
+      "whatsup": "Open WhatsApp",
+      "telegram": "Open Telegram",
+      "gh": "Open GitHub",
+      "hh": "Open resume"
+    },
+    "seo": {
+      "title": "Aleksandra Skirnevskaia - Contact",
+      "description": ""
+    }
+  }
+}

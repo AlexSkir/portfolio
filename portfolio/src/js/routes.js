@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import MainLayout from './MainLayout';
 import Home from './HomePage';
 import Resume from './ResumePage';
@@ -10,6 +11,7 @@ import NoMatch from './common/NoMatchPage';
 import projectArr from './common/projectsArray';
 
 const AppRouter = () => {
+  const { i18n } = useTranslation();
   return (
     <BrowserRouter>
       <Routes>

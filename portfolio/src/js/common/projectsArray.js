@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import fescoImg from '../../assets/images/projects/fesco.webp';
 import AlexisImg from '../../assets/images/projects/alexis.webp';
@@ -10,6 +11,7 @@ import GofuckImg from '../../assets/images/projects/gofuck.webp';
 import GritellaImg from '../../assets/images/projects/gritella.webp';
 import zooImage from '../../assets/images/projects/zoo.webp';
 import yagoImage from '../../assets/images/projects/yago.webp';
+import yagoCMSImage from '../../assets/images/projects/yagoCms.webp';
 import reactIcon from '../../assets/images/react.png';
 import sassIcon from '../../assets/images/sass.png';
 import jsIcon from '../../assets/images/js.svg';
@@ -22,31 +24,49 @@ const projectArr = {
   yandexGo: {
     name: 'Yandex Go',
     description: `Yandex Go is a one-page website (landing) promoting scooters. 
+    The web page was created using Editor X advanced creation platform for 
+    website development. There is an adaptive layout with main breakpoints being 
+    1440px, 900px and 375px. For smaller screens images are arranged into a slider,
+    controlled by on-click events (JS and Velo's API.)`,
+    tabs: ['all', 'landings', 'cms'],
+    mainTool: ['CMS', 'Adaptive layout'],
+    avatar: sassIcon,
+    technologies: ['CMS', 'JS', 'Adaptive layout', 'Perfect Pixel', 'Web constructor', 'API'],
+    type: 'Landing page, CMS',
+    path: 'Yandex-Go-CMS',
+    image: yagoCMSImage,
+    links: [
+      {
+        name: 'demo',
+        url: 'https://askirnevskaia.editorx.io/yago',
+      },
+      {
+        name: 'figma',
+        url:
+          'https://www.figma.com/file/W9gacDyHMIG55KuDwAN2Tl/go-scooter-pass?node-id=0%3A1&mode=dev',
+      },
+    ],
+  },
+  yandexGoSASS: {
+    name: 'Yandex Go SASS',
+    description: `Yandex Go is a one-page website (landing) promoting scooters. 
     The website has adaptive layout, main breakpoints are 1440px, 900px and 375px.
     For smaller screens images are arranged into a slider, controlled by simple 
-    jQuery scripts called with on-click events. There is also a copy of this web page
-    created using Editor X advanced creation platform for website development.`,
-    tabs: ['all', 'landings', 'cms'],
+    jQuery scripts called with on-click events.`,
+    tabs: ['all', 'landings'],
     mainTool: ['SASS', 'Adaptive layout'],
     avatar: sassIcon,
-    technologies: [
-      'HTML',
-      'SASS',
-      'jQuery',
-      'Adaptive layout',
-      'Perfect Pixel',
-      'Web constructor',
-      'CMS',
-    ],
+    technologies: ['HTML', 'SASS', 'jQuery', 'Adaptive layout', 'Perfect Pixel'],
     type: 'Landing page',
-    path: 'Yandex-Go',
+    path: 'Yandex-Go-SASS',
     image: yagoImage,
     links: [
       { name: 'demo', url: 'https://alexskir.github.io/yago/' },
       { name: 'github', url: 'https://github.com/AlexSkir/yago' },
       {
-        name: 'demo (editor X)',
-        url: 'https://askirnevskaia.editorx.io/yago',
+        name: 'figma',
+        url:
+          'https://www.figma.com/file/W9gacDyHMIG55KuDwAN2Tl/go-scooter-pass?node-id=0%3A1&mode=dev',
       },
     ],
   },

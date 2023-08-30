@@ -35,7 +35,7 @@ const rawTheme = {
   },
   typography: {
     fontFamily: [
-      '"Raleway"', '"Poppins"', '"Pacifico"', 'san-serif'
+      '"Raleway"', '"Poppins"', '"Pacifico"', '"Roboto"', 'san-serif'
     ].join(','),
     body: {
       fontFamily: "'Raleway', san-serif",
@@ -43,7 +43,7 @@ const rawTheme = {
       fontSize: '14px',
     },
     header: {
-      fontFamily: "'Poppins', san-serif",
+      fontFamily: "'Poppins', 'Roboto', san-serif",
       fontWeight: 500,
     },
     logo: {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation, Trans } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
@@ -9,13 +10,12 @@ import SEO from '../common/SEO';
 import Contacts from './Contacts';
 import Form from './Form';
 
-const descr = `ff`;
-
 function Contact() {
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
   return (
-    <PageLayout title="Contact" avatar="heart">
-      <SEO title="Aleksandra Skirnevskaia - About me" description={descr} />
+    <PageLayout title={t('contact.title')} avatar="heart">
+      <SEO title={t('contact.seo.title')} description={t('contact.seo.description')} />
       <Box
         sx={{
           display: 'flex',
@@ -33,14 +33,14 @@ function Contact() {
           align="left"
           sx={{ m: '15px 0', whiteSpace: 'nowrap' }}
         >
-          Aleksandra Skirnevskaia
+          {t('contact.name')}
         </Typography>
         -
         <Typography variant="h6" sx={{ opacity: '0.5', whiteSpace: 'nowrap' }}>
-          Frontend Developer
+          {t('contact.position')}
         </Typography>
       </Box>
-      <Contacts />
+      <Contacts locale={i18n.resolvedLanguage} />
       <Form />
     </PageLayout>
   );

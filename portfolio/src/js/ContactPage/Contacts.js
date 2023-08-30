@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -35,6 +36,7 @@ const iconHH = {
 };
 
 function Contacts() {
+  const { t } = useTranslation();
   const theme = useTheme();
   return (
     <Box
@@ -45,11 +47,11 @@ function Contacts() {
         <ContactItemCopieble
           link="tel:+79771456716"
           copyText="+79771456716"
-          tooltip="Call"
+          tooltip={t('contact.items.call')}
           icon={
             <CallIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
           }
-          contactName="Phone"
+          contactName={t('contact.items.phone')}
         />
       </Box>
 
@@ -60,7 +62,7 @@ function Contacts() {
         <ContactItemCopieble
           link="mailto:a.skirnevskaia@gmail.com"
           copyText="a.skirnevskaia@gmail.com"
-          tooltip="Message"
+          tooltip={t('contact.items.message')}
           icon={
             <EmailIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
           }
@@ -75,7 +77,7 @@ function Contacts() {
         <ContactItemCopieble
           link="https://wa.me/+79771456716"
           copyText="+79771456716"
-          tooltip="Open WhatsApp"
+          tooltip={t('contact.items.whatsup')}
           icon={<WhatsAppIcon sx={{ color: '#25D366' }} />}
           contactName="WhatsApp"
         />
@@ -85,7 +87,7 @@ function Contacts() {
         <ContactItemCopieble
           link="https://t.me/alexskir"
           copyText="@alexskir"
-          tooltip="Open Telegram"
+          tooltip={t('contact.items.telegram')}
           icon={<TelegramIcon sx={{ color: '#229ED9' }} />}
           contactName="Telegram"
         />
@@ -95,7 +97,7 @@ function Contacts() {
         <ContactItemCopieble
           link="https://github.com/AlexSkir"
           copyText="AlexSkir"
-          tooltip="Open GitHub"
+          tooltip={t('contact.items.gh')}
           icon={<GitHubIcon sx={{ color: '#000000' }} />}
           contactName="GitHub"
         />
@@ -108,7 +110,7 @@ function Contacts() {
         <ContactItemCopieble
           link="https://hh.ru/resume/62f371a2ff0810d5600039ed1f48674e706c43"
           copyText="Aleksandra Skirnevskaia"
-          tooltip="Copy link"
+          tooltip={t('contact.items.hh')}
           icon={<Box sx={iconHH} />}
           contactName="HeadHunter"
         />

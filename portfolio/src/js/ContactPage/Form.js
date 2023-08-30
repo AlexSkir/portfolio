@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Alert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -7,6 +8,7 @@ import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
 
 export default function Form() {
+  const { t } = useTranslation();
   const [name, setName] = React.useState('');
   const [mail, setMail] = React.useState('');
   const [msg, setMsg] = React.useState('');
@@ -26,11 +28,17 @@ export default function Form() {
         setName('');
         setMail('');
         setMsg('');
-        setAlert(<Alert severity="success">Email sent!</Alert>);
+        setAlert(<Alert severity="success">{t('contact.form.alertSuccess')}</Alert>);
+        setTimeout(() => {
+          setAlert(<></>);
+        }, 5000);
       },
       (err) => {
         console.log('FAILED...', err);
-        setAlert(<Alert severity="error">{err}</Alert>);
+        setAlert(<Alert severity="error">{t('contact.form.alertFail')}</Alert>);
+        setTimeout(() => {
+          setAlert(<></>);
+        }, 10000);
       },
     );
   };
@@ -46,16 +54,16 @@ export default function Form() {
         p: { xs: '10px', sm: '30px' },
         mt: '30px',
       }}
-      noValidate
+      noValidate={false}
       autoComplete="off"
       onSubmit={handleSubmit}
     >
       <Typography sx={{ fontSize: '16px', lineHeight: '30px', p: '10px' }}>
-        I am always open to discussing new projects, opportunities in tech world or a feedback.
+        {t('contact.form.title')}
       </Typography>
       <TextField
         id="formName"
-        label="Name:"
+        label={t('contact.form.name')}
         variant="standard"
         fullWidth
         value={name}
@@ -75,8 +83,9 @@ export default function Form() {
       />
       <TextField
         id="formText"
-        label="Message:"
+        label={t('contact.form.msg')}
         variant="standard"
+        required
         fullWidth
         multiline
         minRows={1}
@@ -96,7 +105,7 @@ export default function Form() {
           borderRadius: '20px',
         }}
       >
-        Submit
+        {t('contact.form.btn')}
       </Button>
       {alert}
     </Box>

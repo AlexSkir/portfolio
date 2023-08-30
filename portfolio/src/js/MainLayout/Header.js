@@ -3,6 +3,7 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { MyThemeSwitch } from '../common/ThemeSwitcher';
+import LangSwitcher from './langSwitcher';
 
 export default function Header() {
   return (
@@ -39,6 +40,8 @@ export default function Header() {
       </Link>
 
       <MyThemeSwitch />
+
+      <LangSwitcher />
     </Box>
   );
 }

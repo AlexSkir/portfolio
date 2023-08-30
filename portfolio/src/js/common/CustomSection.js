@@ -5,6 +5,17 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
 const styles = ({ theme }) => ({
+  [theme.breakpoints.down('lg')]: {
+    h2: {
+      fontSize: '32px',
+    },
+    h3: {
+      fontSize: '28px',
+    },
+    h5: {
+      fontSize: '20px',
+    },
+  },
   [theme.breakpoints.down('sm')]: {
     h1: {
       fontSize: '16px',
@@ -23,6 +34,10 @@ const styles = ({ theme }) => ({
     },
     h6: {
       fontSize: '14px',
+    },
+    [` .homepage-section__activity-icon, 
+    .homepage-section__activity-icon.activity-icon_dark`]: {
+      fill: theme.palette.secondary.main,
     },
   },
   [` 
@@ -107,6 +122,16 @@ const styles = ({ theme }) => ({
   },
   [` #formText`]: {
     resize: 'vertical',
+  },
+  [` .homepage-section__activity-icon`]: {
+    width: '24px',
+    height: '24px',
+  },
+  [` .activity-icon_main`]: {
+    fill: theme.palette.secondary.main,
+  },
+  [` .activity-icon_dark`]: {
+    fill: theme.palette.secondary.dark,
   },
 });
 
