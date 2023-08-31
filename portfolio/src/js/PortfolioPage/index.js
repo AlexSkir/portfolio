@@ -25,7 +25,7 @@ function Portfolio() {
       {tabs.map((item, i) => (
         <TabPanel key={i} index={item} value={value}>
           <ProjectsListGallery
-            itemData={Object.values(projectArr).filter((project) => project.tabs.includes(item))}
+            itemData={Object.values(projectArr(t)).filter((project) => project.tabs.includes(item))}
           />
         </TabPanel>
       ))}

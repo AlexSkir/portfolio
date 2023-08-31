@@ -11,7 +11,7 @@ import NoMatch from './common/NoMatchPage';
 import projectArr from './common/projectsArray';
 
 const AppRouter = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   return (
     <BrowserRouter>
       <Routes>
@@ -20,7 +20,7 @@ const AppRouter = () => {
           <Route path="Resume" element={<Resume />} />
           <Route path="Portfolio">
             <Route index element={<Portfolio />} />
-            {Object.values(projectArr).map((project) => (
+            {Object.values(projectArr(t)).map((project) => (
               <Route key={project.name} path={project.path} element={<Project data={project} />} />
             ))}
           </Route>

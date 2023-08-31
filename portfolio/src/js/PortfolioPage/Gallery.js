@@ -7,6 +7,12 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Typography from '@mui/material/Typography';
 
+const subt2 = {
+  fontSize: '14px',
+  fontWeight: '400',
+  opacity: '0.5',
+};
+
 function ProjectsListGallery(props) {
   const { itemData } = props;
   return (
@@ -49,18 +55,11 @@ function ProjectsListGallery(props) {
             />
             <ImageListItemBar
               position="below"
-              title={
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    fontSize: '10px',
-                    fontWeight: '400',
-                    opacity: '0.5',
-                  }}
-                >
+              title={(
+                <Typography variant="subtitle2" sx={subt2}>
                   {item.type}
                 </Typography>
-              }
+              )}
               subtitle={
                 <Typography
                   variant="subtitle2"

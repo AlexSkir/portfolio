@@ -1,0 +1,95 @@
+{
+  "projects": {
+    "responsive": "Responsive layout",
+    "adaptive": "Adaptive layout",
+    "static": "Static layout",
+    "mobile": "Mobile layout",
+    "landing": "Landing page",
+    "app": "Web app",
+    "constr": "Web constructor",
+    "task": "Terms of reference",
+    "phptempl": "PHP template",
+    "yandexGo": {
+      "description": [
+        "Yandex Go is a one-page website (landing) promoting scooters.",
+        "The web page was created using Editor X advanced creation platform for",
+        "website development. There is an adaptive layout with main breakpoints being",
+        "1440px, 900px and 375px. For smaller screens images are arranged into a slider,",
+        "controlled by on-click events (JS and Velo's API.)"
+      ]
+    },
+    "yandexGoSASS": {
+      "description": [
+        "Yandex Go is a one-page website (landing) promoting scooters. The website has",
+        "adaptive layout, main breakpoints are 1440px, 900px and 375px. For smaller",
+        "screens images are arranged into a slider, controlled by simple jQuery scripts",
+        "called with on-click events."
+      ]
+    },
+    "zoo": {
+      "description": [
+        "Online Zoo is a website that shows information about animals from different zoos",
+        "with web cameras. The website has interactive elements, form, custom scroll, etc.",
+        "The breakpoints are 1600px, 1000px and 640px."
+      ]
+    },
+    "culturePortal": {
+      "description": [
+        "Culture Portal is a multilingual web portal about the culture of Belarus,",
+        "developed as a team project."
+      ]
+    },
+    "chat": {
+      "description": [
+        "Awesome Chat - Simple WebSocket based Chat-application with push-notifications, content",
+        "-editable text field and emoticons. Autodeployment from a Github repository to Render."
+      ]
+    },
+    "youtube": {
+      "description": [
+        "The app is based on pure JS, using JS DOM manipulation, AJAX enquiries, youtube API, Babel,",
+        "Webpack. It is a web app for searching the YouTube content by keywords. The search result is",
+        "presented in the form of cards with the detailed information about the video clips."
+      ]
+    },
+    "fesco": {
+      "description": [
+        "Restaurant Fesco is a single page website that contains the information about the restaurant.",
+        "The website shows the menu, contacts and allows to book a table in few clicks filling in the form."
+      ]
+    },
+    "piskel": {
+      "description": [
+        "Piskel Clone is a simplified clone of Piskel, a web-based tool for creating animated sprites",
+        "& pixel art."
+      ]
+    },
+    "alexis": {
+      "description": [
+        "Alexis is a homepage and designed as visit card of the company. Some blocks have \"on hover\"",
+        "and \"on click\" effects."
+      ]
+    },
+    "hexal": {
+      "description": [
+        "Hexal is a single page website, product of design experimentations with hexagons and simple animation."
+      ]
+    },
+    "gofuck": {
+      "description": [
+        "GoFuckBiz.com - Forum of successful webmasters. The main objective was to create wireless CSS",
+        "for PHP template with layout for mobile devices."
+      ]
+    },
+    "gritella": {
+      "description": [
+        "Gritella lingerie is an eCommerce website which is made on WordPress with WooCommerce plugin.",
+        "Content is manageable through CMS admin panel of the website. Main features: ..."
+      ],
+      "warning": [
+        "The project was closed in Aug 2021, the website is now stored on free web hosting and some",
+        "functionality can be unavailable."
+      ]
+    }
+  }
+}
