@@ -21,6 +21,7 @@ import wpIcon from '../../assets/images/wordpress.png';
 import GritellaProject from './ProjectPage/Gritella';
 import CulturePortal from './ProjectPage/CulturePortal';
 import YoutubeApp from './ProjectPage/Youtube';
+import Piskel from './ProjectPage/Piskel';
 
 export default function projectArr(t) {
   const land = t('projects.landing', { ns: 'projects' });
@@ -195,6 +196,7 @@ export default function projectArr(t) {
         { name: 'demo', url: 'http://alexskir.github.io/clown/' },
         { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
       ],
+      more: <Piskel />,
     },
     alexis: {
       name: 'Alexis',
@@ -257,6 +259,7 @@ export default function projectArr(t) {
         'WooCommerce',
         'CMS',
         'PHP',
+        'MySQL',
         'JavaScript',
         'Google login',
         'ReCaptcha',

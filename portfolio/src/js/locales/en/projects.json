@@ -109,13 +109,18 @@
     },
     "chat": {
       "description": [
-        "Awesome Chat - Simple WebSocket based Chat-application with push-notifications, content",
-        "-editable text field and emoticons. Autodeployment from a Github repository to Render."
+        "Awesome Chat - Simple WebSocket Chat-application created with React/redux, Material-UI",
+        "and Bootstrap libraries. It has push-notifications controlled by a Switch button,",
+        "a content-editable text field and emoticons. Before sending a message, the input data",
+        "is transformed into a plane text and smiles are replaced with their codes",
+        "On receiving a message, the smiles are rerenderred in Chat Block as Image components.",
+        "There is a simple Login option, autoload of all messages sent to the chat, websocket",
+        "status bar. Autodeployment is set from a Github repository to Render.com ."
       ]
     },
     "youtube": {
       "description": [
-        "The app is based on pure JS, using JS DOM manipulation, AJAX enquiries, youtube API, Babel,",
+        "The app is created with pure JS, using JS DOM manipulation, AJAX enquiries, youtube API, Babel,",
         "Webpack. It is a web app for searching the YouTube content by keywords. The search result is",
         "presented in the form of cards with the detailed information about the video clips."
       ],
@@ -132,41 +137,324 @@
     "fesco": {
       "description": [
         "Restaurant Fesco is a single page website that contains the information about the restaurant.",
-        "The website shows the menu, contacts and allows to book a table in few clicks filling in the form."
+        "The website is created with HTML, SCSS, JavaScript. It has a custom Navigation Bar with desktop",
+        "and mobile layout, form for booking a table, with styled selects and a date picker (js-datepicker library)."
       ]
     },
     "piskel": {
       "description": [
         "Piskel Clone is a simplified clone of Piskel, a web-based tool for creating animated sprites",
-        "& pixel art."
-      ]
+        "& pixel art. The app is created with React/redux libraries, Google API, Firebase database,",
+        "Canvas element with canvas scripting API for drawing graphics and animations. Main features:..."
+      ],
+      "more": {
+        "google": {
+          "name": "Google API",
+          "features": [
+            {
+              "name": "Google Auth API is used to sign in the app, on success the promise returns Google User data"
+            },
+            {
+              "name": "Sprites can be saved on the User's Google drive, links for sharing will be generated"
+            }
+          ]
+        },
+        "canvas": {
+          "name": "Canvas API",
+          "features": [
+            {
+              "name": "All animated sprites are created with Canvas API via JavaScript (jQuery), no libraries"
+            },
+            {
+              "name": "Main drawing tools: pen, line, rectangle, circle, paint (fill), erase"
+            },
+            {
+              "name": "For pippete tool the function for color match is written, which compares the picked color with previous color"
+            },
+            {
+              "name": "There is a simple color pannel with current and previous colors that can be swapped"
+            },
+            {
+              "name": "The left block of frames allows to create a new frame, copy, delete or swap other frames"
+            },
+            {
+              "name": "The right block allows to make settings for layers, FPS and palette"
+            },
+            {
+              "name": "The side block pannel contains some settings for Canvas and export/import"
+            }
+          ]
+        },
+        "store": {
+          "name": "Storing options",
+          "features": [
+            {
+              "name": "After signing in, all saved sprites are fetched from FireBase and displayed in User Gallery"
+            },
+            {
+              "name": "When user saves the sprite to the gallery, it is added to FireBase database"
+            },
+            {
+              "name": "User can delete the sprite from the gallery, it will be removed from FireBase database"
+            },
+            {
+              "name": "User can export animations to Google drive"
+            },
+            {
+              "name": "User can save animations in the browser via LocalStorage, then brows local saves in pop up window"
+            },
+            {
+              "name": "Sprites can be downloaded as a gif file (GIFEncoder library)"
+            }
+          ]
+        },
+        "user": {
+          "name": "User page",
+          "features": [
+            {
+              "name": "The web app has a simple user page with some User Info, User Gallery and Animation Page"
+            },
+            {
+              "name": "User Gallery displays all animations saved by user in form of cards with info"
+            },
+            {
+              "name": "Animation Cards' buttons allow to delete, edit and copy animation, and get detailed info on the Animation Page"
+            },
+            {
+              "name": "Edit or Copy the animation opens canvas with saved animation and all its settings (number of frames, their content, FPS, palette, etc)"
+            }
+          ]
+        }
+      }
     },
     "alexis": {
       "description": [
-        "Alexis is a homepage and designed as visit card of the company. Some blocks have \"on hover\"",
-        "and \"on click\" effects."
+        "Alexis is a landing page, designed as a visit card of a company. ",
+        "The page's layout is fully responsible, the navigation bar has desktop",
+        "and mobile layouts. There is an animated slider for Testimonials and Team-member info block",
+        "that slides-in onClick with transition effects. Some other blocks have onHover and onClick effects."
       ]
     },
     "hexal": {
       "description": [
-        "Hexal is a single page website, product of design experimentations with hexagons and simple animation."
+        "Hexal is a single page website, product of design experimentations with hexagons and simple animation.",
+        "The page is created with HTML and CSS, it has simple static layout. The hexagons are arranged in grid",
+        "template, have onHover animation effects. There is a form with validated fileds."
       ]
     },
     "gofuck": {
       "description": [
         "GoFuckBiz.com - Forum of successful webmasters. The main objective was to create wireless CSS",
-        "for PHP template with layout for mobile devices."
+        "for PHP template with layout for mobile devices. The page has styled pagination, variety of forms,",
+        "different types of forum messages (citation, code, images, texts, etc), styled action buttons."
       ]
     },
     "gritella": {
       "description": [
         "Gritella lingerie is an eCommerce website which is made with WordPress and WooCommerce plugin.",
-        "Content is manageable through the CMS admin panel of the website. Main features: ..."
+        "Content is manageable through the CMS admin panel of the website. The data stored with MySQL. Main features: ..."
       ],
       "warning": [
         "The project was closed in Aug 2021, the website is now stored in a free web hosting and some",
         "functionality can be unavailable."
-      ]
+      ],
+      "more": {
+        "homePage": {
+          "name": "Home Page",
+          "features": [
+            {
+              "name": "Mini-header with contact info, User page, WishList and Cart counters"
+            },
+            {
+              "name": "Banner with styled logo and search bar"
+            },
+            {
+              "name": "Navigation Bar with drop down lists of products (Max Mega Menu plugin)"
+            },
+            {
+              "name": "Products are displayed in grid table with sorting function, action buttons on product cards"
+            },
+            {
+              "name": "There is a Subscription Form with \"Mailchimp for WooCommerce\" plugin, subscribes users for email marketing"
+            },
+            {
+              "name": "Right side bar - Navigation Bar to the User Page, WishList, Cart"
+            }
+          ]
+        },
+        "productPage": {
+          "name": "Product Page",
+          "features": [
+            {
+              "name": "Product images are shown in Image Galery"
+            },
+            {
+              "name": "Customer review banner"
+            },
+            {
+              "name": "Choose the size of the product"
+            },
+            {
+              "name": "Add product to a WishList, Cart"
+            },
+            {
+              "name": "Share a product through a social network"
+            },
+            {
+              "name": "Tabs with description, images, reviews"
+            }
+          ]
+        },
+        "userPage": {
+          "name": "User Page",
+          "features": [
+            {
+              "name": "Register/Log-in with Email and password, or using third parties (FB, VK, Google)"
+            },
+            {
+              "name": "Styled Navigation Bar with redirect to: Main page, My orders, Deliveries, Product return, My address"
+            },
+            {
+              "name": "On the User Page the main info is displayed: User Data, Changeble avatar, deliveries, etc"
+            },
+            {
+              "name": "On the User Page the main info is displayed: User Data, Changeble avatar, deliveries, etc"
+            }
+          ]
+        },
+        "gift": {
+          "name": "Gift Card page",
+          "features": [
+            {
+              "name": "Users can buy and present Virtual Gift Cards with different amount of money"
+            },
+            {
+              "name": "Gift Cards are sent to the receiver's Email with a note that users can write"
+            },
+            {
+              "name": "Receivers of Gift Cards can apply the code to purchase product in the store"
+            },
+            {
+              "name": "Users can check the balance of the Gift Card filling in the form with Card number or Phone number"
+            }
+          ]
+        },
+        "order": {
+          "name": "Cart/Order Page",
+          "features": [
+            {
+              "name": "There is a table with products in cart and action buttons (remove/undo, product, quantity)"
+            },
+            {
+              "name": "On checkout page there is an option to Log In, enter Coupon, Gift Card, Log In using social networks"
+            },
+            {
+              "name": "Choose delivery option (CDEK plugin and integration with calculation of parcel parameters and delivery price"
+            },
+            {
+              "name": "Yadex Map API is used to display CDEK's Pick Points and Courier address input"
+            },
+            {
+              "name": "Form for customer to fill in Name, contac info, additional notes"
+            },
+            {
+              "name": "Proceed to Secure Payment Page, on successful payment the Receipt and order detailes are sent via Email"
+            },
+            {
+              "name": "The order now is displayed on User Page, and the soonest delivery"
+            },
+            {
+              "name": "The payment system works with compliance with the requirements of Federal Law No. 54 \"On the Application of cash register equipment\""
+            }
+          ]
+        },
+        "misc": {
+          "name": "Miscellaneous",
+          "features": [
+            {
+              "name": "Installed and modified Plugins (ATUM Inventory Management for WooCommerce, Jetpack, UpdraftPlus - Backup/Restore, Mailchimp etc)",
+              "link": true
+            },
+            {
+              "name": "Created SEO campaign using different tools (Google Analytix, Yandex Webmaster, All in One SEO addon for WordPress)",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/yandex.png",
+                "name": "Open screenshot"
+              }
+            },
+            {
+              "name": "Effective SEO solutions were used to display the website in the search engines",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/1.jpg",
+                "name": "Open screenshot"
+              }
+            },
+            {
+              "name": "Set up Email notification both for a client and customers",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/5_2.jpg",
+                "name": "Open screenshot"
+              }
+            },
+            {
+              "name": "Created FAQs with styled side-block navigation and collapsible tables",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/FAQs.png",
+                "name": "Open screenshot"
+              }
+            },
+            {
+              "name": "Wrote custom PHP functions modificating plugins and adding extra functionality",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/PHP/functions.php",
+                "name": "View code sample"
+              }
+            },
+            {
+              "name": "CSS custom modification of the Theme style",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/CSS/custom.css",
+                "name": "View code sample"
+              }
+            },
+            {
+              "name": "CSS style of elements via PHP files",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/PHP/email-styles.php",
+                "name": "View code sample"
+              }
+            },
+            {
+              "name": "JS code for the integration with the Delivery API",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/JS/delivery-calc.js",
+                "name": "View code sample"
+              }
+            },
+            {
+              "name": "Delivery API - pick points on map and type of delivery",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/yandexmap.jpg",
+                "name": "Open screenshot"
+              }
+            },
+            {
+              "name": "Delivery API - the price of delivery is calculated and added to cart",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/4.jpg",
+                "name": "Open screenshot"
+              }
+            },
+            {
+              "name": "User page",
+              "link": {
+                "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/profile.jpg",
+                "name": "Open screenshot"
+              }
+            }
+          ]
+        }
+      }
     }
   }
 }

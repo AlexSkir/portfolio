@@ -58,21 +58,46 @@ export default function Row(props) {
             <Box sx={{ margin: 1 }}>
               <Table size="small" aria-label="features">
                 <TableBody>
-                  {row.features.map((featureRow) => (
-                    <TableRow
-                      key={featureRow.name}
-                      sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
-                    >
-                      {featureRow.library ? (
-                        <>
+                  {row.features.map((featureRow) => {
+                    if (featureRow.library) {
+                      return (
+                        <TableRow
+                          key={featureRow.name}
+                          sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
+                        >
                           <TableCell sx={{ width: '70%' }}>{featureRow.name}</TableCell>
                           <TableCell sx={{ width: '30%' }}>{featureRow.library}</TableCell>
-                        </>
-                      ) : (
+                        </TableRow>
+                      );
+                    }
+                    if (featureRow.link) {
+                      return (
+                        <TableRow
+                          key={featureRow.name}
+                          sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
+                        >
+                          <TableCell sx={{ width: '70%' }}>{featureRow.name}</TableCell>
+                          <TableCell sx={{ width: '30%' }}>
+                            <Link
+                              sx={{ color: 'primary.contrastText', textDecoration: 'underline' }}
+                              href={featureRow.link.href}
+                              target="_blank"
+                            >
+                              {featureRow.link.name}
+                            </Link>
+                          </TableCell>
+                        </TableRow>
+                      );
+                    }
+                    return (
+                      <TableRow
+                        key={featureRow.name}
+                        sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
+                      >
                         <TableCell sx={{ width: '100%' }}>{featureRow.name}</TableCell>
-                      )}
-                    </TableRow>
-                  ))}
+                      </TableRow>
+                    );
+                  })}
                 </TableBody>
               </Table>
             </Box>
