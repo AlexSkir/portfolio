@@ -9,6 +9,11 @@
     "constr": "Web constructor",
     "task": "Terms of reference",
     "phptempl": "PHP template",
+    "shop": "eCommerce website",
+    "forum": "Forum",
+    "visit": "visit page",
+    "features": "Features",
+    "library": "Library",
     "yandexGo": {
       "description": [
         "Yandex Go is a one-page website (landing) promoting scooters.",
@@ -20,24 +25,87 @@
     },
     "yandexGoSASS": {
       "description": [
-        "Yandex Go is a one-page website (landing) promoting scooters. The website has",
-        "adaptive layout, main breakpoints are 1440px, 900px and 375px. For smaller",
-        "screens images are arranged into a slider, controlled by simple jQuery scripts",
-        "called with on-click events."
+        "Yandex Go is a one-page website (landing) promoting scooters. The website was created",
+        "with HTML, SCSS and jQuery, gosted in GH-Pages. It has adaptive layout, main breakpoints",
+        "are 1440px, 900px and 375px. For smaller screens, images are arranged into a slider",
+        "controlled by simple jQuery scripts for on-click events."
       ]
     },
     "zoo": {
       "description": [
         "Online Zoo is a website that shows information about animals from different zoos",
-        "with web cameras. The website has interactive elements, form, custom scroll, etc.",
-        "The breakpoints are 1600px, 1000px and 640px."
+        "with web cameras. The website was created with HTML, SCSS, jQuery. It has interactive",
+        "elements, form, custom scroll, etc. The breakpoints are 1600px, 1000px and 640px."
       ]
     },
     "culturePortal": {
       "description": [
         "Culture Portal is a multilingual web portal about the culture of Belarus,",
-        "developed as a team project."
-      ]
+        "developed as a team project. The website was created with React/redux libraries,",
+        "styled with Material-UI. The localization was realised with React-intl library.",
+        "Main features: ..."
+      ],
+      "more": {
+        "homePage": {
+          "name": "Home page",
+          "features": [
+            {
+              "name": "Content is presented in 3 languages - English, Belarusian, Russian",
+              "library": "react-intl"
+            },
+            {
+              "name": "Styled components",
+              "library": "@material-ui"
+            },
+            {
+              "name": "Navigation through a page is animated",
+              "library": "react-anchor-link-smooth-scroll"
+            },
+            {
+              "name": "Animated slider with timer on main screen changing images",
+              "library": "slick-slider"
+            },
+            {
+              "name": "Styled image gallery",
+              "library": "react-image-gallery"
+            },
+            {
+              "name": "Date picker with a script changing content according to a date",
+              "library": "React"
+            }
+          ]
+        },
+        "persPage": {
+          "name": "Photographer page",
+          "features": [
+            {
+              "name": "Animated timeline",
+              "library": "vertical-timeline-component-for-react"
+            },
+            {
+              "name": "Animated image gallery",
+              "library": "slick-carousel"
+            },
+            {
+              "name": "Video player for static videos and Youtube videos",
+              "library": "video-react, react-youtube"
+            },
+            {
+              "name": "Google Map API for pins on map",
+              "library": "google-maps-react"
+            }
+          ]
+        },
+        "allPers": {
+          "name": "All photographers page",
+          "features": [
+            {
+              "name": "Form for searching a person by Name and/or Place field from the list of photographers",
+              "library": "React"
+            }
+          ]
+        }
+      }
     },
     "chat": {
       "description": [
@@ -83,11 +151,11 @@
     },
     "gritella": {
       "description": [
-        "Gritella lingerie is an eCommerce website which is made on WordPress with WooCommerce plugin.",
-        "Content is manageable through CMS admin panel of the website. Main features: ..."
+        "Gritella lingerie is an eCommerce website which is made with WordPress and WooCommerce plugin.",
+        "Content is manageable through the CMS admin panel of the website. Main features: ..."
       ],
       "warning": [
-        "The project was closed in Aug 2021, the website is now stored on free web hosting and some",
+        "The project was closed in Aug 2021, the website is now stored in a free web hosting and some",
         "functionality can be unavailable."
       ]
     }

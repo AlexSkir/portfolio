@@ -81,8 +81,9 @@ export default function Project(props) {
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"
+              sx={{ color: 'secondary.dark' }}
             >
-              <ExpandMoreIcon />
+              <ExpandMoreIcon className={expanded ? '' : 'bounce2'} />
             </ExpandMore>
           ) : (
             <></>

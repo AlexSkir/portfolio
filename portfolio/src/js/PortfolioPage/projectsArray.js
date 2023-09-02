@@ -18,7 +18,8 @@ import jsIcon from '../../assets/images/js.png';
 import cssIcon from '../../assets/images/css.png';
 import wpIcon from '../../assets/images/wordpress.png';
 
-import GritellaProject from '../PortfolioPage/ProjectPage/Gritella';
+import GritellaProject from './ProjectPage/Gritella';
+import CulturePortal from './ProjectPage/CulturePortal';
 
 export default function projectArr(t) {
   const land = t('projects.landing', { ns: 'projects' });
@@ -29,6 +30,8 @@ export default function projectArr(t) {
   const app = t('projects.app', { ns: 'projects' });
   const task = t('projects.task', { ns: 'projects' });
   const phptempl = t('projects.phptempl', { ns: 'projects' });
+  const shop = t('projects.shop', { ns: 'projects' });
+  const forum = t('projects.forum', { ns: 'projects' });
   return {
     yandexGo: {
       name: 'Yandex Go',
@@ -107,7 +110,7 @@ export default function projectArr(t) {
         'Gatsby',
         'Material-UI',
         'Google API',
-        'I18N Internationalization',
+        'Internationalization',
       ],
       type: app,
       path: 'Culture-Portal',
@@ -115,8 +118,9 @@ export default function projectArr(t) {
       links: [
         { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
         { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
-        { name: 'github (react)', url: 'https://github.com/AlexSkir/online-zoo' },
+        { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
       ],
+      more: <CulturePortal />,
     },
     chat: {
       name: 'Awesome Chat',
@@ -231,7 +235,7 @@ export default function projectArr(t) {
       mainTool: ['CSS', phptempl],
       avatar: cssIcon,
       technologies: ['CSS', mobile, phptempl],
-      type: 'Forum',
+      type: forum,
       path: 'Gofuck',
       image: GofuckImg,
       links: [
@@ -255,7 +259,7 @@ export default function projectArr(t) {
         'Google login',
         'ReCaptcha',
       ],
-      type: 'eCommerce website',
+      type: shop,
       path: 'Gritella',
       image: GritellaImg,
       links: [

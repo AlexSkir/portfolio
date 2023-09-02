@@ -8,7 +8,7 @@ import Portfolio from './PortfolioPage';
 import Project from './PortfolioPage/ProjectPage';
 import Contact from './ContactPage';
 import NoMatch from './common/NoMatchPage';
-import projectArr from './common/projectsArray';
+import projectArr from './PortfolioPage/projectsArray';
 
 const AppRouter = () => {
   const { i18n, t } = useTranslation();
