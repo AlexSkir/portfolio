@@ -118,7 +118,16 @@
         "The app is based on pure JS, using JS DOM manipulation, AJAX enquiries, youtube API, Babel,",
         "Webpack. It is a web app for searching the YouTube content by keywords. The search result is",
         "presented in the form of cards with the detailed information about the video clips."
-      ]
+      ],
+      "more": {
+        "features": [
+          "Entire page HTML is created by JavaScript function when page is loaded",
+          "Search result is arranged into endless scroll - slider (touch scroll in mobile devices)",
+          "Pagination is created after first chunk of search result is received",
+          "Resize of slider and pagination according to width of device, Responsive layout",
+          "Youtube API is used to get search results, every unit has API info (name of channel, date, views, description"
+        ]
+      }
     },
     "fesco": {
       "description": [

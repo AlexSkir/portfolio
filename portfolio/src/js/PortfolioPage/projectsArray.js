@@ -20,6 +20,7 @@ import wpIcon from '../../assets/images/wordpress.png';
 
 import GritellaProject from './ProjectPage/Gritella';
 import CulturePortal from './ProjectPage/CulturePortal';
+import YoutubeApp from './ProjectPage/Youtube';
 
 export default function projectArr(t) {
   const land = t('projects.landing', { ns: 'projects' });
@@ -159,6 +160,7 @@ export default function projectArr(t) {
           url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
         },
       ],
+      more: <YoutubeApp />,
     },
     fesco: {
       name: 'Fesco',

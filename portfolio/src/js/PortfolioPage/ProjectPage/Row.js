@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Collapse from '@mui/material/Collapse';
@@ -8,36 +7,45 @@ import IconButton from '@mui/material/IconButton';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export default function Row(props) {
-  const { t } = useTranslation();
   const { row } = props;
   const [open, setOpen] = React.useState(false);
 
+  const rowStyle = {
+    backgroundColor: open ? 'secondary.light' : '',
+  };
+
   return (
     <>
-      <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-        <TableCell component="th" scope="row" sx={{ width: '90%', fontSize: '20px' }}>
+      <TableRow sx={{ '& > *': { borderBottom: 'unset' }, ...rowStyle }}>
+        <TableCell component="th" scope="row" sx={{ width: '70%', fontSize: '20px' }}>
           {row.name}
-          <Link
-            href={row.link}
-            target="_blank"
-            sx={{
-              color: 'primary.contrastText',
-              fontWeight: '400',
-              textDecoration: 'underline',
-              fontSize: '16px',
-              ml: '10px',
-            }}
-          >
-            {`(${t('projects.visit', { ns: 'projects' })})`}
-          </Link>
+          {row.link ? (
+            <Link
+              href={row.link.url}
+              target="_blank"
+              sx={{
+                color: 'primary.contrastText',
+                fontWeight: '400',
+                textDecoration: 'underline',
+                fontSize: '16px',
+                ml: '10px',
+              }}
+            >
+              {`(${row.link.title})`}
+            </Link>
+          ) : (
+            <></>
+          )}
         </TableCell>
-        <TableCell>
+        <TableCell component="th" scope="row" sx={{ width: '20%', fontSize: '20px' }}>
+          {open ? row.type : ''}
+        </TableCell>
+        <TableCell component="th" scope="row">
           <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
@@ -45,33 +53,24 @@ export default function Row(props) {
       </TableRow>
 
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
+        <TableCell style={{ padding: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow sx={{ backgroundColor: 'secondary.light' }}>
-                    <TableCell sx={{ width: '70%', fontWeight: '500', fontSize: '20px' }}>
-                      {t('projects.features', { ns: 'projects' })}
-                    </TableCell>
-                    <TableCell
-                      component="th"
-                      scope="row"
-                      sx={{ width: '30%', fontWeight: '500', fontSize: '20px' }}
-                    >
-                      {t('projects.library', { ns: 'projects' })}
-                    </TableCell>
-                  </TableRow>
-                </TableHead>
-
+              <Table size="small" aria-label="features">
                 <TableBody>
                   {row.features.map((featureRow) => (
                     <TableRow
                       key={featureRow.name}
                       sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
                     >
-                      <TableCell>{featureRow.name}</TableCell>
-                      <TableCell>{featureRow.library}</TableCell>
+                      {featureRow.library ? (
+                        <>
+                          <TableCell sx={{ width: '70%' }}>{featureRow.name}</TableCell>
+                          <TableCell sx={{ width: '30%' }}>{featureRow.library}</TableCell>
+                        </>
+                      ) : (
+                        <TableCell sx={{ width: '100%' }}>{featureRow.name}</TableCell>
+                      )}
                     </TableRow>
                   ))}
                 </TableBody>
@@ -87,11 +86,15 @@ export default function Row(props) {
 Row.propTypes = {
   row: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
+    link: PropTypes.shape({
+      title: PropTypes.string,
+      url: PropTypes.string,
+    }),
+    type: PropTypes.string,
     features: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        library: PropTypes.string.isRequired,
+        name: PropTypes.string,
+        library: PropTypes.string,
       }),
     ).isRequired,
   }).isRequired,
