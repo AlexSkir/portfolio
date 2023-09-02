@@ -62,7 +62,7 @@ export default function Project(props) {
             {data.description}
           </Typography>
         </CardContent>
-        <CardActions sx={{ p: '16px' }}>
+        <CardActions sx={{ p: '16px', flexDirection: { xs: 'column', sm: 'row' } }}>
           {data.links.map((item) => (
             <Link
               key={item.name}

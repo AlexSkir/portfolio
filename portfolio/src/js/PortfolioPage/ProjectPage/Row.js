@@ -22,7 +22,15 @@ export default function Row(props) {
   return (
     <>
       <TableRow sx={{ '& > *': { borderBottom: 'unset' }, ...rowStyle }}>
-        <TableCell component="th" scope="row" sx={{ width: '70%', fontSize: '20px' }}>
+        <TableCell
+          component="th"
+          scope="row"
+          sx={{
+            width: { xs: '100%', sm: '70%' },
+            fontSize: { xs: '14px', md: '20px' },
+            lineHeight: { xs: '20px', md: '30px' },
+          }}
+        >
           {row.name}
           {row.link ? (
             <Link
@@ -32,7 +40,8 @@ export default function Row(props) {
                 color: 'primary.contrastText',
                 fontWeight: '400',
                 textDecoration: 'underline',
-                fontSize: '16px',
+                fontSize: { xs: '12px', md: '16px' },
+                lineHeight: { xs: '20px', md: '30px' },
                 ml: '10px',
               }}
             >
@@ -42,7 +51,15 @@ export default function Row(props) {
             <></>
           )}
         </TableCell>
-        <TableCell component="th" scope="row" sx={{ width: '20%', fontSize: '20px' }}>
+        <TableCell
+          component="th"
+          scope="row"
+          sx={{
+            width: '20%',
+            fontSize: { xs: '14px', md: '20px' },
+            display: { xs: 'none', sm: 'table-cell' },
+          }}
+        >
           {open ? row.type : ''}
         </TableCell>
         <TableCell component="th" scope="row">
@@ -63,10 +80,30 @@ export default function Row(props) {
                       return (
                         <TableRow
                           key={featureRow.name}
-                          sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
+                          sx={{
+                            '&:nth-of-type(even)': { backgroundColor: 'primary.light' },
+                            display: { xs: 'flex', sm: 'table-row' },
+                            flexDirection: 'column',
+                          }}
                         >
-                          <TableCell sx={{ width: '70%' }}>{featureRow.name}</TableCell>
-                          <TableCell sx={{ width: '30%' }}>{featureRow.library}</TableCell>
+                          <TableCell
+                            sx={{
+                              width: { xs: '100%', sm: '70%' },
+                              fontSize: { xs: '14px', md: '20px' },
+                              lineHeight: { xs: '20px', md: '30px' },
+                            }}
+                          >
+                            {featureRow.name}
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              width: { xs: '100%', sm: '30%' },
+                              fontSize: { xs: '14px', md: '20px' },
+                              lineHeight: { xs: '20px', md: '30px' },
+                            }}
+                          >
+                            {featureRow.library}
+                          </TableCell>
                         </TableRow>
                       );
                     }
@@ -74,10 +111,28 @@ export default function Row(props) {
                       return (
                         <TableRow
                           key={featureRow.name}
-                          sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
+                          sx={{
+                            '&:nth-of-type(even)': { backgroundColor: 'primary.light' },
+                            display: { xs: 'flex', sm: 'table-cell' },
+                            flexDirection: 'column',
+                          }}
                         >
-                          <TableCell sx={{ width: '70%' }}>{featureRow.name}</TableCell>
-                          <TableCell sx={{ width: '30%' }}>
+                          <TableCell
+                            sx={{
+                              width: { xs: '100%', sm: '70%' },
+                              fontSize: { xs: '14px', md: '20px' },
+                              lineHeight: { xs: '20px', md: '30px' },
+                            }}
+                          >
+                            {featureRow.name}
+                          </TableCell>
+                          <TableCell
+                            sx={{
+                              width: { xs: '100%', sm: '30%' },
+                              fontSize: { xs: '14px', md: '20px' },
+                              lineHeight: { xs: '20px', md: '30px' },
+                            }}
+                          >
                             <Link
                               sx={{ color: 'primary.contrastText', textDecoration: 'underline' }}
                               href={featureRow.link.href}
@@ -94,7 +149,15 @@ export default function Row(props) {
                         key={featureRow.name}
                         sx={{ '&:nth-of-type(even)': { backgroundColor: 'primary.light' } }}
                       >
-                        <TableCell sx={{ width: '100%' }}>{featureRow.name}</TableCell>
+                        <TableCell
+                          sx={{
+                            width: '100%',
+                            fontSize: { xs: '14px', md: '20px' },
+                            lineHeight: { xs: '20px', md: '30px' },
+                          }}
+                        >
+                          {featureRow.name}
+                        </TableCell>
                       </TableRow>
                     );
                   })}
