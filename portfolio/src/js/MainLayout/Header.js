@@ -23,7 +23,7 @@ export default function Header() {
       }}
     >
       <Link
-        href="/Home"
+        href="/"
         underline="none"
         sx={{
           display: 'flex',

@@ -12,6 +12,7 @@ const contentWrapper = {
   minHeight: '700px',
   position: 'relative',
   p: { xs: '15px', lg: '30px 50px 30px 70px' },
+  borderRadius: { xs: '8px', sm: '20px' },
 };
 
 const PageLayout = (props) => {
@@ -19,7 +20,7 @@ const PageLayout = (props) => {
   return (
     <>
       <SideBlock avatar={avatar} />
-      <Box className="container-mainWrapper__content-wrapper border-radius-20" sx={contentWrapper}>
+      <Box className="container-mainWrapper__content-wrapper" sx={contentWrapper}>
         <Box
           className="container-mainWrapper__page-wrapper"
           sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}

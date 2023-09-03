@@ -18,6 +18,7 @@ const blockWrapper = {
   p: { xs: '0', md: '30px' },
   justifyContent: 'space-between',
   backgroundColor: { xs: 'primary.paper', md: 'primary.main' },
+  borderRadius: '20px',
 };
 
 const contactItemBox = {
@@ -38,7 +39,7 @@ export default function ContactBlock(props) {
 
   return (
     <Box
-      className="side-block__contact-card border-radius-20"
+      className="side-block__contact-card"
       sx={{ ...blockWrapper, display: open ? 'flex' : 'none' }}
     >
       <Box className="side-block__contact-item" sx={contactItemBox}>

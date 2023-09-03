@@ -42,13 +42,15 @@ export default function Footer() {
   const { t } = useTranslation();
   return (
     <Box
-      className="container-mainWrapper__footer footer-section border-radius-20"
+      className="container-mainWrapper__footer footer-section"
       sx={{
         width: '100%',
         minHeight: '100px',
         backgroundColor: 'primary.paper',
-        my: '20px',
+        mt: '20px',
+        mb: { xs: '70px', sm: '20px' },
         p: { xs: '30px', sm: '50px' },
+        borderRadius: { xs: '8px', sm: '20px' },
       }}
     >
       <Typography variant="h6" align="center" sx={{ mb: { xs: '20px', sm: '50px' } }}>

@@ -35,6 +35,10 @@ const styles = ({ theme }) => ({
     h6: {
       fontSize: '14px',
     },
+    ' .MuiTypography-body2': {
+      fontSize: '14px',
+      lineHeight: '20px',
+    },
     [` .homepage-section__activity-icon, 
     .homepage-section__activity-icon.activity-icon_dark`]: {
       fill: theme.palette.secondary.main,
@@ -56,12 +60,6 @@ const styles = ({ theme }) => ({
   [` div, h1`]: {
     color: theme.palette.primary.contrastText,
   },
-  [` .border-radius-20`]: {
-    borderRadius: '20px',
-  },
-  [` .border-radius-8`]: {
-    borderRadius: '8px',
-  },
   [` .gradientText`]: {
     background: theme.palette.secondary.gradient,
     backgroundClip: 'text',
@@ -71,13 +69,6 @@ const styles = ({ theme }) => ({
     boxShadow: `0px 0px 4px 0px ${theme.palette.primary.accent}`,
   },
   [` .navbar-button`]: {
-    width: '80px',
-    height: '80px',
-    background: theme.palette.primary.accent,
-    ...theme.typography.button,
-    color: theme.palette.primary.contrastText,
-    borderRadius: '20px',
-    flexDirection: 'column',
     '& svg': {
       opacity: '50%',
     },

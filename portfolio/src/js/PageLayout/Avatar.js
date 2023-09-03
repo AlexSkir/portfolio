@@ -11,13 +11,14 @@ const avatarBlock = {
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
+  borderRadius: { xs: '8px', sm: '20px' },
 };
 
 export default function Avatar(props) {
   const { img, open } = props;
   return (
     <Box
-      className="side-block__avatar border-radius-20"
+      className="side-block__avatar"
       sx={{ ...avatarBlock, backgroundImage: `url(${img})`, display: open ? 'block' : 'none' }}
     />
   );

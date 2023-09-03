@@ -9,7 +9,7 @@ function ResumeItem(props) {
 
   return (
     <Box
-      className="resume-section__resume-item border-radius-8"
+      className="resume-section__resume-item"
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -20,6 +20,7 @@ function ResumeItem(props) {
         minHeight: '90px',
         p: '10px',
         mb: '25px',
+        borderRadius: '8px',
         backgroundColor: color === 'pink' ? 'secondary.pinkBox' : 'secondary.blueBox',
       }}
     >
