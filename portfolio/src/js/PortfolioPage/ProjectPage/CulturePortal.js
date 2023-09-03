@@ -49,7 +49,7 @@ export default function CulturePortal() {
   const { t } = useTranslation();
   return (
     <>
-      <Typography variant="h6">Main features:</Typography>
+      <Typography variant="h6">{t('projects.features', { ns: 'projects' })}</Typography>
       <CollapsibleTable features={withTranslation(t)} />
     </>
   );

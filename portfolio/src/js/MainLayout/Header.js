@@ -33,10 +33,19 @@ export default function Header() {
           flexDirection: { xs: 'column', sm: 'row' },
         }}
       >
-        <Typography variant="h1" component="h1" sx={{ mr: '10px' }}>
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{ mr: '10px', display: 'flex', alignItems: 'center', height: '100%' }}
+        >
           {t('header.name')}
         </Typography>
-        <Typography variant="h1" component="h1" className="gradientText">
+        <Typography
+          variant="h1"
+          component="h1"
+          className="gradientText"
+          sx={{ display: 'flex', alignItems: 'center', height: '100%' }}
+        >
           {t('header.name2')}
         </Typography>
       </Link>

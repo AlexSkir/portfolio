@@ -8,7 +8,7 @@ export default function YoutubeApp() {
   return (
     <>
       <Typography variant="h6" sx={{ mb: '20px' }}>
-        Main features:
+        {t('projects.features', { ns: 'projects' })}
       </Typography>
       <SimpleTable
         features={t('projects.youtube.more.features', {

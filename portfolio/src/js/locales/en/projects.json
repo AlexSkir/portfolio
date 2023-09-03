@@ -12,7 +12,7 @@
     "shop": "eCommerce website",
     "forum": "Forum",
     "visit": "visit page",
-    "features": "Features",
+    "features": "Main features:",
     "library": "Library",
     "yandexGo": {
       "description": [
@@ -26,7 +26,7 @@
     "yandexGoSASS": {
       "description": [
         "Yandex Go is a one-page website (landing) promoting scooters. The website was created",
-        "with HTML, SCSS and jQuery, gosted in GH-Pages. It has adaptive layout, main breakpoints",
+        "with HTML, SCSS and jQuery, hosted in GH-Pages. It has adaptive layout, main breakpoints",
         "are 1440px, 900px and 375px. For smaller screens, images are arranged into a slider",
         "controlled by simple jQuery scripts for on-click events."
       ]
@@ -62,7 +62,7 @@
               "library": "react-anchor-link-smooth-scroll"
             },
             {
-              "name": "Animated slider with timer on main screen changing images",
+              "name": "Animated slider on main screen with timer and autoplay function",
               "library": "slick-slider"
             },
             {
@@ -122,7 +122,7 @@
       "description": [
         "The app is created with pure JS, using JS DOM manipulation, AJAX enquiries, youtube API, Babel,",
         "Webpack. It is a web app for searching the YouTube content by keywords. The search result is",
-        "presented in the form of cards with the detailed information about the video clips."
+        "presented in the form of cards with the detailed information about the video clips. Main features: ..."
       ],
       "more": {
         "features": [
@@ -130,7 +130,7 @@
           "Search result is arranged into endless scroll - slider (touch scroll in mobile devices)",
           "Pagination is created after first chunk of search result is received",
           "Resize of slider and pagination according to width of device, Responsive layout",
-          "Youtube API is used to get search results, every unit has API info (name of channel, date, views, description"
+          "Youtube API is used to get search results, every unit has API info (name of channel, date, views, description, link to the video"
         ]
       }
     },
@@ -215,7 +215,7 @@
               "name": "The web app has a simple user page with some User Info, User Gallery and Animation Page"
             },
             {
-              "name": "User Gallery displays all animations saved by user in form of cards with info"
+              "name": "User Gallery displays all animations saved by user in form of cards with info and action buttons"
             },
             {
               "name": "Animation Cards' buttons allow to delete, edit and copy animation, and get detailed info on the Animation Page"
@@ -256,7 +256,7 @@
       ],
       "warning": [
         "The project was closed in Aug 2021, the website is now stored in a free web hosting and some",
-        "functionality can be unavailable."
+        "functionality can be unavailable (no SSL, captcha, google/social login, other APIs)."
       ],
       "more": {
         "homePage": {

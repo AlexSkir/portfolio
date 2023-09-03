@@ -17,6 +17,9 @@ const styles = ({ theme }) => ({
     },
   },
   [theme.breakpoints.down('sm')]: {
+    '.MuiTypography-root': {
+      textAlign: 'justify',
+    },
     h1: {
       fontSize: '16px',
     },
