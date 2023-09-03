@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
@@ -11,6 +12,8 @@ import GhIcon from '../../assets/images/gh-pages.svg';
 import StackIcon from '../../assets/images/stack.svg';
 import SassIcon from '../../assets/images/sass.svg';
 import FontsIcon from '../../assets/images/fonts.svg';
+import I18nIcon from '../../assets/images/i18n.svg';
+import EmailJs from '../../assets/images/emailJs.svg';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
@@ -20,6 +23,8 @@ const techIcons = [
   { href: 'https://stackoverflow.com/', icon: <StackIcon />, tooltip: 'Stack overflow' },
   { href: 'https://sass-lang.com/', icon: <SassIcon />, tooltip: 'Sass' },
   { href: 'https://fonts.google.com/', icon: <FontsIcon />, tooltip: 'Google Fonts' },
+  { href: 'https://www.i18next.com/', icon: <I18nIcon />, tooltip: 'i18n localization' },
+  { href: 'https://dashboard.emailjs.com/', icon: <EmailJs />, tooltip: 'Email JS Service' },
 ];
 
 const iconWrapper = {
@@ -38,15 +43,18 @@ const iconWrapper = {
 };
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <Box
-      className="container-mainWrapper__footer footer-section border-radius-20"
+      className="container-mainWrapper__footer footer-section"
       sx={{
         width: '100%',
         minHeight: '100px',
         backgroundColor: 'primary.paper',
-        my: '20px',
+        mt: '20px',
+        mb: { xs: '70px', sm: '20px' },
         p: { xs: '30px', sm: '50px' },
+        borderRadius: { xs: '8px', sm: '20px' },
       }}
     >
       <Typography variant="h6" align="center" sx={{ mb: { xs: '20px', sm: '50px' } }}>
@@ -55,9 +63,9 @@ export default function Footer() {
           href="https://www.figma.com/community/file/1264680769254941322/Portfolio-Design"
           sx={{ color: 'secondary.main', mr: '10px' }}
         >
-          Portfolio template
+          {t('footer.link1')}
         </Link>
-        is designed by
+        {t('footer.link2')}
         <Link
           className="footer-section__dark-link"
           href="https://www.figma.com/@beatricewambui"
@@ -69,7 +77,7 @@ export default function Footer() {
 
       <Box>
         <Typography variant="h6" align="center">
-          This website was built with:
+          {t('footer.ref')}
         </Typography>
         <Box
           sx={{

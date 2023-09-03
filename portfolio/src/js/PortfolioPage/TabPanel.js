@@ -23,7 +23,7 @@ function TabPanel(props) {
       sx={{ display: value !== index ? 'none' : 'flex' }}
       {...other}
     >
-      {value === index && <Box>{children}</Box>}
+      {value === index && <Box sx={{ width: '100%' }}>{children}</Box>}
     </Box>
   );
 }

@@ -10,7 +10,7 @@ function CardItem(props) {
   const { date, position, place, color, link, techs, projectUrl, CTA } = props;
   return (
     <Card
-      className="resume-section__resume-item border-radius-8"
+      className="resume-section__resume-item"
       sx={{
         width: '100%',
         maxWidth: '290px',
@@ -18,6 +18,7 @@ function CardItem(props) {
         p: '10px',
         mb: '25px',
         backgroundColor: color === 'pink' ? 'secondary.pinkBox' : 'secondary.blueBox',
+        borderRadius: '8px',
       }}
       elevation={0}
     >

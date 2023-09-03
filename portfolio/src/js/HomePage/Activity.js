@@ -8,21 +8,6 @@ const svgWrapper = {
   height: '24px',
   mr: '10px',
 };
-const pinkBox = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'flex-start',
-  backgroundColor: 'secondary.pinkBox',
-  p: '25px',
-  mb: '25px',
-  width: { xs: '100%', lg: '50%' },
-  borderRadius: '20px',
-};
-const blueBox = {
-  ...pinkBox,
-  backgroundColor: 'secondary.blueBox',
-};
 const subtitleWrapper = {
   width: '100%',
   display: 'flex',
@@ -31,26 +16,29 @@ const subtitleWrapper = {
 };
 
 function ActivityItem(props) {
-  const { icon, title, children, color, mr, ...other } = props;
+  const { icon, title, children, color, ...other } = props;
 
   const colorBox = {
+    width: { xs: '100%', sm: '45%' },
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    backgroundColor: color === 'pink' ? 'secondary.pinkBox' : 'secondary.blueBox',
-    p: '25px',
-    mb: '25px',
-    width: { xs: '100%', lg: '50%' },
+    backgroundColor: {
+      xs: 'secondary.blueBox',
+      sm: color === 'pink' ? 'secondary.pinkBox' : 'secondary.blueBox',
+    },
+    p: { xs: '10px', md: '25px' },
     borderRadius: '20px',
-    mr: mr ? { xs: '0', md: '25px' } : 0,
   };
 
   return (
     <Box {...other} className="about-section__activity-item" sx={colorBox}>
       <Box sx={subtitleWrapper}>
         <Box sx={svgWrapper}>{icon}</Box>
-        <Typography variant="h5">{title}</Typography>
+        <Typography variant="h5" sx={{ wordBreak: 'break-word' }}>
+          {title}
+        </Typography>
       </Box>
       <Typography variant="body1">{children}</Typography>
     </Box>
@@ -62,7 +50,6 @@ ActivityItem.propTypes = {
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  mr: PropTypes.bool.isRequired,
 };
 
 export default ActivityItem;

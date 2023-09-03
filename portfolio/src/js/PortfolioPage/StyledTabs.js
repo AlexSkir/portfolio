@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
@@ -33,7 +34,7 @@ const styles = ({ theme }) => ({
     minWidth: '30px',
     height: '24px',
     minHeight: '24px',
-    fontFamily: 'Poppins',
+    fontFamily: 'Poppins, Roboto',
     fontSize: '16px',
     fontWeight: '500',
     color: theme.palette.primary.paleText,
@@ -46,6 +47,7 @@ const styles = ({ theme }) => ({
 const StyledTabs = styled(Tabs)(styles);
 
 function CustomStyledTabs(props) {
+  const { t } = useTranslation();
   const { value, handleChange } = props;
   return (
     <Box>
@@ -57,11 +59,11 @@ function CustomStyledTabs(props) {
         scrollButtons
         allowScrollButtonsMobile
       >
-        <Tab label="All" {...a11yProps('all')} />
-        <Tab label="Landings" {...a11yProps('landings')} />
-        <Tab label="Apps" {...a11yProps('app')} />
-        <Tab label="CMS" {...a11yProps('cms')} />
-        <Tab label="School" {...a11yProps('school')} />
+        <Tab label={t('portfolio.tabs.all')} {...a11yProps('all')} />
+        <Tab label={t('portfolio.tabs.landings')} {...a11yProps('landings')} />
+        <Tab label={t('portfolio.tabs.app')} {...a11yProps('app')} />
+        <Tab label={t('portfolio.tabs.cms')} {...a11yProps('cms')} />
+        <Tab label={t('portfolio.tabs.school')} {...a11yProps('school')} />
       </StyledTabs>
     </Box>
   );

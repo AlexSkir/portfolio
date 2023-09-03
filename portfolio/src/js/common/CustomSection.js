@@ -5,7 +5,21 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 
 const styles = ({ theme }) => ({
+  [theme.breakpoints.down('lg')]: {
+    h2: {
+      fontSize: '32px',
+    },
+    h3: {
+      fontSize: '28px',
+    },
+    h5: {
+      fontSize: '20px',
+    },
+  },
   [theme.breakpoints.down('sm')]: {
+    '.MuiTypography-root': {
+      textAlign: 'justify',
+    },
     h1: {
       fontSize: '16px',
     },
@@ -24,6 +38,14 @@ const styles = ({ theme }) => ({
     h6: {
       fontSize: '14px',
     },
+    ' .MuiTypography-body2': {
+      fontSize: '14px',
+      lineHeight: '20px',
+    },
+    [` .homepage-section__activity-icon, 
+    .homepage-section__activity-icon.activity-icon_dark`]: {
+      fill: theme.palette.secondary.main,
+    },
   },
   [` 
   .resume-section__resume-item, 
@@ -41,12 +63,6 @@ const styles = ({ theme }) => ({
   [` div, h1`]: {
     color: theme.palette.primary.contrastText,
   },
-  [` .border-radius-20`]: {
-    borderRadius: '20px',
-  },
-  [` .border-radius-8`]: {
-    borderRadius: '8px',
-  },
   [` .gradientText`]: {
     background: theme.palette.secondary.gradient,
     backgroundClip: 'text',
@@ -56,13 +72,6 @@ const styles = ({ theme }) => ({
     boxShadow: `0px 0px 4px 0px ${theme.palette.primary.accent}`,
   },
   [` .navbar-button`]: {
-    width: '80px',
-    height: '80px',
-    background: theme.palette.primary.accent,
-    ...theme.typography.button,
-    color: theme.palette.primary.contrastText,
-    borderRadius: '20px',
-    flexDirection: 'column',
     '& svg': {
       opacity: '50%',
     },
@@ -107,6 +116,16 @@ const styles = ({ theme }) => ({
   },
   [` #formText`]: {
     resize: 'vertical',
+  },
+  [` .homepage-section__activity-icon`]: {
+    width: '24px',
+    height: '24px',
+  },
+  [` .activity-icon_main`]: {
+    fill: theme.palette.secondary.main,
+  },
+  [` .activity-icon_dark`]: {
+    fill: theme.palette.secondary.dark,
   },
 });
 

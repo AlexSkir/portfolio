@@ -1,10 +1,13 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { MyThemeSwitch } from '../common/ThemeSwitcher';
+import LangSwitcher from './langSwitcher';
 
 export default function Header() {
+  const { t } = useTranslation();
   return (
     <Box
       className="container-mainWrapper__header-section"
@@ -20,7 +23,7 @@ export default function Header() {
       }}
     >
       <Link
-        href="/Home"
+        href="/"
         underline="none"
         sx={{
           display: 'flex',
@@ -30,15 +33,26 @@ export default function Header() {
           flexDirection: { xs: 'column', sm: 'row' },
         }}
       >
-        <Typography variant="h1" component="h1" sx={{ mr: '10px' }}>
-          Aleksandra
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{ mr: '10px', display: 'flex', alignItems: 'center', height: '100%' }}
+        >
+          {t('header.name')}
         </Typography>
-        <Typography variant="h1" component="h1" className="gradientText">
-          Skirnevskaia
+        <Typography
+          variant="h1"
+          component="h1"
+          className="gradientText"
+          sx={{ display: 'flex', alignItems: 'center', height: '100%' }}
+        >
+          {t('header.name2')}
         </Typography>
       </Link>
 
       <MyThemeSwitch />
+
+      <LangSwitcher />
     </Box>
   );
 }

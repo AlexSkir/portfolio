@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import MainLayout from './MainLayout';
 import Home from './HomePage';
 import Resume from './ResumePage';
@@ -7,9 +8,10 @@ import Portfolio from './PortfolioPage';
 import Project from './PortfolioPage/ProjectPage';
 import Contact from './ContactPage';
 import NoMatch from './common/NoMatchPage';
-import projectArr from './common/projectsArray';
+import projectArr from './PortfolioPage/projectsArray';
 
 const AppRouter = () => {
+  const { i18n, t } = useTranslation();
   return (
     <BrowserRouter>
       <Routes>
@@ -18,7 +20,7 @@ const AppRouter = () => {
           <Route path="Resume" element={<Resume />} />
           <Route path="Portfolio">
             <Route index element={<Portfolio />} />
-            {Object.values(projectArr).map((project) => (
+            {Object.values(projectArr(t)).map((project) => (
               <Route key={project.name} path={project.path} element={<Project data={project} />} />
             ))}
           </Route>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -27,6 +28,7 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function Project(props) {
+  const { t } = useTranslation();
   const { data, children } = props;
   const [expanded, setExpanded] = React.useState(false);
 
@@ -35,7 +37,7 @@ export default function Project(props) {
   };
 
   return (
-    <PageLayout title="Portfolio" avatar="ok">
+    <PageLayout title={t('portfolio.title')} avatar="ok">
       <Card>
         <CardHeader
           sx={{ p: '16px' }}
@@ -60,7 +62,7 @@ export default function Project(props) {
             {data.description}
           </Typography>
         </CardContent>
-        <CardActions sx={{ p: '16px' }}>
+        <CardActions sx={{ p: '16px', flexDirection: { xs: 'column', sm: 'row' } }}>
           {data.links.map((item) => (
             <Link
               key={item.name}
@@ -79,8 +81,9 @@ export default function Project(props) {
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"
+              sx={{ color: 'secondary.dark' }}
             >
-              <ExpandMoreIcon />
+              <ExpandMoreIcon className={expanded ? '' : 'bounce2'} />
             </ExpandMore>
           ) : (
             <></>

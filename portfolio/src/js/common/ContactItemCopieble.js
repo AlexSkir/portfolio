@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
@@ -28,6 +29,7 @@ const contactCopy = {
 };
 
 export default function ContactItemCopieble(props) {
+  const { t } = useTranslation();
   const { link, copyText, tooltip, icon, contactName } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
 
@@ -46,12 +48,12 @@ export default function ContactItemCopieble(props) {
   return (
     <>
       <Tooltip title={tooltip}>
-        <Link href={link} sx={contactLink}>
+        <Link href={link} sx={contactLink} target="_blank">
           {icon}
         </Link>
       </Tooltip>
 
-      <Tooltip title={copySuccess ? 'Copied!' : 'Copy'}>
+      <Tooltip title={copySuccess ? t('common.copieble.copied') : t('common.copieble.copy')}>
         <Button
           className="contact-item__copy-button"
           sx={contactCopy}

@@ -1,16 +1,24 @@
 import React from 'react';
-import Alert from '@mui/material/Alert';
+import { useTranslation } from 'react-i18next';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function Form() {
+  const { t } = useTranslation();
   const [name, setName] = React.useState('');
   const [mail, setMail] = React.useState('');
   const [msg, setMsg] = React.useState('');
   const [alert, setAlert] = React.useState(<></>);
+  const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,13 +34,23 @@ export default function Form() {
         setName('');
         setMail('');
         setMsg('');
-        setAlert(<Alert severity="success">Email sent!</Alert>);
+        setAlert('success');
+        setOpen(true);
       },
       (err) => {
         console.log('FAILED...', err);
-        setAlert(<Alert severity="error">{err}</Alert>);
+        setAlert('error');
+        setOpen(true);
       },
     );
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -46,16 +64,16 @@ export default function Form() {
         p: { xs: '10px', sm: '30px' },
         mt: '30px',
       }}
-      noValidate
+      noValidate={false}
       autoComplete="off"
       onSubmit={handleSubmit}
     >
       <Typography sx={{ fontSize: '16px', lineHeight: '30px', p: '10px' }}>
-        I am always open to discussing new projects, opportunities in tech world or a feedback.
+        {t('contact.form.title', { joinArrays: ' ' })}
       </Typography>
       <TextField
         id="formName"
-        label="Name:"
+        label={t('contact.form.name')}
         variant="standard"
         fullWidth
         value={name}
@@ -75,8 +93,9 @@ export default function Form() {
       />
       <TextField
         id="formText"
-        label="Message:"
+        label={t('contact.form.msg')}
         variant="standard"
+        required
         fullWidth
         multiline
         minRows={1}
@@ -96,9 +115,20 @@ export default function Form() {
           borderRadius: '20px',
         }}
       >
-        Submit
+        {t('contact.form.btn')}
       </Button>
-      {alert}
+
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        {alert === 'success' ? (
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            {t('contact.form.alertSuccess')}
+          </Alert>
+        ) : (
+          <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+            {t('contact.form.alertFail')}
+          </Alert>
+        )}
+      </Snackbar>
     </Box>
   );
 }
