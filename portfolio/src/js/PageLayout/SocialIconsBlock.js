@@ -7,7 +7,7 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
-import HeadHunter from '../../assets/images/hh.png';
+import HeadHunter from '../../assets/images/icons/hh.png';
 import PhoneIcon from '../common/icons/PhoneIconGradient';
 import ResumeDownload from '../common/ResumeDownload';
 

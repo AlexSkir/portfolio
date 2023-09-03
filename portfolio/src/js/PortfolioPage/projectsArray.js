@@ -6,17 +6,19 @@ import HexalImg from '../../assets/images/projects/hexal.webp';
 import YoutubeImg from '../../assets/images/projects/youtube.webp';
 import PiskelImg from '../../assets/images/projects/piskel.webp';
 import CultureImg from '../../assets/images/projects/culturePortal.webp';
-import ChatImg1 from '../../assets/images/projects/chat1.webp';
+import ChatImg from '../../assets/images/projects/chat.webp';
 import GofuckImg from '../../assets/images/projects/gofuck.webp';
 import GritellaImg from '../../assets/images/projects/gritella.webp';
 import zooImage from '../../assets/images/projects/zoo.webp';
 import yagoImage from '../../assets/images/projects/yago.webp';
 import yagoCMSImage from '../../assets/images/projects/yagoCms.webp';
-import reactIcon from '../../assets/images/react.png';
-import sassIcon from '../../assets/images/sass.png';
-import jsIcon from '../../assets/images/js.png';
-import cssIcon from '../../assets/images/css.png';
-import wpIcon from '../../assets/images/wordpress.png';
+
+import reactIcon from '../../assets/images/icons/react.png';
+import sassIcon from '../../assets/images/icons/sass.png';
+import jsIcon from '../../assets/images/icons/js.png';
+import cssIcon from '../../assets/images/icons/css.png';
+import wpIcon from '../../assets/images/icons/wordpress.png';
+import wixIcon from '../../assets/images/icons/wix.png';
 
 import GritellaProject from './ProjectPage/Gritella';
 import CulturePortal from './ProjectPage/CulturePortal';
@@ -40,7 +42,7 @@ export default function projectArr(t) {
       description: t('projects.yandexGo.description', { joinArrays: ' ', ns: 'projects' }),
       tabs: ['all', 'landings', 'cms'],
       mainTool: [land, 'CMS'],
-      avatar: sassIcon,
+      avatar: wixIcon,
       technologies: [
         'CMS',
         'JS',
@@ -133,7 +135,7 @@ export default function projectArr(t) {
       technologies: ['React', 'Redux', 'WebSocket', 'Material-UI', 'Bootstrap', resp],
       type: app,
       path: 'Awesome-Chat',
-      image: ChatImg1,
+      image: ChatImg,
       links: [
         { name: 'demo', url: 'https://chat-render-9rxz.onrender.com/' },
         { name: 'github', url: 'https://github.com/AlexSkir/chat/tree/project' },

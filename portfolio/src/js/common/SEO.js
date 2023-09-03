@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 
-import Avatar from '../../assets/images/avatar-thumb-up.png';
+import Avatar from '../../assets/images/avatar/avatar-thumb-up.png';
 
 const descr = `Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and 
 versatile Front-end developer with a keen interest in creating the user friendly apps and websites. 

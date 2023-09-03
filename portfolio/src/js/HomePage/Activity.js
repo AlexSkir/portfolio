@@ -16,10 +16,10 @@ const subtitleWrapper = {
 };
 
 function ActivityItem(props) {
-  const { icon, title, children, color, ...other } = props;
+  const { icon, title, children, color, width, ...other } = props;
 
   const colorBox = {
-    width: { xs: '100%', sm: '45%' },
+    width,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -50,6 +50,7 @@ ActivityItem.propTypes = {
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
+  width: PropTypes.string.isRequired,
 };
 
 export default ActivityItem;

@@ -6,9 +6,9 @@ import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 
 import PageLayout from '../PageLayout';
 import SEO from '../common/SEO';
-import CodeIcon from '../../assets/images/code.svg';
-import App from '../../assets/images/App.svg';
-import Seo from '../../assets/images/seo.svg';
+import CodeIcon from '../../assets/images/svg/code.svg';
+import App from '../../assets/images/svg/App.svg';
+import Seo from '../../assets/images/svg/seo.svg';
 
 import ActivityItem from './Activity';
 
@@ -22,6 +22,31 @@ const rowWrapper = {
 
 function Home() {
   const { t } = useTranslation();
+  const elementRef = React.useRef();
+  const [width, setWidth] = React.useState(600);
+
+  React.useEffect(() => {
+    const element = elementRef.current;
+
+    if (!element) return;
+
+    const observer = new ResizeObserver((entries) => {
+      // Wrap it in requestAnimationFrame to avoid ResizeObserver loop limit exceeded error
+      window.requestAnimationFrame(() => {
+        if (!Array.isArray(entries) || !entries.length) {
+          return;
+        }
+        setWidth(element.offsetWidth);
+      });
+    });
+
+    observer.observe(element);
+
+    return () => {
+      window.ResizeObserver = 0;
+    };
+  }, []);
+
   return (
     <PageLayout title={t('home.title')} avatar="hi">
       <SEO
@@ -35,37 +60,38 @@ function Home() {
           {t('home.subtitle')}
         </Typography>
 
-        <Box sx={rowWrapper}>
+        <Box sx={rowWrapper} ref={elementRef}>
           <ActivityItem
             icon={<CodeIcon className="homepage-section__activity-icon activity-icon_dark" />}
             title={t('home.activity1.subtitle')}
             color="pink"
+            width={width > 600 ? '45%' : '100%'}
           >
             {t('home.activity1.body', { joinArrays: ' ' })}
           </ActivityItem>
-
           <ActivityItem
             icon={<App className="homepage-section__activity-icon activity-icon_main" />}
             title={t('home.activity2.subtitle')}
             color="blue"
+            width={width > 600 ? '45%' : '100%'}
           >
             {t('home.activity2.body', { joinArrays: ' ' })}
           </ActivityItem>
-
           <ActivityItem
             icon={
               <StoreOutlinedIcon className="homepage-section__activity-icon activity-icon_main" />
             }
             title={t('home.activity3.subtitle')}
             color="blue"
+            width={width > 600 ? '45%' : '100%'}
           >
             {t('home.activity3.body', { joinArrays: ' ' })}
           </ActivityItem>
-
           <ActivityItem
             icon={<Seo className="homepage-section__activity-icon activity-icon_dark" />}
             title={t('home.activity4.subtitle')}
             color="pink"
+            width={width > 600 ? '45%' : '100%'}
           >
             {t('home.activity4.body', { joinArrays: ' ' })}
           </ActivityItem>

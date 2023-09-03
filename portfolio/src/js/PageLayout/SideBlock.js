@@ -13,11 +13,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Avatar from './Avatar';
 import SocialIconsBlock from './SocialIconsBlock';
 import ContactBlock from './ContactBlock';
-import avatarBase from '../../assets/images/avatar-base.png';
-import avatarHeart from '../../assets/images/avatar-heart.png';
-import avatarOk from '../../assets/images/avatar-ok.png';
-import avatarHi from '../../assets/images/avatar-hi.png';
-import avatar4042 from '../../assets/images/avatar-404.2.png';
+import avatarBase from '../../assets/images/avatar/avatar-base.png';
+import avatarHeart from '../../assets/images/avatar/avatar-heart.png';
+import avatarOk from '../../assets/images/avatar/avatar-ok.png';
+import avatarHi from '../../assets/images/avatar/avatar-hi.png';
+import avatar4042 from '../../assets/images/avatar/avatar-404.2.png';
 
 const openedMixin = (theme) => ({
   position: 'relative',

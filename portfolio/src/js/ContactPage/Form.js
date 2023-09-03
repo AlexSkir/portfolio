@@ -17,7 +17,7 @@ export default function Form() {
   const [name, setName] = React.useState('');
   const [mail, setMail] = React.useState('');
   const [msg, setMsg] = React.useState('');
-  const [alert, setAlert] = React.useState(<></>);
+  const [alert, setAlert] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (e) => {

@@ -5,15 +5,15 @@ import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import ReactIcon from '../../assets/images/react.svg';
-import MuiIcon from '../../assets/images/mui.svg';
-import FigmaIcon from '../../assets/images/figma.svg';
-import GhIcon from '../../assets/images/gh-pages.svg';
-import StackIcon from '../../assets/images/stack.svg';
-import SassIcon from '../../assets/images/sass.svg';
-import FontsIcon from '../../assets/images/fonts.svg';
-import I18nIcon from '../../assets/images/i18n.svg';
-import EmailJs from '../../assets/images/emailJs.svg';
+import ReactIcon from '../../assets/images/svg/react.svg';
+import MuiIcon from '../../assets/images/svg/mui.svg';
+import FigmaIcon from '../../assets/images/svg/figma.svg';
+import GhIcon from '../../assets/images/svg/gh-pages.svg';
+import StackIcon from '../../assets/images/svg/stack.svg';
+import SassIcon from '../../assets/images/svg/sass.svg';
+import FontsIcon from '../../assets/images/svg/fonts.svg';
+import I18nIcon from '../../assets/images/svg/i18n.svg';
+import EmailJs from '../../assets/images/svg/emailJs.svg';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
