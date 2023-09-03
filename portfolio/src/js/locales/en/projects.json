@@ -14,6 +14,7 @@
     "visit": "visit page",
     "features": "Main features:",
     "library": "Library",
+    "link": "Link",
     "yandexGo": {
       "description": [
         "Yandex Go is a one-page website (landing) promoting scooters.",
@@ -318,7 +319,7 @@
               "name": "On the User Page the main info is displayed: User Data, Changeble avatar, deliveries, etc"
             },
             {
-              "name": "On the User Page the main info is displayed: User Data, Changeble avatar, deliveries, etc"
+              "name": "If there is an Order in progress, the nearest delivery date is displayed"
             }
           ]
         },
@@ -361,7 +362,7 @@
               "name": "Proceed to Secure Payment Page, on successful payment the Receipt and order detailes are sent via Email"
             },
             {
-              "name": "The order now is displayed on User Page, and the soonest delivery"
+              "name": "The order now is displayed on User Page, and the nearest date of delivery"
             },
             {
               "name": "The payment system works with compliance with the requirements of Federal Law No. 54 \"On the Application of cash register equipment\""
@@ -376,7 +377,7 @@
               "link": true
             },
             {
-              "name": "Created SEO campaign using different tools (Google Analytix, Yandex Webmaster, All in One SEO addon for WordPress)",
+              "name": "Created SEO campaign using different tools (Metatags, Open Graph, Google Analytix, Yandex Webmaster, All in One SEO addon for WordPress)",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/yandex.png",
                 "name": "Open screenshot"

@@ -12,6 +12,8 @@ import GhIcon from '../../assets/images/gh-pages.svg';
 import StackIcon from '../../assets/images/stack.svg';
 import SassIcon from '../../assets/images/sass.svg';
 import FontsIcon from '../../assets/images/fonts.svg';
+import I18nIcon from '../../assets/images/i18n.svg';
+import EmailJs from '../../assets/images/emailJs.svg';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
@@ -21,6 +23,8 @@ const techIcons = [
   { href: 'https://stackoverflow.com/', icon: <StackIcon />, tooltip: 'Stack overflow' },
   { href: 'https://sass-lang.com/', icon: <SassIcon />, tooltip: 'Sass' },
   { href: 'https://fonts.google.com/', icon: <FontsIcon />, tooltip: 'Google Fonts' },
+  { href: 'https://www.i18next.com/', icon: <I18nIcon />, tooltip: 'i18n localization' },
+  { href: 'https://dashboard.emailjs.com/', icon: <EmailJs />, tooltip: 'Email JS Service' },
 ];
 
 const iconWrapper = {

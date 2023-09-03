@@ -149,7 +149,7 @@ export default function projectArr(t) {
       tabs: ['all', 'js', 'app', 'school'],
       mainTool: ['JS', 'Youtube api'],
       avatar: jsIcon,
-      technologies: ['Pure JS', 'AJAX', 'Youtube api', 'HTML', 'CSS', resp],
+      technologies: ['Pure JS', 'AJAX', 'Youtube API', 'HTML', 'CSS', resp],
       type: app,
       path: 'Youtube',
       image: YoutubeImg,

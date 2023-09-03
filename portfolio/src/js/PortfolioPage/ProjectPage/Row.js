@@ -27,7 +27,7 @@ export default function Row(props) {
           scope="row"
           sx={{
             width: { xs: '100%', sm: '70%' },
-            fontSize: { xs: '14px', md: '20px' },
+            fontSize: { xs: '16px', md: '20px' },
             lineHeight: { xs: '20px', md: '30px' },
           }}
         >
@@ -56,7 +56,7 @@ export default function Row(props) {
           scope="row"
           sx={{
             width: '20%',
-            fontSize: { xs: '14px', md: '20px' },
+            fontSize: { xs: '16px', md: '20px' },
             display: { xs: 'none', sm: 'table-cell' },
           }}
         >
@@ -89,7 +89,7 @@ export default function Row(props) {
                           <TableCell
                             sx={{
                               width: { xs: '100%', sm: '70%' },
-                              fontSize: { xs: '14px', md: '20px' },
+                              fontSize: { xs: '12px', md: '16px' },
                               lineHeight: { xs: '20px', md: '30px' },
                             }}
                           >
@@ -98,7 +98,7 @@ export default function Row(props) {
                           <TableCell
                             sx={{
                               width: { xs: '100%', sm: '30%' },
-                              fontSize: { xs: '14px', md: '20px' },
+                              fontSize: { xs: '12px', md: '16px' },
                               lineHeight: { xs: '20px', md: '30px' },
                             }}
                           >
@@ -113,14 +113,14 @@ export default function Row(props) {
                           key={featureRow.name}
                           sx={{
                             '&:nth-of-type(even)': { backgroundColor: 'primary.light' },
-                            display: { xs: 'flex', sm: 'table-cell' },
+                            display: { xs: 'flex', sm: 'table-row-group' },
                             flexDirection: 'column',
                           }}
                         >
                           <TableCell
                             sx={{
                               width: { xs: '100%', sm: '70%' },
-                              fontSize: { xs: '14px', md: '20px' },
+                              fontSize: { xs: '12px', md: '16px' },
                               lineHeight: { xs: '20px', md: '30px' },
                             }}
                           >
@@ -129,7 +129,7 @@ export default function Row(props) {
                           <TableCell
                             sx={{
                               width: { xs: '100%', sm: '30%' },
-                              fontSize: { xs: '14px', md: '20px' },
+                              fontSize: { xs: '12px', md: '16px' },
                               lineHeight: { xs: '20px', md: '30px' },
                             }}
                           >
@@ -152,7 +152,7 @@ export default function Row(props) {
                         <TableCell
                           sx={{
                             width: '100%',
-                            fontSize: { xs: '14px', md: '20px' },
+                            fontSize: { xs: '12px', md: '16px' },
                             lineHeight: { xs: '20px', md: '30px' },
                           }}
                         >

@@ -67,7 +67,7 @@ const withTranslation = (t) => {
         returnObjects: true,
         ns: 'projects',
       }),
-      type: 'Link',
+      type: t('projects.link', { ns: 'projects' }),
     },
   ];
 };

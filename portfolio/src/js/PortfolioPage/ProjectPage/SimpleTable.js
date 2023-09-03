@@ -19,7 +19,14 @@ export default function SimpleTable(props) {
                 key={feature}
                 sx={{ '&:nth-of-type(odd)': { backgroundColor: 'primary.light' } }}
               >
-                <TableCell component="td" scope="row">
+                <TableCell
+                  component="td"
+                  scope="row"
+                  sx={{
+                    fontSize: { xs: '12px', md: '16px' },
+                    lineHeight: { xs: '20px', md: '30px' },
+                  }}
+                >
                   {feature}
                 </TableCell>
               </TableRow>

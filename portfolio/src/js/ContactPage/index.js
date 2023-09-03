@@ -19,8 +19,8 @@ function Contact() {
       <Box
         sx={{
           display: 'flex',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
           columnGap: '20px',
           rowGap: 0,
           flexWrap: 'wrap',
@@ -35,7 +35,6 @@ function Contact() {
         >
           {t('contact.name')}
         </Typography>
-        -
         <Typography variant="h6" sx={{ opacity: '0.5', whiteSpace: 'nowrap' }}>
           {t('contact.position')}
         </Typography>

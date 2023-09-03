@@ -1,11 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import Alert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 export default function Form() {
   const { t } = useTranslation();
@@ -13,6 +18,7 @@ export default function Form() {
   const [mail, setMail] = React.useState('');
   const [msg, setMsg] = React.useState('');
   const [alert, setAlert] = React.useState(<></>);
+  const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,19 +34,23 @@ export default function Form() {
         setName('');
         setMail('');
         setMsg('');
-        setAlert(<Alert severity="success">{t('contact.form.alertSuccess')}</Alert>);
-        setTimeout(() => {
-          setAlert(<></>);
-        }, 5000);
+        setAlert('success');
+        setOpen(true);
       },
       (err) => {
         console.log('FAILED...', err);
-        setAlert(<Alert severity="error">{t('contact.form.alertFail')}</Alert>);
-        setTimeout(() => {
-          setAlert(<></>);
-        }, 10000);
+        setAlert('error');
+        setOpen(true);
       },
     );
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
@@ -107,7 +117,18 @@ export default function Form() {
       >
         {t('contact.form.btn')}
       </Button>
-      {alert}
+
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        {alert === 'success' ? (
+          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+            {t('contact.form.alertSuccess')}
+          </Alert>
+        ) : (
+          <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+            {t('contact.form.alertFail')}
+          </Alert>
+        )}
+      </Snackbar>
     </Box>
   );
 }

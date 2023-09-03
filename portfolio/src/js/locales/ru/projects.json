@@ -11,9 +11,10 @@
     "phptempl": "PHP шаблон",
     "shop": "Онлайн магазин",
     "forum": "Форум",
-    "visit": "Сайт-визитка",
+    "visit": "Открыть страницу",
     "features": "Особенности:",
     "library": "Библиотека",
+    "link": "Ссылка",
     "yandexGo": {
       "description": [
         "Yandex Go - одностраничный сайт-визитка (лэндинг), рекламирующий самокаты.",
@@ -42,7 +43,7 @@
     "culturePortal": {
       "description": [
         "Culture Portal - мультиязыковой веб портал о культуре Беларуси, разработан в рамках",
-        "командного проекта. Сайт разработан на базе React/redux библиотек, стилизован с",
+        "командного проекта. Сайт сделан на базе React/redux библиотек, стилизован с",
         "использованием Material-UI компонентов. Локализация реализована с помощью React-intl",
         "библиотеки. Особенности: ..."
       ],
@@ -116,7 +117,7 @@
         "(content-editable) и смайлы. Перед отправкой сообщения введенный контент форматируется",
         "в простой текст, смайлы заменяются на соответствующий им код. При получении сообщений,",
         "коды смайлов заменяются на элементы img. На странице есть простой логин блок, автозагрузка",
-        "всех сообщений чата, отображение статуса вебсокета. Сайт публикуется автомаически на",
+        "всех сообщений чата, отображение статуса вебсокета. Сайт публикуется автоматически на",
         "Render.com после каждого коммита в репозиторий проекта на Github."
       ]
     },
@@ -147,7 +148,7 @@
     },
     "piskel": {
       "description": [
-        "Piskel Clone - упрощенный клон Piskel, веб инструмент для создания анимированный спрайтов",
+        "Piskel Clone - упрощенный клон Piskel - веб инструмента для создания анимированных спрайтов",
         "и пиксельной графики. Веб приложение создано на базе библиотек React/redux, с использованием",
         "Google API, базы данных Firebase, Canvas элемента для отрисовки графики и анимаций через скрипты JS.",
         "Особенности:..."
@@ -203,10 +204,10 @@
               "name": "При удалении анимации из галереи, она будет удалена из БД FireBase"
             },
             {
-              "name": "Пользователи могут сохранить анимацию на своем Google drive аккаунте"
+              "name": "Пользователи могут сохранить анимацию в своем Google drive аккаунте"
             },
             {
-              "name": "Можно сохранять анимации локально в браузере (LocalStorage), страница с локальными спрайтами открывается в pop-up окне"
+              "name": "Можно сохранять анимации локально в браузере (LocalStorage), список локальных спрайтов открывается в pop-up окне"
             },
             {
               "name": "Файл с анимацией можно скачать в формате gif (библиотека GIFEncoder)"
@@ -226,7 +227,7 @@
               "name": "Кнопки действий позволяют удалять, изменять или копировать спрайт, а также получить детальную информацию на странице Спрайта"
             },
             {
-              "name": "При нажатии на кнопки Изменить или Копировать спрайт откроется канвас с этой анимацией и всеми настройками (количество кадров, их контент, FPS, палитра, и тд)"
+              "name": "При нажатии на кнопки Изменить или Копировать спрайт, откроется канвас с этим спрайтом и его настройками (количество кадров, их контент, FPS, палитра, и тд)"
             }
           ]
         }
@@ -237,7 +238,7 @@
         "Alexis - одностраничный сайт-визитка (лэндинг), подходящий для компании или портфолио.",
         "Реализована полностью отзывчивая верстка, панель навигации адаптирована под настольный",
         "компьютер и мобильные устройства. Имеется анимированный слайдер для отзывов, блок участников",
-        "проекта имеет эффект slides-in при клике по блоку. Присутствуют другие onHover и onClick эффекты"
+        "проекта имеет эффект slide-in при клике по блоку. Присутствуют другие onHover и onClick эффекты"
       ]
     },
     "hexal": {
@@ -276,187 +277,187 @@
               "name": "Главный баннер содержит фирменный логотип и панель поиска по товарам"
             },
             {
-              "name": "Паель навигации имеет выпадающий список товаров (Max Mega Menu plugin)"
+              "name": "Панель навигации имеет выпадающий список товаров (Max Mega Menu plugin)"
             },
             {
-              "name": "Products are displayed in grid table with sorting function, action buttons on product cards"
+              "name": "Товары расположены в грид-сетке с функцией сортировки, кнопками действий на карточке товара"
             },
             {
-              "name": "There is a Subscription Form with \"Mailchimp for WooCommerce\" plugin, subscribes users for email marketing"
+              "name": "Добавлена форма для подписки на рекламную рассылку (\"Mailchimp for WooCommerce\" plugin)"
             },
             {
-              "name": "Right side bar - Navigation Bar to the User Page, WishList, Cart"
+              "name": "Справа панель навигации на страницу Пользователя, Отложенных товаров и Корзину"
             }
           ]
         },
         "productPage": {
-          "name": "Product Page",
+          "name": "Страница товара",
           "features": [
             {
-              "name": "Product images are shown in Image Galery"
+              "name": "Изображения товаров организованы в галерею"
             },
             {
-              "name": "Customer review banner"
+              "name": "Имеется баннер с рейтингом покупателей"
             },
             {
-              "name": "Choose the size of the product"
+              "name": "Выбор размера товара"
             },
             {
-              "name": "Add product to a WishList, Cart"
+              "name": "Добавление товара в корзину/отложенные"
             },
             {
-              "name": "Share a product through a social network"
+              "name": "Поделиться через соцсети"
             },
             {
-              "name": "Tabs with description, images, reviews"
+              "name": "Блок с вкладками: описание товара, изображения, отзывы"
             }
           ]
         },
         "userPage": {
-          "name": "User Page",
+          "name": "Страница пользователя",
           "features": [
             {
-              "name": "Register/Log-in with Email and password, or using third parties (FB, VK, Google)"
+              "name": "Регистрация/логин с Email и паролем, или используя сторонние сервисы (FB, VK, Google)"
             },
             {
-              "name": "Styled Navigation Bar with redirect to: Main page, My orders, Deliveries, Product return, My address"
+              "name": "Стилизованная панель навигации на Главную страницу, Заказы, Доставки, Возвраты, Адреса"
             },
             {
-              "name": "On the User Page the main info is displayed: User Data, Changeble avatar, deliveries, etc"
+              "name": "Отображена основная информация о пользователе: ФИО, Контакты, Аватар, доставки, и тд"
             },
             {
-              "name": "On the User Page the main info is displayed: User Data, Changeble avatar, deliveries, etc"
+              "name": "Если оформлен заказ, то показана ближайшая дата доставки"
             }
           ]
         },
         "gift": {
-          "name": "Gift Card page",
+          "name": "Страница подарочной карты",
           "features": [
             {
-              "name": "Users can buy and present Virtual Gift Cards with different amount of money"
+              "name": "Покупатели могут купить и подарить виртуальную подарочную карту разного номинала"
             },
             {
-              "name": "Gift Cards are sent to the receiver's Email with a note that users can write"
+              "name": "Подарочная карта с сопроводительным текстом отправляется получателю на указанный Email"
             },
             {
-              "name": "Receivers of Gift Cards can apply the code to purchase product in the store"
+              "name": "Владельцы подарочной карты могут применить код при оплате товаров в Магазине"
             },
             {
-              "name": "Users can check the balance of the Gift Card filling in the form with Card number or Phone number"
+              "name": "Есть форма для проверки баланса Подарочной Карты по номеру карты или телефона"
             }
           ]
         },
         "order": {
-          "name": "Cart/Order Page",
+          "name": "Страница заказа/корзина",
           "features": [
             {
-              "name": "There is a table with products in cart and action buttons (remove/undo, product, quantity)"
+              "name": "Товар в корзине отображен в таблице с кнопками действий (удалить, изменить количество, ссылка на товар)"
             },
             {
-              "name": "On checkout page there is an option to Log In, enter Coupon, Gift Card, Log In using social networks"
+              "name": "При оформлении заказа есть возможность авторизоваться/зарегистрироваться, ввести Купон, Подарочную карту, войти через соц аккаунт"
             },
             {
-              "name": "Choose delivery option (CDEK plugin and integration with calculation of parcel parameters and delivery price"
+              "name": "Выбор метода доставки (СДЭК плагин, интеграция СДЭК API с подсчетом стоимости и сроков доставки)"
             },
             {
-              "name": "Yadex Map API is used to display CDEK's Pick Points and Courier address input"
+              "name": "Получение полного адреса и почтового индекса для курьерской доставки происходит с помощью Yadex Map API, отображение постаматов СДЭК на карте"
             },
             {
-              "name": "Form for customer to fill in Name, contac info, additional notes"
+              "name": "Форма с валидацией ввода данных покупателя"
             },
             {
-              "name": "Proceed to Secure Payment Page, on successful payment the Receipt and order detailes are sent via Email"
+              "name": "Переход на страницу платежной платформы, после оплаты чек и детали заказа отправляются на Email"
             },
             {
-              "name": "The order now is displayed on User Page, and the soonest delivery"
+              "name": "Заказ падает в личный кабинет, на общей странице пользователя отобразится дата ближайшей доставки"
             },
             {
-              "name": "The payment system works with compliance with the requirements of Federal Law No. 54 \"On the Application of cash register equipment\""
+              "name": "Платежная система работает в рамках Федерального закона № 54 \"О применении контрольно-кассовой техники при осуществлении расчетов в РФ\""
             }
           ]
         },
         "misc": {
-          "name": "Miscellaneous",
+          "name": "Разное",
           "features": [
             {
-              "name": "Installed and modified Plugins (ATUM Inventory Management for WooCommerce, Jetpack, UpdraftPlus - Backup/Restore, Mailchimp etc)",
+              "name": "Установены и модифицированы плагины (ATUM Inventory Management for WooCommerce, Jetpack, UpdraftPlus - Backup/Restore, Mailchimp etc)",
               "link": true
             },
             {
-              "name": "Created SEO campaign using different tools (Google Analytix, Yandex Webmaster, All in One SEO addon for WordPress)",
+              "name": "Разработана SEO кампания с применением различных инструментов (Метатэги, Open Graph, Google Analytix, Yandex Webmaster, All in One SEO addon for WordPress)",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/yandex.png",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             },
             {
-              "name": "Effective SEO solutions were used to display the website in the search engines",
+              "name": "Применены эффективые SEO решения для отображения контента в поисковой выдаче",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/1.jpg",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             },
             {
-              "name": "Set up Email notification both for a client and customers",
+              "name": "Настроены Email уведомления клиентов и владельца магазина",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/5_2.jpg",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             },
             {
-              "name": "Created FAQs with styled side-block navigation and collapsible tables",
+              "name": "Создана страница FAQs со стилизованной боковой панелью навигации, таблицей со сворачиваемыми элементами",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/FAQs.png",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             },
             {
-              "name": "Wrote custom PHP functions modificating plugins and adding extra functionality",
+              "name": "Написаны PHP функции для кастомизации плагинов и добавления дополнительного функционала",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/PHP/functions.php",
-                "name": "View code sample"
+                "name": "Образец кода"
               }
             },
             {
-              "name": "CSS custom modification of the Theme style",
+              "name": "CSS кастомизация Темы магазина",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/CSS/custom.css",
-                "name": "View code sample"
+                "name": "Образец кода"
               }
             },
             {
-              "name": "CSS style of elements via PHP files",
+              "name": "CSS стилизация элементов в PHP файлах",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/PHP/email-styles.php",
-                "name": "View code sample"
+                "name": "Образец кода"
               }
             },
             {
-              "name": "JS code for the integration with the Delivery API",
+              "name": "Написаны JS скрипты для интеграции СДЭК Delivery API",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/JS/delivery-calc.js",
-                "name": "View code sample"
+                "name": "Образец кода"
               }
             },
             {
-              "name": "Delivery API - pick points on map and type of delivery",
+              "name": "Delivery API - выбор способа доставки и отображения постаматов на карте",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/yandexmap.jpg",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             },
             {
-              "name": "Delivery API - the price of delivery is calculated and added to cart",
+              "name": "Delivery API - цена доставки рассчитана и добавлена в корзину",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/4.jpg",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             },
             {
-              "name": "User page",
+              "name": "Личный кабинет",
               "link": {
                 "href": "https://github.com/AlexSkir/gritella-lingerie/blob/main/assets/images/profile.jpg",
-                "name": "Open screenshot"
+                "name": "Смотреть скриншот"
               }
             }
           ]
