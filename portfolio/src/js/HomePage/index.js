@@ -42,6 +42,7 @@ function Home() {
 
     observer.observe(element);
 
+    // eslint-disable-next-line consistent-return
     return () => {
       window.ResizeObserver = 0;
     };

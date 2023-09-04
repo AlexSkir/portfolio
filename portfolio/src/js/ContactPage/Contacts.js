@@ -15,11 +15,12 @@ const contactItem = {
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  width: '100%',
-  maxWidth: '300px',
-  height: { xs: 'auto', sm: '100px' },
-  p: { xs: '10px', sm: '30px' },
-  pl: { xs: '0', sm: '20px' },
+  width: { xs: 'fit-content', sm: '100%' },
+  maxWidth: { xs: 'unset', sm: '45%' },
+  minWidth: { xs: 'unset', md: '270px' },
+  height: { xs: 'auto', md: '100px' },
+  p: { xs: '10px', md: '30px' },
+  pl: { xs: '0', md: '20px' },
   borderRadius: '8px',
   backgroundColor: { xs: 'unset', sm: 'secondary.pinkBox' },
   '& *': { opacity: 1 },
@@ -41,7 +42,13 @@ function Contacts() {
   return (
     <Box
       className="contact__contact-items-block"
-      sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: '0', sm: '30px' }, maxWidth: '630px' }}
+      sx={{
+        display: 'flex',
+        flexDirection: { xs: 'column', sm: 'row' },
+        flexWrap: 'wrap',
+        gap: { xs: '0', sm: '10px', md: '30px' },
+        maxWidth: '630px',
+      }}
     >
       <Box className="contact__contact-item" sx={contactItem}>
         <ContactItemCopieble

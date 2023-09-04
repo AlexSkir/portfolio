@@ -3,6 +3,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
+import ScrollTop from './ScrollTop';
 import NavBar from './Navbar';
 import { ThemeSwitcher } from '../common/ThemeSwitcher';
 import Header from './Header';
@@ -29,6 +30,7 @@ function MainLayout() {
         <NavBar />
 
         <Box className="container-mainWrapper__main-layout" sx={mainLayout}>
+          <ScrollTop />
           <Outlet />
         </Box>
 

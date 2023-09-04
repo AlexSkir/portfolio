@@ -2,6 +2,7 @@
   "common": {
     "downloadBtn": "Download Resume",
     "downloadTooltip": "Download resume",
+    "dialogTitleDl": "Choose the language of resume",
     "copieble": {
       "copied": "Copied!",
       "copy": "Copy"

@@ -2,6 +2,7 @@
   "common": {
     "downloadBtn": "Скачать Резюме",
     "downloadTooltip": "Скачать резюме",
+    "dialogTitleDl": "Выберите язык резюме",
     "copieble": {
       "copied": "Скопировано!",
       "copy": "Копировать"

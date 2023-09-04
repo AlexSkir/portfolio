@@ -127,6 +127,10 @@ const styles = ({ theme }) => ({
   [` .activity-icon_dark`]: {
     fill: theme.palette.secondary.dark,
   },
+  '.scroll-to-top-btn': {
+    background: theme.palette.secondary.gradientBG,
+    borderRadius: '30px',
+  },
 });
 
 function CustomSection(props) {

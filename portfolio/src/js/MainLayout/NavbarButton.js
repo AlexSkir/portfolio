@@ -1,6 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
 
 export default function NavbarButton(props) {
   const { title, href, status, handleClick, children, ...other } = props;
