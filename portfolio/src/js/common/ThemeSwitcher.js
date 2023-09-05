@@ -53,7 +53,9 @@ export function MyThemeSwitch() {
 
 export function ThemeSwitcher(Component) {
   function ThemeSwitcher(props) {
-    let defaultTheme = 'light';
+    let defaultTheme = window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches
+      ? 'dark'
+      : 'light';
     if (localStorage && localStorage.getItem('myColorMode')) {
       defaultTheme = localStorage.getItem('myColorMode');
     }

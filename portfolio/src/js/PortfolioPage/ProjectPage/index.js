@@ -52,7 +52,7 @@ export default function Project(props) {
             {data.technologies.join(' • ')}
           </Typography>
           {data.warning ? (
-            <Typography variant="body3" sx={{ backgroundColor: 'warning.light' }}>
+            <Typography variant="body3" sx={{ backgroundColor: 'warning.light', color: 'black' }}>
               {data.warning}
             </Typography>
           ) : (
@@ -62,7 +62,7 @@ export default function Project(props) {
             {data.description}
           </Typography>
         </CardContent>
-        <CardActions sx={{ p: '16px', flexDirection: { xs: 'column', sm: 'row' } }}>
+        <CardActions sx={{ p: '16px', flexDirection: 'row', flexWrap: 'wrap' }}>
           {data.links.map((item) => (
             <Link
               key={item.name}

@@ -47,10 +47,15 @@ const styles = ({ theme }) => ({
       fill: theme.palette.secondary.main,
     },
   },
+  [`.contact__contact-item`]: {
+    backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
+    [theme.breakpoints.down('sm')]: {
+      backgroundColor: 'unset',
+    },
+  },
   [` 
   .resume-section__resume-item, 
   .about-section__activity-item, 
-  .contact__contact-item, 
   .projects-list__item-wrapper `]: {
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
   },

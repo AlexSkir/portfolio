@@ -17,6 +17,9 @@ export default function Row(props) {
 
   const rowStyle = {
     backgroundColor: open ? 'secondary.light' : '',
+    '*': {
+      color: open ? 'black' : '',
+    },
   };
 
   return (
