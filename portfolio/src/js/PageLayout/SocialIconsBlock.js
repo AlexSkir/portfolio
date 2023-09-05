@@ -43,7 +43,7 @@ export default function SocialIconsBlock(props) {
   return (
     <Box
       className="side-block__social-icons"
-      sx={{ my: open ? '20px' : '60px', display: 'flex', flexDirection: open ? 'row' : 'column' }}
+      sx={{ my: open ? '20px' : '80px', display: 'flex', flexDirection: open ? 'row' : 'column' }}
     >
       {open ? (
         <></>
