@@ -43,7 +43,7 @@ export default function SEO(props) {
         }
         gtag('js', new Date());
 
-        gtag('config', 'your_id');`}
+        gtag('G-CY08ZZSTVE', 'your_id');`}
       </script>
     </Helmet>
   );
