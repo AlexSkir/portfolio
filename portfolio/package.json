@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --port 8080 --open --mode=development",
     "clean-build": "shx rm -rf build",
     "build2": "npm run clean-build && webpack --mode=production",
-    "build": "webpack --mode=production",
+    "build": "npx webpack --mode=production",
     "build-serve": "npm run build && serve"
   },
   "engines": {
