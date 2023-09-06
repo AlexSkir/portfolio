@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 8080 --open --mode=development",
-    "clean-build": "shx rm -rf portfolio/build",
-    "build": "npm run clean-build && webpack --mode=production",
+    "build": "npm run build && webpack --mode=production",
     "build-serve": "npm run build && serve"
   },
   "engines": {
