@@ -169,7 +169,9 @@
   "footer": {
     "link1": "Portfolio template",
     "link2": "is designed by",
-    "ref": "This website was built with:"
+    "ref": "This website was built with:",
+    "shareTitle": "Share this Portfolio to your network",
+    "copyLink": "Copy the link!"
   },
   "navbar": {
     "home": "Home",

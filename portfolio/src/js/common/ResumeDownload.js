@@ -67,7 +67,12 @@ export default function ResumeDownload(props) {
           {title}
         </Button>
       </Tooltip>
-      <DialogList open={open} onClose={handleClose} list={resumeList} />
+      <DialogList
+        open={open}
+        onClose={handleClose}
+        list={resumeList}
+        title={t('common.dialogTitleDl')}
+      />
     </>
   );
 }

@@ -67,6 +67,6 @@ SEO.defaultProps = {
   twType: 'summary',
   fbType: 'website',
   keywords: 'Frontend, React, JS, Javascript, design, App, Web development, AlexSkir, Skirnevskaia',
-  url: 'http',
+  url: window.location.href,
   image: Avatar,
 };

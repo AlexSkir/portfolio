@@ -5,6 +5,8 @@ import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
+import Share from './Share';
+
 import ReactIcon from '../../assets/images/svg/react.svg';
 import MuiIcon from '../../assets/images/svg/mui.svg';
 import FigmaIcon from '../../assets/images/svg/figma.svg';
@@ -50,6 +52,9 @@ export default function Footer() {
       sx={{
         width: '100%',
         minHeight: '100px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
         backgroundColor: 'primary.paper',
         mt: '20px',
         mb: { xs: '70px', sm: '20px' },
@@ -57,26 +62,74 @@ export default function Footer() {
         borderRadius: { xs: '8px', sm: '20px' },
       }}
     >
-      <Typography variant="h6" align="center" sx={{ mb: { xs: '20px', sm: '50px' } }}>
+      <Box
+        className="footer__left-block"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          width: { xs: '100%', sm: '48%' },
+          '& .footer__ref-link': { textAlign: { xs: 'center', sm: 'left' } },
+        }}
+      >
         <Link
-          className="footer-section__light-link"
-          href="https://www.figma.com/community/file/1264680769254941322/Portfolio-Design"
-          sx={{ color: 'secondary.main', mr: '10px' }}
+          href="/"
+          underline="none"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            height: '42px',
+            cursor: 'pointer',
+            flexDirection: 'row',
+          }}
         >
-          {t('footer.link1')}
+          <Typography variant="h1" component="h1" sx={{ height: '100%' }}>
+            Alex
+          </Typography>
+          <Typography variant="h1" component="h1" className="gradientText" sx={{ height: '100%' }}>
+            Skir
+          </Typography>
         </Link>
-        {t('footer.link2')}
-        <Link
-          className="footer-section__dark-link"
-          href="https://www.figma.com/@beatricewambui"
-          sx={{ color: 'secondary.dark', ml: '10px' }}
-        >
-          Beatrice Wambui Mbugua
-        </Link>
-      </Typography>
 
-      <Box>
-        <Typography variant="h6" align="center">
+        <Typography
+          className="footer__ref-link"
+          align="left"
+          variant="h6"
+          sx={{ mb: { xs: '20px', sm: '50px' } }}
+        >
+          <Link
+            className="footer-section__light-link"
+            href="https://www.figma.com/community/file/1264680769254941322/Portfolio-Design"
+            sx={{ color: 'secondary.main', mr: '10px' }}
+          >
+            {t('footer.link1')}
+          </Link>
+          {t('footer.link2')}
+          <Link
+            className="footer-section__dark-link"
+            href="https://www.figma.com/@beatricewambui"
+            sx={{ color: 'secondary.dark', ml: '10px' }}
+          >
+            Beatrice Wambui Mbugua
+          </Link>
+        </Typography>
+      </Box>
+
+      <Box
+        className="footer__right-block"
+        sx={{
+          width: { xs: '100%', sm: '48%' },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: { xs: 'center', sm: 'flex-end' },
+          mb: '50px',
+        }}
+      >
+        <Share url={window.location.href} />
+      </Box>
+
+      <Box sx={{ width: '100%', '& .footer__tool-title': { textAlign: 'center' } }}>
+        <Typography className="footer__tool-title" variant="h6" align="center">
           {t('footer.ref')}
         </Typography>
         <Box

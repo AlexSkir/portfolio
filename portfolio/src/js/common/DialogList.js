@@ -12,7 +12,7 @@ import Dialog from '@mui/material/Dialog';
 
 export default function DialogList(props) {
   const { t } = useTranslation();
-  const { onClose, open, list } = props;
+  const { onClose, open, list, title } = props;
 
   const handleClose = () => {
     onClose(false);
@@ -24,7 +24,7 @@ export default function DialogList(props) {
 
   return (
     <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>{t('common.dialogTitleDl')}</DialogTitle>
+      <DialogTitle>{title}</DialogTitle>
       <List sx={{ pt: 0 }}>
         {list.map((item) => (
           <ListItem disableGutters key={item.name}>
@@ -45,4 +45,5 @@ DialogList.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   list: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
 };
