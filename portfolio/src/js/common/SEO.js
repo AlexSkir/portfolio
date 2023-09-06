@@ -35,7 +35,7 @@ export default function SEO(props) {
       <meta name="keywords" content={keywords} />
 
       {/*  <!-- Google tag (gtag.js) -->  */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=your_id" />
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY08ZZSTVE" />
       <script>
         {`window.dataLayer = window.dataLayer || [];
         function gtag(){
