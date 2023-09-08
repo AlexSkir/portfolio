@@ -139,10 +139,11 @@
     "name": "Aleksandra Skirnevskaia",
     "position": "Frontend Developer",
     "form": {
-      "alertSuccess": "Email sent!",
-      "alertFail": "Something went wrong, please, try later!",
+      "success": "Email sent!",
+      "error": "Something went wrong, please, try later!",
+      "warning": "Please, check the box!",
       "title": [
-        "I am always open to discussing new projects, opportunities in tech world or offers.",
+        "I am always open to discussing new projects, opportunities in tech world or offers",
         "from potential employers. Any feedbacks are always welcome!"
       ],
       "name": "Name:",

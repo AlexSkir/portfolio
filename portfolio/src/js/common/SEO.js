@@ -21,9 +21,11 @@ export default function SEO(props) {
       {/* Facebook tags */}
       <meta property="og:type" content={fbType} />
       <meta property="og:title" content={title} />
+      <meta property="og:site_name" content="Aleksandra Skirnevskaia - Portfolio" />
+      <meta property="og:updated_time" content="1440432930" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" itemProp="image" content={image} />
       {/* End Facebook tags */}
 
       {/* Twitter tags */}
