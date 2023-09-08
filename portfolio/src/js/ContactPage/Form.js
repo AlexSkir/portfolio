@@ -88,6 +88,7 @@ export default function Form() {
         id="formEmail"
         label="Email:"
         variant="standard"
+        type="email"
         fullWidth
         value={mail}
         onChange={(event) => {
