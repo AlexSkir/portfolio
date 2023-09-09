@@ -15,6 +15,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
 import PageLayout from '../../PageLayout';
+import SEO from '../../common/SEO';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -38,6 +39,11 @@ export default function Project(props) {
 
   return (
     <PageLayout title={t('portfolio.title')} avatar="ok">
+      <SEO
+        title={`${t('common.name')} - ${data.name}`}
+        description={`${t('portfolio.project')} ${data.type} (${data.technologies.join(' • ')})`}
+        image={data.image}
+      />
       <Card>
         <CardHeader
           sx={{ p: '16px' }}

@@ -10,7 +10,8 @@ I enjoy applying both new technologies and learning about the Best Practice soli
 I constantly strive to enhance my skills and embrace emerging trends in the industry.`;
 
 export default function SEO(props) {
-  const { title, description, name, twType, fbType, keywords, url, image } = props;
+  const { title, description, name, keywords, url, image } = props;
+  const imageLink = window.location.origin + image;
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -19,19 +20,22 @@ export default function SEO(props) {
       {/* End standard metadata tags */}
 
       {/* Facebook tags */}
-      <meta property="og:type" content={fbType} />
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
-      <meta property="og:site_name" content="Aleksandra Skirnevskaia - Portfolio" />
+      <meta property="og:site_name" content="Aleksandra Skirnevskaia - Frontend Developer" />
       <meta property="og:updated_time" content="1440432930" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" name="image" content={image} />
-      <link property="image" href={image} />
+      <meta property="og:image" itemProp="image" content={imageLink} />
+      <meta property="og:image" name="image" content={imageLink} />
+      <meta property="og:image:secure_url" content={imageLink} />
+      <link property="image" href={imageLink} />
+      <link rel="image_src" href={imageLink} />
       {/* End Facebook tags */}
 
       {/* Twitter tags */}
       <meta name="twitter:creator" content={name} />
-      <meta name="twitter:card" content={twType} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {/* End Twitter tags */}
@@ -56,8 +60,6 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   name: PropTypes.string,
-  twType: PropTypes.string,
-  fbType: PropTypes.string,
   keywords: PropTypes.string,
   url: PropTypes.string,
   image: PropTypes.string,
@@ -67,8 +69,6 @@ SEO.defaultProps = {
   title: 'Aleksandra Skirnevskaia',
   description: descr,
   name: '@AlexSkir',
-  twType: 'summary',
-  fbType: 'website',
   keywords: 'Frontend, React, JS, Javascript, design, App, Web development, AlexSkir, Skirnevskaia',
   url: window.location.href,
   image: Avatar,
