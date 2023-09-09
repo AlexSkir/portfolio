@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'react-i18next';
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -11,7 +10,6 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
 
 export default function DialogList(props) {
-  const { t } = useTranslation();
   const { onClose, open, list, title } = props;
 
   const handleClose = () => {
@@ -32,7 +30,7 @@ export default function DialogList(props) {
               <ListItemAvatar>
                 <Avatar sx={{ bgcolor: 'primary.light' }} src={item.icon} />
               </ListItemAvatar>
-              <ListItemText primary={item.name} />
+              <ListItemText primary={item?.name} />
             </ListItemButton>
           </ListItem>
         ))}

@@ -3,6 +3,9 @@
     "downloadBtn": "Download Resume",
     "downloadTooltip": "Download resume",
     "dialogTitleDl": "Choose the language of resume",
+    "shareTitle": "Share this Portfolio to your network",
+    "dialogShare": "Share",
+    "copyLink": "Copy",
     "copieble": {
       "copied": "Copied!",
       "copy": "Copy"
@@ -170,9 +173,7 @@
   "footer": {
     "link1": "Portfolio template",
     "link2": "is designed by",
-    "ref": "This website was built with:",
-    "shareTitle": "Share this Portfolio to your network",
-    "copyLink": "Copy the link!"
+    "ref": "This website was built with:"
   },
   "navbar": {
     "home": "Home",

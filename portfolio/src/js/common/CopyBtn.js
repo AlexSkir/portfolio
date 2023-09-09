@@ -2,36 +2,15 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
+import { useTheme } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-const contactLink = {
-  width: '44px',
-  minWidth: '44px',
-  height: '44px',
-  minHeight: '44px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  color: 'primary.contrastText',
-};
-
-const contactCopy = {
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  m: '10px',
-  p: '10px',
-  color: 'primary.contrastText',
-};
-
 export default function CopyBtn(props) {
   const { t } = useTranslation();
-  const { copyText, icon, contactName } = props;
+  const { copyText, contactName } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
+  const theme = useTheme();
 
   const handleCopy = async (text) => {
     try {
@@ -48,14 +27,18 @@ export default function CopyBtn(props) {
   return (
     <Tooltip title={copySuccess ? t('common.copieble.copied') : t('common.copieble.copy')}>
       <Button
-        className="contact-item__copy-button"
-        sx={contactCopy}
+        className="copy_btn button_isActive_true"
+        sx={{
+          background: theme.palette.secondary.gradientBG,
+          color: theme.palette.secondary.contrastText,
+          m: '10px',
+          p: '5px 10px',
+          borderRadius: '20px',
+          minWidth: 'fit-content',
+        }}
         onClick={() => handleCopy(copyText)}
       >
-        {icon}
-        <Typography variant="body3" sx={{ opacity: '0.5' }}>
-          {contactName}
-        </Typography>
+        <Typography variant="body3">{contactName}</Typography>
       </Button>
     </Tooltip>
   );
@@ -63,10 +46,5 @@ export default function CopyBtn(props) {
 
 CopyBtn.propTypes = {
   copyText: PropTypes.string.isRequired,
-  icon: PropTypes.node,
   contactName: PropTypes.string.isRequired,
-};
-
-CopyBtn.defaultProps = {
-  icon: <></>,
 };

@@ -5,7 +5,7 @@ import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-import Share from './Share';
+import ShareBar from './Share';
 
 import ReactIcon from '../../assets/images/svg/react.svg';
 import MuiIcon from '../../assets/images/svg/mui.svg';
@@ -125,7 +125,10 @@ export default function Footer() {
           mb: '50px',
         }}
       >
-        <Share url={window.location.href} />
+        <Typography variant="h6" align="right">
+          {t('common.shareTitle')}
+        </Typography>
+        <ShareBar url={window.location.origin} len={4} />
       </Box>
 
       <Box sx={{ width: '100%', '& .footer__tool-title': { textAlign: 'center' } }}>

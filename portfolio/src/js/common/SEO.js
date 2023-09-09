@@ -25,7 +25,8 @@ export default function SEO(props) {
       <meta property="og:updated_time" content="1440432930" />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" itemProp="image" content={image} />
+      <meta property="og:image" name="image" content={image} />
+      <link property="image" href={image} />
       {/* End Facebook tags */}
 
       {/* Twitter tags */}
