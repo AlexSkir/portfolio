@@ -10,16 +10,16 @@ import Avatar from '../assets/images/avatar/avatar-thumb-up.png';
 const App = () => {
   const { t } = useTranslation();
   return (
-    <Suspense fallback={<Loading />}>
-      <HelmetProvider>
+    <HelmetProvider>
+      <Suspense fallback={<Loading />}>
         <SEO
           image={Avatar}
           title={t('common.seo.title')}
           description={t('common.seo.description', { joinArrays: ' ' })}
         />
         <AppRouter />
-      </HelmetProvider>
-    </Suspense>
+      </Suspense>
+    </HelmetProvider>
   );
 };
 
