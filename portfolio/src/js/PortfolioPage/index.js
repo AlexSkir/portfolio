@@ -22,7 +22,7 @@ function Portfolio() {
 
   return (
     <PageLayout title={t('portfolio.title')} avatar="ok">
-      <SEO title={t('portfolio.seo.description', { joinArrays: ' ' })} image={collage} />
+      <SEO title={t('portfolio.seo.title', { joinArrays: ' ' })} image={collage} />
       <CustomStyledTabs value={value} handleChange={handleChange} />
       {tabs.map((item, i) => (
         <TabPanel key={i} index={item} value={value}>
