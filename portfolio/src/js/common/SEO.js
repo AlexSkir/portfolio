@@ -13,7 +13,8 @@ I constantly strive to enhance my skills and embrace emerging trends in the indu
 export default function SEO(props) {
   const { t } = useTranslation();
   const { title, description, name, keywords, url, image } = props;
-  const imageLink = window.location.origin + image;
+  const imageProp = image || Avatar;
+  const imageLink = window.location.origin + imageProp;
   const defDescr = description || t('common.seo.description', { joinArrays: ' ' });
   const defTitle = title || t('common.seo.title');
   return (
@@ -33,7 +34,6 @@ export default function SEO(props) {
       <meta property="og:image" itemProp="image" content={imageLink} />
       <meta property="og:image" content={imageLink} />
       <meta property="og:image:alt" content={defTitle} />
-      <link rel="image_src" href={imageLink} />
       {/* <link property="image" href={imageLink} />
       <link rel="image_src" href={imageLink} /> */}
       {/* End Facebook tags */}
@@ -47,6 +47,8 @@ export default function SEO(props) {
       <meta name="twitter:image:alt" content={defTitle} />
       {/* End Twitter tags */}
       <meta name="keywords" content={keywords} />
+
+      <meta property="vk:image" content={imageLink} />
 
       {/*  <!-- Google tag (gtag.js) -->  */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY08ZZSTVE" />
@@ -76,5 +78,4 @@ SEO.defaultProps = {
   name: '@AlexSkir',
   keywords: 'Frontend, React, JS, Javascript, design, App, Web development, AlexSkir, Skirnevskaia',
   url: window.location.href,
-  image: Avatar,
 };
