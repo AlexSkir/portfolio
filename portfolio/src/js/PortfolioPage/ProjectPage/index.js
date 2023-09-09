@@ -43,6 +43,7 @@ export default function Project(props) {
         title={`${t('common.name')}, ${t('portfolio.project')} ${data.name} - 
         ${data.type} (${data.technologies.join(' • ')})`}
         image={data.image}
+        description={data.description}
       />
       <Card>
         <CardHeader
