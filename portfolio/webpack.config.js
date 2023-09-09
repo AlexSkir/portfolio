@@ -105,7 +105,7 @@ const config = {
       template: './index.html',
     }),
     new FaviconsWebpackPlugin({
-      logo: './favicon.png',
+      logo: './favicon.ico',
       mode: 'light',
       devMode: 'light',
       prefix: 'assets/favicon/',
