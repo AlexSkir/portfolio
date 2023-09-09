@@ -15,6 +15,7 @@ export default function SEO(props) {
   const { title, description, name, keywords, url, image } = props;
   /* const imageProp = image || Avatar;
   const imageLink = window.location.origin + imageProp; */
+  const imageLink = window.location.origin + image;
   const defDescr = description || t('common.seo.description', { joinArrays: ' ' });
   const defTitle = title || t('common.seo.title');
   return (
@@ -25,14 +26,13 @@ export default function SEO(props) {
       {/* End standard metadata tags */}
 
       {/* Facebook tags */}
-      <meta property="og:type" content="website" />
+      <meta property="og:type" content="article" />
       <meta property="og:title" content={defTitle} />
-      <meta property="og:site_name" content="Aleksandra Skirnevskaia - Frontend Developer" />
-      <meta property="og:updated_time" content="1440432930" />
+      {/* <meta property="og:site_name" content="Aleksandra Skirnevskaia - Frontend Developer" />
+      <meta property="og:updated_time" content="1440432930" /> */}
       <meta property="og:description" content={defDescr} />
       <meta property="og:url" content={url} />
-      <meta property="og:image" itemProp="image" content={image} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={imageLink} />
       <meta property="og:image:alt" content={defTitle} />
       {/* <link property="image" href={imageLink} />
       <link rel="image_src" href={imageLink} /> */}
@@ -43,12 +43,12 @@ export default function SEO(props) {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={defTitle} />
       <meta name="twitter:description" content={defDescr} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={imageLink} />
       <meta name="twitter:image:alt" content={defTitle} />
       {/* End Twitter tags */}
       <meta name="keywords" content={keywords} />
 
-      <meta property="vk:image" content={image} />
+      <meta property="vk:image" content={imageLink} />
 
       {/*  <!-- Google tag (gtag.js) -->  */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY08ZZSTVE" />
