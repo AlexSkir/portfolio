@@ -40,8 +40,8 @@ export default function Project(props) {
   return (
     <PageLayout title={t('portfolio.title')} avatar="ok">
       <SEO
-        title={`${t('common.name')} - ${data.name}`}
-        description={`${t('portfolio.project')} ${data.type} (${data.technologies.join(' • ')})`}
+        title={`${t('common.name')}, ${t('portfolio.project')} ${data.name} - 
+        ${data.type} (${data.technologies.join(' • ')})`}
         image={data.image}
       />
       <Card>

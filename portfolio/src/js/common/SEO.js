@@ -27,17 +27,19 @@ export default function SEO(props) {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:image" itemProp="image" content={imageLink} />
-      <meta property="og:image" name="image" content={imageLink} />
-      <meta property="og:image:secure_url" content={imageLink} />
-      <link property="image" href={imageLink} />
-      <link rel="image_src" href={imageLink} />
+      <meta property="og:image" content={imageLink} />
+      <meta property="og:image:alt" content={title} />
+      {/* <link property="image" href={imageLink} />
+      <link rel="image_src" href={imageLink} /> */}
       {/* End Facebook tags */}
 
       {/* Twitter tags */}
-      <meta name="twitter:creator" content={name} />
+      <meta name="twitter:site" content={name} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageLink} />
+      <meta name="twitter:image:alt" content={title} />
       {/* End Twitter tags */}
       <meta name="keywords" content={keywords} />
 

@@ -16,7 +16,7 @@
       "btn": "Go Home"
     },
     "seo": {
-      "title": "Aleksandra Skirnevskaia, Frontend developer",
+      "title": "Aleksandra Skirnevskaia - Development of web pages apps and other user-friendly web products.",
       "description": [
         "Development of web sites, from simple web pages based on HTML/CSS to complex",
         "projects with JS/React, Mui/Bootstrap and other libraries necessary to create",
@@ -129,8 +129,8 @@
       "school": "School"
     },
     "seo": {
-      "description": [
-        "Demo websites of landing pages, web apps, CMS created with",
+      "title": [
+        "Check out my Demo websites of landing pages, web apps, CMS created with",
         "modern development tools."
       ]
     },
@@ -165,7 +165,7 @@
       "address": "Moscow, Russia"
     },
     "seo": {
-      "description": "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me!"
+      "title": "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me!"
     }
   },
   "footer": {

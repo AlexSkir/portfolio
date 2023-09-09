@@ -15,7 +15,7 @@ function Contact() {
   const theme = useTheme();
   return (
     <PageLayout title={t('contact.title')} avatar="heart">
-      <SEO description={t('contact.seo.description', { joinArrays: ' ' })} image={Avatar} />
+      <SEO description={t('contact.seo.title', { joinArrays: ' ' })} image={Avatar} />
       <Box
         sx={{
           display: 'flex',
