@@ -7,10 +7,12 @@ import AppRouter from './routes';
 import Loading from './common/Loading';
 import Avatar from '../assets/images/avatar/avatar-thumb-up.png';
 
+const helmetContext = {};
+
 const App = () => {
   const { t } = useTranslation();
   return (
-    <HelmetProvider>
+    <HelmetProvider context={helmetContext}>
       <Suspense fallback={<Loading />}>
         <SEO
           image={Avatar}
