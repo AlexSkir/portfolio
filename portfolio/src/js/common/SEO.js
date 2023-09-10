@@ -50,6 +50,22 @@ export default function SEO(props) {
 
         gtag('G-CY08ZZSTVE', 'your_id');`}
       </script>
+
+      <style>
+        {`@media (prefers-color-scheme: dark) {
+          body {
+            background: black;
+          }
+        }
+
+        body.lightTheme {
+          background: unset;
+        }
+
+        body.darkTheme {
+          background: black;
+        }`}
+      </style>
     </Helmet>
   );
 }
