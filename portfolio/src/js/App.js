@@ -12,16 +12,14 @@ const helmetContext = {};
 const App = () => {
   const { t } = useTranslation();
   return (
-    <HelmetProvider context={helmetContext}>
-      <Suspense fallback={<Loading />}>
-        <SEO
-          image={Avatar}
-          title={t('common.seo.title')}
-          description={t('common.seo.description', { joinArrays: ' ' })}
-        />
-        <AppRouter />
-      </Suspense>
-    </HelmetProvider>
+    <Suspense fallback={<Loading />}>
+      <SEO
+        image={Avatar}
+        title={t('common.seo.title')}
+        description={t('common.seo.description', { joinArrays: ' ' })}
+      />
+      <AppRouter />
+    </Suspense>
   );
 };
 
