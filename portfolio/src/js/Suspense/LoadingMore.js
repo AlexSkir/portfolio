@@ -9,9 +9,18 @@ export default function LoadingMainlayout() {
     : window.screen.width > 1200;
   return (
     <Stack spacing={2} sx={{ width: '100%', height: 'auto', p: '10px', boxSizing: 'border-box' }}>
-      <Skeleton variant="rounded" sx={{ height: '30px', width: '100%' }} />
-      <Skeleton variant="rounded" sx={{ height: '30px', width: '100%' }} />
-      <Skeleton variant="rounded" sx={{ height: '30px', width: '100%' }} />
+      <Skeleton
+        variant="rounded"
+        sx={{ height: '30px', width: '100%', backgroundColor: 'primary.accent' }}
+      />
+      <Skeleton
+        variant="rounded"
+        sx={{ height: '30px', width: '100%', backgroundColor: 'primary.accent' }}
+      />
+      <Skeleton
+        variant="rounded"
+        sx={{ height: '30px', width: '100%', backgroundColor: 'primary.accent' }}
+      />
     </Stack>
   );
 }

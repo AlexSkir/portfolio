@@ -10,8 +10,14 @@ export default function LoadingMainlayout() {
   return (
     <Stack spacing={1} sx={{ width: '100%', height: '100vh', p: '30px', boxSizing: 'border-box' }}>
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Skeleton variant="text" sx={{ fontSize: '40px', width: '200px' }} />
-        <Skeleton variant="circular" sx={{ width: '50px', height: '50px' }} />
+        <Skeleton
+          variant="text"
+          sx={{ fontSize: '40px', width: '200px', backgroundColor: 'primary.accent' }}
+        />
+        <Skeleton
+          variant="circular"
+          sx={{ width: '50px', height: '50px', backgroundColor: 'primary.accent' }}
+        />
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
         <Skeleton
@@ -23,6 +29,7 @@ export default function LoadingMainlayout() {
             height: { xs: '50px', sm: '100px' },
             borderRadius: '20px',
             mt: '50px',
+            backgroundColor: 'primary.accent',
           }}
         />
       </Box>
@@ -42,11 +49,18 @@ export default function LoadingMainlayout() {
             height: '100%',
             display: { xs: 'none', md: 'block' },
             borderRadius: '20px',
+            backgroundColor: 'primary.accent',
           }}
         />
         <Skeleton
           variant="rounded"
-          sx={{ width: '100%', height: '100%', borderRadius: '20px', mt: { xs: '50px', md: 0 } }}
+          sx={{
+            width: '100%',
+            height: '100%',
+            borderRadius: '20px',
+            mt: { xs: '50px', md: 0 },
+            backgroundColor: 'primary.accent',
+          }}
         />
       </Box>
     </Stack>
