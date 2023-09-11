@@ -53,9 +53,9 @@ function NavBar() {
 
   const pages = [
     { name: t('navbar.home'), path: '/', icon: <HomeOutlinedIcon /> },
-    { name: t('navbar.resume'), path: '/Resume', icon: <ArticleOutlinedIcon /> },
-    { name: t('navbar.portfolio'), path: '/Portfolio', icon: <WorkOutlineOutlinedIcon /> },
-    { name: t('navbar.contact'), path: '/Contact', icon: <ContactMailOutlinedIcon /> },
+    { name: t('navbar.resume'), path: '/resume', icon: <ArticleOutlinedIcon /> },
+    { name: t('navbar.portfolio'), path: '/portfolio', icon: <WorkOutlineOutlinedIcon /> },
+    { name: t('navbar.contact'), path: '/contact', icon: <ContactMailOutlinedIcon /> },
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -65,8 +65,8 @@ function NavBar() {
   React.useEffect(() => {
     const curPage = window.location.pathname;
     setLocation(curPage);
-    if (location.includes('Portfolio')) {
-      setLocation('/Portfolio');
+    if (location.includes('portfolio')) {
+      setLocation('/portfolio');
     }
   }, [handleOpenNavMenu]);
 

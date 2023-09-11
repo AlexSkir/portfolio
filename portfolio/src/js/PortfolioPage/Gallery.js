@@ -31,7 +31,7 @@ function ProjectsListGallery(props) {
       {itemData.map((item) => (
         <Link
           key={item.name}
-          href={`/Portfolio/${item.path}`}
+          href={`/portfolio/${item.path}`}
           sx={{ width: { xs: '300px', lg: '330px' } }}
         >
           <ImageListItem
@@ -55,12 +55,12 @@ function ProjectsListGallery(props) {
             />
             <ImageListItemBar
               position="below"
-              title={(
+              title={
                 <Typography variant="subtitle2" sx={subt2}>
                   {item.type}
                 </Typography>
-              )}
-              subtitle={
+              }
+              subtitle={(
                 <Typography
                   variant="subtitle2"
                   sx={{
@@ -70,7 +70,7 @@ function ProjectsListGallery(props) {
                 >
                   {item.mainTool.join(` • `)}
                 </Typography>
-              }
+              )}
             />
           </ImageListItem>
         </Link>

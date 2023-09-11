@@ -16,7 +16,10 @@
       "btn": "Go Home"
     },
     "seo": {
-      "title": "Aleksandra Skirnevskaia - Development of web pages apps and other user-friendly web products.",
+      "title": [
+        "Development of web pages, apps and other user-friendly web products. Stack",
+        "of technologies: HTML, CSS, SASS, JS, jQuery, React, Bootstrap, Material UI etc."
+      ],
       "description": [
         "Development of web sites, from simple web pages based on HTML/CSS to complex",
         "projects with JS/React, Mui/Bootstrap and other libraries necessary to create",

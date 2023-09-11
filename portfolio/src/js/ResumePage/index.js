@@ -100,7 +100,7 @@ function Resume() {
             link="https://rs.school/"
             color="pink"
             techs={t('resume.edu.schoolTechs', { joinArrays: ' ' })}
-            projectUrl="/Portfolio"
+            projectUrl="/portfolio"
             CTA={t('resume.edu.cta')}
           />
           <ResumeItem
@@ -125,7 +125,7 @@ function Resume() {
             place=""
             color="blue"
             techs={t('resume.exp.unit1.techs')}
-            projectUrl="/Portfolio"
+            projectUrl="/portfolio"
             CTA={t('resume.exp.unit1.cta')}
           />
           <CardItem
@@ -135,7 +135,7 @@ function Resume() {
             link="http://d97714j6.beget.tech/"
             color="blue"
             techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
-            projectUrl="/Portfolio/Gritella"
+            projectUrl="/portfolio/gritella"
             CTA={t('resume.exp.unit2.cta')}
           />
           <CardItem
@@ -145,7 +145,7 @@ function Resume() {
             link="https://www.gofuckbiz.com/"
             color="blue"
             techs={t('resume.exp.unit3.techs')}
-            projectUrl="/Portfolio/Gofuck"
+            projectUrl="/portfolio/gofuck"
             CTA={t('resume.exp.unit3.cta')}
           />
         </Box>

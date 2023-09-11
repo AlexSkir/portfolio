@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import fescoImg from '../../assets/images/projects/fesco.webp';
 import AlexisImg from '../../assets/images/projects/alexis.webp';
 import HexalImg from '../../assets/images/projects/hexal.webp';
@@ -20,10 +20,14 @@ import cssIcon from '../../assets/images/icons/css.png';
 import wpIcon from '../../assets/images/icons/wordpress.png';
 import wixIcon from '../../assets/images/icons/wix.png';
 
-import GritellaProject from './ProjectPage/Gritella';
+// import GritellaProject from './ProjectPage/Gritella';
 import CulturePortal from './ProjectPage/CulturePortal';
 import YoutubeApp from './ProjectPage/Youtube';
 import Piskel from './ProjectPage/Piskel';
+
+import LoadingMore from '../Suspense/LoadingMore';
+
+const GritellaProject = lazy(() => import('./ProjectPage/Gritella'));
 
 export default function projectArr(t) {
   const land = t('projects.landing', { ns: 'projects' });
@@ -52,7 +56,7 @@ export default function projectArr(t) {
         'API',
       ],
       type: land,
-      path: 'Yandex-Go-CMS',
+      path: 'yandex-go-cms',
       image: yagoCMSImage,
       links: [
         {
@@ -74,7 +78,7 @@ export default function projectArr(t) {
       avatar: sassIcon,
       technologies: ['HTML', 'SASS', 'jQuery', adapt, 'Perfect Pixel'],
       type: land,
-      path: 'Yandex-Go-SASS',
+      path: 'yandex-go-sass',
       image: yagoImage,
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/yago/' },
@@ -94,7 +98,7 @@ export default function projectArr(t) {
       avatar: sassIcon,
       technologies: ['HTML', 'SASS', 'jQuery', adapt, 'Perfect Pixel'],
       type: land,
-      path: 'Zoo',
+      path: 'zoo',
       image: zooImage,
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/online-zoo/index.html' },
@@ -117,14 +121,18 @@ export default function projectArr(t) {
         'Internationalization',
       ],
       type: app,
-      path: 'Culture-Portal',
+      path: 'culture-portal',
       image: CultureImg,
       links: [
         { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
         { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
         { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
       ],
-      more: <CulturePortal />,
+      more: (
+        <Suspense fallback={<LoadingMore />}>
+          <CulturePortal />
+        </Suspense>
+      ),
     },
     chat: {
       name: 'Awesome Chat',
@@ -134,7 +142,7 @@ export default function projectArr(t) {
       avatar: reactIcon,
       technologies: ['React', 'Redux', 'WebSocket', 'Material-UI', 'Bootstrap', resp],
       type: app,
-      path: 'Awesome-Chat',
+      path: 'awesome-chat',
       image: ChatImg,
       links: [
         { name: 'demo', url: 'https://chat-render-9rxz.onrender.com/' },
@@ -153,7 +161,7 @@ export default function projectArr(t) {
       avatar: jsIcon,
       technologies: ['Pure JS', 'AJAX', 'Youtube API', 'HTML', 'CSS', resp],
       type: app,
-      path: 'Youtube',
+      path: 'youtube',
       image: YoutubeImg,
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/youtube-app/' },
@@ -163,7 +171,11 @@ export default function projectArr(t) {
           url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
         },
       ],
-      more: <YoutubeApp />,
+      more: (
+        <Suspense fallback={<LoadingMore />}>
+          <YoutubeApp />
+        </Suspense>
+      ),
     },
     fesco: {
       name: 'Fesco',
@@ -173,7 +185,7 @@ export default function projectArr(t) {
       avatar: sassIcon,
       technologies: ['HTML', 'SASS', 'JS', resp, 'Perfect Pixel'],
       type: land,
-      path: 'Fesco',
+      path: 'fesco',
       image: fescoImg,
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/restaurant-fesco/' },
@@ -192,13 +204,17 @@ export default function projectArr(t) {
       avatar: reactIcon,
       technologies: ['React', 'Redux', 'jQuery', 'Canvas', 'Google API', 'Firebase DB'],
       type: app,
-      path: 'Piskel',
+      path: 'piskel',
       image: PiskelImg,
       links: [
         { name: 'demo', url: 'http://alexskir.github.io/clown/' },
         { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
       ],
-      more: <Piskel />,
+      more: (
+        <Suspense fallback={<LoadingMore />}>
+          <Piskel />
+        </Suspense>
+      ),
     },
     alexis: {
       name: 'Alexis',
@@ -208,7 +224,7 @@ export default function projectArr(t) {
       avatar: cssIcon,
       technologies: ['HTML', 'CSS', 'JS', resp, 'Perfect Pixel'],
       type: land,
-      path: 'Alexis',
+      path: 'alexis',
       image: AlexisImg,
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/alexis-homepage/' },
@@ -227,7 +243,7 @@ export default function projectArr(t) {
       avatar: cssIcon,
       technologies: ['HTML', 'CSS', statLay, 'Perfect Pixel'],
       type: land,
-      path: 'Hexal',
+      path: 'hexal',
       image: HexalImg,
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/hexal/' },
@@ -242,7 +258,7 @@ export default function projectArr(t) {
       avatar: cssIcon,
       technologies: ['CSS', mobile, phptempl],
       type: forum,
-      path: 'Gofuck',
+      path: 'gofuck',
       image: GofuckImg,
       links: [
         { name: 'website', url: 'https://www.gofuckbiz.com/' },
@@ -267,13 +283,17 @@ export default function projectArr(t) {
         'ReCaptcha',
       ],
       type: shop,
-      path: 'Gritella',
+      path: 'gritella',
       image: GritellaImg,
       links: [
         { name: 'demo', url: 'http://d97714j6.beget.tech/' },
         { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
       ],
-      more: <GritellaProject />,
+      more: (
+        <Suspense fallback={<LoadingMore />}>
+          <GritellaProject />
+        </Suspense>
+      ),
     },
   };
 }

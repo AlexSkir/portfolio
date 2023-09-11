@@ -1,11 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
+import poster from '../../assets/images/portfolio.png';
 
 export default function SEO(props) {
   const { title, description, name, keywords, url, image } = props;
-  /* const imageProp = image || Avatar;
-  const imageLink = window.location.origin + imageProp; */
   const imageLink = window.location.origin + image;
   return (
     <Helmet>
@@ -60,11 +59,12 @@ SEO.propTypes = {
   name: PropTypes.string,
   keywords: PropTypes.string,
   url: PropTypes.string,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 SEO.defaultProps = {
   name: '@AlexSkir',
   keywords: 'Frontend, React, JS, Javascript, design, App, Web development, AlexSkir, Skirnevskaia',
   url: window.location.href,
+  image: poster,
 };

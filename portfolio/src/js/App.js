@@ -1,25 +1,21 @@
 import { hot } from 'react-hot-loader';
-import React, { Suspense } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SEO from './common/SEO';
 import AppRouter from './routes';
-import Loading from './common/Loading';
 import Avatar from '../assets/images/avatar/avatar-thumb-up.png';
-
-const helmetContext = {};
 
 const App = () => {
   const { t } = useTranslation();
   return (
-    <Suspense fallback={<Loading />}>
+    <div>
       <SEO
         image={Avatar}
-        title={t('common.seo.title')}
+        title={t('common.seo.title', { joinArrays: ' ' })}
         description={t('common.seo.description', { joinArrays: ' ' })}
       />
       <AppRouter />
-    </Suspense>
+    </div>
   );
 };
 
