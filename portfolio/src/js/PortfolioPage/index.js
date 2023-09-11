@@ -7,6 +7,8 @@ import ProjectsListGallery from './Gallery';
 import projectArr from './projectsArray';
 import PageLayout from '../PageLayout/index';
 
+import collage from '../../assets/images/projects/portfolio.png';
+
 const tabs = ['all', 'landings', 'app', 'cms', 'school'];
 
 function Portfolio() {
@@ -20,7 +22,11 @@ function Portfolio() {
 
   return (
     <PageLayout title={t('portfolio.title')} avatar="ok">
-      <SEO title={t('portfolio.seo.title')} description={t('portfolio.seo.description')} />
+      <SEO
+        title={t('portfolio.seo.title', { joinArrays: ' ' })}
+        image={collage}
+        description={t('common.seo.description', { joinArrays: ' ' })}
+      />
       <CustomStyledTabs value={value} handleChange={handleChange} />
       {tabs.map((item, i) => (
         <TabPanel key={i} index={item} value={value}>

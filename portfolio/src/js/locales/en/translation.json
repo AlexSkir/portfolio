@@ -1,8 +1,12 @@
 {
   "common": {
+    "name": "Aleksandra Skirnevskaia",
     "downloadBtn": "Download Resume",
     "downloadTooltip": "Download resume",
     "dialogTitleDl": "Choose the language of resume",
+    "shareTitle": "Share this Portfolio to your network",
+    "dialogShare": "Share",
+    "copyLink": "Copy",
     "copieble": {
       "copied": "Copied!",
       "copy": "Copy"
@@ -10,6 +14,14 @@
     "nomatch": {
       "title": "Ops, this page doesn't exist!",
       "btn": "Go Home"
+    },
+    "seo": {
+      "title": "Aleksandra Skirnevskaia - Development of web pages apps and other user-friendly web products.",
+      "description": [
+        "Development of web sites, from simple web pages based on HTML/CSS to complex",
+        "projects with JS/React, Mui/Bootstrap and other libraries necessary to create",
+        "reliable, fast, and user-friendly web products."
+      ]
     }
   },
   "home": {
@@ -53,15 +65,6 @@
         "Fast web pages and low Internet traffic improve user experience. Moreover, it increases",
         "chances of having your content surfaced to users and guarantees presentable layout in",
         "social networks"
-      ]
-    },
-    "seo": {
-      "title": "Aleksandra Skirnevskaia - About me",
-      "description": [
-        "I am a Front-end developer with a keen interest in Web and App Development.",
-        "I love using React.js, Redux, Mui/Bootstrap and other libraries to create reliable,",
-        "fast, scalable, and user-friendly products. I also enjoy doing SEO optimization and",
-        "internationalization."
       ]
     }
   },
@@ -114,10 +117,6 @@
           "Tolerant"
         ]
       }
-    },
-    "seo": {
-      "title": "Aleksandra Skirnevskaia - Resume",
-      "description": ""
     }
   },
   "portfolio": {
@@ -130,19 +129,23 @@
       "school": "School"
     },
     "seo": {
-      "title": "Aleksandra Skirnevskaia - Portfolio",
-      "description": ""
-    }
+      "title": [
+        "Check out my Demo websites of landing pages, web apps, CMS created with",
+        "modern development tools."
+      ]
+    },
+    "project": "Look at my project:"
   },
   "contact": {
     "title": "Contact",
     "name": "Aleksandra Skirnevskaia",
     "position": "Frontend Developer",
     "form": {
-      "alertSuccess": "Email sent!",
-      "alertFail": "Something went wrong, please, try later!",
+      "success": "Email sent!",
+      "error": "Something went wrong, please, try later!",
+      "warning": "Please, check the box!",
       "title": [
-        "I am always open to discussing new projects, opportunities in tech world or offers.",
+        "I am always open to discussing new projects, opportunities in tech world or offers",
         "from potential employers. Any feedbacks are always welcome!"
       ],
       "name": "Name:",
@@ -162,8 +165,7 @@
       "address": "Moscow, Russia"
     },
     "seo": {
-      "title": "Aleksandra Skirnevskaia - Contact",
-      "description": ""
+      "title": "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me!"
     }
   },
   "footer": {

@@ -6,16 +6,16 @@ import { useTheme } from '@mui/material/styles';
 
 import PageLayout from '../PageLayout';
 import SEO from '../common/SEO';
-
 import Contacts from './Contacts';
 import Form from './Form';
+import Avatar from '../../assets/images/avatar/avatar-heart.png';
 
 function Contact() {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   return (
     <PageLayout title={t('contact.title')} avatar="heart">
-      <SEO title={t('contact.seo.title')} description={t('contact.seo.description')} />
+      <SEO description={t('contact.seo.title', { joinArrays: ' ' })} image={Avatar} />
       <Box
         sx={{
           display: 'flex',

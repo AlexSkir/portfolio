@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import PageLayout from '../PageLayout';
-import SEO from '../common/SEO';
 import HatIcon from './HatGradientIcon';
 import BagIcon from './BagGradientIcon';
 import ResumeItem from './ResumeItem';
@@ -80,7 +79,6 @@ function Resume() {
 
   return (
     <PageLayout title={t('resume.title')} avatar="base">
-      <SEO title={t('resume.seo.title')} description={t('resume.seo.description')} />
       <Box className="resume-section__info-block" sx={sectionWrapper}>
         <Box className="resume-section__education-block" sx={blockWrapper}>
           <Box className="resume-section__block-title" sx={titleWrapper}>

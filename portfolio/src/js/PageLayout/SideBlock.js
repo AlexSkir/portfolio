@@ -78,17 +78,22 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function SideBlock(props) {
+  const sideBlockOpen = localStorage?.getItem('sideBlockOpen')
+    ? JSON.parse(localStorage.getItem('sideBlockOpen'))
+    : window.screen.width > 1200;
   const { t } = useTranslation();
   const { avatar } = props;
   const [avatarImg, setAvatar] = React.useState(avatarHi);
-  const [open, setOpen] = React.useState(window.screen.width > 1200);
+  const [open, setOpen] = React.useState(sideBlockOpen);
 
   const handleDrawerOpen = () => {
     setOpen(true);
+    localStorage.setItem('sideBlockOpen', true);
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+    localStorage.setItem('sideBlockOpen', false);
   };
 
   React.useEffect(() => {
@@ -108,7 +113,13 @@ export default function SideBlock(props) {
   return (
     <Box className="side-block-section" sx={{ display: { xs: 'none', md: 'block' } }}>
       <Drawer variant="permanent" open={open}>
-        <DrawerHeader sx={{ position: 'absolute', top: '10px', right: 0 }}>
+        <DrawerHeader
+          sx={{
+            position: 'absolute',
+            top: { xs: '10px', lg: '30px' },
+            right: 0,
+          }}
+        >
           {open ? (
             <Tooltip title={t('sideblock.closeBtnTooltip')}>
               <IconButton onClick={handleDrawerClose}>

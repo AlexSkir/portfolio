@@ -5,30 +5,33 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
-import Snackbar from '@mui/material/Snackbar';
-import MuiAlert from '@mui/material/Alert';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import ReCAPTCHA from 'react-google-recaptcha';
+import SimpleAlert from './Alert';
 
 export default function Form() {
   const { t } = useTranslation();
+  const recaptchaRef = React.createRef();
   const [name, setName] = React.useState('');
   const [mail, setMail] = React.useState('');
   const [msg, setMsg] = React.useState('');
-  const [alert, setAlert] = React.useState('');
+  const [alert, setAlert] = React.useState('success');
   const [open, setOpen] = React.useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const recaptchaValue = recaptchaRef.current.getValue();
+    if (!recaptchaValue) {
+      setAlert('warning');
+      setOpen(true);
+      return;
+    }
     const letter = {
       from_name: name,
       reply_to: mail,
       message: msg,
+      'g-recaptcha-response': recaptchaValue,
     };
-    console.log(letter);
-    emailjs.send('portfolio_email', 'template_portfolio', letter, 'ESDfL1xe9UlN3Cc2B').then(
+    emailjs.send('portfolio_email', 'template_portfolio', letter, process.env.emailjs_user_id).then(
       (response) => {
         console.log('SUCCESS!', response.status, response.text);
         setName('');
@@ -85,6 +88,7 @@ export default function Form() {
         id="formEmail"
         label="Email:"
         variant="standard"
+        type="email"
         fullWidth
         value={mail}
         onChange={(event) => {
@@ -104,6 +108,7 @@ export default function Form() {
           setMsg(event.target.value);
         }}
       />
+      {msg ? <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.captcha_site_key} /> : <></>}
       <Button
         type="submit"
         sx={{
@@ -118,17 +123,7 @@ export default function Form() {
         {t('contact.form.btn')}
       </Button>
 
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        {alert === 'success' ? (
-          <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-            {t('contact.form.alertSuccess')}
-          </Alert>
-        ) : (
-          <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-            {t('contact.form.alertFail')}
-          </Alert>
-        )}
-      </Snackbar>
+      <SimpleAlert type={alert} onCloseHandle={handleClose} open={open} />
     </Box>
   );
 }
