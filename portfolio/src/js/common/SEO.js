@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import poster from '../../assets/images/portfolio.png';
+import poster2 from '../../assets/images/portfolio2.png';
 
 export default function SEO(props) {
   const { title, description, name, keywords, url, image } = props;
@@ -21,6 +22,7 @@ export default function SEO(props) {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={imageLink} />
+      <meta property="og:image" itemProp="image" content={poster2} />
       <meta property="og:image:alt" content={title} />
       {/* <link property="image" href={imageLink} />
       <link rel="image_src" href={imageLink} /> */}
