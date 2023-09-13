@@ -10,7 +10,6 @@ import BagIcon from './BagGradientIcon';
 import ResumeItem from './ResumeItem';
 import CardItem from './Card';
 import ResumeDownload from '../common/ResumeDownload';
-import ShareBar from '../MainLayout/Share';
 
 const sectionWrapper = {
   display: 'flex',
@@ -80,16 +79,6 @@ function Resume() {
 
   return (
     <PageLayout title={t('resume.title')} avatar="base">
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          button: { m: 0, backgroundColor: 'primary.paper' },
-        }}
-      >
-        <ShareBar url={window.location.href} len={0} />
-      </Box>
       <Box className="resume-section__info-block" sx={sectionWrapper}>
         <Box className="resume-section__education-block" sx={blockWrapper}>
           <Box className="resume-section__block-title" sx={titleWrapper}>
