@@ -5,7 +5,6 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import ScrollTop from './ScrollTop';
 import NavBar from './Navbar';
-import { ThemeSwitcher } from '../common/ThemeSwitcher';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -40,4 +39,4 @@ function MainLayout() {
   );
 }
 
-export default ThemeSwitcher(MainLayout);
+export default MainLayout;

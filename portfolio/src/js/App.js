@@ -4,18 +4,19 @@ import { useTranslation } from 'react-i18next';
 import SEO from './common/SEO';
 import AppRouter from './routes';
 import Avatar from '../assets/images/avatar/avatar-thumb-up.png';
+import ThemeWrapper from './common/ThemeWrapper';
 
 const App = () => {
   const { t } = useTranslation();
   return (
-    <div>
+    <ThemeWrapper>
       <SEO
         image={Avatar}
         title={t('common.seo.title')}
         description={t('common.seo.description', { joinArrays: ' ' })}
       />
       <AppRouter />
-    </div>
+    </ThemeWrapper>
   );
 };
 
