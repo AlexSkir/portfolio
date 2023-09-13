@@ -5,6 +5,7 @@ import MainLayout from './MainLayout';
 import NoMatch from './common/NoMatchPage';
 import projectArr from './PortfolioPage/projectsArray';
 import LoadingApp from './Suspense/LoadingApp';
+import LoadingLayout from './Suspense/LoadingMainlayout';
 
 const Home = lazy(() => import('./HomePage'));
 const Resume = lazy(() => import('./ResumePage'));
