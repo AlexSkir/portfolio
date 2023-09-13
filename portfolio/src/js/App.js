@@ -11,7 +11,7 @@ const App = () => {
     <div>
       <SEO
         image={Avatar}
-        title={t('common.seo.title', { joinArrays: ' ' })}
+        title={t('common.seo.title')}
         description={t('common.seo.description', { joinArrays: ' ' })}
       />
       <AppRouter />

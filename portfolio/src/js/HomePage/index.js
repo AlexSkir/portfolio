@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 
 import PageLayout from '../PageLayout';
+import ShareBar from '../MainLayout/Share';
 import CodeIcon from '../../assets/images/svg/code.svg';
 import App from '../../assets/images/svg/App.svg';
 import Seo from '../../assets/images/svg/seo.svg';
@@ -49,6 +50,16 @@ function Home() {
 
   return (
     <PageLayout title={t('home.title')} avatar="hi">
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          button: { m: 0, backgroundColor: 'primary.paper' },
+        }}
+      >
+        <ShareBar url={window.location.href} len={0} />
+      </Box>
       <Box>
         <Typography variant="body2">{t('home.intro', { joinArrays: ' ' })}</Typography>
 

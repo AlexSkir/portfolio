@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import SideBlock from './SideBlock';
-import ShareBar from '../MainLayout/Share';
 
 const contentWrapper = {
   backgroundColor: 'primary.paper',
@@ -26,16 +25,6 @@ const PageLayout = (props) => {
           className="container-mainWrapper__page-wrapper"
           sx={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'relative' }}
         >
-          <Box
-            sx={{
-              position: 'absolute',
-              top: 0,
-              right: 0,
-              button: { m: 0, backgroundColor: 'primary.paper' },
-            }}
-          >
-            <ShareBar url={window.location.href} len={0} />
-          </Box>
           <Box
             className="page-content__title"
             sx={{

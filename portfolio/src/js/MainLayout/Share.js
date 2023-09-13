@@ -88,11 +88,11 @@ const linkBlock = {
   overflow: 'hidden',
 };
 
-const shareIcons = (url, ...args) => {
+const shareIcons = (url, title, summary, image, len1, len2) => {
   const socialButtons = [
     {
       item: (
-        <LinkedinShareButton url={url}>
+        <LinkedinShareButton url={url} title={title} summary={summary}>
           <LinkedinIcon />
           LinkedIn
         </LinkedinShareButton>
@@ -101,7 +101,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <TelegramShareButton url={url}>
+        <TelegramShareButton url={url} title={title}>
           <TelegramIcon />
           Telegram
         </TelegramShareButton>
@@ -110,7 +110,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <WhatsappShareButton url={url}>
+        <WhatsappShareButton url={url} title={title}>
           <WhatsappIcon />
           WhatsApp
         </WhatsappShareButton>
@@ -119,7 +119,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <FacebookShareButton url={url}>
+        <FacebookShareButton url={url} quote={title}>
           <FacebookIcon />
           Facebook
         </FacebookShareButton>
@@ -128,7 +128,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <TwitterShareButton url={url}>
+        <TwitterShareButton url={url} title={title}>
           <TwitterIcon />
           Twitter
         </TwitterShareButton>
@@ -137,7 +137,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <VKShareButton url={url}>
+        <VKShareButton url={url} title={title} image={image} noParse={!!title}>
           <VKIcon />
           VKontakte
         </VKShareButton>
@@ -145,12 +145,12 @@ const shareIcons = (url, ...args) => {
       tooltip: 'VKontakte',
     },
   ];
-  return socialButtons.slice(...args);
+  return socialButtons.slice(len1, len2);
 };
 
 export default function ShareBar(props) {
   const { t } = useTranslation();
-  const { url, len } = props;
+  const { url, title, summary, image, len } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -164,7 +164,7 @@ export default function ShareBar(props) {
   return (
     <>
       <Box sx={shareBox}>
-        {shareIcons(url, 0, len).map((item) => (
+        {shareIcons(url, title, summary, image, 0, len).map((item) => (
           <Tooltip key={item.tooltip} title={item.tooltip}>
             {item.item}
           </Tooltip>
@@ -182,7 +182,7 @@ export default function ShareBar(props) {
       <Dialog onClose={handleClose} open={open} fullWidth maxWidth="sm" sx={dialogBlock}>
         <DialogTitle sx={{ p: 0 }}>{t('common.dialogShare')}</DialogTitle>
         <List sx={dialogList}>
-          {shareIcons(url).map((item, i) => (
+          {shareIcons(url, title, summary, image, 0, 6).map((item, i) => (
             <ListItem disableGutters key={i} onClick={() => handleClose(item)}>
               {item.item}
             </ListItem>
@@ -193,7 +193,7 @@ export default function ShareBar(props) {
           <Typography variant="body3" sx={linkBlock}>
             {url}
           </Typography>
-          <CopyBtn contactName={t('common.copyLink')} copyText={url} />
+          <CopyBtn contactName={t('common.copyLink')} copyText={url} close={() => handleClose()} />
         </Box>
       </Dialog>
     </>
@@ -203,4 +203,13 @@ export default function ShareBar(props) {
 ShareBar.propTypes = {
   url: PropTypes.string.isRequired,
   len: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  summary: PropTypes.string,
+  image: PropTypes.string,
+};
+
+ShareBar.defaultProps = {
+  title: '',
+  summary: '',
+  image: '',
 };

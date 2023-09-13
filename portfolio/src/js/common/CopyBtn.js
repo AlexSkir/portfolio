@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 
 export default function CopyBtn(props) {
   const { t } = useTranslation();
-  const { copyText, contactName } = props;
+  const { copyText, contactName, close } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
   const theme = useTheme();
 
@@ -16,8 +16,11 @@ export default function CopyBtn(props) {
     try {
       await navigator.clipboard.writeText(text);
       setCopySuccess(true);
+      close();
       setTimeout(() => {
-        setCopySuccess(false);
+        if (copySuccess) {
+          setCopySuccess(false);
+        }
       }, 2000);
     } catch (err) {
       setCopySuccess(false);
@@ -47,4 +50,9 @@ export default function CopyBtn(props) {
 CopyBtn.propTypes = {
   copyText: PropTypes.string.isRequired,
   contactName: PropTypes.string.isRequired,
+  close: PropTypes.func,
+};
+
+CopyBtn.defaultProps = {
+  close: () => { },
 };

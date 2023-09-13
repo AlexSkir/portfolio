@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
 import PageLayout from '../PageLayout';
+import ShareBar from '../MainLayout/Share';
 import SEO from '../common/SEO';
 import Contacts from './Contacts';
 import Form from './Form';
@@ -15,7 +16,27 @@ function Contact() {
   const theme = useTheme();
   return (
     <PageLayout title={t('contact.title')} avatar="heart">
-      <SEO description={t('contact.seo.title', { joinArrays: ' ' })} image={Avatar} />
+      <SEO
+        title={t('contact.seo.title')}
+        description={t('contact.seo.description', { joinArrays: ' ' })}
+        image={Avatar}
+      />
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          button: { m: 0, backgroundColor: 'primary.paper' },
+        }}
+      >
+        <ShareBar
+          url={window.location.href}
+          len={0}
+          title={t('contact.seo.title')}
+          summary={t('contact.seo.description', { joinArrays: ' ' })}
+          image={Avatar}
+        />
+      </Box>
       <Box
         sx={{
           display: 'flex',

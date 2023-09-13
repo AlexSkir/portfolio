@@ -17,6 +17,7 @@ import Collapse from '@mui/material/Collapse';
 import PageLayout from '../../PageLayout';
 import SEO from '../../common/SEO';
 import ErrorBoundary from '../../common/ErrorBoundary';
+import ShareBar from '../../MainLayout/Share';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -58,6 +59,23 @@ export default function Project(props) {
           description={data.description}
         />
         <Card>
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              button: { m: 0, backgroundColor: 'primary.paper' },
+            }}
+          >
+            <ShareBar
+              url={window.location.href}
+              len={0}
+              title={`${t('portfolio.project')} ${data.name} - 
+              ${data.type} (${data.technologies.join(' • ')})`}
+              summary={data.description}
+              image={data.share}
+            />
+          </Box>
           <CardHeader
             sx={{ p: '16px' }}
             avatar={<Avatar src={data.avatar} alt="Sass icon" sx={{ width: 50, height: 50 }} />}
