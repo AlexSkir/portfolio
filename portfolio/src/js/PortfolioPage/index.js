@@ -8,7 +8,7 @@ import projectArr from './projectsArray';
 import PageLayout from '../PageLayout/index';
 
 import ErrorBoundary from '../common/ErrorBoundary';
-import collage from '../../assets/images/projects/portfolio.png';
+import collage from '../../assets/images/portfolio.png';
 
 const tabs = ['all', 'landings', 'app', 'cms', 'school'];
 
