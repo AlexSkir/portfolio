@@ -16,12 +16,14 @@ export default function CopyBtn(props) {
     try {
       await navigator.clipboard.writeText(text);
       setCopySuccess(true);
-      close();
+      setTimeout(() => {
+        close();
+      }, 500);
       setTimeout(() => {
         if (copySuccess) {
           setCopySuccess(false);
         }
-      }, 2000);
+      }, 1000);
     } catch (err) {
       setCopySuccess(false);
     }

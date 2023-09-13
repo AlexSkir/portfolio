@@ -16,17 +16,31 @@ import SassIcon from '../../assets/images/svg/sass.svg';
 import FontsIcon from '../../assets/images/svg/fonts.svg';
 import I18nIcon from '../../assets/images/svg/i18n.svg';
 import EmailJs from '../../assets/images/svg/emailJs.svg';
+import Recaptcha from '../../assets/images/svg/recaptcha.svg';
+import Npm from '../../assets/images/svg/npm.svg';
+import Render from '../../assets/images/icons/render.png';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
   { href: 'https://mui.com/', icon: <MuiIcon />, tooltip: 'MUI' },
   { href: 'https://www.figma.com/', icon: <FigmaIcon />, tooltip: 'Figma' },
-  { href: 'https://github.com/', icon: <GhIcon />, tooltip: 'GH-pages' },
+  { href: 'https://github.com/', icon: <GhIcon />, tooltip: 'Github' },
   { href: 'https://stackoverflow.com/', icon: <StackIcon />, tooltip: 'Stack overflow' },
   { href: 'https://sass-lang.com/', icon: <SassIcon />, tooltip: 'Sass' },
   { href: 'https://fonts.google.com/', icon: <FontsIcon />, tooltip: 'Google Fonts' },
   { href: 'https://www.i18next.com/', icon: <I18nIcon />, tooltip: 'i18n localization' },
   { href: 'https://dashboard.emailjs.com/', icon: <EmailJs />, tooltip: 'Email JS Service' },
+  {
+    href: 'https://www.google.com/recaptcha/about/',
+    icon: <Recaptcha />,
+    tooltip: "Google's reCAPTCHA",
+  },
+  { href: 'https://www.npmjs.com/', icon: <Npm />, tooltip: 'Node Package Manager' },
+  {
+    href: 'https://render.com/',
+    icon: <Box component="img" src={Render} />,
+    tooltip: 'Render (Cloud Application Hosting)',
+  },
 ];
 
 const iconWrapper = {
@@ -38,7 +52,7 @@ const iconWrapper = {
   borderRadius: '8px',
   backgroundColor: 'primary.main',
   m: { xs: '10px', sm: '20px' },
-  '& svg': {
+  '& svg, img': {
     width: '70%',
     height: '70%',
   },
