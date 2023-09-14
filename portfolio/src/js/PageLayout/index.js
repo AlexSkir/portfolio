@@ -31,7 +31,13 @@ const PageLayout = (props) => {
               position: 'absolute',
               top: 0,
               right: 0,
-              button: { m: 0, backgroundColor: 'primary.paper' },
+              button: {
+                m: 0,
+                backgroundColor: 'primary.paper',
+                '&:hover': {
+                  backgroundColor: 'primary.paper',
+                },
+              },
             }}
           >
             <ShareBar url={window.location.href} len={0} />
