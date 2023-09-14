@@ -38,6 +38,7 @@ export default function SEO(props) {
       <meta name="keywords" content={keywords} />
 
       <meta property="vk:image" content={imageLink} />
+      <meta name="yandex-verification" content="a7156f0372045afd" />
 
       {/*  <!-- Google tag (gtag.js) -->  */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY08ZZSTVE" />
