@@ -67,13 +67,13 @@ export default function SEO(props) {
         });`}
       </script>
       <noscript>
-        <div>
+        {`<div>
           <img
             src="https://mc.yandex.ru/watch/94952225"
             style="position:absolute; left:-9999px;"
             alt=""
           />
-        </div>
+        </div>`}
       </noscript>
       {/* <!-- /Yandex.Metrika counter --> */}
     </Helmet>
