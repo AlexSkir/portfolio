@@ -22,7 +22,7 @@ import Render from '../../assets/images/icons/render.png';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
-  { href: 'https://mui.com/', icon: <MuiIcon />, tooltip: 'MUI' },
+  { href: 'https://mui.com/', icon: <MuiIcon />, tooltip: 'Material-UI Design System' },
   { href: 'https://www.figma.com/', icon: <FigmaIcon />, tooltip: 'Figma' },
   { href: 'https://github.com/', icon: <GhIcon />, tooltip: 'Github' },
   { href: 'https://stackoverflow.com/', icon: <StackIcon />, tooltip: 'Stack overflow' },
