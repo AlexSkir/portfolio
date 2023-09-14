@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './i18n';
+import '../assets/files/sitemap.xml';
 
 const app = (
   <HelmetProvider>

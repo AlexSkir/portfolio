@@ -98,6 +98,13 @@ const config = {
           filename: 'assets/files/[name][ext][query]',
         },
       },
+      {
+        test: /\.xml$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/files/[name][ext][query]',
+        },
+      },
     ],
   },
   plugins: [

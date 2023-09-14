@@ -109,6 +109,7 @@
     "react-hot-loader": "^4.13.1",
     "react-i18next": "^13.2.1",
     "react-router-dom": "^6.15.0",
-    "react-share": "^4.4.1"
+    "react-share": "^4.4.1",
+    "xml-loader": "^1.2.1"
   }
 }
