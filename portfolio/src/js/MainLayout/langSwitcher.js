@@ -22,7 +22,7 @@ const langWrapper = {
 };
 
 export default function LangSwitcher() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -42,6 +42,8 @@ export default function LangSwitcher() {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
         sx={{ color: 'primary.contrastText' }}
+        role="button"
+        aria-label={t('common.langswitch')}
       >
         <LanguageIcon />
       </Button>

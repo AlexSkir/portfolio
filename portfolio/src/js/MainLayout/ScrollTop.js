@@ -62,6 +62,7 @@ export default function ScrollTop() {
         onClick={() => {
           window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }}
+        role="button"
       >
         <KeyboardArrowUpIcon sx={{ color: 'secondary.contrastText' }} />
       </Button>

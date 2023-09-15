@@ -32,6 +32,7 @@ export default function CopyBtn(props) {
   return (
     <Tooltip title={copySuccess ? t('common.copieble.copied') : t('common.copieble.copy')}>
       <Button
+        role="button"
         className="copy_btn button_isActive_true"
         sx={{
           background: theme.palette.secondary.gradientBG,

@@ -36,7 +36,7 @@ const rawTheme = {
   typography: {
     fontFamily: [
       '"Raleway"', '"Poppins"', '"Pacifico"', '"Roboto"', 'san-serif'
-    ].join(','),
+    ].join(', '),
     body: {
       fontFamily: "'Raleway', san-serif",
       fontWeight: 400,

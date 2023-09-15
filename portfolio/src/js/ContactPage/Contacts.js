@@ -15,7 +15,7 @@ const contactItem = {
   display: 'flex',
   alignItems: 'flex-start',
   justifyContent: 'flex-start',
-  width: { xs: 'fit-content', sm: '100%' },
+  width: '100%',
   maxWidth: { xs: 'unset', sm: '45%' },
   minWidth: { xs: 'unset', md: '270px' },
   height: { xs: 'auto', md: '100px' },

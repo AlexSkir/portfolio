@@ -36,7 +36,13 @@ export function MyThemeSwitch() {
   const colorMode = React.useContext(ColorModeContext);
   return (
     <Box className="theme-switch-section" sx={switchWrapper}>
-      <IconButton sx={{ m: 0, p: '20px' }} onClick={colorMode.toggleColorMode} color="inherit">
+      <IconButton
+        sx={{ m: 0, p: '20px' }}
+        onClick={colorMode.toggleColorMode}
+        color="inherit"
+        role="button"
+        aria-label={t('common.themeswitch')}
+      >
         {theme.palette.mode === 'dark' ? (
           <Tooltip title={t('header.lightTheme')}>
             <LightModeOutlinedIcon />

@@ -26,6 +26,14 @@ const contactCopy = {
   color: 'primary.contrastText',
 };
 
+const linkText = {
+  wordBreak: 'break-word',
+  textAlign: 'left',
+  color: 'primary.contrastText',
+  borderBottom: '1px solid',
+  borderColor: 'primary.contrastText',
+};
+
 export default function ContactItemCopieble(props) {
   const { t } = useTranslation();
   const { link, copyText, icon, contactName } = props;
@@ -59,15 +67,7 @@ export default function ContactItemCopieble(props) {
         </Typography>
 
         <Link href={link} target="_blank">
-          <Typography
-            variant="body3"
-            sx={{
-              wordBreak: 'break-word',
-              textAlign: 'left',
-              color: 'primary.contrastText',
-              textDecoration: 'underline',
-            }}
-          >
+          <Typography variant="body3" sx={linkText}>
             {copyText}
           </Typography>
         </Link>

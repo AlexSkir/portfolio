@@ -1,6 +1,8 @@
 {
   "common": {
     "name": "Александра Скирневская",
+    "langswitch": "кнопка для смены языка",
+    "themeswitch": "кнопка для смены темы",
     "downloadBtn": "Скачать Резюме",
     "downloadTooltip": "Скачать резюме",
     "dialogTitleDl": "Выберите язык резюме",

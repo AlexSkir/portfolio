@@ -170,7 +170,7 @@ export default function ShareBar(props) {
           </Tooltip>
         ))}
 
-        <Button onClick={handleClickOpen}>
+        <Button onClick={handleClickOpen} role="button" aria-label={t('common.dialogShare')}>
           <ShareOutlinedIcon
             sx={{
               color: 'primary.contrastText',

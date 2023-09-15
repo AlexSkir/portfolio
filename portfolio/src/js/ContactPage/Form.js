@@ -111,6 +111,7 @@ export default function Form() {
       {msg ? <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.captcha_site_key} /> : <></>}
       <Button
         type="submit"
+        role="button"
         sx={{
           mt: '30px',
           p: '10px 30px',

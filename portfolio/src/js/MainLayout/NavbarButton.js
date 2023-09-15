@@ -11,6 +11,7 @@ export default function NavbarButton(props) {
       className={`navbar-button button_isActive_${status}`}
       onClick={handleClick}
       {...other}
+      role="button"
     >
       {children}
       {title}

@@ -1,6 +1,8 @@
 {
   "common": {
     "name": "Aleksandra Skirnevskaia",
+    "langswitch": "change language button",
+    "themeswitch": "change theme button",
     "downloadBtn": "Download Resume",
     "downloadTooltip": "Download resume",
     "dialogTitleDl": "Choose the language of resume",

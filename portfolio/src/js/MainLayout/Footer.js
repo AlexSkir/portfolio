@@ -38,7 +38,7 @@ const techIcons = [
   { href: 'https://www.npmjs.com/', icon: <Npm />, tooltip: 'Node Package Manager' },
   {
     href: 'https://render.com/',
-    icon: <Box component="img" src={Render} />,
+    icon: <Box component="img" src={Render} alt="Render.com" />,
     tooltip: 'Render (Cloud Application Hosting)',
   },
 ];
