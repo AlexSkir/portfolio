@@ -45,7 +45,7 @@
   src: url('../assets/fonts/Pacifico-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -53,7 +53,7 @@
   src: url('../assets/fonts/Poppins-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 500;
-  display: swap;
+  font-display: swap;
 }
 
 @font-face {
@@ -61,7 +61,7 @@
   src: url('../assets/fonts/Roboto-Medium.ttf') format('truetype');
   font-style: normal;
   font-weight: 500;
-  display: swap;
+  font-display: swap;
 }
 
 .lazy-loading {

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
-import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { styled } from '@mui/material/styles';
+import LoadingBlock from '../Suspense/LoadingBlock';
+
+const Tabs = lazy(() => import('@mui/material/Tabs'));
 
 function a11yProps(index) {
   return {
@@ -51,20 +53,22 @@ function CustomStyledTabs(props) {
   const { value, handleChange } = props;
   return (
     <Box>
-      <StyledTabs
-        value={value}
-        onChange={handleChange}
-        aria-label="example projects"
-        variant="scrollable"
-        scrollButtons
-        allowScrollButtonsMobile
-      >
-        <Tab label={t('portfolio.tabs.all')} {...a11yProps('all')} />
-        <Tab label={t('portfolio.tabs.landings')} {...a11yProps('landings')} />
-        <Tab label={t('portfolio.tabs.app')} {...a11yProps('app')} />
-        <Tab label={t('portfolio.tabs.cms')} {...a11yProps('cms')} />
-        <Tab label={t('portfolio.tabs.school')} {...a11yProps('school')} />
-      </StyledTabs>
+      <Suspense fallback={<LoadingBlock width="100%" height="300px" variant="rectangular" />}>
+        <StyledTabs
+          value={value}
+          onChange={handleChange}
+          aria-label="example projects"
+          variant="scrollable"
+          scrollButtons
+          allowScrollButtonsMobile
+        >
+          <Tab label={t('portfolio.tabs.all')} {...a11yProps('all')} />
+          <Tab label={t('portfolio.tabs.landings')} {...a11yProps('landings')} />
+          <Tab label={t('portfolio.tabs.app')} {...a11yProps('app')} />
+          <Tab label={t('portfolio.tabs.cms')} {...a11yProps('cms')} />
+          <Tab label={t('portfolio.tabs.school')} {...a11yProps('school')} />
+        </StyledTabs>
+      </Suspense>
     </Box>
   );
 }

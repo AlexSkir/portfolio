@@ -3,31 +3,41 @@
   src: url("../assets/fonts/Raleway-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
+  display: swap;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("../assets/fonts/Raleway-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  display: swap;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("../assets/fonts/Raleway-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
+  display: swap;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("../assets/fonts/Raleway-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
+  display: swap;
 }
+
 @font-face {
   font-family: "Raleway";
   src: url("../assets/fonts/Raleway-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  display: swap;
 }
+
 @font-face {
   font-family: "Pacifico";
   src: url("../assets/fonts/Pacifico-Regular.ttf") format("truetype");
@@ -35,6 +45,7 @@
   font-style: normal;
   display: swap;
 }
+
 @font-face {
   font-family: "Poppins";
   src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
@@ -42,6 +53,7 @@
   font-weight: 500;
   display: swap;
 }
+
 .lazy-loading {
   position: relative;
   top: 50%;
@@ -53,4 +65,6 @@
 .flexPos {
   justify-content: var(--justify);
   align-items: var(--align);
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */

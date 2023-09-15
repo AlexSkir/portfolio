@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
-import ReCAPTCHA from 'react-google-recaptcha';
 import SimpleAlert from './Alert';
+import LoadingBlock from '../Suspense/LoadingBlock';
+
+const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
+const TextField = lazy(() => import('@mui/material/TextField'));
 
 export default function Form() {
   const { t } = useTranslation();
@@ -74,56 +76,63 @@ export default function Form() {
       <Typography sx={{ fontSize: '16px', lineHeight: '30px', p: '10px' }}>
         {t('contact.form.title', { joinArrays: ' ' })}
       </Typography>
-      <TextField
-        id="formName"
-        label={t('contact.form.name')}
-        variant="standard"
-        fullWidth
-        value={name}
-        onChange={(event) => {
-          setName(event.target.value);
-        }}
-      />
-      <TextField
-        id="formEmail"
-        label="Email:"
-        variant="standard"
-        type="email"
-        fullWidth
-        value={mail}
-        onChange={(event) => {
-          setMail(event.target.value);
-        }}
-      />
-      <TextField
-        id="formText"
-        label={t('contact.form.msg')}
-        variant="standard"
-        required
-        fullWidth
-        multiline
-        minRows={1}
-        value={msg}
-        onChange={(event) => {
-          setMsg(event.target.value);
-        }}
-      />
-      {msg ? <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.captcha_site_key} /> : <></>}
-      <Button
-        type="submit"
-        role="button"
-        sx={{
-          mt: '30px',
-          p: '10px 30px',
-          color: 'primary.contrastText',
-          border: '1px solid',
-          borderColor: 'secondary.main',
-          borderRadius: '20px',
-        }}
-      >
-        {t('contact.form.btn')}
-      </Button>
-
+      <Suspense fallback={<LoadingBlock width="100%" height="150px" variant="rectangular" />}>
+        <TextField
+          id="formName"
+          label={t('contact.form.name')}
+          variant="standard"
+          fullWidth
+          value={name}
+          onChange={(event) => {
+            setName(event.target.value);
+          }}
+        />
+        <TextField
+          id="formEmail"
+          label="Email:"
+          variant="standard"
+          type="email"
+          fullWidth
+          value={mail}
+          onChange={(event) => {
+            setMail(event.target.value);
+          }}
+        />
+        <TextField
+          id="formText"
+          label={t('contact.form.msg')}
+          variant="standard"
+          required
+          fullWidth
+          multiline
+          minRows={1}
+          value={msg}
+          onChange={(event) => {
+            setMsg(event.target.value);
+          }}
+        />
+        {msg ? (
+          <Suspense fallback={<LoadingBlock width="300px" height="74px" variant="rectangular" />}>
+            <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.captcha_site_key} />
+          </Suspense>
+        ) : (
+          <></>
+        )}
+        <Button
+          type="submit"
+          role="button"
+          sx={{
+            mt: '30px',
+            p: '10px 30px',
+            color: 'primary.contrastText',
+            border: '1px solid',
+            borderColor: 'secondary.main',
+            borderRadius: '20px',
+          }}
+        >
+          {t('contact.form.btn')}
+        </Button>
+      </Suspense>
       <SimpleAlert type={alert} onCloseHandle={handleClose} open={open} />
     </Box>
   );
