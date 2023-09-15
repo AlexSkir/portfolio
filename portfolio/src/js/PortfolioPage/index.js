@@ -37,7 +37,7 @@ function Portfolio() {
       <SEO
         title={t('portfolio.seo.title', { joinArrays: ' ' })}
         image={collage}
-        description={t('common.seo.description', { joinArrays: ' ' })}
+        description={t('portfolio.seo.description', { joinArrays: ' ' })}
       />
       <CustomStyledTabs value={value} handleChange={handleChange} />
       {tabs.map((item, i) => (
