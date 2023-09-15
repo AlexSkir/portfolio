@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM, { hydrate, render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './i18n';
+import '../assets/files/sitemap.xml';
 
 const app = (
   <HelmetProvider>
@@ -11,11 +12,3 @@ const app = (
 );
 
 ReactDOM.render(app, document.querySelector('#root'));
-
-const rootElement = document.getElementById('root');
-
-if (rootElement.hasChildNodes()) {
-  ReactDOM.hydrate(app, rootElement);
-} else {
-  ReactDOM.render(app, rootElement);
-}
