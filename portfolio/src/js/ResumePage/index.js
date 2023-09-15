@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import PageLayout from '../PageLayout';
 import HatIcon from './HatGradientIcon';
 import BagIcon from './BagGradientIcon';
 import ResumeItem from './ResumeItem';
 import CardItem from './Card';
 import ResumeDownload from '../common/ResumeDownload';
+import LoadingLayout from '../Suspense/LoadingMainlayout';
+
+const PageLayout = lazy(() => import('../PageLayout'));
 
 const sectionWrapper = {
   display: 'flex',
@@ -78,115 +80,117 @@ function Resume() {
   const theme = useTheme();
 
   return (
-    <PageLayout title={t('resume.title')} avatar="base">
-      <Box className="resume-section__info-block" sx={sectionWrapper}>
-        <Box className="resume-section__education-block" sx={blockWrapper}>
-          <Box className="resume-section__block-title" sx={titleWrapper}>
-            <HatIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
-            <Typography variant="subtitle1" sx={{ ml: '10px' }}>
-              {t('resume.edu.title')}
-            </Typography>
+    <Suspense fallback={<LoadingLayout />}>
+      <PageLayout title={t('resume.title')} avatar="base">
+        <Box className="resume-section__info-block" sx={sectionWrapper}>
+          <Box className="resume-section__education-block" sx={blockWrapper}>
+            <Box className="resume-section__block-title" sx={titleWrapper}>
+              <HatIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
+              <Typography variant="subtitle1" sx={{ ml: '10px' }}>
+                {t('resume.edu.title')}
+              </Typography>
+            </Box>
+            <ResumeItem
+              date="2019-2020"
+              position="HTML, CSS, JavaScript, React"
+              place="Codecademy, Codewars"
+              color="pink"
+            />
+            <CardItem
+              date="2019"
+              position="JavaScript"
+              place="The Rolling Scopes School"
+              link="https://rs.school/"
+              color="pink"
+              techs={t('resume.edu.schoolTechs', { joinArrays: ' ' })}
+              projectUrl="/portfolio"
+              CTA={t('resume.edu.cta')}
+            />
+            <ResumeItem
+              date="2009"
+              position={t('resume.edu.degree')}
+              place={t('resume.edu.faculty')}
+              link="https://tusur.ru/"
+              color="pink"
+            />
           </Box>
-          <ResumeItem
-            date="2019-2020"
-            position="HTML, CSS, JavaScript, React"
-            place="Codecademy, Codewars"
-            color="pink"
-          />
-          <CardItem
-            date="2019"
-            position="JavaScript"
-            place="The Rolling Scopes School"
-            link="https://rs.school/"
-            color="pink"
-            techs={t('resume.edu.schoolTechs', { joinArrays: ' ' })}
-            projectUrl="/portfolio"
-            CTA={t('resume.edu.cta')}
-          />
-          <ResumeItem
-            date="2009"
-            position={t('resume.edu.degree')}
-            place={t('resume.edu.faculty')}
-            link="https://tusur.ru/"
-            color="pink"
+
+          <Box className="resume-section__experience-block" sx={blockWrapper}>
+            <Box className="resume-section__block-title" sx={titleWrapper}>
+              <BagIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
+              <Typography variant="subtitle1" sx={{ ml: '10px' }}>
+                {t('resume.exp.title')}
+              </Typography>
+            </Box>
+            <CardItem
+              date={t('resume.exp.unit1.date')}
+              position={t('resume.exp.unit1.position')}
+              place=""
+              color="blue"
+              techs={t('resume.exp.unit1.techs')}
+              projectUrl="/portfolio"
+              CTA={t('resume.exp.unit1.cta')}
+            />
+            <CardItem
+              date="2020-2021"
+              position={t('resume.exp.unit2.position')}
+              place="Gritella lingereie"
+              link="http://d97714j6.beget.tech/"
+              color="blue"
+              techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
+              projectUrl="/portfolio/gritella"
+              CTA={t('resume.exp.unit2.cta')}
+            />
+            <CardItem
+              date="2019"
+              position={t('resume.exp.unit3.position')}
+              place="GoFuckBiz.com"
+              link="https://www.gofuckbiz.com/"
+              color="blue"
+              techs={t('resume.exp.unit3.techs')}
+              projectUrl="/portfolio/gofuck"
+              CTA={t('resume.exp.unit3.cta')}
+            />
+          </Box>
+        </Box>
+
+        <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+          <ResumeDownload
+            title={t('common.downloadBtn')}
+            btnStyle={{
+              width: '185px',
+              height: '44px',
+              color: 'secondary.contrastText',
+              borderRadius: '20px',
+              gap: '10px',
+            }}
           />
         </Box>
 
-        <Box className="resume-section__experience-block" sx={blockWrapper}>
-          <Box className="resume-section__block-title" sx={titleWrapper}>
-            <BagIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
-            <Typography variant="subtitle1" sx={{ ml: '10px' }}>
-              {t('resume.exp.title')}
-            </Typography>
+        <Box className="resume-section__skills-block" sx={{ ...sectionWrapper, ...skillsBlock }}>
+          <Box className="resume-section__work-skills" sx={blockWrapper}>
+            <Typography variant="subtitle1">{t('resume.skills.work.title')}</Typography>
+            <Box sx={skillsWrapper}>
+              {workSkills.map((item, i) => (
+                <Box key={i} sx={skillItem}>
+                  {item}
+                </Box>
+              ))}
+            </Box>
           </Box>
-          <CardItem
-            date={t('resume.exp.unit1.date')}
-            position={t('resume.exp.unit1.position')}
-            place=""
-            color="blue"
-            techs={t('resume.exp.unit1.techs')}
-            projectUrl="/portfolio"
-            CTA={t('resume.exp.unit1.cta')}
-          />
-          <CardItem
-            date="2020-2021"
-            position={t('resume.exp.unit2.position')}
-            place="Gritella lingereie"
-            link="http://d97714j6.beget.tech/"
-            color="blue"
-            techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
-            projectUrl="/portfolio/gritella"
-            CTA={t('resume.exp.unit2.cta')}
-          />
-          <CardItem
-            date="2019"
-            position={t('resume.exp.unit3.position')}
-            place="GoFuckBiz.com"
-            link="https://www.gofuckbiz.com/"
-            color="blue"
-            techs={t('resume.exp.unit3.techs')}
-            projectUrl="/portfolio/gofuck"
-            CTA={t('resume.exp.unit3.cta')}
-          />
-        </Box>
-      </Box>
-
-      <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-        <ResumeDownload
-          title={t('common.downloadBtn')}
-          btnStyle={{
-            width: '185px',
-            height: '44px',
-            color: 'secondary.contrastText',
-            borderRadius: '20px',
-            gap: '10px',
-          }}
-        />
-      </Box>
-
-      <Box className="resume-section__skills-block" sx={{ ...sectionWrapper, ...skillsBlock }}>
-        <Box className="resume-section__work-skills" sx={blockWrapper}>
-          <Typography variant="subtitle1">{t('resume.skills.work.title')}</Typography>
-          <Box sx={skillsWrapper}>
-            {workSkills.map((item, i) => (
-              <Box key={i} sx={skillItem}>
-                {item}
-              </Box>
-            ))}
+          <Box className="resume-section__soft-skills" sx={blockWrapper}>
+            <Typography variant="subtitle1">{t('resume.skills.soft.title')}</Typography>
+            <Box sx={skillsWrapper}>
+              {t('resume.skills.soft.body', { returnObjects: true }).map((item, i) => (
+                <Box key={i} sx={skillItem}>
+                  {item}
+                </Box>
+              ))}
+            </Box>
           </Box>
         </Box>
-        <Box className="resume-section__soft-skills" sx={blockWrapper}>
-          <Typography variant="subtitle1">{t('resume.skills.soft.title')}</Typography>
-          <Box sx={skillsWrapper}>
-            {t('resume.skills.soft.body', { returnObjects: true }).map((item, i) => (
-              <Box key={i} sx={skillItem}>
-                {item}
-              </Box>
-            ))}
-          </Box>
-        </Box>
-      </Box>
-    </PageLayout>
+      </PageLayout>
+    </Suspense>
   );
 }
 
