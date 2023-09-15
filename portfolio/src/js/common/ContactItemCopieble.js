@@ -1,12 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
-const contactLink = {
+const contactIcon = {
   width: '44px',
   minWidth: '44px',
   height: '44px',
@@ -14,7 +13,6 @@ const contactLink = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  color: 'primary.contrastText',
 };
 
 const contactCopy = {
@@ -30,7 +28,7 @@ const contactCopy = {
 
 export default function ContactItemCopieble(props) {
   const { t } = useTranslation();
-  const { link, copyText, tooltip, icon, contactName } = props;
+  const { link, copyText, icon, contactName } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
 
   const handleCopy = async (text) => {
@@ -46,35 +44,41 @@ export default function ContactItemCopieble(props) {
   };
 
   return (
-    <>
-      <Tooltip title={tooltip}>
-        <Link href={link} sx={contactLink} target="_blank">
-          {icon}
-        </Link>
-      </Tooltip>
-
-      <Tooltip title={copySuccess ? t('common.copieble.copied') : t('common.copieble.copy')}>
-        <Button
-          className="contact-item__copy-button"
-          sx={contactCopy}
-          onClick={() => handleCopy(copyText)}
-        >
-          <Typography variant="body3" sx={{ opacity: '0.5' }}>
-            {contactName}
+    <Box
+      className="contact-item__copy-button"
+      sx={{ display: 'flex', cursor: 'pointer', width: '100%' }}
+      onMouseUp={() => handleCopy(copyText)}
+    >
+      <Box sx={contactIcon}>{icon}</Box>
+      <Box sx={contactCopy}>
+        <Typography variant="body3" sx={{ opacity: '0.5' }}>
+          {contactName}
+          <Typography component="span" sx={{ ml: '15px', fontSize: '10px', userSelect: 'none' }}>
+            {copySuccess ? t('common.copieble.copied') : ''}
           </Typography>
-          <Typography variant="body3" sx={{ wordBreak: 'break-word', textAlign: 'left' }}>
+        </Typography>
+
+        <Link href={link} target="_blank">
+          <Typography
+            variant="body3"
+            sx={{
+              wordBreak: 'break-word',
+              textAlign: 'left',
+              color: 'primary.contrastText',
+              textDecoration: 'underline',
+            }}
+          >
             {copyText}
           </Typography>
-        </Button>
-      </Tooltip>
-    </>
+        </Link>
+      </Box>
+    </Box>
   );
 }
 
 ContactItemCopieble.propTypes = {
   link: PropTypes.string.isRequired,
   copyText: PropTypes.string.isRequired,
-  tooltip: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
   contactName: PropTypes.string.isRequired,
 };
