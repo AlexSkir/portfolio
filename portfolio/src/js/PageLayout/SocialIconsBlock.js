@@ -48,7 +48,7 @@ export default function SocialIconsBlock(props) {
       {open ? (
         <></>
       ) : (
-        <Link href="tel:+79771456716" target="_blank" sx={iconLink} aria-label="dial +79771456716">
+        <Link href="tel:+79939056716" target="_blank" sx={iconLink} aria-label="dial +79939056716">
           <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
         </Link>
       )}
@@ -65,10 +65,10 @@ export default function SocialIconsBlock(props) {
         </Link>
       )}
       <Link
-        href="https://wa.me/+79771456716"
+        href="https://wa.me/+79939056716"
         target="_blank"
         sx={iconLink}
-        aria-label="message +79771456716 in whatsapp"
+        aria-label="message +79939056716 in whatsapp"
       >
         <WhatsAppIcon sx={{ color: '#25D366' }} />
       </Link>

@@ -52,8 +52,8 @@ function Contacts() {
     >
       <Box className="contact__contact-item" sx={contactItem}>
         <ContactItemCopieble
-          link="tel:+79771456716"
-          copyText="+79771456716"
+          link="tel:+79939056716"
+          copyText="+79939056716"
           tooltip={t('contact.items.call')}
           icon={
             <CallIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
@@ -82,8 +82,8 @@ function Contacts() {
         sx={{ ...contactItem, backgroundColor: { xs: 'unset', sm: 'secondary.blueBox' } }}
       >
         <ContactItemCopieble
-          link="https://wa.me/+79771456716"
-          copyText="+79771456716"
+          link="https://wa.me/+79939056716"
+          copyText="+79939056716"
           tooltip={t('contact.items.whatsup')}
           icon={<WhatsAppIcon sx={{ color: '#25D366' }} />}
           contactName="WhatsApp"
