@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import poster from '../../assets/images/portfolio.png';
 
 const keywords = `Frontend, React, JS, Javascript, Web development, AlexSkir, create website, freelance,
-разработка сайтов, фронтенд разработчик, веб разработка, фриланс`;
+Skirnevskaia, Aleksandra Skirnevskaia, разработка сайтов, фронтенд разработчик, веб разработка, фриланс,
+Александра Скирневская, Скирневская`;
 
 export default function SEO(props) {
   const { title, description, image } = props;

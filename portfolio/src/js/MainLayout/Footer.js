@@ -115,6 +115,7 @@ export default function Footer() {
             className="footer-section__light-link"
             href="https://www.figma.com/community/file/1264680769254941322/Portfolio-Design"
             sx={{ color: 'secondary.main', mr: '10px' }}
+            target="_blank"
           >
             {t('footer.link1')}
           </Link>
@@ -123,6 +124,7 @@ export default function Footer() {
             className="footer-section__dark-link"
             href="https://www.figma.com/@beatricewambui"
             sx={{ color: 'secondary.dark', ml: '10px' }}
+            target="_blank"
           >
             Beatrice Wambui Mbugua
           </Link>
@@ -158,7 +160,7 @@ export default function Footer() {
         >
           {techIcons.map((item, i) => (
             <Tooltip key={i} title={item.tooltip}>
-              <Link sx={iconWrapper} href={item.href}>
+              <Link sx={iconWrapper} href={item.href} target="_blank">
                 {item.icon}
               </Link>
             </Tooltip>
