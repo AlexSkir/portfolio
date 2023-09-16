@@ -9,8 +9,9 @@ Skirnevskaia, Aleksandra Skirnevskaia, разработка сайтов, фро
 Александра Скирневская, Скирневская`;
 
 export default function SEO(props) {
-  const { title, description, image } = props;
-  const imageLink = window.location.origin + image;
+  const { title, description, image, path } = props;
+  const imageLink = `https://alexskir.ru/${image}`;
+  const url = `https://alexskir.ru${path}`;
   return (
     <Helmet>
       {/* Standard metadata tags */}
@@ -83,8 +84,10 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string,
+  path: PropTypes.string,
 };
 
 SEO.defaultProps = {
   image: poster,
+  path: '/',
 };

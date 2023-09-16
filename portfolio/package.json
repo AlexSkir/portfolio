@@ -16,6 +16,7 @@
     "include": [
       "/",
       "/contact",
+      "/resume",
       "/portfolio",
       "/portfolio/yandex-go-cms",
       "/portfolio/gritella",

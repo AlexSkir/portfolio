@@ -14,6 +14,7 @@ const App = () => {
         image={Avatar}
         title={t('common.seo.title')}
         description={t('common.seo.description', { joinArrays: ' ' })}
+        path="/"
       />
       <AppRouter />
     </ThemeWrapper>

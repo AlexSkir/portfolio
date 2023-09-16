@@ -22,6 +22,7 @@ function Contact() {
           title={t('contact.seo.title')}
           description={t('contact.seo.description', { joinArrays: ' ' })}
           image={Avatar}
+          path="/contact"
         />
         <Box
           sx={{
