@@ -26,7 +26,6 @@ export default function SEO(props) {
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={imageLink} />
-      <meta property="og:image" itemProp="image" content={imageLink} />
       <meta property="og:image:alt" content={title} />
       <meta property="og:image:type" content="image/png" />
       <meta property="og:image:width" content="1200" />
@@ -40,6 +39,7 @@ export default function SEO(props) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageLink} />
+      <meta name="twitter:image:src" content={imageLink} />
       <meta name="twitter:image:alt" content={title} />
       {/* End Twitter tags */}
 
