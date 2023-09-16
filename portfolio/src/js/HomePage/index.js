@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -8,8 +8,9 @@ import PageLayout from '../PageLayout';
 import CodeIcon from '../../assets/images/svg/code.svg';
 import App from '../../assets/images/svg/App.svg';
 import Seo from '../../assets/images/svg/seo.svg';
+import LoadingBlock from '../Suspense/LoadingBlock';
 
-import ActivityItem from './Activity';
+const ActivityItem = lazy(() => import('./Activity'));
 
 const rowWrapper = {
   display: 'flex',
@@ -57,40 +58,42 @@ function Home() {
         </Typography>
 
         <Box sx={rowWrapper} ref={elementRef}>
-          <ActivityItem
-            icon={<CodeIcon className="homepage-section__activity-icon activity-icon_dark" />}
-            title={t('home.activity1.subtitle')}
-            color="pink"
-            width={width > 600 ? '45%' : '100%'}
-          >
-            {t('home.activity1.body', { joinArrays: ' ' })}
-          </ActivityItem>
-          <ActivityItem
-            icon={<App className="homepage-section__activity-icon activity-icon_main" />}
-            title={t('home.activity2.subtitle')}
-            color="blue"
-            width={width > 600 ? '45%' : '100%'}
-          >
-            {t('home.activity2.body', { joinArrays: ' ' })}
-          </ActivityItem>
-          <ActivityItem
-            icon={
-              <StoreOutlinedIcon className="homepage-section__activity-icon activity-icon_main" />
-            }
-            title={t('home.activity3.subtitle')}
-            color="blue"
-            width={width > 600 ? '45%' : '100%'}
-          >
-            {t('home.activity3.body', { joinArrays: ' ' })}
-          </ActivityItem>
-          <ActivityItem
-            icon={<Seo className="homepage-section__activity-icon activity-icon_dark" />}
-            title={t('home.activity4.subtitle')}
-            color="pink"
-            width={width > 600 ? '45%' : '100%'}
-          >
-            {t('home.activity4.body', { joinArrays: ' ' })}
-          </ActivityItem>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
+            <ActivityItem
+              icon={<CodeIcon className="homepage-section__activity-icon activity-icon_dark" />}
+              title={t('home.activity1.subtitle')}
+              color="pink"
+              width={width > 600 ? '45%' : '100%'}
+            >
+              {t('home.activity1.body', { joinArrays: ' ' })}
+            </ActivityItem>
+            <ActivityItem
+              icon={<App className="homepage-section__activity-icon activity-icon_main" />}
+              title={t('home.activity2.subtitle')}
+              color="blue"
+              width={width > 600 ? '45%' : '100%'}
+            >
+              {t('home.activity2.body', { joinArrays: ' ' })}
+            </ActivityItem>
+            <ActivityItem
+              icon={
+                <StoreOutlinedIcon className="homepage-section__activity-icon activity-icon_main" />
+              }
+              title={t('home.activity3.subtitle')}
+              color="blue"
+              width={width > 600 ? '45%' : '100%'}
+            >
+              {t('home.activity3.body', { joinArrays: ' ' })}
+            </ActivityItem>
+            <ActivityItem
+              icon={<Seo className="homepage-section__activity-icon activity-icon_dark" />}
+              title={t('home.activity4.subtitle')}
+              color="pink"
+              width={width > 600 ? '45%' : '100%'}
+            >
+              {t('home.activity4.body', { joinArrays: ' ' })}
+            </ActivityItem>
+          </Suspense>
         </Box>
       </Box>
     </PageLayout>
