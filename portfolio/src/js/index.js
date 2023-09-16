@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM, { hydrate, render } from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App';
 import './i18n';
@@ -11,4 +11,13 @@ const app = (
   </HelmetProvider>
 );
 
-ReactDOM.render(app, document.querySelector('#root'));
+// ReactDOM.render(app, document.querySelector('#root'));
+
+const rootElement = document.getElementById('root'); // (или ваш id при олтличии)
+if (rootElement.hasChildNodes()) {
+  // …Если в корневом элементе есть контент, то…
+  hydrate(app, rootElement); // …"цепляем" приложение на существующий DOM.
+} else {
+  // …Иначе рендерим приложение стандартным образом
+  render(app, rootElement);
+}
