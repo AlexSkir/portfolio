@@ -73,6 +73,8 @@ export default function SEO(props) {
         });`}
       </script>
       {/* <!-- /Yandex.Metrika counter --> */}
+      <meta name="yandex-verification" content="a7156f0372045afd" />
+      <meta name="google-site-verification" content="tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU" />
     </Helmet>
   );
 }

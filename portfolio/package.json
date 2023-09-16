@@ -6,9 +6,23 @@
   "scripts": {
     "start": "webpack-dev-server --port 8080 --open --mode=development",
     "clean-build": "shx rm -rf build",
-    "build": "npm run clean-build && webpack --mode=production",
+    "build": "npm run clean-build && webpack --mode=production && react-snap",
     "build2": "webpack --mode=production && serve",
     "build-serve": "npm run build && serve"
+  },
+  "reactSnap": {
+    "source": "build",
+    "destination": "build",
+    "include": [
+      "/",
+      "/contact",
+      "/portfolio",
+      "/portfolio/yandex-go-cms",
+      "/portfolio/gritella",
+      "/portfolio/youtube",
+      "/portfolio/piskel",
+      "/portfolio/culture-portal"
+    ]
   },
   "engines": {
     "node": ">=10.16.0"
@@ -110,6 +124,7 @@
     "react-i18next": "^13.2.1",
     "react-router-dom": "^6.15.0",
     "react-share": "^4.4.1",
+    "react-snap": "^1.23.0",
     "xml-loader": "^1.2.1"
   }
 }
