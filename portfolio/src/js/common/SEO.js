@@ -10,7 +10,7 @@ Skirnevskaia, Aleksandra Skirnevskaia, разработка сайтов, фро
 
 export default function SEO(props) {
   const { title, description, image, path } = props;
-  const imageLink = `https://alexskir.ru/${image}`;
+  const imageLink = `https://alexskir.ru${image}`;
   const url = `https://alexskir.ru${path}`;
   return (
     <Helmet>
@@ -24,7 +24,7 @@ export default function SEO(props) {
       <meta property="og:title" content={title} />
       <meta property="og:site_name" content="alexskir.ru" />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content={window.location.href} />
+      <meta property="og:url" content={url} />
       <meta property="og:image" content={imageLink} />
       <meta property="og:image" itemProp="image" content={imageLink} />
       <meta property="og:image:alt" content={title} />
