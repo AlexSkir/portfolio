@@ -53,7 +53,7 @@ function CustomStyledTabs(props) {
   const { value, handleChange } = props;
   return (
     <Box>
-      <Suspense fallback={<LoadingBlock width="100%" height="300px" variant="rectangular" />}>
+      <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rectangular" />}>
         <StyledTabs
           value={value}
           onChange={handleChange}
