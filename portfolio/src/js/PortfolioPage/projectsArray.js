@@ -56,7 +56,7 @@ export default function projectArr(t) {
       name: 'Yandex Go',
       description: t('projects.yandexGo.description', { joinArrays: ' ', ns: 'projects' }),
       tabs: ['all', 'landings', 'cms'],
-      mainTool: [land, 'CMS'],
+      mainTool: [t('projects.constr', { ns: 'projects' }), 'CMS'],
       avatar: wixIcon,
       technologies: [
         'CMS',

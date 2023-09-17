@@ -10,8 +10,7 @@ import Contacts from './Contacts';
 import Form from './Form';
 
 function Contact() {
-  const { t, i18n } = useTranslation();
-  const theme = useTheme();
+  const { t } = useTranslation();
   return (
     <PageLayout title={t('contact.title')} avatar="heart">
       <SEO
@@ -42,7 +41,7 @@ function Contact() {
           {t('contact.position')}
         </Typography>
       </Box>
-      <Contacts locale={i18n.resolvedLanguage} />
+      <Contacts />
       <Form />
     </PageLayout>
   );

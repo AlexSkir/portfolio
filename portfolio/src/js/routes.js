@@ -19,7 +19,9 @@ const Project = lazy(() => import('./PortfolioPage/ProjectPage'));
 const Contact = lazy(() => import('./ContactPage')); */
 
 const AppRouter = () => {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const lang = i18n.language;
+
   return (
     <BrowserRouter>
       <Routes>

@@ -37,7 +37,7 @@ const iconHH = {
 };
 
 function Contacts() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
   const theme = useTheme();
   return (
     <Box
@@ -115,8 +115,12 @@ function Contacts() {
         sx={{ ...contactItem, backgroundColor: { xs: 'unset', sm: 'secondary.blueBox' } }}
       >
         <ContactItemCopieble
-          link="https://hh.ru/resume/62f371a2ff0810d5600039ed1f48674e706c43"
-          copyText="Aleksandra Skirnevskaia"
+          link={
+            i18n.resolvedLanguage === 'en'
+              ? 'https://hh.ru/resume/1840c148ff0bdaee9f0039ed1f734b67763447'
+              : 'https://hh.ru/resume/62f371a2ff0810d5600039ed1f48674e706c43'
+          }
+          copyText={t('common.name')}
           tooltip={t('contact.items.hh')}
           icon={<Box sx={iconHH} />}
           contactName="HeadHunter"

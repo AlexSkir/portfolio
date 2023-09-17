@@ -15,14 +15,9 @@
     "destination": "build",
     "include": [
       "/",
-      "/contact",
       "/resume",
       "/portfolio",
-      "/portfolio/yandex-go-cms",
-      "/portfolio/gritella",
-      "/portfolio/youtube",
-      "/portfolio/piskel",
-      "/portfolio/culture-portal"
+      "/contact"
     ]
   },
   "engines": {

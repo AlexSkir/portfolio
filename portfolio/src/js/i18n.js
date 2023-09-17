@@ -15,6 +15,10 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
+    detection: {
+      lookupFromSubdomainIndex: false,
+      lookupLocalStorage: false,
+    },
     debug: true,
     fallbackLng: ['en', 'ru'],
     ns: ['translation', 'projects'],
@@ -22,6 +26,7 @@ i18n
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
+    lng: 'ru-RU',
     resources: {
       en: {
         translation: translationEn,

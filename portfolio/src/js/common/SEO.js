@@ -8,6 +8,32 @@ const keywords = `Frontend, React, JS, Javascript, Web development, AlexSkir, cr
 Skirnevskaia, Aleksandra Skirnevskaia, разработка сайтов, фронтенд разработчик, веб разработка, фриланс,
 Александра Скирневская, Скирневская`;
 
+const yaMetrics = `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+ym(94952225, "init", {
+      clickmap:true,
+      trackLinks:true,
+      accurateTrackBounce:true,
+      webvisor:true
+});`;
+
+const gMetrics = `window.dataLayer = window.dataLayer || [];
+function gtag(){
+  dataLayer.push(arguments);
+}
+gtag('js', new Date());
+
+gtag('G-CY08ZZSTVE', 'your_id');`;
+
+const gTag = 'https://www.googletagmanager.com/gtag/js?id=G-CY08ZZSTVE';
+
+const yaVerification = 'a7156f0372045afd';
+const gVerification = 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU';
+
 export default function SEO(props) {
   const { title, description, image, path } = props;
   const imageLink = `https://alexskir.ru${image}`;
@@ -47,35 +73,14 @@ export default function SEO(props) {
       <meta property="vk:image" content={imageLink} />
 
       {/*  <!-- Google tag (gtag.js) -->  */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-CY08ZZSTVE" />
-      <script>
-        {`window.dataLayer = window.dataLayer || [];
-        function gtag(){
-          dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('G-CY08ZZSTVE', 'your_id');`}
-      </script>
+      <script async src="" />
+      <script>{ }</script>
       {/*  <!-- Google tag (gtag.js) -->  */}
       {/* <!-- Yandex.Metrika counter --> */}
-      <script type="text/javascript">
-        {`(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(94952225, "init", {
-              clickmap:true,
-              trackLinks:true,
-              accurateTrackBounce:true,
-              webvisor:true
-        });`}
-      </script>
+      <script type="text/javascript">{ }</script>
       {/* <!-- /Yandex.Metrika counter --> */}
-      <meta name="yandex-verification" content="a7156f0372045afd" />
-      <meta name="google-site-verification" content="tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU" />
+      <meta name="yandex-verification" content="" />
+      <meta name="google-site-verification" content="" />
     </Helmet>
   );
 }

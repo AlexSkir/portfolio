@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import LanguageIcon from '@mui/icons-material/Language';
+import MyRedirect from '../common/MyRedirect';
 
 const langWrapper = {
   position: 'absolute',
@@ -25,11 +26,33 @@ export default function LangSwitcher() {
   const { i18n, t } = useTranslation();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  const lang = i18n.resolvedLanguage;
+  const { protocol, host, pathname } = window.location;
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = (event) => {
-    i18n.changeLanguage(event.target.getAttribute('value'));
+    const clickLang = event.target.getAttribute('value');
+    const locales = ['en', 'ru'];
+
+    const sameLang = host.indexOf(`${clickLang}.`) > -1;
+    const anyLocale = locales.some((locale) => host.indexOf(`${locale}.`) > -1);
+
+    if (anyLocale) {
+      // console.log('there are locales');
+      if (sameLang) {
+        // console.log('same lang');
+      } else {
+        // console.log(`url has other locale, must redirect to new lang: ${clickLang}`);
+        const hostArr = host.split('.');
+        // window.location = `${protocol}//${clickLang}.${hostArr[1]}${pathname}`;
+      }
+    } else {
+      // window.location = `${protocol}//${lang}.${host}${pathname}`;
+      <MyRedirect url={`${protocol}//${lang}.${host}${pathname}`} />;
+    }
     setAnchorEl(null);
   };
 
