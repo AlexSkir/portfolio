@@ -8,7 +8,6 @@ import PageLayout from '../PageLayout';
 import SEO from '../common/SEO';
 import Contacts from './Contacts';
 import Form from './Form';
-import Avatar from '../../assets/images/avatar/avatar-heart.png';
 
 function Contact() {
   const { t, i18n } = useTranslation();
@@ -18,7 +17,6 @@ function Contact() {
       <SEO
         title={t('contact.seo.title')}
         description={t('contact.seo.description', { joinArrays: ' ' })}
-        image={Avatar}
         path="/contact"
       />
       <Box

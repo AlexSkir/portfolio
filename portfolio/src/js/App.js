@@ -3,7 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import SEO from './common/SEO';
 import AppRouter from './routes';
-import Avatar from '../assets/images/avatar/avatar-thumb-up.png';
+import Avatar from '../assets/images/portfolio.png';
 import ThemeWrapper from './common/ThemeWrapper';
 
 const App = () => {
