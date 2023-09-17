@@ -13,7 +13,10 @@ export default function LoadingApp() {
       spacing={1}
       sx={{
         width: '100%',
+        maxWidth: '1300px',
         height: '100vh',
+        maxHeight: '700px',
+        mx: 'auto',
         p: { xs: '16px', sm: '30px' },
         boxSizing: 'border-box',
       }}
