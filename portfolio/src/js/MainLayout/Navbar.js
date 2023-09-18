@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -46,16 +47,22 @@ const bottomNav = {
 };
 
 function NavBar() {
-  const { t } = useTranslation();
-  const [location, setLocation] = React.useState('/');
+  const { i18n, t } = useTranslation();
+  const lang = i18n.resolvedLanguage;
+  const { pathname } = useLocation();
+  const [location, setLocation] = React.useState(`/${lang}`);
 
   const theme = useTheme();
 
   const pages = [
-    { name: t('navbar.home'), path: '/', icon: <HomeOutlinedIcon /> },
-    { name: t('navbar.resume'), path: '/resume', icon: <ArticleOutlinedIcon /> },
-    { name: t('navbar.portfolio'), path: '/portfolio', icon: <WorkOutlineOutlinedIcon /> },
-    { name: t('navbar.contact'), path: '/contact', icon: <ContactMailOutlinedIcon /> },
+    { name: t('navbar.home'), path: `/${lang}`, icon: <HomeOutlinedIcon /> },
+    { name: t('navbar.resume'), path: `/${lang}/resume`, icon: <ArticleOutlinedIcon /> },
+    {
+      name: t('navbar.portfolio'),
+      path: `/${lang}/portfolio`,
+      icon: <WorkOutlineOutlinedIcon />,
+    },
+    { name: t('navbar.contact'), path: `/${lang}/contact`, icon: <ContactMailOutlinedIcon /> },
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -63,10 +70,12 @@ function NavBar() {
   };
 
   React.useEffect(() => {
-    const curPage = window.location.pathname;
+    console.log('nabar params', lang);
+    const curPage = pathname;
     setLocation(curPage);
+    console.log('curPage', curPage);
     if (location.includes('portfolio')) {
-      setLocation('/portfolio');
+      setLocation(`/${lang}/portfolio`);
     }
   }, [handleOpenNavMenu]);
 

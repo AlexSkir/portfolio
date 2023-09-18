@@ -1,12 +1,16 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import ScrollTop from './ScrollTop';
 import NavBar from './Navbar';
 import Header from './Header';
 import Footer from './Footer';
+import SEO from '../common/SEO';
+import poster from '../../assets/images/portfolio.png';
 
 const containerWrapper = {
   maxWidth: { lg: '1300px' },
@@ -21,12 +25,28 @@ const mainLayout = {
   mt: { xs: '50px', sm: '150px' },
 };
 
-function MainLayout() {
+function MainLayout(props) {
+  const { locale } = props;
+  const { i18n, t } = useTranslation();
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    console.log('changed path');
+    i18n.changeLanguage(locale);
+    i18n.getFixedT(locale);
+  }, [pathname]);
+
   return (
     <>
+      <SEO
+        image={poster}
+        title={t('common.seo.title')}
+        description={t('common.seo.description', { joinArrays: ' ' })}
+        path="/"
+      />
       <Container className="container-mainWrapper" maxWidth="false" sx={containerWrapper}>
         <Header />
-        <NavBar />
+        <NavBar locale={locale} />
 
         <Box className="container-mainWrapper__main-layout" sx={mainLayout}>
           <ScrollTop />
@@ -40,3 +60,7 @@ function MainLayout() {
 }
 
 export default MainLayout;
+
+MainLayout.propTypes = {
+  locale: PropTypes.string.isRequired,
+};

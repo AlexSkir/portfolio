@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
@@ -16,6 +17,8 @@ const subt2 = {
 };
 
 function ProjectsListGallery(props) {
+  const { i18n } = useTranslation();
+  const lang = i18n.resolvedLanguage;
   const { itemData } = props;
   return (
     <ImageList
@@ -33,7 +36,7 @@ function ProjectsListGallery(props) {
       {itemData.map((item) => (
         <Link
           key={item.name}
-          href={`/portfolio/${item.path}`}
+          href={`/${lang}/portfolio/${item.path}`}
           sx={{ width: { xs: '300px', lg: '330px' } }}
         >
           <Suspense fallback={<LoadingBlock width="100%" height="200px" variant="rectangular" />}>

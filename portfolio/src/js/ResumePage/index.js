@@ -74,7 +74,8 @@ const workSkills = [
 ];
 
 function Resume() {
-  const { t } = useTranslation();
+  const { i18n, t } = useTranslation();
+  const lang = i18n.resolvedLanguage;
   const theme = useTheme();
 
   return (
@@ -100,7 +101,7 @@ function Resume() {
             link="https://rs.school/"
             color="pink"
             techs={t('resume.edu.schoolTechs', { joinArrays: ' ' })}
-            projectUrl="/portfolio"
+            projectUrl={`/${lang}/portfolio`}
             CTA={t('resume.edu.cta')}
           />
           <ResumeItem
@@ -125,7 +126,7 @@ function Resume() {
             place=""
             color="blue"
             techs={t('resume.exp.unit1.techs')}
-            projectUrl="/portfolio"
+            projectUrl={`/${lang}/portfolio`}
             CTA={t('resume.exp.unit1.cta')}
           />
           <CardItem
@@ -135,7 +136,7 @@ function Resume() {
             link="http://d97714j6.beget.tech/"
             color="blue"
             techs="WordPress & WooCommerce, JS, PHP, SEO, Google API"
-            projectUrl="/portfolio/gritella"
+            projectUrl={`/${lang}/portfolio/gritella`}
             CTA={t('resume.exp.unit2.cta')}
           />
           <CardItem
@@ -145,7 +146,7 @@ function Resume() {
             link="https://www.gofuckbiz.com/"
             color="blue"
             techs={t('resume.exp.unit3.techs')}
-            projectUrl="/portfolio/gofuck"
+            projectUrl={`/${lang}/portfolio/gofuck`}
             CTA={t('resume.exp.unit3.cta')}
           />
         </Box>
