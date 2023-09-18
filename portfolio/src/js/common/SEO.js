@@ -77,10 +77,10 @@ export default function SEO(props) {
       <script>{ }</script>
       {/*  <!-- Google tag (gtag.js) -->  */}
       {/* <!-- Yandex.Metrika counter --> */}
-      <script type="text/javascript">{ }</script>
+      <script type="text/javascript">{yaMetrics}</script>
       {/* <!-- /Yandex.Metrika counter --> */}
-      <meta name="yandex-verification" content="" />
-      <meta name="google-site-verification" content="" />
+      <meta name="yandex-verification" content={yaVerification} />
+      <meta name="google-site-verification" content={gVerification} />
     </Helmet>
   );
 }
