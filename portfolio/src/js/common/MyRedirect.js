@@ -41,7 +41,7 @@ export function MyRedirect() {
           // i18n.changeLanguage(locale);
         }
       } else {
-        navigate(`/${lang}${pathname}`, { replace: true });
+        navigate(`/${lang}`, { replace: true });
         // navigate(`/ru${pathname}`, { replace: true });
       }
     }
@@ -49,8 +49,12 @@ export function MyRedirect() {
 
   return (
     <>
-      <a href="/ru" aria-label="navigate to russian website" />
-      <a href="/en" aria-label="navigate to english website" />
+      <a href="/ru" hidden>
+        navigate to russian website
+      </a>
+      <a href="/en" hidden>
+        navigate to english website
+      </a>
       <Outlet />
     </>
   );

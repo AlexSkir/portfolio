@@ -70,7 +70,7 @@ function NavBar() {
   };
 
   React.useEffect(() => {
-    console.log('nabar params', lang);
+    console.log('nabar params', lang, pathname);
     const curPage = pathname;
     setLocation(curPage);
     console.log('curPage', curPage);

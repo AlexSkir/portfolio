@@ -11,6 +11,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SEO from '../common/SEO';
 import poster from '../../assets/images/portfolio.png';
+import ThemeWrapper from '../common/ThemeWrapper';
 
 const containerWrapper = {
   maxWidth: { lg: '1300px' },
@@ -37,7 +38,7 @@ function MainLayout(props) {
   }, [pathname]);
 
   return (
-    <>
+    <ThemeWrapper>
       <SEO
         image={poster}
         title={t('common.seo.title')}
@@ -55,7 +56,7 @@ function MainLayout(props) {
 
         <Footer />
       </Container>
-    </>
+    </ThemeWrapper>
   );
 }
 
