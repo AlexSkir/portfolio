@@ -92,7 +92,7 @@ function Contacts() {
 
       <Box className="contact__contact-item" sx={contactItem}>
         <ContactItemCopieble
-          link="https://t.me/alexskir"
+          link="https://t.me/+79939056716"
           copyText="+79939056716"
           tooltip={t('contact.items.telegram')}
           icon={<TelegramIcon sx={{ color: '#229ED9' }} />}
