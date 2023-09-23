@@ -6,3 +6,4 @@ build
 .env
 test
 stash
+.next
