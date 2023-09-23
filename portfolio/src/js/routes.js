@@ -32,24 +32,22 @@ const AppRouter = () => {
       <Suspense fallback={<LoadingApp />}>
         <Routes>
           <Route path="/" element={<MyRedirect />}>
-            {locales.map((locale) => (
-              <Route key={locale} path={locale} element={<MainLayout locale={locale} />}>
-                <Route index element={<Home />} />
-                <Route path="resume" element={<Resume />} />
-                <Route path="portfolio">
-                  <Route index element={<Portfolio />} />
-                  {Object.values(projectArr(t)).map((project) => (
-                    <Route
-                      key={project.name}
-                      path={project.path}
-                      element={<Project data={project} />}
-                    />
-                  ))}
-                </Route>
-                <Route path="contact" element={<Contact />} />
-                <Route path="*" element={<NoMatch />} />
+            <Route path=":locale" element={<MainLayout />}>
+              <Route index element={<Home />} />
+              <Route path="resume" element={<Resume />} />
+              <Route path="portfolio">
+                <Route index element={<Portfolio />} />
+                {Object.values(projectArr(t)).map((project) => (
+                  <Route
+                    key={project.name}
+                    path={project.path}
+                    element={<Project data={project} />}
+                  />
+                ))}
               </Route>
-            ))}
+              <Route path="contact" element={<Contact />} />
+              <Route path="*" element={<NoMatch />} />
+            </Route>
             <Route path="*" element={<NoMatch />} />
           </Route>
         </Routes>

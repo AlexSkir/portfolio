@@ -4,9 +4,9 @@ import MuiAlert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import { useTranslation } from 'react-i18next';
 
-const Alert = React.forwardRef(function Alert(props, ref) {
+const Alert = function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+};
 
 export default function SimpleAlert(props) {
   const { type, onCloseHandle, open } = props;

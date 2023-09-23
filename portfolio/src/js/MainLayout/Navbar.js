@@ -1,10 +1,11 @@
+'use client';
+
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import { useTheme } from '@mui/material/styles';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
@@ -47,22 +48,20 @@ const bottomNav = {
 };
 
 function NavBar() {
-  const { i18n, t } = useTranslation();
-  const lang = i18n.resolvedLanguage;
+  const { t } = useTranslation();
+  const { locale } = useParams();
   const { pathname } = useLocation();
-  const [location, setLocation] = React.useState(`/${lang}`);
-
-  const theme = useTheme();
+  const [location, setLocation] = React.useState(`/${locale}`);
 
   const pages = [
-    { name: t('navbar.home'), path: `/${lang}`, icon: <HomeOutlinedIcon /> },
-    { name: t('navbar.resume'), path: `/${lang}/resume`, icon: <ArticleOutlinedIcon /> },
+    { name: t('navbar.home'), path: `/${locale}/`, icon: <HomeOutlinedIcon /> },
+    { name: t('navbar.resume'), path: `/${locale}/resume/`, icon: <ArticleOutlinedIcon /> },
     {
       name: t('navbar.portfolio'),
-      path: `/${lang}/portfolio`,
+      path: `/${locale}/portfolio/`,
       icon: <WorkOutlineOutlinedIcon />,
     },
-    { name: t('navbar.contact'), path: `/${lang}/contact`, icon: <ContactMailOutlinedIcon /> },
+    { name: t('navbar.contact'), path: `/${locale}/contact/`, icon: <ContactMailOutlinedIcon /> },
   ];
 
   const handleOpenNavMenu = (event) => {
@@ -70,12 +69,11 @@ function NavBar() {
   };
 
   React.useEffect(() => {
-    console.log('nabar params', lang, pathname);
     const curPage = pathname;
     setLocation(curPage);
     console.log('curPage', curPage);
     if (location.includes('portfolio')) {
-      setLocation(`/${lang}/portfolio`);
+      setLocation(`/${locale}/portfolio/`);
     }
   }, [handleOpenNavMenu]);
 

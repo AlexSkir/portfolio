@@ -1,0 +1,205 @@
+{
+  "common": {
+    "languageSwitcher": "Switch from <1>{{lng}}</1> to: ",
+    "name": "Aleksandra Skirnevskaia",
+    "langswitch": "change language button",
+    "themeswitch": "change theme button",
+    "downloadBtn": "Download Resume",
+    "downloadTooltip": "Download resume",
+    "dialogTitleDl": "Choose the language of resume",
+    "shareTitle": "Share this Portfolio to your network",
+    "dialogShare": "Share",
+    "copyLink": "Copy",
+    "copieble": {
+      "copied": "Copied!",
+      "copy": "Copy"
+    },
+    "nomatch": {
+      "title": "Ops, this page doesn't exist!",
+      "btn": "Go Home"
+    },
+    "seo": {
+      "title": "Check out my website-portfolio!",
+      "description": [
+        "Development of web sites, from simple web pages to complex but reliable, fast,",
+        "and user-friendly web products with JS/React, Mui/Bootstrap and other libraries!"
+      ]
+    }
+  },
+  "home": {
+    "title": "About me",
+    "intro": [
+      "Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and versatile",
+      "Front-end developer with a keen interest in creating the user friendly apps and websites.",
+      "I enjoy applying both new technologies and learning about the Best Practice solid solutions.",
+      "I constantly strive to enhance my skills and embrace emerging trends in the industry."
+    ],
+    "subtitle": "What I do",
+    "activity1": {
+      "subtitle": "Web Development",
+      "body": [
+        "Crafting visually appealing and intuitive user interfaces that offer a delightful user",
+        "experience is something I'm truly fanatic about. As well as developing new user-facing",
+        "features, optimizing code, building reusable components and using a variety of markup",
+        "languages to create the web pages."
+      ]
+    },
+    "activity2": {
+      "subtitle": "App Development",
+      "body": [
+        "As a developer, I find myself most captivated by the power and flexibility of React.js.",
+        "I'm always eager to dive into new projects that leverage React.js, Redux, Mui/Bootstrap",
+        "and other libraries to discover innovative ways to create reliable, fast, scalable, and",
+        "user-friendly applications."
+      ]
+    },
+    "activity3": {
+      "subtitle": "Freelance",
+      "body": [
+        "I also find very interesting to create websites for small businesses of any kind, from",
+        "simple landings and apps to complex online shops with user accounts and admin dashboards.",
+        "New offers are always welcome."
+      ]
+    },
+    "activity4": {
+      "subtitle": "SEO optimization",
+      "body": [
+        "Fast web pages and low Internet traffic improve user experience. Moreover, it increases",
+        "chances of having your content surfaced to users and guarantees presentable layout in",
+        "social networks"
+      ]
+    }
+  },
+  "resume": {
+    "title": "Resume",
+    "edu": {
+      "title": "Education",
+      "schoolTechs": [
+        "Static, Adaptive and Responsive Layout; JS, jQuery, AJAX, React; Bootstrap, Material-UI;",
+        "WebSocket; Google, Youtube, Firebase APIs"
+      ],
+      "cta": "Watch Portfolio",
+      "degree": "Engineer (incomplete)",
+      "faculty": "Faculty of Radio Design, TUSUR"
+    },
+    "exp": {
+      "title": "Experience",
+      "unit1": {
+        "date": "2019-Present",
+        "position": "Freelance Web Developer",
+        "techs": "Frontend development, Refactor, SEO, Maintenance",
+        "cta": "Watch Portfolio"
+      },
+      "unit2": {
+        "position": "Freelance Web Developer",
+        "cta": "Open project"
+      },
+      "unit3": {
+        "position": "Freelance Web Developer",
+        "techs": "Wireless CSS for PHP template, cross-browser responsive design",
+        "cta": "Open project"
+      }
+    },
+    "skills": {
+      "work": {
+        "title": "Work skills"
+      },
+      "soft": {
+        "title": "Soft skills",
+        "body": [
+          "Positive attitude",
+          "Self-motivation",
+          "Adaptability",
+          "Dependability",
+          "Fast learner",
+          "Problem solving",
+          "Attention to details",
+          "Hard working",
+          "Open-minded",
+          "Tolerant"
+        ]
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "tabs": {
+      "all": "All",
+      "landings": "Landings",
+      "app": "Apps",
+      "cms": "CMS",
+      "school": "School"
+    },
+    "seo": {
+      "title": [
+        "Check out my Demo websites of landing pages, web apps and CMS created with",
+        "modern development tools."
+      ],
+      "description": [
+        "Demo websites were created with such technologies as JS/jQuery/React, CSS, SASS,",
+        "Bootstrap, Material UI, API (Google, Firebase), Web constructors and others. Just",
+        "click on project to get more info!"
+      ]
+    },
+    "project": "Look at my project:"
+  },
+  "contact": {
+    "title": "Contact",
+    "name": "Aleksandra Skirnevskaia",
+    "position": "Frontend Developer",
+    "form": {
+      "success": "Email sent!",
+      "error": "Something went wrong, please, try later!",
+      "warning": "Please, check the box!",
+      "title": [
+        "I am always open to discussing new projects, opportunities in tech world or offers",
+        "from potential employers. Any feedbacks are always welcome!"
+      ],
+      "name": "Name:",
+      "msg": "Message:",
+      "btn": "Submit"
+    },
+    "items": {
+      "call": "Call",
+      "phone": "Phone",
+      "message": "Message",
+      "whatsup": "Open WhatsApp",
+      "telegram": "Open Telegram",
+      "gh": "Open GitHub",
+      "hh": "Open resume",
+      "map": "Show on map",
+      "location": "Location",
+      "address": "Moscow, Russia"
+    },
+    "seo": {
+      "title": "Hey! Let's talk business!",
+      "description": [
+        "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me :)"
+      ]
+    }
+  },
+  "footer": {
+    "link1": "Portfolio template",
+    "link2": "is designed by",
+    "ref": "This website was built with:"
+  },
+  "navbar": {
+    "home": "Home",
+    "resume": "Resume",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "header": {
+    "name": "Aleksandra",
+    "name2": "Skirnevskaia",
+    "langTooltip": "Change language",
+    "darkTheme": "Use dark color mode",
+    "lightTheme": "Use light color mode"
+  },
+  "sideblock": {
+    "name": "Aleksandra Skirnevskaia",
+    "position": "Frontend Developer",
+    "openBtnTooltip": "Expand",
+    "closeBtnTooltip": "Collapse"
+  }
+}

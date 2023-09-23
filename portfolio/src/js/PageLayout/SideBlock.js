@@ -8,6 +8,7 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import MuiDrawer from '@mui/material/Drawer';
 import LoadingBlock from '../Suspense/LoadingBlock';
 
 import Avatar from './Avatar';
@@ -16,11 +17,13 @@ import avatarHeart from '../../assets/images/avatar/avatar-heart.png';
 import avatarOk from '../../assets/images/avatar/avatar-ok.png';
 import avatarHi from '../../assets/images/avatar/avatar-hi.png';
 import avatar4042 from '../../assets/images/avatar/avatar-404.2.png';
+import SocialIconsBlock from './SocialIconsBlock';
+import ContactBlock from './ContactBlock';
 
 // const Avatar = lazy(() => import('./Avatar'));
-const SocialIconsBlock = lazy(() => import('./SocialIconsBlock'));
-const ContactBlock = lazy(() => import('./ContactBlock'));
-const MuiDrawer = lazy(() => import('@mui/material/Drawer'));
+// const SocialIconsBlock = lazy(() => import('./SocialIconsBlock'));
+// const ContactBlock = lazy(() => import('./ContactBlock'));
+// const MuiDrawer = lazy(() => import('@mui/material/Drawer'));
 
 const openedMixin = (theme) => ({
   position: 'relative',
@@ -84,7 +87,11 @@ export default function SideBlock(props) {
   const { t } = useTranslation();
   const { avatar } = props;
   const [avatarImg, setAvatar] = React.useState(avatarHi);
-  const [open, setOpen] = React.useState(window.screen.width > 1200);
+
+  const sideBlockOpen = localStorage?.getItem('sideBlockOpen')
+    ? JSON.parse(localStorage.getItem('sideBlockOpen'))
+    : window.screen.width > 1200;
+  const [open, setOpen] = React.useState(sideBlockOpen);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -114,73 +121,69 @@ export default function SideBlock(props) {
     const sideBlockOpen = localStorage?.getItem('sideBlockOpen')
       ? JSON.parse(localStorage.getItem('sideBlockOpen'))
       : window.screen.width > 1200;
+    console.log('check sideblck, isOpen? ', open, sideBlockOpen);
     setOpen(sideBlockOpen);
   }, []);
 
   return (
     <Box className="side-block-section" sx={{ display: { xs: 'none', md: 'block' } }}>
-      <Suspense
+      {/* <Suspense
         fallback={
           <LoadingBlock width={open ? '400px' : '70px'} height="100%" variant="rectangular" />
         }
-      >
-        <Drawer variant="permanent" open={open}>
-          <Suspense fallback={<LoadingBlock width="100%" height="74px" variant="rectangular" />}>
-            <DrawerHeader
-              sx={{
-                position: 'absolute',
-                top: { xs: '10px', lg: '30px' },
-                right: 0,
-              }}
-            >
-              {open ? (
-                <Tooltip title={t('sideblock.closeBtnTooltip')}>
-                  <IconButton onClick={handleDrawerClose}>
-                    <ChevronLeftIcon
-                      sx={{ color: 'secondary.dark', width: '40px', height: '40px' }}
-                    />
-                  </IconButton>
-                </Tooltip>
-              ) : (
-                <Tooltip title={t('sideblock.openBtnTooltip')}>
-                  <IconButton
-                    color="inherit"
-                    aria-label="open drawer"
-                    onClick={handleDrawerOpen}
-                    edge="start"
-                  >
-                    <ChevronRightIcon
-                      sx={{ color: 'secondary.main', width: '40px', height: '40px' }}
-                    />
-                  </IconButton>
-                </Tooltip>
-              )}
-            </DrawerHeader>
-          </Suspense>
+      > */}
+      <Drawer variant="permanent" open={open}>
+        {/* <Suspense fallback={<LoadingBlock width="100%" height="74px" variant="rectangular" />}> */}
+        <DrawerHeader
+          sx={{
+            position: 'absolute',
+            top: { xs: '10px', lg: '30px' },
+            right: 0,
+          }}
+        >
+          {open ? (
+            <Tooltip title={t('sideblock.closeBtnTooltip')}>
+              <IconButton onClick={handleDrawerClose}>
+                <ChevronLeftIcon sx={{ color: 'secondary.dark', width: '40px', height: '40px' }} />
+              </IconButton>
+            </Tooltip>
+          ) : (
+            <Tooltip title={t('sideblock.openBtnTooltip')}>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+              >
+                <ChevronRightIcon sx={{ color: 'secondary.main', width: '40px', height: '40px' }} />
+              </IconButton>
+            </Tooltip>
+          )}
+        </DrawerHeader>
+        {/* </Suspense> */}
+        <Avatar img={avatarImg} open={open} />
 
-          <Avatar img={avatarImg} open={open} />
+        <Typography
+          variant="h4"
+          component="h4"
+          align="center"
+          sx={{ m: '15px 0', display: open ? 'block' : 'none' }}
+        >
+          {t('sideblock.name')}
+        </Typography>
+        <Typography variant="body2" sx={{ opacity: '0.5', display: open ? 'block' : 'none' }}>
+          {t('sideblock.position')}
+        </Typography>
 
-          <Typography
-            variant="h4"
-            component="h4"
-            align="center"
-            sx={{ m: '15px 0', display: open ? 'block' : 'none' }}
-          >
-            {t('sideblock.name')}
-          </Typography>
-          <Typography variant="body2" sx={{ opacity: '0.5', display: open ? 'block' : 'none' }}>
-            {t('sideblock.position')}
-          </Typography>
+        <SocialIconsBlock open={open} />
+        {/* <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
+          </Suspense> */}
 
-          <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
-            <SocialIconsBlock open={open} />
-          </Suspense>
-
-          <Suspense fallback={<LoadingBlock width="350px" height="350px" variant="rounded" />}>
-            <ContactBlock open={open} />
-          </Suspense>
-        </Drawer>
-      </Suspense>
+        <ContactBlock open={open} />
+        {/* <Suspense fallback={<LoadingBlock width="350px" height="350px" variant="rounded" />}>
+          </Suspense> */}
+      </Drawer>
+      {/* </Suspense> */}
     </Box>
   );
 }

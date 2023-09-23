@@ -1,0 +1,6 @@
+{
+  "/[lng]/page": "app/[lng]/page.js",
+  "/[lng]/[...not_found]/page": "app/[lng]/[...not_found]/page.js",
+  "/[lng]/resume/page": "app/[lng]/resume/page.js",
+  "/[lng]/portfolio/page": "app/[lng]/portfolio/page.js"
+}

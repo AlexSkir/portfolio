@@ -64,6 +64,20 @@
   font-display: swap;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(35, 35, 35);
+  }
+}
+
+body.lightTheme {
+  background: rgb(242, 245, 249);
+}
+
+body.darkTheme {
+  background: rgb(35, 35, 35);
+}
+
 .lazy-loading {
   position: relative;
   top: 50%;

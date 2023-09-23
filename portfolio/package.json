@@ -6,19 +6,12 @@
   "scripts": {
     "start": "webpack-dev-server --port 8080 --open --mode=development",
     "clean-build": "shx rm -rf build",
-    "build": "npm run clean-build && webpack --mode=production && react-snap",
-    "build2": "webpack --mode=production && serve",
-    "build-serve": "npm run build && serve"
-  },
-  "reactSnap": {
-    "source": "build",
-    "destination": "build",
-    "include": [
-      "/",
-      "/resume",
-      "/portfolio",
-      "/contact"
-    ]
+    "build": "npm run clean-build && webpack --mode=production",
+    "build-serve": "npm run build && serve",
+    "next-dev": "next dev",
+    "next-build": "next build",
+    "next-start": "next start",
+    "next-lint": "next lint"
   },
   "engines": {
     "node": ">=10.16.0"
@@ -102,25 +95,26 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@hot-loader/react-dom": "^17.0.2",
     "@mui/icons-material": "^5.14.3",
     "@mui/styled-engine-sc": "^5.12.0",
+    "accept-language": "^3.0.18",
     "beautify-json": "^1.0.1",
     "bootstrap": "^5.2.3",
     "dotenv-webpack": "^8.0.1",
     "emailjs-com": "^3.2.0",
-    "i18next": "^23.4.6",
+    "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
+    "i18next-resources-to-backend": "^1.1.4",
+    "next": "^13.5.2",
+    "next-i18next": "^14.0.3",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-cookie": "^6.1.1",
+    "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
     "react-helmet-async": "^1.3.0",
-    "react-hot-loader": "^4.13.1",
-    "react-i18next": "^13.2.1",
+    "react-i18next": "^13.2.2",
     "react-router-dom": "^6.15.0",
-    "react-share": "^4.4.1",
-    "react-snap": "^1.23.0",
-    "xml-loader": "^1.2.1"
+    "react-share": "^4.4.1"
   }
 }

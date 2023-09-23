@@ -1,8 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import { Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import ScrollTop from './ScrollTop';
@@ -18,6 +17,7 @@ const containerWrapper = {
   display: 'flex',
   flexDirection: 'column',
   position: 'relative',
+  backgroundColor: 'background.default',
 };
 const mainLayout = {
   display: 'flex',
@@ -27,7 +27,7 @@ const mainLayout = {
 };
 
 function MainLayout(props) {
-  const { locale } = props;
+  const { locale } = useParams();
   const { i18n, t } = useTranslation();
   const { pathname } = useLocation();
 
@@ -61,7 +61,3 @@ function MainLayout(props) {
 }
 
 export default MainLayout;
-
-MainLayout.propTypes = {
-  locale: PropTypes.string.isRequired,
-};
