@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import PropTypes from 'prop-types';
-import Script from 'next/script';
 import { dir } from 'i18next';
+import { cookies } from 'next/headers';
 import { languages } from '../i18n/settings';
+import Loading from './loading';
+import styles from './style.module.scss';
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
 export default function RootLayout({ children, params: { lng } }) {
+  let localTheme;
+  if (cookies().get('myColorMode')) {
+    localTheme = cookies().get('myColorMode').value;
+  }
+
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
@@ -24,26 +31,19 @@ export default function RootLayout({ children, params: { lng } }) {
               }
             }
 
-            body.lightTheme {
+            body.light {
               background: #F2F5F9;
             }
 
-            body.darkTheme {
+            body.dark {
               background: rgb(35, 35, 35);
             }`}
         </style>
       </head>
-      <body>
-        <Script id="defaultTheme">
-          {`const selectedTheme = localStorage.getItem('myColorMode');
-            if (selectedTheme === 'dark') {
-              document.body.classList.add('darkTheme')
-            } else if (selectedTheme === 'light') {
-              document.body.classList.add('lightTheme')
-            }`}
-        </Script>
-
-        <div id="root">{children}</div>
+      <body className={localTheme || 'defaultTheme'}>
+        <div id="root">
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </div>
       </body>
     </html>
   );

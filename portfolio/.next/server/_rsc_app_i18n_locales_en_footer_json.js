@@ -17,7 +17,7 @@ exports.modules = {
   \*****************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"link1":"Portfolio template","link2":"is designed by","ref":"This website was built with:","languageSwitcher":"Switch from <1>{{lng}}</1> to: "}');
+module.exports = JSON.parse('{"link1":"Portfolio template","link2":"is designed by","ref":"This website was built with:","languageSwitcher":"Switch from <1>{{lng}}</1> to: ","shareTitle":"Share this Portfolio to your network"}');
 
 /***/ })
 

@@ -1,19 +1,20 @@
 {
   "pages": {
+    "/[lng]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lng]/page.js"
+    ],
     "/[lng]/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
+      "static/css/app/[lng]/layout.css",
       "static/chunks/app/[lng]/layout.js"
     ],
     "/[lng]/template": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[lng]/template.js"
-    ],
-    "/[lng]/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/loading.js"
     ],
     "/[lng]/not-found": [
       "static/chunks/webpack.js",
@@ -25,20 +26,20 @@
       "static/chunks/main-app.js",
       "static/chunks/app/[lng]/resume/page.js"
     ],
-    "/[lng]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/page.js"
-    ],
     "/[lng]/portfolio/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[lng]/portfolio/page.js"
     ],
-    "/[lng]/[...not_found]/page": [
+    "/[lng]/portfolio/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/[...not_found]/page.js"
+      "static/chunks/app/[lng]/portfolio/loading.js"
+    ],
+    "/[lng]/loading": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lng]/loading.js"
     ]
   }
 }

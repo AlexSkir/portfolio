@@ -1,18 +1,53 @@
+'use client';
+
 import React from 'react';
 import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 
-export default function Loading() {
-  let sideBlockOpen = true;
+export default function LoadingApp() {
+  const localStored =
+    typeof localStorage !== 'undefined' && localStorage.getItem('sideBlockOpen')
+      ? localStorage.getItem('sideBlockOpen')
+      : undefined;
+  const windowScreenWidth =
+    typeof window !== 'undefined' && window.screen.width ? window.screen.width > 1200 : undefined;
+  const sideBlockOpen = localStored || windowScreenWidth;
 
-  if (typeof window !== 'undefined') {
-    sideBlockOpen = localStorage?.getItem('sideBlockOpen')
-      ? JSON.parse(localStorage.getItem('sideBlockOpen'))
-      : window.screen.width > 1200;
-  }
   return (
-    <Stack spacing={1} sx={{ width: '100%', height: '500px' }}>
+    <Stack
+      spacing={1}
+      sx={{
+        width: '100%',
+        height: '100vh',
+        p: { xs: '16px', sm: '30px' },
+        boxSizing: 'border-box',
+      }}
+    >
+      <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Skeleton
+          variant="text"
+          sx={{ height: '40px', width: '200px', backgroundColor: 'primary.accent' }}
+        />
+        <Skeleton
+          variant="circular"
+          sx={{ width: '50px', height: '50px', backgroundColor: 'primary.accent' }}
+        />
+      </Box>
+      <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <Skeleton
+          variant="rounded"
+          sx={{
+            display: { xs: 'none', sm: 'flex' },
+            width: '90%',
+            maxWidth: '500px',
+            height: { xs: '50px', sm: '100px' },
+            borderRadius: { xs: '8px', sm: '20px' },
+            mt: '50px',
+            backgroundColor: 'primary.accent',
+          }}
+        />
+      </Box>
       <Box
         sx={{
           display: 'flex',
@@ -28,7 +63,7 @@ export default function Loading() {
             minWidth: sideBlockOpen ? '400px' : '70px',
             height: '100%',
             display: { xs: 'none', md: 'block' },
-            borderRadius: '20px',
+            borderRadius: { xs: '8px', sm: '20px' },
             backgroundColor: 'primary.accent',
           }}
         />
@@ -37,7 +72,8 @@ export default function Loading() {
           sx={{
             width: '100%',
             height: '100%',
-            borderRadius: '20px',
+            borderRadius: { xs: '8px', sm: '20px' },
+            mt: { xs: '70px', md: 0 },
             backgroundColor: 'primary.accent',
           }}
         />

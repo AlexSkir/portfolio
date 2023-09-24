@@ -45,7 +45,7 @@ export default function Template({ children }) {
           <ScrollTop />
           {children}
         </Box>
-        {/* <Footer lng={lng} /> */}
+        <Footer lng={lng} />
       </Container>
     </ThemeWrapper>
   );

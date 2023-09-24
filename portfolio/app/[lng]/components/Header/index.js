@@ -7,7 +7,6 @@ import { usePathname } from 'next/navigation';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from '../../../i18n/client';
-import { languages } from '../../../i18n/settings';
 
 // import Link from '@mui/material/Link';
 import { MyThemeSwitch } from '../theme/ThemeSwitcher';

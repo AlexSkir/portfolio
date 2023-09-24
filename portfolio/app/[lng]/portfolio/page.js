@@ -4,7 +4,8 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useTranslation } from '../../i18n/client';
-import { Footer } from '../components/Footer/client';
+// import { Footer } from '../components/Footer/client';
+// import { Footer } from '../components/Footer';
 
 export default function Page({ params: { lng } }) {
   const { t } = useTranslation(lng, 'projects');
@@ -22,7 +23,7 @@ export default function Page({ params: { lng } }) {
       <Link href={`/${lng}`}>
         <button type="button">back</button>
       </Link>
-      <Footer lng={lng} pathname={usePathname()} />
+      {/* <Footer lng={lng} pathname={usePathname()} /> */}
     </>
   );
 }
