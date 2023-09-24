@@ -27,6 +27,14 @@ const mainLayout = {
 
 export default function Template({ children }) {
   const { lng } = useParams();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
   return (
     <ThemeWrapper>
       <Container className="container-mainWrapper" maxWidth="false" sx={containerWrapper}>
@@ -37,7 +45,7 @@ export default function Template({ children }) {
           <ScrollTop />
           {children}
         </Box>
-        <Footer lng={lng} />
+        {/* <Footer lng={lng} /> */}
       </Container>
     </ThemeWrapper>
   );

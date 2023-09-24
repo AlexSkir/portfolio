@@ -30,10 +30,10 @@ const switchWrapper = {
   borderRadius: '50%',
   boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)',
 };
-
 export function MyThemeSwitch({ t }) {
   const theme = useTheme();
   const colorMode = React.useContext(ColorModeContext);
+
   return (
     <Box className="theme-switch-section" sx={switchWrapper}>
       <IconButton
@@ -104,7 +104,13 @@ export function ThemeSwitcher(Component) {
         <ThemeProvider theme={theme}>
           <CustomSection
             className="app_appContainer"
-            sx={{ width: '100%', minHeight: '100vh', p: 0, m: 0, backgroundColor: 'primary.main' }}
+            sx={{
+              width: '100%',
+              minHeight: '100vh',
+              p: 0,
+              m: 0,
+              backgroundColor: 'primary.main',
+            }}
           >
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
