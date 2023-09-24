@@ -124,7 +124,7 @@ const config = {
 module.exports = (env, argv) => {
   config.mode = argv.mode;
   if (argv.mode === 'development') {
-    config.entry = ['react-hot-loader/patch', './src/js/index.js', './src/css/index.scss'];
+    config.entry = ['./src/js/index.js', './src/css/index.scss'];
     config.devtool = 'inline-source-map';
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
     config.stats.errorDetails = true;
