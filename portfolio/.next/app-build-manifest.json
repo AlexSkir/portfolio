@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/[lng]/page": [
+    "/[lng]/global-error": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/page.js"
+      "static/chunks/app/[lng]/global-error.js"
     ],
     "/[lng]/layout": [
       "static/chunks/webpack.js",
@@ -11,35 +11,30 @@
       "static/css/app/[lng]/layout.css",
       "static/chunks/app/[lng]/layout.js"
     ],
-    "/[lng]/template": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/template.js"
-    ],
     "/[lng]/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[lng]/not-found.js"
     ],
-    "/[lng]/resume/page": [
+    "/[lng]/template": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/resume/page.js"
-    ],
-    "/[lng]/portfolio/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/portfolio/page.js"
-    ],
-    "/[lng]/portfolio/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/[lng]/portfolio/loading.js"
+      "static/chunks/app/[lng]/template.js"
     ],
     "/[lng]/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/[lng]/loading.js"
+    ],
+    "/[lng]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lng]/page.js"
+    ],
+    "/[lng]/[...not_found]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/[lng]/[...not_found]/page.js"
     ]
   }
 }

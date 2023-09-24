@@ -44,8 +44,8 @@ export default function ContactBlock(props) {
     >
       <Box className="side-block__contact-item" sx={contactItemBox}>
         <ContactItemCopieble
-          link="tel:+79939056716"
-          copyText="+79939056716"
+          link="tel:+79938996716"
+          copyText="+79938996716"
           tooltip={t('contact.items.call')}
           icon={
             <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />

@@ -1,0 +1,44 @@
+{
+  "title": "About me",
+  "intro": [
+    "Hello there! I'm thrilled to welcome you to my portfolio. I am a passionate and versatile",
+    "Front-end developer with a keen interest in creating the user friendly apps and websites.",
+    "I enjoy applying both new technologies and learning about the Best Practice solid solutions.",
+    "I constantly strive to enhance my skills and embrace emerging trends in the industry."
+  ],
+  "subtitle": "What I do",
+  "activity1": {
+    "subtitle": "Web Development",
+    "body": [
+      "Crafting visually appealing and intuitive user interfaces that offer a delightful user",
+      "experience is something I'm truly fanatic about. As well as developing new user-facing",
+      "features, optimizing code, building reusable components and using a variety of markup",
+      "languages to create the web pages."
+    ]
+  },
+  "activity2": {
+    "subtitle": "App Development",
+    "body": [
+      "As a developer, I find myself most captivated by the power and flexibility of React.js.",
+      "I'm always eager to dive into new projects that leverage React.js, Redux, Mui/Bootstrap",
+      "and other libraries to discover innovative ways to create reliable, fast, scalable, and",
+      "user-friendly applications."
+    ]
+  },
+  "activity3": {
+    "subtitle": "Freelance",
+    "body": [
+      "I also find very interesting to create websites for small businesses of any kind, from",
+      "simple landings and apps to complex online shops with user accounts and admin dashboards.",
+      "New offers are always welcome."
+    ]
+  },
+  "activity4": {
+    "subtitle": "SEO optimization",
+    "body": [
+      "Fast web pages and low Internet traffic improve user experience. Moreover, it increases",
+      "chances of having your content surfaced to users and guarantees presentable layout in",
+      "social networks"
+    ]
+  }
+}

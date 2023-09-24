@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -47,7 +48,7 @@ const bottomNav = {
   },
 };
 
-function NavBar({ lng }) {
+export default function Navbar({ lng }) {
   const { t } = useTranslation(lng);
   const pathname = usePathname();
   // const [location, setLocation] = React.useState(`/${lng}`);
@@ -67,15 +68,6 @@ function NavBar({ lng }) {
   const handleOpenNavMenu = (event) => {
     const curPage = event.currentTarget;
   };
-
-  /* React.useEffect(() => {
-    const curPage = pathname;
-    setLocation(curPage);
-    console.log('curPage', curPage);
-    if (location.includes('portfolio')) {
-      setLocation(`/${lng}/portfolio/`);
-    }
-  }); */
 
   return (
     <>
@@ -133,4 +125,7 @@ function NavBar({ lng }) {
     </>
   );
 }
-export default NavBar;
+
+Navbar.propTypes = {
+  lng: PropTypes.string.isRequired,
+};

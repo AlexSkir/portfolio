@@ -1,9 +1,8 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { dir } from 'i18next';
 import { cookies } from 'next/headers';
 import { languages } from '../i18n/settings';
-import Loading from './loading';
 import styles from './style.module.scss';
 
 export async function generateStaticParams() {
@@ -41,9 +40,7 @@ export default function RootLayout({ children, params: { lng } }) {
         </style>
       </head>
       <body className={localTheme || 'defaultTheme'}>
-        <div id="root">
-          <Suspense fallback={<Loading />}>{children}</Suspense>
-        </div>
+        <div id="root">{children}</div>
       </body>
     </html>
   );

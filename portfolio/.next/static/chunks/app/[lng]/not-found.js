@@ -15,25 +15,53 @@
 /***/ (function(module, __unused_webpack_exports, __webpack_require__) {
 
 var map = {
-	"./en/footer.json": [
-		"(app-pages-browser)/./app/i18n/locales/en/footer.json",
-		"_app-pages-browser_app_i18n_locales_en_footer_json"
+	"./en/contact.json": [
+		"(app-pages-browser)/./app/i18n/locales/en/contact.json",
+		"_app-pages-browser_app_i18n_locales_en_contact_json"
+	],
+	"./en/home.json": [
+		"(app-pages-browser)/./app/i18n/locales/en/home.json",
+		"_app-pages-browser_app_i18n_locales_en_home_json"
+	],
+	"./en/portfolio.json": [
+		"(app-pages-browser)/./app/i18n/locales/en/portfolio.json",
+		"_app-pages-browser_app_i18n_locales_en_portfolio_json"
 	],
 	"./en/projects.json": [
 		"(app-pages-browser)/./app/i18n/locales/en/projects.json",
 		"_app-pages-browser_app_i18n_locales_en_projects_json"
 	],
+	"./en/resume.json": [
+		"(app-pages-browser)/./app/i18n/locales/en/resume.json",
+		"_app-pages-browser_app_i18n_locales_en_resume_json"
+	],
+	"./en/seo.json": [
+		"(app-pages-browser)/./app/i18n/locales/en/seo.json",
+		"_app-pages-browser_app_i18n_locales_en_seo_json"
+	],
 	"./en/translation.json": [
 		"(app-pages-browser)/./app/i18n/locales/en/translation.json",
 		"_app-pages-browser_app_i18n_locales_en_translation_json"
 	],
-	"./ru/footer.json": [
-		"(app-pages-browser)/./app/i18n/locales/ru/footer.json",
-		"_app-pages-browser_app_i18n_locales_ru_footer_json"
+	"./ru/contact.json": [
+		"(app-pages-browser)/./app/i18n/locales/ru/contact.json",
+		"_app-pages-browser_app_i18n_locales_ru_contact_json"
+	],
+	"./ru/home.json": [
+		"(app-pages-browser)/./app/i18n/locales/ru/home.json",
+		"_app-pages-browser_app_i18n_locales_ru_home_json"
+	],
+	"./ru/portfolio.json": [
+		"(app-pages-browser)/./app/i18n/locales/ru/portfolio.json",
+		"_app-pages-browser_app_i18n_locales_ru_portfolio_json"
 	],
 	"./ru/projects.json": [
 		"(app-pages-browser)/./app/i18n/locales/ru/projects.json",
 		"_app-pages-browser_app_i18n_locales_ru_projects_json"
+	],
+	"./ru/resume.json": [
+		"(app-pages-browser)/./app/i18n/locales/ru/resume.json",
+		"_app-pages-browser_app_i18n_locales_ru_resume_json"
 	],
 	"./ru/translation.json": [
 		"(app-pages-browser)/./app/i18n/locales/ru/translation.json",

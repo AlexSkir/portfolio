@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import { useTranslation } from '../../../i18n/client';
 
-// import ShareBar from './Share';
+import ShareBar from '../common/Share';
 
 import ReactIcon from '../../../../assets/images/svg/react.svg';
 import MuiIcon from '../../../../assets/images/svg/mui.svg';
@@ -62,8 +62,8 @@ const iconWrapper = {
   },
 };
 
-export function Footer({ lng }) {
-  const { t } = useTranslation(lng, 'footer');
+export default function Footer({ lng }) {
+  const { t } = useTranslation(lng);
   return (
     <Box
       className="container-mainWrapper__footer footer-section"
@@ -121,9 +121,9 @@ export function Footer({ lng }) {
             sx={{ color: 'secondary.main', mr: '10px' }}
             target="_blank"
           >
-            {t('link1')}
+            {t('footer.link1')}
           </Link>
-          {t('link2')}
+          {t('footer.link2')}
           <Link
             className="footer-section__dark-link"
             href="https://www.figma.com/@beatricewambui"
@@ -146,14 +146,15 @@ export function Footer({ lng }) {
         }}
       >
         <Typography variant="h6" align="right">
-          {t('shareTitle')}
+          {t('common.shareTitle')}
         </Typography>
-        {/* <ShareBar url={window.location.origin} len={4} /> */}
+
+        <ShareBar url={typeof window !== 'undefined' ? window.location.origin : ''} len={4} t={t} />
       </Box>
 
       <Box sx={{ width: '100%', '& .footer__tool-title': { textAlign: 'center' } }}>
         <Typography className="footer__tool-title" variant="h6" align="center">
-          {t('ref')}
+          {t('footer.ref')}
         </Typography>
         <Box
           sx={{

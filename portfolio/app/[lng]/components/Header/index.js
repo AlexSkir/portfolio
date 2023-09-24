@@ -2,17 +2,17 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 import { useTranslation } from '../../../i18n/client';
 
-// import Link from '@mui/material/Link';
 import { MyThemeSwitch } from '../theme/ThemeSwitcher';
 import LangSwitcher from './langSwitcher';
 
-export function Header({ lng }) {
+export default function Header({ lng }) {
   const { t } = useTranslation(lng);
   const pathname = usePathname();
 
@@ -31,7 +31,7 @@ export function Header({ lng }) {
       }}
     >
       <Link
-        href="/"
+        href={`/${lng}`}
         underline="none"
         sx={{
           display: 'flex',

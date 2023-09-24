@@ -1,0 +1,22 @@
+{
+  "title": "Portfolio",
+  "tabs": {
+    "all": "All",
+    "landings": "Landings",
+    "app": "Apps",
+    "cms": "CMS",
+    "school": "School"
+  },
+  "seo": {
+    "title": [
+      "Check out my Demo websites of landing pages, web apps and CMS created with",
+      "modern development tools."
+    ],
+    "description": [
+      "Demo websites were created with such technologies as JS/jQuery/React, CSS, SASS,",
+      "Bootstrap, Material UI, API (Google, Firebase), Web constructors and others. Just",
+      "click on project to get more info!"
+    ]
+  },
+  "project": "Look at my project:"
+}

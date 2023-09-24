@@ -1,15 +1,18 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
 import ThemeWrapper from './components/theme/ThemeWrapper';
 import ScrollTop from './components/ScrollTop';
-import NavBar from './components/Navbar';
+import Loading from './loading';
+import LoadingApp from './components/LoadingApp';
+
+const Header = lazy(() => import('./components/Header'));
+const Footer = lazy(() => import('./components/Footer'));
+const Navbar = lazy(() => import('./components/Navbar'));
 
 const containerWrapper = {
   maxWidth: { lg: '1300px' },
@@ -37,16 +40,18 @@ export default function Template({ children }) {
 
   return (
     <ThemeWrapper>
-      <Container className="container-mainWrapper" maxWidth="false" sx={containerWrapper}>
-        <Header lng={lng} />
-        <NavBar lng={lng} />
+      <Suspense fallback={<LoadingApp />}>
+        <Container className="container-mainWrapper" maxWidth="false" sx={containerWrapper}>
+          <Header lng={lng} />
+          <Navbar lng={lng} />
 
-        <Box className="container-mainWrapper__main-layout" sx={mainLayout}>
-          <ScrollTop />
-          {children}
-        </Box>
-        <Footer lng={lng} />
-      </Container>
+          <Box className="container-mainWrapper__main-layout" sx={mainLayout}>
+            <ScrollTop />
+            <Suspense fallback={<Loading />}>{children}</Suspense>
+          </Box>
+          <Footer lng={lng} />
+        </Container>
+      </Suspense>
     </ThemeWrapper>
   );
 }

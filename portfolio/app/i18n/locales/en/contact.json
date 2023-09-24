@@ -1,0 +1,38 @@
+{
+  "title": "Contact",
+  "name": "Aleksandra Skirnevskaia",
+  "position": "Frontend Developer",
+  "downloadBtn": "Download Resume",
+  "downloadTooltip": "Download resume",
+  "dialogTitleDl": "Choose the language of resume",
+  "form": {
+    "success": "Email sent!",
+    "error": "Something went wrong, please, try later!",
+    "warning": "Please, check the box!",
+    "title": [
+      "I am always open to discussing new projects, opportunities in tech world or offers",
+      "from potential employers. Any feedbacks are always welcome!"
+    ],
+    "name": "Name:",
+    "msg": "Message:",
+    "btn": "Submit"
+  },
+  "items": {
+    "call": "Call",
+    "phone": "Phone",
+    "message": "Message",
+    "whatsup": "Open WhatsApp",
+    "telegram": "Open Telegram",
+    "gh": "Open GitHub",
+    "hh": "Open resume",
+    "map": "Show on map",
+    "location": "Location",
+    "address": "Moscow, Russia"
+  },
+  "seo": {
+    "title": "Hey! Let's talk business!",
+    "description": [
+      "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me :)"
+    ]
+  }
+}

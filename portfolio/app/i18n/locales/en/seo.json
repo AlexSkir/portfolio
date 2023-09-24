@@ -1,0 +1,26 @@
+{
+  "common": {
+    "title": "Check out my website-portfolio!",
+    "description": [
+      "Development of web sites, from simple web pages to complex but reliable, fast,",
+      "and user-friendly web products with JS/React, Mui/Bootstrap and other libraries!"
+    ]
+  },
+  "portfolio": {
+    "title": [
+      "Check out my Demo websites of landing pages, web apps and CMS created with",
+      "modern development tools."
+    ],
+    "description": [
+      "Demo websites were created with such technologies as JS/jQuery/React, CSS, SASS,",
+      "Bootstrap, Material UI, API (Google, Firebase), Web constructors and others. Just",
+      "click on project to get more info!"
+    ]
+  },
+  "contact": {
+    "title": "Hey! Let's talk business!",
+    "description": [
+      "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me :)"
+    ]
+  }
+}

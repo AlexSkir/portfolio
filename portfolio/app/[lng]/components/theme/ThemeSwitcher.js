@@ -3,6 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cookie from 'cookie-cutter';
+import { useCookies } from 'react-cookie';
 import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
@@ -63,6 +64,7 @@ MyThemeSwitch.propTypes = {
 
 export function ThemeSwitcher(Component) {
   function ThemeSwitcher(props) {
+    const [cookies, setCookie] = useCookies(['myColorMode']);
     let defaultTheme = 'light';
 
     if (typeof window !== 'undefined') {
@@ -70,8 +72,8 @@ export function ThemeSwitcher(Component) {
         ? 'dark'
         : 'light';
     }
-    if (cookie.get('myColorMode')) {
-      defaultTheme = cookie.get('myColorMode');
+    if (cookies.myColorMode) {
+      defaultTheme = cookies.myColorMode;
     }
 
     const [mode, setMode] = React.useState(defaultTheme);
@@ -86,7 +88,7 @@ export function ThemeSwitcher(Component) {
             } else {
               newMode = 'light';
             }
-            cookie.set('myColorMode', newMode);
+            setCookie('myColorMode', newMode, { path: '/' });
             return newMode;
           });
         },

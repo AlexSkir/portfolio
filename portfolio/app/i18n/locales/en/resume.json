@@ -1,0 +1,51 @@
+{
+  "title": "Resume",
+  "edu": {
+    "title": "Education",
+    "schoolTechs": [
+      "Static, Adaptive and Responsive Layout; JS, jQuery, AJAX, React; Bootstrap, Material-UI;",
+      "WebSocket; Google, Youtube, Firebase APIs"
+    ],
+    "cta": "Watch Portfolio",
+    "degree": "Engineer (incomplete)",
+    "faculty": "Faculty of Radio Design, TUSUR"
+  },
+  "exp": {
+    "title": "Experience",
+    "unit1": {
+      "date": "2019-Present",
+      "position": "Freelance Web Developer",
+      "techs": "Frontend development, Refactor, SEO, Maintenance",
+      "cta": "Watch Portfolio"
+    },
+    "unit2": {
+      "position": "Freelance Web Developer",
+      "cta": "Open project"
+    },
+    "unit3": {
+      "position": "Freelance Web Developer",
+      "techs": "Wireless CSS for PHP template, cross-browser responsive design",
+      "cta": "Open project"
+    }
+  },
+  "skills": {
+    "work": {
+      "title": "Work skills"
+    },
+    "soft": {
+      "title": "Soft skills",
+      "body": [
+        "Positive attitude",
+        "Self-motivation",
+        "Adaptability",
+        "Dependability",
+        "Fast learner",
+        "Problem solving",
+        "Attention to details",
+        "Hard working",
+        "Open-minded",
+        "Tolerant"
+      ]
+    }
+  }
+}
