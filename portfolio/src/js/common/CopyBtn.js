@@ -17,7 +17,9 @@ export default function CopyBtn(props) {
       await navigator.clipboard.writeText(text);
       setCopySuccess(true);
       setTimeout(() => {
-        close();
+        if (close) {
+          close();
+        }
       }, 500);
       setTimeout(() => {
         if (copySuccess) {
@@ -54,8 +56,4 @@ CopyBtn.propTypes = {
   copyText: PropTypes.string.isRequired,
   contactName: PropTypes.string.isRequired,
   close: PropTypes.func,
-};
-
-CopyBtn.defaultProps = {
-  close: () => { },
 };

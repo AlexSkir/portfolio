@@ -133,7 +133,6 @@ export default function SideBlock(props) {
         }
       > */}
       <Drawer variant="permanent" open={open}>
-        {/* <Suspense fallback={<LoadingBlock width="100%" height="74px" variant="rectangular" />}> */}
         <DrawerHeader
           sx={{
             position: 'absolute',

@@ -8,7 +8,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 
 export default function CopyBtn(props) {
-  const { copyText, contactName, close = () => { }, t } = props;
+  const { copyText, contactName, close, t } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
   const theme = useTheme();
 
@@ -17,7 +17,9 @@ export default function CopyBtn(props) {
       await navigator.clipboard.writeText(text);
       setCopySuccess(true);
       setTimeout(() => {
-        close();
+        if (close) {
+          close();
+        }
       }, 500);
       setTimeout(() => {
         if (copySuccess) {
@@ -53,6 +55,6 @@ export default function CopyBtn(props) {
 CopyBtn.propTypes = {
   copyText: PropTypes.string.isRequired,
   contactName: PropTypes.string.isRequired,
-  close: PropTypes.func.isRequired,
+  close: PropTypes.func,
   t: PropTypes.func.isRequired,
 };
