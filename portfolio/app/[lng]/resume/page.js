@@ -1,5 +1,5 @@
-/* import React, { Suspense, lazy } from 'react';
-import Link from '@mui/material/Link'; */
+import React, { Suspense, lazy } from 'react';
+// import Link from '@mui/material/Link';
 import Link from 'next/link';
 import { useTranslation } from '../../i18n';
 // import LoadingPage from './components/loading';
