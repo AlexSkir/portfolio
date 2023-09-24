@@ -63,6 +63,10 @@ var map = {
 		"(app-pages-browser)/./app/i18n/locales/ru/resume.json",
 		"_app-pages-browser_app_i18n_locales_ru_resume_json"
 	],
+	"./ru/seo.json": [
+		"(app-pages-browser)/./app/i18n/locales/ru/seo.json",
+		"_app-pages-browser_app_i18n_locales_ru_seo_json"
+	],
 	"./ru/translation.json": [
 		"(app-pages-browser)/./app/i18n/locales/ru/translation.json",
 		"_app-pages-browser_app_i18n_locales_ru_translation_json"

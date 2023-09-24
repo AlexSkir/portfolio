@@ -1,4 +1,4 @@
 {
   "/[lng]/page": "app/[lng]/page.js",
-  "/[lng]/icon.png/route": "app/[lng]/icon.png/route.js"
+  "/[lng]/resume/page": "app/[lng]/resume/page.js"
 }
