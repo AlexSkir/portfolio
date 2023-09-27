@@ -1,5 +1,4 @@
 /* eslint-disable prettier/prettier */
-import { green, grey, red } from '@mui/material/colors';
 
 const rawTheme = {
   palette: {
@@ -23,14 +22,14 @@ const rawTheme = {
       dark: '#dd5831',
     },
     error: {
-      light: red[50],
-      main: red[500],
-      dark: red[700],
+      light: '#ffebee',
+      main: "#f44336",
+      dark: "#d32f2f",
     },
     success: {
-      light: green[50],
-      main: green[500],
-      dark: green[700],
+      light: "#e8f5e9",
+      main: "#4caf50",
+      dark: "#388e3c",
     },
   },
   typography: {
@@ -139,7 +138,7 @@ export const darkTheme = {
     background: {
       ...rawTheme.palette.background,
       default: 'rgb(35, 35, 35)',
-      placeholder: grey[200],
+      placeholder: "#eeeeee",
     },
   },
   typography: {
@@ -164,7 +163,7 @@ export const lightTheme = {
     background: {
       ...rawTheme.palette.background,
       default: 'rgb(242, 245, 249)',
-      placeholder: grey[200],
+      placeholder: "#eeeeee",
     },
   },
   typography: {

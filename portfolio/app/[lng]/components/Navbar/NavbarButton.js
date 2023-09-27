@@ -3,20 +3,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
+import Link from 'next/link';
 
 export default function NavbarButton(props) {
-  const { title, href, status = false, handleClick, children, ...other } = props;
+  const { title, href, status = false, children, classes } = props;
 
   return (
-    <Button
-      href={href}
-      className={`navbar-button button_isActive_${status}`}
-      onClick={handleClick}
-      {...other}
-      role="button"
-    >
-      {children}
-      {title}
+    <Button className={`navbar-button button_isActive_${status} ${classes}`} role="button">
+      <Link href={href} className={`MyTypography-button ${classes}-link`}>
+        {children}
+        {title}
+      </Link>
     </Button>
   );
 }
@@ -24,7 +21,7 @@ export default function NavbarButton(props) {
 NavbarButton.propTypes = {
   title: PropTypes.string.isRequired,
   href: PropTypes.string.isRequired,
-  handleClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   status: PropTypes.bool.isRequired,
+  classes: PropTypes.string.isRequired,
 };

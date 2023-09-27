@@ -1,0 +1,172 @@
+/* 
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../assets/fonts/Raleway-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../assets/fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../assets/fonts/Raleway-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../assets/fonts/Raleway-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('../../assets/fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  src: url('../../assets/fonts/Pacifico-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../../assets/fonts/Roboto-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+} */
+
+.MyTypography {
+  &.h1-variant {
+    font-family: var(--font-pacifico), cursive;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 42px;
+  }
+
+  &.h2-variant {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 40px;
+  }
+
+  &.h3-variant {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-height: 40px;
+  }
+
+  &.h4-variant {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+  }
+
+  &.h5-variant {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  &.h6-variant {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    line-height: 40px;
+  }
+
+  &.subtitle1-variant {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 28px;
+    line-height: 120%;
+    font-weight: 500;
+    letter-spacing: 0.693px;
+  }
+
+  &.subtitle2-variant {
+    font-family: var(--font-poppins), sans-serif;
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: 500;
+    letter-spacing: 0.693px;
+  }
+
+  &.body1-variant {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.35px;
+  }
+
+  &.body2-variant {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 500;
+  }
+
+  &.body3-variant {
+    font-family: var(--font-raleway), sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &.MyAlignText-left {
+    text-align: left;
+  }
+
+  &.MyAlignText-right {
+    text-align: right;
+  }
+
+  &.MyAlignText-center {
+    text-align: center;
+  }
+
+  &.MyAlignText-justify {
+    text-align: justify;
+  }
+}
+
+.MyTypography-button {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: initial;
+}

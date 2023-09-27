@@ -2,10 +2,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
 import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslation } from '../../../i18n/client';
 
@@ -23,6 +21,8 @@ import EmailJs from '../../../../assets/images/svg/emailJs.svg';
 import Recaptcha from '../../../../assets/images/svg/recaptcha.svg';
 import Npm from '../../../../assets/images/svg/npm.svg';
 import Render from '../../../../assets/images/icons/render.png';
+
+import Typography from '../theme/Typography';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
@@ -47,132 +47,69 @@ const techIcons = [
   },
 ];
 
-const iconWrapper = {
-  width: { xs: '40px', sm: '50px' },
-  height: { xs: '40px', sm: '50px' },
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  borderRadius: '8px',
-  backgroundColor: 'primary.main',
-  m: { xs: '10px', sm: '20px' },
-  '& svg, img': {
-    width: '70%',
-    height: '70%',
-  },
-};
-
 export default function Footer({ lng }) {
   const { t } = useTranslation(lng);
   return (
-    <Box
-      className="container-mainWrapper__footer footer-section"
-      sx={{
-        width: '100%',
-        minHeight: '100px',
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-        backgroundColor: 'primary.paper',
-        mt: '20px',
-        mb: { xs: '70px', sm: '20px' },
-        p: { xs: '30px', sm: '50px' },
-        borderRadius: { xs: '8px', sm: '20px' },
-      }}
-    >
-      <Box
-        className="footer__left-block"
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          width: { xs: '100%', sm: '48%' },
-          '& .footer__ref-link': { textAlign: { xs: 'center', sm: 'left' } },
-        }}
-      >
-        <Link
-          href="/"
-          underline="none"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            height: '42px',
-            cursor: 'pointer',
-            flexDirection: 'row',
-          }}
-        >
-          <Typography variant="h1" component="h1" sx={{ height: '100%' }}>
+    <div className="container-mainWrapper__footer footer-section">
+      <div className="footer__left-block">
+        <Link href="/" className="footer-section__logo-link">
+          <Typography variant="h1" classes="footer-section__logo">
             Alex
           </Typography>
-          <Typography variant="h1" component="h1" className="gradientText" sx={{ height: '100%' }}>
+          <Typography variant="h1" classes="footer-section__logo gradientText">
             Skir
           </Typography>
         </Link>
 
-        <Typography
-          className="footer__ref-link"
-          align="left"
-          variant="h6"
-          sx={{ mb: { xs: '20px', sm: '50px' } }}
-        >
-          <Link
+        <Typography classes="footer__ref-link" align="left" variant="h6">
+          <a
             className="footer-section__light-link"
             href="https://www.figma.com/community/file/1264680769254941322/Portfolio-Design"
-            sx={{ color: 'secondary.main', mr: '10px' }}
+            rel="noreferrer"
             target="_blank"
           >
             {t('footer.link1')}
-          </Link>
+          </a>
           {t('footer.link2')}
-          <Link
+          <a
             className="footer-section__dark-link"
             href="https://www.figma.com/@beatricewambui"
-            sx={{ color: 'secondary.dark', ml: '10px' }}
+            rel="noreferrer"
             target="_blank"
           >
             Beatrice Wambui Mbugua
-          </Link>
+          </a>
         </Typography>
-      </Box>
+      </div>
 
-      <Box
-        className="footer__right-block"
-        sx={{
-          width: { xs: '100%', sm: '48%' },
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: { xs: 'center', sm: 'flex-end' },
-          mb: '50px',
-        }}
-      >
+      <div className="footer__right-block">
         <Typography variant="h6" align="right">
           {t('common.shareTitle')}
         </Typography>
 
         <ShareBar url={typeof window !== 'undefined' ? window.location.origin : ''} len={4} t={t} />
-      </Box>
+      </div>
 
-      <Box sx={{ width: '100%', '& .footer__tool-title': { textAlign: 'center' } }}>
+      <div className="footer-section__techs-block">
         <Typography className="footer__tool-title" variant="h6" align="center">
           {t('footer.ref')}
         </Typography>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            flexWrap: 'wrap',
-          }}
-        >
+        <div className="footer-section__techs-wrapper">
           {techIcons.map((item, i) => (
             <Tooltip key={i} title={item.tooltip}>
-              <Link sx={iconWrapper} href={item.href} target="_blank">
+              <a
+                className="footer-section__tech-link"
+                href={item.href}
+                rel="noreferrer"
+                target="_blank"
+              >
                 {item.icon}
-              </Link>
+              </a>
             </Tooltip>
           ))}
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 }
 

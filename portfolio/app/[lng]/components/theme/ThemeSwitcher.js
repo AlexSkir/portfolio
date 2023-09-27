@@ -106,10 +106,6 @@ export function ThemeSwitcher(Component) {
           <CustomSection
             className="app_appContainer"
             sx={{
-              width: '100%',
-              minHeight: '100vh',
-              p: 0,
-              m: 0,
               backgroundColor: 'primary.main',
             }}
           >

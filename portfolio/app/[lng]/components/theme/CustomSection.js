@@ -47,6 +47,9 @@ const styles = ({ theme }) => ({
       fill: theme.palette.secondary.main,
     },
   },
+  [`.lang-switcher__wrapper`]: {
+    backgroundColor: theme.palette.primary.accent,
+  },
   [`.contact__contact-item`]: {
     backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary.main : '',
     [theme.breakpoints.down('sm')]: {
@@ -76,6 +79,18 @@ const styles = ({ theme }) => ({
   [` .navbar-block`]: {
     boxShadow: `0px 0px 4px 0px ${theme.palette.primary.accent}`,
   },
+  '.navbar-block__bottom-btns-wrapper': {
+    backgroundColor: theme.palette.primary.paper,
+    '& .navbar-block__bottom-btn-link': {
+      color: theme.palette.primary.contrastText,
+    },
+  },
+  '.navbar-block__top-btn': {
+    backgroundColor: theme.palette.primary.accent,
+    '& .navbar-block__top-btn-link': {
+      color: theme.palette.primary.contrastText,
+    },
+  },
   [` .navbar-button`]: {
     '& svg': {
       opacity: '50%',
@@ -87,7 +102,9 @@ const styles = ({ theme }) => ({
   },
   [` .button_isActive_true`]: {
     background: theme.palette.secondary.gradientBG,
-    color: theme.palette.secondary.contrastText,
+    '& .navbar-block__bottom-btn-link, .navbar-block__top-btn-link': {
+      color: theme.palette.secondary.contrastText,
+    },
     '& svg': {
       opacity: '100%',
     },
@@ -97,17 +114,25 @@ const styles = ({ theme }) => ({
     height: '2px',
     background: theme.palette.secondary.gradientBG,
   },
+  [`.container-mainWrapper__footer.footer-section`]: {
+    backgroundColor: theme.palette.primary.paper,
+  },
   [` .footer-section__light-link`]: {
+    color: theme.palette.secondary.main,
     textDecorationColor: theme.palette.secondary.main,
     '&:hover': {
       opacity: '0.7',
     },
   },
   [` .footer-section__dark-link`]: {
+    color: theme.palette.secondary.dark,
     textDecorationColor: theme.palette.secondary.dark,
     '&:hover': {
       opacity: '0.7',
     },
+  },
+  [` .footer-section__tech-link`]: {
+    backgroundColor: theme.palette.primary.main,
   },
   [` .MuiInputLabel-root`]: {
     color: theme.palette.primary.contrastText,

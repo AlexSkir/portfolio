@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import { dir } from 'i18next';
 import { cookies } from 'next/headers';
 import { languages } from '../i18n/settings';
-import styles from './style.module.scss';
 import enSeo from '../i18n/locales/en/seo.json';
 import ruSeo from '../i18n/locales/ru/seo.json';
+import './style.scss';
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-export async function generateMetadata({ params, searchParams }, parent) {
+export async function generateMetadata({ params }, parent) {
   // read route params
   const { lng } = params;
 
@@ -24,7 +24,7 @@ export async function generateMetadata({ params, searchParams }, parent) {
 
   return {
     title: seo.title,
-    description: seo.description,
+    description: seo.description.join(' '),
     /* openGraph: {
       images: ['/some-specific-page-image.jpg', ...previousImages],
     }, */

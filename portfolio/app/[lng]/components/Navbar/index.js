@@ -4,16 +4,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
-import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
-import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
-import Paper from '@mui/material/Paper';
 import { useTranslation } from '../../../i18n/client';
 
 import NavbarButton from './NavbarButton';
+import Home from '../../assets/icons/Home.svg';
+import Resume from '../../assets/icons/Resume.svg';
+import Portfolio from '../../assets/icons/Portfolio.svg';
+import Contact from '../../assets/icons/Contact.svg';
 
 const appbarWrapper = {
   display: { xs: 'none', sm: 'flex' },
@@ -28,100 +26,67 @@ const appbarWrapper = {
   borderRadius: '20px',
 };
 
-const navbarBtn = {
-  width: '80px',
-  height: '80px',
-  backgroundColor: 'primary.accent',
-  color: 'primary.contrastText',
-  borderRadius: '20px',
-  flexDirection: 'column',
-};
-
-const bottomNav = {
-  width: '25%',
-  height: '100%',
-  color: 'primary.contrastText',
-  flexDirection: 'column',
-  fontSize: '10px',
-  '& svg': {
-    fontSize: '20px',
-  },
-};
-
 export default function Navbar({ lng }) {
   const { t } = useTranslation(lng);
   const pathname = usePathname();
   // const [location, setLocation] = React.useState(`/${lng}`);
 
   const pages = [
-    { name: t('navbar.home'), path: `/${lng}`, icon: <HomeOutlinedIcon /> },
-    { name: t('navbar.resume'), path: `/${lng}/resume`, icon: <ArticleOutlinedIcon /> },
+    { name: t('navbar.home'), path: `/${lng}`, icon: <Home className="navbar-svg" /> },
+    { name: t('navbar.resume'), path: `/${lng}/resume`, icon: <Resume className="navbar-svg" /> },
     {
       name: t('navbar.portfolio'),
       path: `/${lng}/portfolio`,
-      icon: <WorkOutlineOutlinedIcon />,
+      icon: <Portfolio className="navbar-svg" />,
       portfolio: true,
     },
-    { name: t('navbar.contact'), path: `/${lng}/contact`, icon: <ContactMailOutlinedIcon /> },
+    {
+      name: t('navbar.contact'),
+      path: `/${lng}/contact`,
+      icon: <Contact className="navbar-svg" />,
+    },
   ];
-
-  const handleOpenNavMenu = (event) => {
-    const curPage = event.currentTarget;
-  };
 
   return (
     <>
-      <AppBar position="static" className="navbar-block" sx={appbarWrapper} elevation={0}>
+      <AppBar
+        position="static"
+        className="navbar-block"
+        sx={{ backgroundColor: 'primary.light' }}
+        elevation={0}
+      >
         <Toolbar disableGutters>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: 'none', sm: 'flex' },
-              justifyContent: 'space-between',
-            }}
-          >
+          <div className="navbar-block__top-btns-wrapper">
             {pages.map((page) => (
               <NavbarButton
                 key={page.name}
                 title={page.name}
-                handleClick={handleOpenNavMenu}
                 href={page.path}
                 status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
-                sx={navbarBtn}
+                classes="navbar-block__top-btn"
               >
                 {page.icon}
               </NavbarButton>
             ))}
-          </Box>
+          </div>
         </Toolbar>
       </AppBar>
 
-      <Paper
-        sx={{
-          display: { xs: 'block', sm: 'none' },
-          position: 'fixed',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          zIndex: '100',
-        }}
-        elevation={3}
-      >
-        <Box sx={{ display: 'flex', justifyContent: 'center', height: '56px' }}>
+      <div className="navbar-block__bottom-block">
+        <div className="navbar-block__bottom-btns-wrapper">
           {pages.map((page) => (
             <NavbarButton
               key={page.name}
               title={page.name}
-              handleClick={handleOpenNavMenu}
               href={page.path}
               status={pathname === page.path}
-              sx={bottomNav}
+              classes="navbar-block__bottom-btn"
             >
               {page.icon}
             </NavbarButton>
           ))}
-        </Box>
-      </Paper>
+        </div>
+      </div>
     </>
   );
 }

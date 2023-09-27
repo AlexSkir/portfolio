@@ -2,28 +2,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import LanguageIcon from '@mui/icons-material/Language';
-import Link from '@mui/material/Link';
+import Link from 'next/link';
 import Tooltip from '@mui/material/Tooltip';
-
-const langWrapper = {
-  position: 'absolute',
-  top: '25px',
-  right: '100px',
-  zIndex: '100',
-  width: '56px',
-  height: '56px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  backgroundColor: 'primary.accent',
-  borderRadius: '50%',
-  boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)',
-};
+import Typography from '../theme/Typography';
 
 export default function LangSwitcher({ pathname, t }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -38,7 +23,7 @@ export default function LangSwitcher({ pathname, t }) {
   };
 
   return (
-    <Box className="lang-switcher" sx={langWrapper}>
+    <div className="lang-switcher__wrapper">
       <Tooltip title={t('header.langTooltip')}>
         <Button
           id="basic-button"
@@ -46,7 +31,7 @@ export default function LangSwitcher({ pathname, t }) {
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
-          sx={{ color: 'primary.contrastText' }}
+          sx={{ color: 'primary.contrastText', height: '100%' }}
           role="button"
           aria-label={t('common.langswitch')}
         >
@@ -62,18 +47,24 @@ export default function LangSwitcher({ pathname, t }) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <Link href={pathname.indexOf('/ru') > -1 ? pathname.replace('/ru', '/en') : pathname}>
+        <Link
+          className="lang-switcher__link"
+          href={pathname.indexOf('/ru') > -1 ? pathname.replace('/ru', '/en') : pathname}
+        >
           <MenuItem value="en" onClick={handleClose} sx={{ color: 'primary.contrastText' }}>
-            English
+            <Typography>English</Typography>
           </MenuItem>
         </Link>
-        <Link href={pathname.indexOf('/en') > -1 ? pathname.replace('/en', '/ru') : pathname}>
+        <Link
+          className="lang-switcher__link"
+          href={pathname.indexOf('/en') > -1 ? pathname.replace('/en', '/ru') : pathname}
+        >
           <MenuItem value="ru" onClick={handleClose} sx={{ color: 'primary.contrastText' }}>
-            Русский
+            <Typography>Русский</Typography>
           </MenuItem>
         </Link>
       </Menu>
-    </Box>
+    </div>
   );
 }
 
