@@ -1,3 +1,4 @@
+import React from 'react';
 import enSeo from '../../i18n/locales/en/seo.json';
 import ruSeo from '../../i18n/locales/ru/seo.json';
 

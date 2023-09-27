@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import LoadingApp from '../components/LoadingApp';
 
 export default function ContactLayout({ children, params }) {
@@ -20,3 +21,8 @@ export default function ContactLayout({ children, params }) {
     </div>
   );
 }
+
+ContactLayout.propTypes = {
+  params: PropTypes.object.isRequired,
+  children: PropTypes.node.isRequired,
+};
