@@ -2,7 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import LoadingApp from '../components/LoadingApp';
+import LoadingApp from '../components/common/LoadingApp';
 
 export default function ContactLayout({ children, params }) {
   return (

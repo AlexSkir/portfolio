@@ -109,6 +109,12 @@ const styles = ({ theme }) => ({
       opacity: '100%',
     },
   },
+  '.container-mainWrapper__content-wrapper': {
+    backgroundColor: theme.palette.primary.paper,
+  },
+  '.side-block__avatar': {
+    backgroundColor: theme.palette.secondary.main,
+  },
   [` .page-content__divider`]: {
     width: '252px',
     height: '2px',

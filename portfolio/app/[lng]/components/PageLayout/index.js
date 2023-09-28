@@ -8,17 +8,6 @@ import SideBlock from './SideBlock';
 import ShareBar from '../common/Share';
 import { useTranslation } from '../../../i18n/client';
 
-const contentWrapper = {
-  backgroundColor: 'primary.paper',
-  width: '100%',
-  minWidth: '50%',
-  height: 'auto',
-  minHeight: '700px',
-  position: 'relative',
-  p: { xs: '15px', lg: '30px 50px 30px 70px' },
-  borderRadius: { xs: '8px', sm: '20px' },
-};
-
 const PageLayout = (props) => {
   const { title, children, avatar, lng } = props;
   const { t } = useTranslation(lng);
@@ -26,11 +15,8 @@ const PageLayout = (props) => {
   return (
     <>
       <SideBlock avatar={avatar} t={t} />
-      <Box className="container-mainWrapper__content-wrapper" sx={contentWrapper}>
-        <Box
-          className="container-mainWrapper__page-wrapper"
-          sx={{ display: 'flex', flexDirection: 'column', height: '100%', position: 'relative' }}
-        >
+      <div className="container-mainWrapper__content-wrapper">
+        <div className="container-mainWrapper__page-wrapper">
           <Box
             sx={{
               position: 'absolute',
@@ -81,8 +67,8 @@ const PageLayout = (props) => {
           >
             {children}
           </Box>
-        </Box>
-      </Box>
+        </div>
+      </div>
     </>
   );
 };

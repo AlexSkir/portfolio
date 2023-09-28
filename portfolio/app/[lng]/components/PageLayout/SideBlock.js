@@ -12,11 +12,11 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useCookies } from 'react-cookie';
 import LoadingBlock from '../common/LoadingBlock';
 
-import avatarBase from '../common/images/avatar-base.png';
-import avatarHeart from '../common/images/avatar-heart.png';
-import avatarOk from '../common/images/avatar-ok.png';
-import avatarHi from '../common/images/avatar-hi.png';
-import avatar4042 from '../common/images/avatar-404.2.png';
+import avatarBase from '../../assets/avatar/avatar-base.png';
+import avatarHeart from '../../assets/avatar/avatar-heart.png';
+import avatarOk from '../../assets/avatar/avatar-ok.png';
+import avatarHi from '../../assets/avatar/avatar-hi.png';
+import avatar4042 from '../../assets/avatar/avatar-404.2.png';
 
 const Avatar = lazy(() => import('./Avatar'));
 const SocialIconsBlock = lazy(() => import('./SocialIconsBlock'));
@@ -154,7 +154,7 @@ export default function SideBlock(props) {
 
           <Box sx={{ mt: open ? '-130px' : '0' }}>
             <Suspense fallback={<LoadingBlock width="200px" height="200px" variant="rounded" />}>
-              <Avatar img={avatarImg.src} open={open} />
+              <Avatar img={avatarImg} open={open} />
             </Suspense>
           </Box>
 

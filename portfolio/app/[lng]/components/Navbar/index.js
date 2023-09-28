@@ -8,10 +8,10 @@ import Toolbar from '@mui/material/Toolbar';
 import { useTranslation } from '../../../i18n/client';
 
 import NavbarButton from './NavbarButton';
-import Home from '../../assets/icons/Home.svg';
-import Resume from '../../assets/icons/Resume.svg';
-import Portfolio from '../../assets/icons/Portfolio.svg';
-import Contact from '../../assets/icons/Contact.svg';
+import Home from '../../assets/svg/Home.svg';
+import Resume from '../../assets/svg/Resume.svg';
+import Portfolio from '../../assets/svg/Portfolio.svg';
+import Contact from '../../assets/svg/Contact.svg';
 
 const appbarWrapper = {
   display: { xs: 'none', sm: 'flex' },

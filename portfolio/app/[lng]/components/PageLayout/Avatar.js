@@ -1,36 +1,23 @@
-'use client';
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-
-const avatarBlock = {
-  width: '200px',
-  height: '200px',
-  backgroundColor: 'secondary.main',
-  boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  borderRadius: { xs: '8px', sm: '20px' },
-};
+import Image from 'next/image';
 
 export default function Avatar(props) {
   const { img, open } = props;
 
   return (
-    <Box
+    <div
       className="side-block__avatar"
-      sx={{
-        ...avatarBlock,
-        backgroundImage: `url(${img})`,
+      style={{
         display: open ? 'block' : 'none',
       }}
-    />
+    >
+      <Image src={img} alt="My avatar" width={200} height={200} placeholder="blur" />
+    </div>
   );
 }
 
 Avatar.propTypes = {
-  img: PropTypes.string.isRequired,
+  img: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
 };

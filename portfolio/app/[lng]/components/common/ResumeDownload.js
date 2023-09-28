@@ -6,9 +6,9 @@ import { useParams } from 'next/navigation';
 import Button from '@mui/material/Button';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import Tooltip from '@mui/material/Tooltip';
-import resumeEn from './files/resume-en.pdf';
-import resumeRu from './files/resume-ru.pdf';
-import pdfIcon from './images/pdf.png';
+import resumeEn from '../../assets/files/resume-en.pdf';
+import resumeRu from '../../assets/files/resume-ru.pdf';
+import pdfIcon from '../../assets/icons/pdf.png';
 import DialogList from './DialogList';
 import { useTranslation } from '../../../i18n/client';
 

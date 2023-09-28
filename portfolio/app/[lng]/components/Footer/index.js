@@ -9,18 +9,18 @@ import { useTranslation } from '../../../i18n/client';
 
 import ShareBar from '../common/Share';
 
-import ReactIcon from '../../../../assets/images/svg/react.svg';
-import MuiIcon from '../../../../assets/images/svg/mui.svg';
-import FigmaIcon from '../../../../assets/images/svg/figma.svg';
-import GhIcon from '../../../../assets/images/svg/gh-pages.svg';
-import StackIcon from '../../../../assets/images/svg/stack.svg';
-import SassIcon from '../../../../assets/images/svg/sass.svg';
-import FontsIcon from '../../../../assets/images/svg/fonts.svg';
-import I18nIcon from '../../../../assets/images/svg/i18n.svg';
-import EmailJs from '../../../../assets/images/svg/emailJs.svg';
-import Recaptcha from '../../../../assets/images/svg/recaptcha.svg';
-import Npm from '../../../../assets/images/svg/npm.svg';
-import Render from '../../../../assets/images/icons/render.png';
+import ReactIcon from '../../assets/svg/react.svg';
+import MuiIcon from '../../assets/svg/mui.svg';
+import FigmaIcon from '../../assets/svg/figma.svg';
+import GhIcon from '../../assets/svg/gh-pages.svg';
+import StackIcon from '../../assets/svg/stack.svg';
+import SassIcon from '../../assets/svg/sass.svg';
+import FontsIcon from '../../assets/svg/fonts.svg';
+import I18nIcon from '../../assets/svg/i18n.svg';
+import EmailJs from '../../assets/svg/emailJs.svg';
+import Recaptcha from '../../assets/svg/recaptcha.svg';
+import Npm from '../../assets/svg/npm.svg';
+import Render from '../../assets/icons/render.png';
 
 import Typography from '../theme/Typography';
 

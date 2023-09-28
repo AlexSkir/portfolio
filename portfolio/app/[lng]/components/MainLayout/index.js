@@ -3,17 +3,17 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
-import ThemeWrapper from './components/theme/ThemeWrapper';
-import ScrollTop from './components/common/ScrollTop';
-import Loading from './loading';
-import LoadingApp from './components/common/LoadingApp';
-import { raleway } from './components/theme/Typography';
+import ThemeWrapper from '../theme/ThemeWrapper';
+import ScrollTop from '../common/ScrollTop';
+import Loading from '../../loading';
+import LoadingApp from '../common/LoadingApp';
+import { raleway } from '../theme/Typography';
 
-const Header = lazy(() => import('./components/Header'));
-const Footer = lazy(() => import('./components/Footer'));
-const Navbar = lazy(() => import('./components/Navbar'));
+const Header = lazy(() => import('../Header'));
+const Footer = lazy(() => import('../Footer'));
+const Navbar = lazy(() => import('../Navbar'));
 
-export default function Template({ children }) {
+export default function MainLayout({ children }) {
   const { lng } = useParams();
   const [mounted, setMounted] = React.useState(false);
 
@@ -41,6 +41,6 @@ export default function Template({ children }) {
   );
 }
 
-Template.propTypes = {
+MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
