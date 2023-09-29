@@ -1,104 +1,95 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import TelegramIcon from '@mui/icons-material/Telegram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import DraftsOutlinedIcon from '@mui/icons-material/DraftsOutlined';
+import Email from '../../assets/svg/Email.svg';
+import Github from '../../assets/svg/gh-pages.svg';
+import Telegram from '../../assets/svg/Telegram.svg';
+import Whatsapp from '../../assets/svg/Whatsapp.svg';
 import HeadHunter from '../../../../assets/images/icons/hh.png';
 import PhoneIcon from '../common/iconsJs/PhoneIconGradient';
 import ResumeDownload from '../common/ResumeDownload';
-
-const bgImage = {
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-};
-
-const iconHH = {
-  width: '25px',
-  height: '25px',
-  backgroundImage: `url(${HeadHunter.src})`,
-  ...bgImage,
-  borderRadius: '50%',
-};
 
 export default function SocialIconsBlock(props) {
   const { open } = props;
   const theme = useTheme();
 
-  const iconLink = {
-    width: '70px',
-    height: '70px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: open ? 'primary.light' : 'unset',
-    mr: '9px',
-    borderRadius: '8px',
-  };
-
   return (
-    <Box
+    <div
       className="side-block__social-icons"
-      sx={{ my: open ? '20px' : '80px', display: 'flex', flexDirection: open ? 'row' : 'column' }}
+      style={{
+        margin: open ? '20px 0' : '80px 0',
+        display: 'flex',
+        flexDirection: open ? 'row' : 'column',
+      }}
     >
       {open ? (
         <></>
       ) : (
-        <Link href="tel:+79938996716" target="_blank" sx={iconLink} aria-label="dial +79938996716">
+        <a
+          className="social-block__link"
+          href="tel:+79938996716"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="dial +79938996716"
+          style={{ backgroundColor: open ? 'primary.light' : 'unset' }}
+        >
           <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
-        </Link>
+        </a>
       )}
       {open ? (
         <></>
       ) : (
-        <Link
+        <a
+          className="social-block__link"
           href="mailto:a.skirnevskaia@gmail.com"
           target="_blank"
-          sx={iconLink}
+          rel="noreferrer"
           aria-label="mail to a.skirnevskaia@gmail.com"
         >
-          <DraftsOutlinedIcon sx={{ color: 'secondary.dark' }} />
-        </Link>
+          <Email className="MySvg-icon secondary_dark" />
+        </a>
       )}
-      <Link
+      <a
+        className={`social-block__link ${open ? 'social-link_open' : ''}`}
         href="https://wa.me/+79938996716"
         target="_blank"
-        sx={iconLink}
+        rel="noreferrer"
         aria-label="message +79938996716 in whatsapp"
       >
-        <WhatsAppIcon sx={{ color: '#25D366' }} />
-      </Link>
-      <Link
+        <Whatsapp className="MySvg-icon" style={{ fill: '#25D366' }} />
+      </a>
+      <a
+        className={`social-block__link ${open ? 'social-link_open' : ''}`}
         href="https://t.me/alexskir"
         target="_blank"
-        sx={iconLink}
+        rel="noreferrer"
         aria-label="message to alexskir in telegram"
       >
-        <TelegramIcon sx={{ color: '#229ED9' }} />
-      </Link>
-      <Link
+        <Telegram className="MySvg-icon" style={{ fill: '#229ED9' }} />
+      </a>
+      <a
+        className={`social-block__link ${open ? 'social-link_open' : ''}`}
         href="https://github.com/AlexSkir"
         target="_blank"
-        sx={iconLink}
+        rel="noreferrer"
         aria-label="open alexskir github profile in new tab"
       >
-        <GitHubIcon sx={{ color: '#000000' }} />
-      </Link>
-      <Link
+        <Github className="MySvg-icon" style={{ fill: '#000000' }} />
+      </a>
+      <a
+        className={`social-block__link ${open ? 'social-link_open' : ''}`}
         href="https://hh.ru/resume/62f371a2ff0810d5600039ed1f48674e706c43"
         target="_blank"
-        sx={iconLink}
+        rel="noreferrer"
         aria-label="open resume on headhunter"
       >
-        <Box sx={iconHH} />
-      </Link>
-
-      <ResumeDownload short btnStyle={{ ...iconLink, display: open ? 'none' : 'flex' }} />
-    </Box>
+        <div
+          className="social-block__hh-icon"
+          style={{ backgroundImage: `url(${HeadHunter.src})` }}
+        />
+      </a>
+      {open ? <></> : <ResumeDownload short />}
+    </div>
   );
 }
 

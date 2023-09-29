@@ -102,18 +102,33 @@ const styles = ({ theme }) => ({
   },
   [` .button_isActive_true`]: {
     background: theme.palette.secondary.gradientBG,
-    '& .navbar-block__bottom-btn-link, .navbar-block__top-btn-link': {
+    '& .navbar-block__bottom-btn-link, .navbar-block__top-btn-link, .download__btn': {
       color: theme.palette.secondary.contrastText,
     },
     '& svg': {
       opacity: '100%',
     },
   },
+  '.social-block__link': {
+    backgroundColor: 'unset',
+  },
+  '.social-block__link.social-link_open': {
+    backgroundColor: theme.palette.primary.light,
+  },
   '.container-mainWrapper__content-wrapper': {
     backgroundColor: theme.palette.primary.paper,
   },
   '.side-block__avatar': {
     backgroundColor: theme.palette.secondary.main,
+  },
+  '.side-block__contact-card': {
+    backgroundColor: theme.palette.primary.main,
+  },
+  '.secondary_main': {
+    fill: theme.palette.secondary.main,
+  },
+  '.secondary_dark': {
+    fill: theme.palette.secondary.dark,
   },
   [` .page-content__divider`]: {
     width: '252px',

@@ -20,7 +20,11 @@ const skeletonRight = {
 
 export default function Loading() {
   const [cookies, setCookie] = useCookies(['sideBlockOpen']);
-  const sideBlockOpen = cookies.sideBlockOpen || window.screen.width > 1200;
+  const sideBlockOpen =
+    typeof cookies.sideBlockOpen !== 'undefined'
+      ? cookies.sideBlockOpen
+      : window.screen.width > 1200;
+  console.log(cookies.sideBlockOpen);
   const [open, setOpen] = React.useState(sideBlockOpen);
 
   return (

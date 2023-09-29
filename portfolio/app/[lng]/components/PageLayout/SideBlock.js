@@ -86,7 +86,11 @@ export default function SideBlock(props) {
   const [avatarImg, setAvatar] = React.useState(avatarHi);
   const [cookies, setCookie] = useCookies(['sideBlockOpen']);
 
-  const sideBlockOpen = cookies.sideBlockOpen || window.screen.width > 1200;
+  const sideBlockOpen =
+    typeof cookies.sideBlockOpen !== 'undefined'
+      ? cookies.sideBlockOpen
+      : window.screen.width > 1200;
+  console.log(cookies.sideBlockOpen);
   const [open, setOpen] = React.useState(sideBlockOpen);
 
   const handleDrawerOpen = () => {
@@ -112,6 +116,15 @@ export default function SideBlock(props) {
       setAvatar(avatar4042);
     }
   });
+
+  /* React.useEffect(() => {
+    const sideBlockOpen =
+      typeof cookies.sideBlockOpen !== 'undefined'
+        ? cookies.sideBlockOpen
+        : window.screen.width > 1200;
+    console.log(cookies.sideBlockOpen);
+    setOpen(sideBlockOpen);
+  }); */
 
   return (
     <Box className="side-block-section" sx={{ display: { xs: 'none', md: 'block' } }}>

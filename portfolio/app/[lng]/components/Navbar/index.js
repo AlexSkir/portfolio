@@ -32,18 +32,22 @@ export default function Navbar({ lng }) {
   // const [location, setLocation] = React.useState(`/${lng}`);
 
   const pages = [
-    { name: t('navbar.home'), path: `/${lng}`, icon: <Home className="navbar-svg" /> },
-    { name: t('navbar.resume'), path: `/${lng}/resume`, icon: <Resume className="navbar-svg" /> },
+    { name: t('navbar.home'), path: `/${lng}`, icon: <Home className="navbar-svg MySvg-icon" /> },
+    {
+      name: t('navbar.resume'),
+      path: `/${lng}/resume`,
+      icon: <Resume className="navbar-svg MySvg-icon" />,
+    },
     {
       name: t('navbar.portfolio'),
       path: `/${lng}/portfolio`,
-      icon: <Portfolio className="navbar-svg" />,
+      icon: <Portfolio className="navbar-svg MySvg-icon" />,
       portfolio: true,
     },
     {
       name: t('navbar.contact'),
       path: `/${lng}/contact`,
-      icon: <Contact className="navbar-svg" />,
+      icon: <Contact className="navbar-svg MySvg-icon" />,
     },
   ];
 
