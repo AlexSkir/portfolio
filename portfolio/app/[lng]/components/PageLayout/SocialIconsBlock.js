@@ -31,7 +31,6 @@ export default function SocialIconsBlock(props) {
           target="_blank"
           rel="noreferrer"
           aria-label="dial +79938996716"
-          style={{ backgroundColor: open ? 'primary.light' : 'unset' }}
         >
           <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
         </a>

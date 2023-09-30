@@ -7,8 +7,9 @@ import { usePathname } from 'next/navigation';
 import Typography from '../theme/Typography';
 import { useTranslation } from '../../../i18n/client';
 
-import { MyThemeSwitch } from '../theme/ThemeSwitcher';
+// import { MyThemeSwitch } from '../theme/ThemeSwitcher';
 import LangSwitcher from './langSwitcher';
+import MyThemeSwitch from '../themeSwitcher';
 
 export default function Header({ lng }) {
   const { t } = useTranslation(lng);

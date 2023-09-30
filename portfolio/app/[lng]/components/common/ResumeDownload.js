@@ -56,7 +56,7 @@ export default function ResumeDownload(props) {
       <Tooltip title={t('common.downloadTooltip')}>
         <Button
           // eslint-disable-next-line prettier/prettier, max-len
-          className={`MyTypography-button button_isActive_true download__btn${short ? ' download_short_btn' : ' download_long_btn'}`}
+          className={`MyTypography MyTypography-button button_isActive_true download__btn${short ? ' download_short_btn' : ' download_long_btn'}`}
           onClick={handleClickOpen}
         >
           <Download className="download-svg MySvg-icon" />

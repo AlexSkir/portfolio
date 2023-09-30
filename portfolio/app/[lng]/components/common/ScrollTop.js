@@ -1,9 +1,7 @@
 'use client';
 
 import React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import ScrollUp from '../../assets/svg/ScrollUp.svg';
 
 export default function ScrollTop() {
   const [visible, setVisible] = React.useState(false);
@@ -44,30 +42,21 @@ export default function ScrollTop() {
   }, [scrollDir]);
 
   return (
-    <Box
+    <div
       className="scroll-to-top-btn"
-      sx={{
+      style={{
         display: visible && scrollDir === 'up' ? 'flex' : 'none',
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'fixed',
-        top: '5px',
-        left: '50%',
-        ml: '-20px',
-        width: '50px',
-        height: '50px',
-        zIndex: '1000',
       }}
     >
-      <Button
-        sx={{ p: 0, m: 0, width: '100%', height: '100%' }}
+      <button
+        className="scroll-to-top__button"
         onClick={() => {
           window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         }}
-        role="button"
+        type="button"
       >
-        <KeyboardArrowUpIcon sx={{ color: 'secondary.contrastText' }} />
-      </Button>
-    </Box>
+        <ScrollUp className="MySvg-icon" />
+      </button>
+    </div>
   );
 }

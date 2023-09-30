@@ -1,0 +1,54 @@
+$xs: 0px;
+$sm: 600px;
+$md: 900px;
+$lg: 1200px;
+
+:root {
+  --primary-light: #F2F7FC;
+  --primary-main: #F2F5F9;
+  --primary-accent: #E1E8EF;
+  --primary-paper: #FFFFFF;
+  --primary-background: rgb(242 245 249 / 30%);
+  --primary-paleText: rgb(23 23 23 / 80%);
+  --contrastText: black;
+  --default: rgb(242, 245, 249);
+  --placeholder: #eeeeee;
+
+  --secondary-light: #FFEBD1;
+  --secondary-main: #FF9C1B;
+  --secondary-dark: #EC1B09;
+  --secondary-gradient: linear-gradient(180deg, #FF9C1A 0%, #ED250A 100%);
+  --secondary-gradientBG: linear-gradient(127deg, #FF9C1A 0%, #E80505 100%);
+  --secondary-gradientIcon: linear-gradient(180deg, #FF9A1A 0%, #EC1C09 100%);
+  --secondary-contrastText: #F2F7FC;
+  --secondary-contrastTextActive: #FFFFFF;
+  --secondary-contrastTextInactive: rgba(26, 16, 3, 0.5);
+  --pinkBox: #FFEBD1;
+  --blueBox: #F2F7FC;
+  --textBox: #000000;
+
+  --warning-light: #ffdfba;
+  --warning-main: #ffa64c;
+  --warning-dark: #dd5831;
+
+  --error-light: #ffebee;
+  --error-main: #f44336;
+  --error-dark: #d32f2f;
+
+  --success-light: #e8f5e9;
+  --success-main: #4caf50;
+  --success-dark: #388e3c;
+}
+
+
+:root.dark {
+  --primary-light: #232323;
+  --primary-main: #232323;
+  --primary-accent: #333333;
+  --primary-paper: #444444;
+  --primary-background: rgb(35 35 35 / 30%);
+  --primary-paleText: rgb(255 255 255 / 80%);
+  --contrastText: #e1e3e6;
+  --default: rgb(35, 35, 35);
+  --placeholder: #eeeeee;
+}

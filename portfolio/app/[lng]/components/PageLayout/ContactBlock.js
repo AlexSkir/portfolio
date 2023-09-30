@@ -25,9 +25,7 @@ export default function ContactBlock(props) {
           link="tel:+79938996716"
           copyText="+79938996716"
           tooltip={t('items.call')}
-          icon={
-            <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
-          }
+          icon={<PhoneIcon main="var(--secondary-main)" dark="var(--secondary-dark)" />}
           contactName={t('items.phone')}
         />
       </div>

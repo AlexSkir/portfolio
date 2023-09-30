@@ -13,19 +13,6 @@ import Resume from '../../assets/svg/Resume.svg';
 import Portfolio from '../../assets/svg/Portfolio.svg';
 import Contact from '../../assets/svg/Contact.svg';
 
-const appbarWrapper = {
-  display: { xs: 'none', sm: 'flex' },
-  width: '90%',
-  maxWidth: '500px',
-  height: { xs: '50px', sm: '100px' },
-  position: 'absolute',
-  top: { xs: '95px', sm: '145px' },
-  right: { xs: '16px', sm: '24px' },
-  backgroundColor: 'primary.light',
-  p: { xs: '0 30px', sm: '10px 30px' },
-  borderRadius: '20px',
-};
-
 export default function Navbar({ lng }) {
   const { t } = useTranslation(lng);
   const pathname = usePathname();
@@ -53,12 +40,7 @@ export default function Navbar({ lng }) {
 
   return (
     <>
-      <AppBar
-        position="static"
-        className="navbar-block"
-        sx={{ backgroundColor: 'primary.light' }}
-        elevation={0}
-      >
+      <AppBar position="static" className="navbar-block" elevation={0}>
         <Toolbar disableGutters>
           <div className="navbar-block__top-btns-wrapper">
             {pages.map((page) => (
