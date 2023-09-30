@@ -1,3 +1,5 @@
+import React from 'react';
+
 export async function generateMetadata({ params }, parent) {
   // read route params
   const { lng } = params;
