@@ -38,10 +38,34 @@ $lg: 1200px;
   --success-light: #e8f5e9;
   --success-main: #4caf50;
   --success-dark: #388e3c;
+
+  --h1-max: 24;
+  --h2-max: 40;
+  --h3-max: 32;
+  --h4-max: 28;
+  --h5-max: 24;
+  --h6-max: 20;
+  --subtitle1-max: 28;
+  --subtitle2-max: 16;
+  --body1-max: 14;
+  --body2-max: 16;
+  --body3-max: 14;
+
+  --h1-min: 16;
+  --h2-min: 28;
+  --h3-min: 24;
+  --h4-min: 28;
+  --h5-min: 18;
+  --h6-min: 14;
+  --subtitle1-min: 16;
+  --subtitle2-min: 14;
+  --body1-min: 14;
+  --body2-min: 14;
+  --body3-min: 14;
 }
 
 
-:root.dark {
+:root body.dark {
   --primary-light: #232323;
   --primary-main: #232323;
   --primary-accent: #333333;

@@ -39,47 +39,52 @@ export async function generateMetadata({ params }, parent) {
   };
 }
 export default function RootLayout({ children, params: { lng } }) {
-  let localTheme;
+  let defaultTheme = 'light';
+  if (typeof window !== 'undefined') {
+    defaultTheme = window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? 'dark' : 'light';
+  }
   if (cookies().get('myColorMode')) {
-    localTheme = cookies().get('myColorMode').value;
+    defaultTheme = cookies().get('myColorMode').value;
   }
 
   return (
-    <html lang={lng} dir={dir(lng)} className={localTheme || 'light'}>
+    <html lang={lng} dir={dir(lng)}>
       <head>
         <style>
           {`@media (prefers-color-scheme: dark) {
-              html {
+              body {
                 background: rgb(35, 35, 35);
               }
             }
             @media (prefers-color-scheme: light) {
-              html {
+              body {
                 background: #F2F5F9;
               }
             }
 
-            html.light {
+            body.light {
               background: #F2F5F9;
             }
 
-            html.dark {
+            body.dark {
               background: rgb(35, 35, 35);
             }`}
         </style>
       </head>
-      <body>
-        <div id="root" className="app_appContainer">
+      <body className={defaultTheme}>
+        <div id="root">
           <Wrapper>
             <Suspense fallback={<LoadingApp />}>
-              <Header lng={lng} />
-              <Navbar lng={lng} />
+              <div className="container-mainWrapper">
+                <Header lng={lng} />
+                <Navbar lng={lng} />
 
-              <div className="container-mainWrapper__main-layout">
-                <ScrollTop />
-                <Suspense fallback={<Loading />}>{children}</Suspense>
+                <div className="container-mainWrapper__main-layout">
+                  <ScrollTop />
+                  <Suspense fallback={<Loading />}>{children}</Suspense>
+                </div>
+                <Footer lng={lng} />
               </div>
-              <Footer lng={lng} />
             </Suspense>
           </Wrapper>
         </div>

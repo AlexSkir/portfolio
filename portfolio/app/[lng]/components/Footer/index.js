@@ -22,7 +22,7 @@ import Recaptcha from '../../assets/svg/recaptcha.svg';
 import Npm from '../../assets/svg/npm.svg';
 import Render from '../../assets/icons/render.png';
 
-import Typography from '../theme/Typography';
+import Typography from '../Typography';
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },

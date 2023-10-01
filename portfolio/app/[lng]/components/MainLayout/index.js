@@ -7,7 +7,7 @@ import ThemeWrapper from '../theme/ThemeWrapper';
 import ScrollTop from '../common/ScrollTop';
 import Loading from '../../loading';
 import LoadingApp from '../common/LoadingApp';
-import { raleway } from '../theme/Typography';
+import { raleway } from '../Typography';
 
 const Header = lazy(() => import('../Header'));
 const Footer = lazy(() => import('../Footer'));

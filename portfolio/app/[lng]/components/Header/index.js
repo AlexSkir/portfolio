@@ -4,12 +4,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Typography from '../theme/Typography';
+import Typography from '../Typography';
 import { useTranslation } from '../../../i18n/client';
 
-// import { MyThemeSwitch } from '../theme/ThemeSwitcher';
 import LangSwitcher from './langSwitcher';
-import MyThemeSwitch from '../themeSwitcher';
+import ThemeSwitcher from './themeSwitcher';
 
 export default function Header({ lng }) {
   const { t } = useTranslation(lng);
@@ -26,7 +25,7 @@ export default function Header({ lng }) {
         </Typography>
       </Link>
 
-      <MyThemeSwitch t={t} />
+      <ThemeSwitcher t={t} />
 
       <LangSwitcher pathname={pathname} lng={lng} t={t} />
     </div>

@@ -7,7 +7,7 @@ import Link from '@mui/material/Link';
 import { useTranslation } from '../i18n/client';
 // import LoadingPage from './components/loading';
 // import PageLayout from './components/PageLayout';
-import Typography from './components/theme/Typography';
+import Typography from './components/Typography';
 
 const PageLayout = lazy(() => import('./components/PageLayout'));
 
@@ -23,7 +23,7 @@ export default function Page({ params: { lng } }) {
         my title
       </Typography>
       <Typography classes="logo">default</Typography>
-      <button type="button" className="MyTypography-button">
+      <button type="button" className="MyTypography MyTypography-button">
         sdsdsd
       </button>
       <Typography variant="subtitle1">{t('title', { joinArrays: ' ' })}</Typography>

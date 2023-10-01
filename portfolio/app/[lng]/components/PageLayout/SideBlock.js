@@ -2,14 +2,13 @@
 
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Tooltip from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { useCookies } from 'react-cookie';
+import Typography from '../Typography';
 import LoadingBlock from '../common/LoadingBlock';
 
 import avatarBase from '../../assets/avatar/avatar-base.png';
@@ -35,7 +34,7 @@ const openedMixin = (theme) => ({
   overflowX: 'visible',
   overflowY: 'visible',
   borderRadius: '20px',
-  backgroundColor: theme.palette.primary.paper,
+  backgroundColor: 'var(--primary-paper)',
   transition: theme.transitions.create('width', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
@@ -50,7 +49,7 @@ const closedMixin = (theme) => ({
   overflowX: 'hidden',
   width: '70px',
   height: '100%',
-  backgroundColor: theme.palette.primary.paper,
+  backgroundColor: 'var(--primary-paper)',
   overflowY: 'visible',
   padding: '0',
   marginRight: '0',
@@ -86,11 +85,8 @@ export default function SideBlock(props) {
   const [avatarImg, setAvatar] = React.useState(avatarHi);
   const [cookies, setCookie] = useCookies(['sideBlockOpen']);
 
-  const sideBlockOpen =
-    typeof cookies.sideBlockOpen !== 'undefined'
-      ? cookies.sideBlockOpen
-      : window.screen.width > 1200;
-  console.log(cookies.sideBlockOpen);
+  let sideBlockOpen = typeof window !== 'undefined' ? window.screen.width > 1200 : true;
+  sideBlockOpen = typeof cookies.sideBlockOpen !== 'undefined' ? cookies.sideBlockOpen : true;
   const [open, setOpen] = React.useState(sideBlockOpen);
 
   const handleDrawerOpen = () => {
@@ -127,7 +123,7 @@ export default function SideBlock(props) {
   }); */
 
   return (
-    <Box className="side-block-section" sx={{ display: { xs: 'none', md: 'block' } }}>
+    <div className="side-block-section">
       <Suspense
         fallback={
           <LoadingBlock width={open ? '400px' : '70px'} height="500px" variant="rectangular" />
@@ -145,7 +141,7 @@ export default function SideBlock(props) {
               <Tooltip title={t('sideblock.closeBtnTooltip')}>
                 <IconButton onClick={handleDrawerClose}>
                   <ChevronLeftIcon
-                    sx={{ color: 'secondary.dark', width: '40px', height: '40px' }}
+                    sx={{ color: 'var(--secondary-dark)', width: '40px', height: '40px' }}
                   />
                 </IconButton>
               </Tooltip>
@@ -158,28 +154,27 @@ export default function SideBlock(props) {
                   edge="start"
                 >
                   <ChevronRightIcon
-                    sx={{ color: 'secondary.main', width: '40px', height: '40px' }}
+                    sx={{ color: 'var(--secondary-main)', width: '40px', height: '40px' }}
                   />
                 </IconButton>
               </Tooltip>
             )}
           </DrawerHeader>
 
-          <Box sx={{ mt: open ? '-130px' : '0' }}>
+          <div style={{ marginTop: open ? '-130px' : '0' }}>
             <Suspense fallback={<LoadingBlock width="200px" height="200px" variant="rounded" />}>
               <Avatar img={avatarImg} open={open} />
             </Suspense>
-          </Box>
+          </div>
 
           <Typography
             variant="h4"
-            component="h4"
             align="center"
-            sx={{ m: '15px 0', display: open ? 'block' : 'none' }}
+            classes={`side-block__name ${open ? 'is_block' : ''}`}
           >
             {t('sideblock.name')}
           </Typography>
-          <Typography variant="body2" sx={{ opacity: '0.5', display: open ? 'block' : 'none' }}>
+          <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
             {t('sideblock.position')}
           </Typography>
 
@@ -192,7 +187,7 @@ export default function SideBlock(props) {
           </Suspense>
         </Drawer>
       </Suspense>
-    </Box>
+    </div>
   );
 }
 

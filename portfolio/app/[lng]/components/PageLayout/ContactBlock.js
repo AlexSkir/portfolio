@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
-import { useTheme } from '@mui/material/styles';
 
 import ContactItemCopieble from '../common/ContactItemCopieble';
 import ResumeDownload from '../common/ResumeDownload';
@@ -16,7 +15,6 @@ export default function ContactBlock(props) {
   const { open } = props;
   const { lng } = useParams();
   const { t } = useTranslation(lng, 'contact');
-  const theme = useTheme();
 
   return (
     <div className="side-block__contact-card" style={{ display: open ? 'flex' : 'none' }}>

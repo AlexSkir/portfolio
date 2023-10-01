@@ -10,7 +10,7 @@ export default function NavbarButton(props) {
 
   return (
     <Button className={`navbar-button button_isActive_${status} ${classes}`} role="button">
-      <Link href={href} className={`MyTypography-button ${classes}-link`}>
+      <Link href={href} className={`MyTypography MyTypography-button ${classes}-link`}>
         {children}
         {title}
       </Link>

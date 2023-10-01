@@ -2,13 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
 import Tooltip from '@mui/material/Tooltip';
 import Lang from '../../assets/svg/Lang.svg';
-import Typography from '../theme/Typography';
+import Typography from '../Typography';
 
 export default function LangSwitcher({ pathname, t }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -25,18 +24,17 @@ export default function LangSwitcher({ pathname, t }) {
   return (
     <div className="lang-switcher__wrapper">
       <Tooltip title={t('header.langTooltip')}>
-        <Button
-          id="basic-button"
+        <button
           className="lang-switcher__button"
           aria-controls={open ? 'basic-menu' : undefined}
           aria-haspopup="true"
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
-          role="button"
+          type="button"
           aria-label={t('common.langswitch')}
         >
           <Lang className="MySvg-icon" />
-        </Button>
+        </button>
       </Tooltip>
       <Menu
         className="lang-switcher__menu"

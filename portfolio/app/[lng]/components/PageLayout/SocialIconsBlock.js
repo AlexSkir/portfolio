@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
 import Email from '../../assets/svg/Email.svg';
 import Github from '../../assets/svg/gh-pages.svg';
 import Telegram from '../../assets/svg/Telegram.svg';
@@ -11,7 +10,6 @@ import ResumeDownload from '../common/ResumeDownload';
 
 export default function SocialIconsBlock(props) {
   const { open } = props;
-  const theme = useTheme();
 
   return (
     <div
@@ -32,7 +30,7 @@ export default function SocialIconsBlock(props) {
           rel="noreferrer"
           aria-label="dial +79938996716"
         >
-          <PhoneIcon main={theme.palette.secondary.main} dark={theme.palette.secondary.dark} />
+          <PhoneIcon main="var(--secondary-main)" dark="var(--secondary-dark)" />
         </a>
       )}
       {open ? (
