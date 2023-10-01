@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import SEO from '../common/SEO';
 import CustomStyledTabs from './StyledTabs';
 import TabPanel from './TabPanel';
 import ProjectsListGallery from './Gallery';
@@ -33,12 +32,6 @@ function Portfolio() {
 
   return (
     <PageLayout title={t('portfolio.title')} avatar="ok">
-      <SEO
-        title={t('portfolio.seo.title', { joinArrays: ' ' })}
-        image={collage}
-        description={t('portfolio.seo.description', { joinArrays: ' ' })}
-        path="/portfolio"
-      />
       <CustomStyledTabs value={value} handleChange={handleChange} />
       {tabs.map((item, i) => (
         <TabPanel key={i} index={item} value={value}>

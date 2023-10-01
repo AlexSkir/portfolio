@@ -10,7 +10,6 @@ import IconButton from '@mui/material/IconButton';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import SEO from '../../common/SEO';
 import ErrorBoundary from '../../common/ErrorBoundary';
 import PageLayout from '../../PageLayout';
 import LoadingBlock from '../../Suspense/LoadingBlock';
@@ -52,13 +51,13 @@ export default function Project(props) {
   return (
     <PageLayout title={t('portfolio.title')} avatar="ok">
       <ErrorBoundary ErrorComponent={ErrorMsg}>
-        <SEO
+        {/* <SEO
           // eslint-disable-next-line prettier/prettier, max-len
           title={`${t('portfolio.project')} ${data.name} - ${data.type} (${data.technologies.join(' • ')})`}
           image={data.share}
           description={data.description}
           path={`/portfolio/${data.path}`}
-        />
+        /> */}
         <Card>
           <CardHeader
             sx={{ p: '16px' }}

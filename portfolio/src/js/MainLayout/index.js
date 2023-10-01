@@ -8,7 +8,6 @@ import ScrollTop from './ScrollTop';
 import NavBar from './Navbar';
 import Header from './Header';
 import Footer from './Footer';
-import SEO from '../common/SEO';
 import poster from '../../assets/images/portfolio.png';
 import ThemeWrapper from '../common/ThemeWrapper';
 
@@ -39,12 +38,6 @@ function MainLayout(props) {
 
   return (
     <ThemeWrapper>
-      <SEO
-        image={poster}
-        title={t('common.seo.title')}
-        description={t('common.seo.description', { joinArrays: ' ' })}
-        path="/"
-      />
       <Container className="container-mainWrapper" maxWidth="false" sx={containerWrapper}>
         <Header />
         <NavBar locale={locale} />

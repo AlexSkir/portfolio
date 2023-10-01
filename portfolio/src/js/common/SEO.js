@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 import PropTypes from 'prop-types';
 import poster from '../../assets/images/portfolio.png';
 
@@ -39,7 +39,7 @@ export default function SEO(props) {
   const imageLink = `https://alexskir.ru${image}`;
   const url = `https://alexskir.ru${path}`;
   return (
-    <Helmet>
+    <div>
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
@@ -81,7 +81,7 @@ export default function SEO(props) {
       {/* <!-- /Yandex.Metrika counter --> */}
       <meta name="yandex-verification" content="" />
       <meta name="google-site-verification" content="" />
-    </Helmet>
+    </div>
   );
 }
 

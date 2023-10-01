@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
 import PageLayout from '../PageLayout';
-import SEO from '../common/SEO';
 import Contacts from './Contacts';
 import Form from './Form';
 
@@ -13,11 +12,6 @@ function Contact() {
   const { t } = useTranslation();
   return (
     <PageLayout title={t('contact.title')} avatar="heart">
-      <SEO
-        title={t('contact.seo.title')}
-        description={t('contact.seo.description', { joinArrays: ' ' })}
-        path="/contact"
-      />
       <Box
         sx={{
           display: 'flex',
