@@ -42,9 +42,7 @@ export default function LangSwitcher({ pathname, t }) {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
+        aria-labelledby="basic-button"
       >
         <Link
           className="lang-switcher__link"

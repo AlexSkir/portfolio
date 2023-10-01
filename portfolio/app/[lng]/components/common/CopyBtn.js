@@ -2,15 +2,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
-import { useTheme } from '@mui/material/styles';
 import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
+import Typography from '../Typography';
 
 export default function CopyBtn(props) {
   const { copyText, contactName, close, t } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
-  const theme = useTheme();
 
   const handleCopy = async (text) => {
     try {
@@ -33,21 +30,13 @@ export default function CopyBtn(props) {
 
   return (
     <Tooltip title={copySuccess ? t('common.copieble.copied') : t('common.copieble.copy')}>
-      <Button
-        role="button"
+      <button
+        type="button"
         className="copy_btn button_isActive_true"
-        sx={{
-          background: theme.palette.secondary.gradientBG,
-          color: theme.palette.secondary.contrastText,
-          m: '10px',
-          p: '5px 10px',
-          borderRadius: '20px',
-          minWidth: 'fit-content',
-        }}
         onClick={() => handleCopy(copyText)}
       >
         <Typography variant="body3">{contactName}</Typography>
-      </Button>
+      </button>
     </Tooltip>
   );
 }

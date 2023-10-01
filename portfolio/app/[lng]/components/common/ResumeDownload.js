@@ -3,7 +3,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import resumeEn from '../../assets/files/resume-en.pdf';
 import resumeRu from '../../assets/files/resume-ru.pdf';
@@ -54,14 +53,15 @@ export default function ResumeDownload(props) {
   return (
     <>
       <Tooltip title={t('common.downloadTooltip')}>
-        <Button
+        <button
+          type="button"
           // eslint-disable-next-line prettier/prettier, max-len
           className={`MyTypography MyTypography-button button_isActive_true download__btn${short ? ' download_short_btn' : ' download_long_btn'}`}
           onClick={handleClickOpen}
         >
           <Download className="download-svg MySvg-icon" />
           {short ? '' : t('common.downloadBtn')}
-        </Button>
+        </button>
       </Tooltip>
       <DialogList
         open={open}

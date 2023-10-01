@@ -2,10 +2,8 @@
 
 import React from 'react';
 import { useParams } from 'next/navigation';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
+import Link from 'next/link';
+import Typography from './components/Typography';
 import { useTranslation } from '../i18n/client';
 // import PageLayout from '../PageLayout';
 
@@ -15,15 +13,15 @@ export default function NotFound() {
   const { lng } = useParams();
   const { t } = useTranslation(lng);
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Typography variant="h4" align="center" sx={{ mb: '20px' }}>
+    <div className="not-found__container">
+      <Typography variant="h4" align="center" classes="not-found__title">
         {t('common.nomatch.title')}
       </Typography>
-      <Button size="large" variant="contained" color="secondary" role="button">
-        <Link href={`/${lng}`} underline="none" color="black">
-          <Typography variant="2">{t('common.nomatch.btn')}</Typography>
+      <button className="not-found__button MyTypography MyTypography-button" type="button">
+        <Link href={`/${lng}`} className="not-found__link">
+          <Typography variant="h2">{t('common.nomatch.btn')}</Typography>
         </Link>
-      </Button>
-    </Box>
+      </button>
+    </div>
   );
 }

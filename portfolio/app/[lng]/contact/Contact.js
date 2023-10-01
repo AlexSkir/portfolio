@@ -2,8 +2,8 @@
 
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import Link from '@mui/material/Link';
-// import Link from 'next/link';
+// import Link from '@mui/material/Link';
+import Link from 'next/link';
 // import { useTranslation } from '../i18n';
 // import LoadingPage from './components/loading';
 // import PageLayout from './components/PageLayout';

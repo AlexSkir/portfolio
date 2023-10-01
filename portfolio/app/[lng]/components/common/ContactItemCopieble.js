@@ -1,38 +1,9 @@
+'use client';
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Typography from '@mui/material/Typography';
-
-const contactIcon = {
-  width: '44px',
-  minWidth: '44px',
-  height: '44px',
-  minHeight: '44px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-};
-
-const contactCopy = {
-  width: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'flex-start',
-  m: 0,
-  p: 0,
-  color: 'primary.contrastText',
-};
-
-const linkText = {
-  wordBreak: 'break-word',
-  textAlign: 'left',
-  color: 'primary.contrastText',
-  borderBottom: '1px solid',
-  borderColor: 'primary.contrastText',
-};
+import Typography from '../Typography';
 
 export default function ContactItemCopieble(props) {
   const { t } = useTranslation();
@@ -52,27 +23,27 @@ export default function ContactItemCopieble(props) {
   };
 
   return (
-    <Box
-      className="contact-item__copy-button"
-      sx={{ display: 'flex', cursor: 'pointer', width: '100%' }}
+    <button
+      type="button"
+      className="copieble-btn__container"
       onMouseUp={() => handleCopy(copyText)}
     >
-      <Box sx={contactIcon}>{icon}</Box>
-      <Box sx={contactCopy}>
-        <Typography variant="body3" sx={{ opacity: '0.5' }}>
+      <div className="copieble-btn__icon">{icon}</div>
+      <div className="copieble-btn__body">
+        <Typography variant="body3" classes="copieble-btn__name">
           {contactName}
-          <Typography component="span" sx={{ ml: '15px', fontSize: '10px', userSelect: 'none' }}>
+          <Typography variant="body1" component="span" classes="copieble-btn__status">
             {copySuccess ? t('common.copieble.copied') : ''}
           </Typography>
         </Typography>
 
-        <Link href={link} target="_blank">
-          <Typography variant="body3" sx={linkText}>
+        <a className="copieble-btn__link" href={link} target="_blank" rel="noreferrer">
+          <Typography classes="copieble-btn__link-text" variant="body3">
             {copyText}
           </Typography>
-        </Link>
-      </Box>
-    </Box>
+        </a>
+      </div>
+    </button>
   );
 }
 

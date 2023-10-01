@@ -1,8 +1,7 @@
-/* eslint-disable max-len */
+/* 
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 
 const styles = ({ theme }) => ({
   [theme.breakpoints.down('lg')]: {
@@ -65,50 +64,6 @@ const styles = ({ theme }) => ({
       opacity: '0.8',
     },
   },
-  [` div, h1`]: {
-    color: theme.palette.primary.contrastText,
-  },
-  [` .gradientText`]: {
-    background: theme.palette.secondary.gradient,
-    backgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-  },
-  [` .navbar-block`]: {
-    boxShadow: `0px 0px 4px 0px ${theme.palette.primary.accent}`,
-  },
-  [` .navbar-button`]: {
-    '& svg': {
-      opacity: '50%',
-    },
-    '&:hover': {
-      backgroundColor: 'none',
-      boxShadow: `0px 0px 4px 0px ${theme.palette.primary.accent}`,
-    },
-  },
-  [` .button_isActive_true`]: {
-    background: theme.palette.secondary.gradientBG,
-    color: theme.palette.secondary.contrastText,
-    '& svg': {
-      opacity: '100%',
-    },
-  },
-  [` .page-content__divider`]: {
-    width: '252px',
-    height: '2px',
-    background: theme.palette.secondary.gradientBG,
-  },
-  [` .footer-section__light-link`]: {
-    textDecorationColor: theme.palette.secondary.main,
-    '&:hover': {
-      opacity: '0.7',
-    },
-  },
-  [` .footer-section__dark-link`]: {
-    textDecorationColor: theme.palette.secondary.dark,
-    '&:hover': {
-      opacity: '0.7',
-    },
-  },
   [` .MuiInputLabel-root`]: {
     color: theme.palette.primary.contrastText,
     fontSize: '16px',
@@ -132,16 +87,12 @@ const styles = ({ theme }) => ({
   [` .activity-icon_dark`]: {
     fill: theme.palette.secondary.dark,
   },
-  '.scroll-to-top-btn': {
-    background: theme.palette.secondary.gradientBG,
-    borderRadius: '30px',
-  },
 });
 
 function CustomSection(props) {
   const { children, ...other } = props;
 
-  return <Box {...other}>{children}</Box>;
+  return <div>{children}</div>;
 }
 
 CustomSection.propTypes = {
@@ -149,3 +100,4 @@ CustomSection.propTypes = {
 };
 
 export default styled(CustomSection)(styles);
+ */

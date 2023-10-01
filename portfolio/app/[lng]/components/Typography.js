@@ -46,7 +46,7 @@ const myClasses = {
   justify: 'MyAlignText-justify',
 };
 
-const variantMapping = (variant, children, classes, align) => {
+const variantMapping = (variant, children, classes, align, component) => {
   const customClass = classes ? ` ${classes}` : '';
   const customAlign = align ? ` ${myClasses[align]}` : '';
   switch (variant) {
@@ -99,6 +99,14 @@ const variantMapping = (variant, children, classes, align) => {
         </p>
       );
     case 'body1':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.body1} ${raleway.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <p className={`${myClasses.body1} ${raleway.variable}${customClass}${customAlign}`}>
           {children}
@@ -128,7 +136,7 @@ const variantMapping = (variant, children, classes, align) => {
 export { pacifico, raleway, poppins };
 
 export default function Typography(props) {
-  const { variant = '', children, classes = false, align = false } = props;
+  const { variant = '', children, classes = false, align = false, component = false } = props;
 
-  return variantMapping(variant, children, classes, align);
+  return variantMapping(variant, children, classes, align, component);
 }

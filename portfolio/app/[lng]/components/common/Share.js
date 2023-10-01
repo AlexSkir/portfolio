@@ -1,15 +1,11 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 'use client';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
-import Typography from '@mui/material/Typography';
-import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import Tooltip from '@mui/material/Tooltip';
 import {
   FacebookShareButton,
@@ -25,69 +21,15 @@ import {
   VKIcon,
   WhatsappIcon,
 } from 'react-share';
+import Typography, { raleway } from '../Typography';
 import CopyBtn from './CopyBtn';
-import { useTranslation } from '../../../i18n/client';
+import ShareIcon from '../../assets/svg/Share.svg';
 
 const dialogBlock = {
   ' .MuiDialog-paper': {
     p: '20px',
     borderRadius: '20px',
   },
-};
-
-const dialogList = {
-  display: 'flex',
-  flexDirection: 'row',
-  maxWidth: '100%',
-  overflowX: 'auto',
-  pt: 0,
-  li: {
-    mx: '10px',
-  },
-  button: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  svg: {
-    width: { xs: '40px', sm: '50px' },
-    height: { xs: '40px', sm: '50px' },
-    mb: '10px',
-    borderRadius: '8px',
-  },
-};
-
-const shareBox = {
-  display: 'flex',
-  justifyContent: { xs: 'center', sm: 'flex-end' },
-  flexWrap: 'wrap',
-  button: {
-    width: { xs: '40px', sm: '50px' },
-    height: { xs: '40px', sm: '50px' },
-    margin: '10px',
-    borderRadius: '8px',
-    overflow: 'hidden',
-  },
-  svg: { width: '100%', height: '100%' },
-};
-
-const copyBox = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  width: '100%',
-  border: '1px solid',
-  borderColor: 'primary.light',
-  borderRadius: '20px',
-};
-
-const linkBlock = {
-  position: 'relative',
-  pl: '8px',
-  pr: '20px',
-  whiteSpace: 'nowrap',
-  textOverflow: 'ellipsis',
-  overflow: 'hidden',
 };
 
 const shareIcons = (url, ...args) => {
@@ -165,34 +107,41 @@ export default function ShareBar(props) {
 
   return (
     <>
-      <Box sx={shareBox}>
+      <div className="share-container">
         {shareIcons(url, 0, len).map((item) => (
           <Tooltip key={item.tooltip} title={item.tooltip}>
             {item.item}
           </Tooltip>
         ))}
 
-        <Button onClick={handleClickOpen} role="button" aria-label={t('common.dialogShare')}>
-          <ShareOutlinedIcon
-            sx={{
-              color: 'primary.contrastText',
-            }}
-          />
-        </Button>
-      </Box>
+        <button onClick={handleClickOpen} type="button" aria-label={t('common.dialogShare')}>
+          <ShareIcon className="MySvg-icon share-btn__icon" />
+        </button>
+      </div>
 
-      <Dialog onClose={handleClose} open={open} fullWidth maxWidth="sm" sx={dialogBlock}>
-        <DialogTitle sx={{ p: 0 }}>{t('common.dialogShare')}</DialogTitle>
-        <List sx={dialogList}>
+      <Dialog
+        onClose={handleClose}
+        open={open}
+        fullWidth
+        maxWidth="sm"
+        sx={dialogBlock}
+        className={raleway.variable}
+      >
+        <Typography variant="h6">{t('common.dialogShare')}</Typography>
+        <ul className="share__list">
           {shareIcons(url).map((item, i) => (
-            <ListItem disableGutters key={i} onClick={() => handleClose(item)}>
+            <li
+              className="MyTypography MyTypography-button"
+              key={i}
+              onClick={() => handleClose(item)}
+            >
               {item.item}
-            </ListItem>
+            </li>
           ))}
-        </List>
+        </ul>
 
-        <Box sx={copyBox}>
-          <Typography variant="body3" sx={linkBlock}>
+        <div className="share__copy-block">
+          <Typography variant="body3" classes="share__copy-url">
             {url}
           </Typography>
           <CopyBtn
@@ -201,7 +150,7 @@ export default function ShareBar(props) {
             close={() => handleClose()}
             t={t}
           />
-        </Box>
+        </div>
       </Dialog>
     </>
   );
