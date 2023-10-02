@@ -4,9 +4,6 @@ import Link from 'next/link';
 import Typography from '../Typography';
 import LoadingBlock from '../common/LoadingBlock';
 
-// import LangSwitcher from './langSwitcher';
-// import ThemeSwitcher from './themeSwitcher';
-
 const LangSwitcher = lazy(() => import('./LangSwitcher'));
 const ThemeSwitcher = lazy(() => import('./ThemeSwitcher'));
 

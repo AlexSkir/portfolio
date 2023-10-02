@@ -7,7 +7,7 @@ import Tooltip from '@mui/material/Tooltip';
 import DarkMode from '../../assets/svg/Dark-mode.svg';
 import LightMode from '../../assets/svg/Light-mode.svg';
 
-export default function MyThemeSwitch(props) {
+export default function ThemeSwitcher(props) {
   const { t } = props;
   const [cookies, setCookie] = useCookies(['myColorMode']);
   const defaultTheme = typeof window !== 'undefined' ? document.body.className : 'light';
@@ -57,6 +57,6 @@ export default function MyThemeSwitch(props) {
   );
 }
 
-MyThemeSwitch.propTypes = {
+ThemeSwitcher.propTypes = {
   t: PropTypes.object.isRequired,
 };
