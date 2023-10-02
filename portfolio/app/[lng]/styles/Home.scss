@@ -16,6 +16,13 @@
   margin: 25px 0;
 }
 
+body.dark {
+  .home-page__activity-item {
+    background-color: var(--primary-main);
+    color: var(--contrastText);
+  }
+}
+
 .home-page__activity-item {
   display: flex;
   flex-direction: column;

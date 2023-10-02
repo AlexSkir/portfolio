@@ -31,14 +31,17 @@ const dialogBlock = {
   ' .MuiDialog-paper': {
     p: '20px',
     borderRadius: '20px',
+    backgroundColor: 'var(--primary-paper)',
+    color: 'var(--contrastText)',
   },
 };
 
 const shareIcons = (url, ...args) => {
+  const Url = typeof window !== 'undefined' ? window.location[url] : '';
   const socialButtons = [
     {
       item: (
-        <LinkedinShareButton url={url}>
+        <LinkedinShareButton url={Url}>
           <LinkedinIcon />
           LinkedIn
         </LinkedinShareButton>
@@ -47,7 +50,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <TelegramShareButton url={url}>
+        <TelegramShareButton url={Url}>
           <TelegramIcon />
           Telegram
         </TelegramShareButton>
@@ -56,7 +59,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <WhatsappShareButton url={url}>
+        <WhatsappShareButton url={Url}>
           <WhatsappIcon />
           WhatsApp
         </WhatsappShareButton>
@@ -65,7 +68,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <FacebookShareButton url={url}>
+        <FacebookShareButton url={Url}>
           <FacebookIcon />
           Facebook
         </FacebookShareButton>
@@ -74,7 +77,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <TwitterShareButton url={url}>
+        <TwitterShareButton url={Url}>
           <TwitterIcon />
           Twitter
         </TwitterShareButton>
@@ -83,7 +86,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <VKShareButton url={url}>
+        <VKShareButton url={Url}>
           <VKIcon />
           VKontakte
         </VKShareButton>
@@ -145,9 +148,9 @@ export default function ShareBar(props) {
 
         <div className="share__copy-block">
           <Typography variant="body3" classes="share__copy-url">
-            {url}
+            {typeof window !== 'undefined' ? window.location[url] : ''}
           </Typography>
-          <CopyBtn copyText={url} close={() => handleClose()} />
+          <CopyBtn copyText={window.location[url]} close={() => handleClose()} />
         </div>
       </Dialog>
     </>

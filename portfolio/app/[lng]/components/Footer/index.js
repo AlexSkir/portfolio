@@ -90,7 +90,7 @@ export default function Footer(props) {
         </Typography>
 
         <Suspense fallback={<LoadingBlock width="350px" height="70px" />}>
-          <ShareBar url={typeof window !== 'undefined' ? window.location.origin : ''} len={4} />
+          <ShareBar url="origin" len={4} />
         </Suspense>
       </div>
 

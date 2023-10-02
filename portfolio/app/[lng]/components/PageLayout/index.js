@@ -20,7 +20,7 @@ export default async function PageLayout(props) {
         <div className="page-container__wrapper">
           <div className="page-container__ShareBar-wrapper">
             <Suspense fallback={<LoadingBlock width="70px" height="70px" />}>
-              <ShareBar url={typeof window !== 'undefined' ? window.location.href : ''} len={0} />
+              <ShareBar url="href" len={0} />
             </Suspense>
           </div>
           <Suspense fallback={<LoadingBlock width="100%" height="55px" />}>
