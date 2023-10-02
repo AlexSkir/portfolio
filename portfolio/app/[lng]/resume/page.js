@@ -4,7 +4,7 @@ import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 // import Link from '@mui/material/Link';
 import Link from 'next/link';
-import { useTranslation } from '../../i18n/client';
+import useTranslation from '../../i18n/client';
 // import LoadingPage from './components/loading';
 import PageLayout from '../components/PageLayout';
 import enSeo from '../../i18n/locales/en/seo.json';

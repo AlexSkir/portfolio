@@ -4,7 +4,7 @@ import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { useTranslation } from '../../i18n/client';
+import useTranslation from '../../i18n/client';
 // import { Footer } from '../components/Footer/client';
 // import { Footer } from '../components/Footer';
 import Loading from '../loading';

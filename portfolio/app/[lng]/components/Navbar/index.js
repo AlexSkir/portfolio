@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import { useTranslation } from '../../../i18n/client';
 
 import NavbarButton from './NavbarButton';
 import Home from '../../assets/svg/Home.svg';
@@ -13,26 +12,25 @@ import Resume from '../../assets/svg/Resume.svg';
 import Portfolio from '../../assets/svg/Portfolio.svg';
 import Contact from '../../assets/svg/Contact.svg';
 
-export default function Navbar({ lng }) {
-  const { t } = useTranslation(lng);
+export default function Navbar(props) {
+  const { t, lng } = props;
   const pathname = usePathname();
-  // const [location, setLocation] = React.useState(`/${lng}`);
 
   const pages = [
-    { name: t('navbar.home'), path: `/${lng}`, icon: <Home className="navbar-svg MySvg-icon" /> },
+    { name: t.navbar.home, path: `/${lng}`, icon: <Home className="navbar-svg MySvg-icon" /> },
     {
-      name: t('navbar.resume'),
+      name: t.navbar.resume,
       path: `/${lng}/resume`,
       icon: <Resume className="navbar-svg MySvg-icon" />,
     },
     {
-      name: t('navbar.portfolio'),
+      name: t.navbar.portfolio,
       path: `/${lng}/portfolio`,
       icon: <Portfolio className="navbar-svg MySvg-icon" />,
       portfolio: true,
     },
     {
-      name: t('navbar.contact'),
+      name: t.navbar.contact,
       path: `/${lng}/contact`,
       icon: <Contact className="navbar-svg MySvg-icon" />,
     },
@@ -79,4 +77,5 @@ export default function Navbar({ lng }) {
 
 Navbar.propTypes = {
   lng: PropTypes.string.isRequired,
+  t: PropTypes.object.isRequired,
 };

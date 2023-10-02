@@ -21,9 +21,11 @@ import {
   VKIcon,
   WhatsappIcon,
 } from 'react-share';
+import { useParams } from 'next/navigation';
 import Typography, { raleway } from '../Typography';
 import CopyBtn from './CopyBtn';
 import ShareIcon from '../../assets/svg/Share.svg';
+import useTranslation from '../../../i18n/client';
 
 const dialogBlock = {
   ' .MuiDialog-paper': {
@@ -93,9 +95,10 @@ const shareIcons = (url, ...args) => {
 };
 
 export default function ShareBar(props) {
-  // const { t } = useTranslation();
-  const { url, len, t } = props;
+  const { url, len } = props;
   const [open, setOpen] = React.useState(false);
+  const { lng } = useParams();
+  const { t } = useTranslation(lng);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -144,12 +147,7 @@ export default function ShareBar(props) {
           <Typography variant="body3" classes="share__copy-url">
             {url}
           </Typography>
-          <CopyBtn
-            contactName={t('common.copyLink')}
-            copyText={url}
-            close={() => handleClose()}
-            t={t}
-          />
+          <CopyBtn copyText={url} close={() => handleClose()} />
         </div>
       </Dialog>
     </>
@@ -159,5 +157,4 @@ export default function ShareBar(props) {
 ShareBar.propTypes = {
   url: PropTypes.string.isRequired,
   len: PropTypes.number.isRequired,
-  t: PropTypes.func.isRequired,
 };

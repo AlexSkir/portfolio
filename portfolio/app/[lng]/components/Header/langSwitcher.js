@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import { usePathname } from 'next/navigation';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
@@ -9,7 +10,9 @@ import Tooltip from '@mui/material/Tooltip';
 import Lang from '../../assets/svg/Lang.svg';
 import Typography from '../Typography';
 
-export default function LangSwitcher({ pathname, t }) {
+export default function LangSwitcher(props) {
+  const { t } = props;
+  const pathname = usePathname();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -23,7 +26,7 @@ export default function LangSwitcher({ pathname, t }) {
 
   return (
     <div className="lang-switcher__wrapper">
-      <Tooltip title={t('header.langTooltip')}>
+      <Tooltip title={t.header.langTooltip}>
         <button
           className="lang-switcher__button"
           aria-controls={open ? 'basic-menu' : undefined}
@@ -31,7 +34,7 @@ export default function LangSwitcher({ pathname, t }) {
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
           type="button"
-          aria-label={t('common.langswitch')}
+          aria-label={t.common.langswitch}
         >
           <Lang className="MySvg-icon" />
         </button>
@@ -66,6 +69,5 @@ export default function LangSwitcher({ pathname, t }) {
 }
 
 LangSwitcher.propTypes = {
-  pathname: PropTypes.string.isRequired,
-  t: PropTypes.func.isRequired,
+  t: PropTypes.object.isRequired,
 };

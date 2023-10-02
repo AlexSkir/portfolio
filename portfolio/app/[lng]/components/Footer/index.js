@@ -1,13 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '@mui/material/Tooltip';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useTranslation } from '../../../i18n/client';
 
-import ShareBar from '../common/Share';
+// import ShareBar from '../common/Share';
 
 import ReactIcon from '../../assets/svg/react.svg';
 import MuiIcon from '../../assets/svg/mui.svg';
@@ -23,6 +22,9 @@ import Npm from '../../assets/svg/npm.svg';
 import Render from '../../assets/icons/render.png';
 
 import Typography from '../Typography';
+import LoadingBlock from '../common/LoadingBlock';
+
+const ShareBar = lazy(() => import('../common/Share'));
 
 const techIcons = [
   { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
@@ -47,8 +49,8 @@ const techIcons = [
   },
 ];
 
-export default function Footer({ lng }) {
-  const { t } = useTranslation(lng);
+export default function Footer(props) {
+  const { t } = props;
   return (
     <div className="container-mainWrapper__footer footer-section">
       <div className="footer__left-block">
@@ -68,9 +70,9 @@ export default function Footer({ lng }) {
             rel="noreferrer"
             target="_blank"
           >
-            {t('footer.link1')}
+            {t.footer.link1}
           </a>
-          {t('footer.link2')}
+          {t.footer.link2}
           <a
             className="footer-section__dark-link"
             href="https://www.figma.com/@beatricewambui"
@@ -84,15 +86,17 @@ export default function Footer({ lng }) {
 
       <div className="footer__right-block">
         <Typography variant="h6" align="right">
-          {t('common.shareTitle')}
+          {t.common.shareTitle}
         </Typography>
 
-        <ShareBar url={typeof window !== 'undefined' ? window.location.origin : ''} len={4} t={t} />
+        <Suspense fallback={<LoadingBlock width="350px" height="70px" />}>
+          <ShareBar url={typeof window !== 'undefined' ? window.location.origin : ''} len={4} />
+        </Suspense>
       </div>
 
       <div className="footer-section__techs-block">
         <Typography className="footer__tool-title" variant="h6" align="center">
-          {t('footer.ref')}
+          {t.footer.ref}
         </Typography>
         <div className="footer-section__techs-wrapper">
           {techIcons.map((item, i) => (
@@ -114,5 +118,5 @@ export default function Footer({ lng }) {
 }
 
 Footer.propTypes = {
-  lng: PropTypes.string.isRequired,
+  t: PropTypes.object.isRequired,
 };

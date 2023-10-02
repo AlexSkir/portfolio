@@ -4,7 +4,7 @@ import React from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Typography from './components/Typography';
-import { useTranslation } from '../i18n/client';
+import useTranslation from '../i18n/client';
 // import PageLayout from '../PageLayout';
 
 /* <PageLayout title="404" avatar="404"> */

@@ -9,7 +9,7 @@ import ResumeDownload from '../common/ResumeDownload';
 import PhoneIcon from '../common/iconsJs/PhoneIconGradient';
 import Location from '../../assets/svg/Location.svg';
 import Email from '../../assets/svg/Email.svg';
-import { useTranslation } from '../../../i18n/client';
+import useTranslation from '../../../i18n/client';
 
 export default function ContactBlock(props) {
   const { open } = props;

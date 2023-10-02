@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { useTranslation } from '../../i18n/client';
+import useTranslation from '../../i18n/client';
 import Contact from './Contact';
 
 export default function Page({ params }) {

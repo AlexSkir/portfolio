@@ -3,13 +3,12 @@ import PropTypes from 'prop-types';
 import { dir } from 'i18next';
 import { cookies } from 'next/headers';
 import { languages } from '../i18n/settings';
-import enSeo from '../i18n/locales/en/seo.json';
-import ruSeo from '../i18n/locales/ru/seo.json';
 import Wrapper from './components/Wrapper';
 import ScrollTop from './components/common/ScrollTop';
 import LoadingApp from './components/common/LoadingApp';
 import Loading from './loading';
 import './style.scss';
+import getDictionary from '../i18n/dictionaries';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -22,23 +21,23 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }, parent) {
   // read route params
   const { lng } = params;
+  const seo = await getDictionary(lng, 'seo');
 
   // fetch data
   // const product = await fetch(`https://.../${id}`).then((res) => res.json())
 
   // optionally access and extend (rather than replace) parent metadata
   // const previousImages = (await parent).openGraph?.images || []
-  const seo = lng === 'en' ? enSeo.common : ruSeo.common;
 
   return {
-    title: seo.title,
-    description: seo.description.join(' '),
+    title: seo.common.title,
+    description: seo.common.description,
     /* openGraph: {
       images: ['/some-specific-page-image.jpg', ...previousImages],
     }, */
   };
 }
-export default function RootLayout({ children, params: { lng } }) {
+export default async function RootLayout({ children, params: { lng } }) {
   let defaultTheme = 'light';
   if (typeof window !== 'undefined') {
     defaultTheme = window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? 'dark' : 'light';
@@ -46,6 +45,7 @@ export default function RootLayout({ children, params: { lng } }) {
   if (cookies().get('myColorMode')) {
     defaultTheme = cookies().get('myColorMode').value;
   }
+  const layout = await getDictionary(lng);
 
   return (
     <html lang={lng} dir={dir(lng)}>
@@ -76,14 +76,14 @@ export default function RootLayout({ children, params: { lng } }) {
           <Wrapper>
             <Suspense fallback={<LoadingApp />}>
               <div className="container-mainWrapper">
-                <Header lng={lng} />
-                <Navbar lng={lng} />
+                <Header lng={lng} t={layout} />
+                <Navbar lng={lng} t={layout} />
 
                 <div className="container-mainWrapper__main-layout">
                   <ScrollTop />
                   <Suspense fallback={<Loading />}>{children}</Suspense>
                 </div>
-                <Footer lng={lng} />
+                <Footer lng={lng} t={layout} />
               </div>
             </Suspense>
           </Wrapper>

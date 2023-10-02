@@ -9,7 +9,7 @@ import resumeRu from '../../assets/files/resume-ru.pdf';
 import pdfIcon from '../../assets/icons/pdf.png';
 import Download from '../../assets/svg/Download.svg';
 import DialogList from './DialogList';
-import { useTranslation } from '../../../i18n/client';
+import useTranslation from '../../../i18n/client';
 
 const resumeList = [
   {

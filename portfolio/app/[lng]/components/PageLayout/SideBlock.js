@@ -45,13 +45,13 @@ export default function SideBlock(props) {
         >
           <div className="drawer-section__header">
             {open ? (
-              <Tooltip title={t('sideblock.closeBtnTooltip')}>
+              <Tooltip title={t.sideblock.closeBtnTooltip}>
                 <button type="button" onClick={handleDrawerClose}>
                   <Collapse className="drawer-section__collapse" />
                 </button>
               </Tooltip>
             ) : (
-              <Tooltip title={t('sideblock.openBtnTooltip')}>
+              <Tooltip title={t.sideblock.openBtnTooltip}>
                 <button type="button" aria-label="open drawer" onClick={handleDrawerOpen}>
                   <Expand className="drawer-section__expand" />
                 </button>
@@ -70,10 +70,10 @@ export default function SideBlock(props) {
             align="center"
             classes={`side-block__name ${open ? 'is_block' : ''}`}
           >
-            {t('sideblock.name')}
+            {t.sideblock.name}
           </Typography>
           <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
-            {t('sideblock.position')}
+            {t.sideblock.position}
           </Typography>
 
           <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
@@ -91,5 +91,5 @@ export default function SideBlock(props) {
 
 SideBlock.propTypes = {
   avatar: PropTypes.string.isRequired,
-  t: PropTypes.func.isRequired,
+  t: PropTypes.object.isRequired,
 };
