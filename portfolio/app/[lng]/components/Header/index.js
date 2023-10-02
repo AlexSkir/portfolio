@@ -4,8 +4,8 @@ import Link from 'next/link';
 import Typography from '../Typography';
 import LoadingBlock from '../common/LoadingBlock';
 
-const LangSwitcher = lazy(() => import('./LangSwitcher'));
-const ThemeSwitcher = lazy(() => import('./ThemeSwitcher'));
+const LangSwitcher = lazy(() => import('./MyLangSwitcher'));
+const ThemeSwitcher = lazy(() => import('./MyThemeSwitcher'));
 
 export default function Header({ lng, t }) {
   return (
