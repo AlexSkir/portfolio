@@ -2,7 +2,6 @@
 
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-// import Typography from './components/Typography';
 import LoadingBlock from './components/common/LoadingBlock';
 import CodeIcon from './assets/svg/CodeIcon.svg';
 import AppIcon from './assets/svg/App.svg';

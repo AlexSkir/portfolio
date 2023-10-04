@@ -1,9 +1,16 @@
 {
   "common": {
-    "title": "Check out my website-portfolio!",
+    "title": "Check out my portfolio!",
     "description": [
       "Development of web sites, from simple web pages to complex but reliable, fast,",
       "and user-friendly web products with JS/React, Mui/Bootstrap and other libraries!"
+    ]
+  },
+  "resume": {
+    "title": "Resume - Front-End developer",
+    "description": [
+      "Enthusiastic, versatile and fast learning Frontend developer is looking",
+      "for an opportunity to work on interesting projects."
     ]
   },
   "portfolio": {

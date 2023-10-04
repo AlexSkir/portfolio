@@ -1,25 +1,29 @@
-'use client';
-
 import React from 'react';
 import PropTypes from 'prop-types';
-import LoadingApp from '../components/common/LoadingApp';
+import getDictionary from '../../i18n/dictionaries';
+
+export async function generateMetadata({ params }) {
+  // read route params
+  const { lng } = params;
+  const seo = await getDictionary(lng, 'seo');
+
+  // fetch data
+  // const product = await fetch(`https://.../${id}`).then((res) => res.json())
+
+  // optionally access and extend (rather than replace) parent metadata
+  // const previousTitle = (await parent).openGraph?.images || []
+
+  return {
+    title: seo.resume.title,
+    description: seo.resume.description,
+    /* openGraph: {
+      images: ['/some-specific-page-image.jpg', ...previousImages],
+    }, */
+  };
+}
 
 export default function ContactLayout({ children, params }) {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        backgroundColor: 'rgb(242, 245, 249)',
-        width: '100%',
-        height: '100%',
-        zIndex: '10000',
-      }}
-    >
-      <LoadingApp />
-    </div>
-  );
+  return <>{children}</>;
 }
 
 ContactLayout.propTypes = {

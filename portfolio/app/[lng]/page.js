@@ -1,7 +1,5 @@
-import React, { Suspense, lazy } from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-import Typography from './components/Typography';
 import getDictionary from '../i18n/dictionaries';
 import Home from './Home';
 

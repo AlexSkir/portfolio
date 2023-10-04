@@ -30,7 +30,7 @@ body.dark {
   justify-content: flex-start;
   border-radius: 20px;
   padding: 10px;
-  background-color: var(--blueBox);
+  background-color: var(--secondary-blueBox);
 
   min-width: 33%;
   max-width: 100%;
@@ -41,7 +41,7 @@ body.dark {
     padding: 25px;
 
     &.is_pink {
-      background-color: var(--pinkBox);
+      background-color: var(--secondary-pinkBox);
     }
   }
 }

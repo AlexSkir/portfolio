@@ -1,28 +1,19 @@
-'use client';
-
-import React, { Suspense, lazy } from 'react';
+import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
-// import Link from '@mui/material/Link';
-import Link from 'next/link';
-import useTranslation from '../../i18n/client';
-// import LoadingPage from './components/loading';
-import PageLayout from '../components/PageLayout';
-import enSeo from '../../i18n/locales/en/seo.json';
-import ruSeo from '../../i18n/locales/ru/seo.json';
+import getDictionary from '../../i18n/dictionaries';
+import Resume from './Resume';
 
-export default function Page({ params: { lng } }) {
-  const { t } = useTranslation(lng, 'resume');
+const PageLayout = lazy(() => import('../components/PageLayout'));
+
+export default async function Page({ params: { lng } }) {
+  const tResume = await getDictionary(lng, 'resume');
   return (
-    <PageLayout avatar="base" title={t('title')} lng={lng}>
-      <h1>{t('subtitle')}</h1>
-      <Link href={`/${lng}`}>back</Link>
-      <br />
-      <Link href={`/${lng}/portfolio`}>portfolio</Link>
+    <PageLayout avatar="base" title={tResume.title} lng={lng}>
+      <Resume t={tResume} lng={lng} />
     </PageLayout>
   );
 }
 
-/* <PageLayout avatar="base" title={t('title')} lng={lng}> */
 Page.propTypes = {
   params: PropTypes.object.isRequired,
 };

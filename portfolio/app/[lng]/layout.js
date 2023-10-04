@@ -7,8 +7,9 @@ import Wrapper from './components/Wrapper';
 import ScrollTop from './components/common/ScrollTop';
 import LoadingApp from './components/common/LoadingApp';
 import Loading from './loading';
-import './style.scss';
 import getDictionary from '../i18n/dictionaries';
+import Poster from './assets/projects/share/portfolio.png';
+import './style.scss';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -18,23 +19,17 @@ export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
 
-export async function generateMetadata({ params }, parent) {
+export async function generateMetadata({ params }) {
   // read route params
   const { lng } = params;
   const seo = await getDictionary(lng, 'seo');
 
-  // fetch data
-  // const product = await fetch(`https://.../${id}`).then((res) => res.json())
-
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || []
-
   return {
     title: seo.common.title,
     description: seo.common.description,
-    /* openGraph: {
-      images: ['/some-specific-page-image.jpg', ...previousImages],
-    }, */
+    openGraph: {
+      images: [Poster],
+    },
   };
 }
 export default async function RootLayout({ children, params: { lng } }) {
