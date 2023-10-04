@@ -46,13 +46,6 @@ export async function generateMetadata({ params }) {
 
   return {
     metadataBase: new URL('https://nextjs-portfolio-ydgz.onrender.com'),
-    alternates: {
-      canonical: '/',
-      languages: {
-        'en-US': '/en',
-        'ru-RU': '/ru',
-      },
-    },
     title: seo.common.title,
     description: seo.common.description,
     generator: 'Next.js',
