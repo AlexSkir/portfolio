@@ -9,11 +9,31 @@ import LoadingApp from './components/common/LoadingApp';
 import Loading from './loading';
 import getDictionary from '../i18n/dictionaries';
 import Poster from './assets/projects/share/portfolio.png';
+import Poster_alt from './assets/projects/share/portfolio_alt.png';
 import './style.scss';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
 const Navbar = lazy(() => import('./components/Navbar'));
+
+const keywords = [
+  'Frontend',
+  'React',
+  'JS',
+  'Javascript',
+  'Web development',
+  'AlexSkir',
+  'create website',
+  'freelance',
+  'Skirnevskaia',
+  'Aleksandra Skirnevskaia',
+  'разработка сайтов',
+  'фронтенд разработчик',
+  'веб разработка',
+  'фриланс',
+  'Александра Скирневская',
+  'Скирневская',
+];
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -25,10 +45,50 @@ export async function generateMetadata({ params }) {
   const seo = await getDictionary(lng, 'seo');
 
   return {
+    metadataBase: new URL('https://nextjs-portfolio-ydgz.onrender.com'),
+    alternates: {
+      canonical: '/',
+      languages: {
+        'en-US': '/en',
+        'ru-RU': '/ru',
+      },
+    },
     title: seo.common.title,
     description: seo.common.description,
+    generator: 'Next.js',
+    keywords,
+    creator: seo.name,
     openGraph: {
-      images: [Poster],
+      title: seo.common.title,
+      description: seo.common.description,
+      url: 'https://nextjs-portfolio-ydgz.onrender.com',
+      siteName: 'Portfolio',
+      images: [
+        {
+          url: Poster_alt.src,
+          width: 900,
+          height: 900,
+          alt: 'Aleksandra Skirnevskaia - Portfolio',
+        },
+        {
+          url: Poster.src,
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      creator: '@alex_skir',
+    },
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#F2F5F9' },
+      { media: '(prefers-color-scheme: dark)', color: 'rgb(35, 35, 35)' },
+    ],
+    verification: {
+      google: 'google',
+      yandex: 'yandex',
+      yahoo: 'yahoo',
     },
   };
 }
@@ -67,6 +127,7 @@ export default async function RootLayout({ children, params: { lng } }) {
         </style>
       </head>
       <body className={defaultTheme}>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">
           <Wrapper>
             <Suspense fallback={<LoadingApp />}>
