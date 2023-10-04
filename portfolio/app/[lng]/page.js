@@ -2,8 +2,7 @@ import React, { lazy } from 'react';
 import PropTypes from 'prop-types';
 import getDictionary from '../i18n/dictionaries';
 import Home from './Home';
-
-const PageLayout = lazy(() => import('./components/PageLayout'));
+import PageLayout from './components/PageLayout';
 
 export default async function Page({ params: { lng } }) {
   const tHome = await getDictionary(lng, 'home');

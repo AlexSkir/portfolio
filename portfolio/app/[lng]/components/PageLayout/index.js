@@ -23,14 +23,14 @@ export default async function PageLayout(props) {
               <ShareBar url="href" len={0} />
             </Suspense>
           </div>
-          <Suspense fallback={<LoadingBlock width="100%" height="55px" />}>
-            <div className="page-container__title-block">
+          <div className="page-container__title-block">
+            <Suspense fallback={<LoadingBlock width="100%" height="55px" />}>
               <Typography variant="h2" classes="page-container__title">
                 {title}
               </Typography>
               <div className="page-container__divider" />
-            </div>
-          </Suspense>
+            </Suspense>
+          </div>
           <div className="page-container__content">{children}</div>
         </div>
       </div>

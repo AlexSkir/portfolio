@@ -4,7 +4,7 @@ import Email from '../../assets/svg/Email.svg';
 import Github from '../../assets/svg/gh-pages.svg';
 import Telegram from '../../assets/svg/Telegram.svg';
 import Whatsapp from '../../assets/svg/Whatsapp.svg';
-import HeadHunter from '../../../../assets/images/icons/hh.png';
+import HeadHunter from '../../assets/icons/hh.png';
 import PhoneIcon from '../common/iconsJs/PhoneIconGradient';
 import ResumeDownload from '../common/ResumeDownload';
 

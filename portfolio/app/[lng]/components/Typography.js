@@ -87,12 +87,28 @@ const variantMapping = (variant, children, classes, align, component) => {
         </h6>
       );
     case 'subtitle1':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.subtitle1} ${poppins.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <h4 className={`${myClasses.subtitle1} ${poppins.variable}${customClass}${customAlign}`}>
           {children}
         </h4>
       );
     case 'subtitle2':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.subtitle2} ${poppins.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <p className={`${myClasses.subtitle2} ${poppins.variable}${customClass}${customAlign}`}>
           {children}
@@ -113,12 +129,28 @@ const variantMapping = (variant, children, classes, align, component) => {
         </p>
       );
     case 'body2':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.body2} ${raleway.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <p className={`${myClasses.body2} ${raleway.variable}${customClass}${customAlign}`}>
           {children}
         </p>
       );
     case 'body3':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.body3} ${raleway.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <p className={`${myClasses.body3} ${raleway.variable}${customClass}${customAlign}`}>
           {children}

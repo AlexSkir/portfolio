@@ -43,12 +43,18 @@ export default function Resume(props) {
     <>
       <div className="resume-section__info-block">
         <div className="resume-section__education-block">
-          <div className="resume-section__block-title">
-            <HatIcon main="var(--secondary-main)" dark="var(--secondary-dark)" />
-            <Typography variant="subtitle1" classes="resume-section__block-subtitle">
-              {t.edu.title}
-            </Typography>
-          </div>
+          <Suspense fallback={<LoadingBlock width="290px" height="33px" variant="rounded" />}>
+            <div className="resume-section__block-title">
+              <HatIcon main="var(--secondary-main)" dark="var(--secondary-dark)" />
+              <Typography
+                variant="subtitle1"
+                component="h3"
+                classes="resume-section__block-subtitle"
+              >
+                {t.edu.title}
+              </Typography>
+            </div>
+          </Suspense>
           <div className="resume-section__block-body">
             <Suspense fallback={<LoadingBlock width="290px" height="90px" variant="rounded" />}>
               <ResumeCard
@@ -80,12 +86,14 @@ export default function Resume(props) {
         </div>
 
         <div className="resume-section__experience-block">
-          <div className="resume-section__block-title">
-            <BagIcon main="var(--secondary-main)" dark="var(--secondary-dark)" />
-            <Typography variant="subtitle1" classes="resume-section__block-subtitle">
-              {t.exp.title}
-            </Typography>
-          </div>
+          <Suspense fallback={<LoadingBlock width="290px" height="33px" variant="rounded" />}>
+            <div className="resume-section__block-title">
+              <BagIcon main="var(--secondary-main)" dark="var(--secondary-dark)" />
+              <Typography variant="subtitle1" classes="resume-section__block-subtitle">
+                {t.exp.title}
+              </Typography>
+            </div>
+          </Suspense>
           <div className="resume-section__block-body">
             <Suspense fallback={<LoadingBlock width="290px" height="90px" variant="rounded" />}>
               <ResumeCard
