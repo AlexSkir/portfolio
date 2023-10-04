@@ -65,15 +65,16 @@ export async function generateMetadata({ params }) {
       siteName: 'Portfolio',
       images: [
         {
+          url: Poster.src,
+          width: 1200,
+          height: 630,
+          alt: 'Aleksandra Skirnevskaia - Portfolio',
+        },
+        {
           url: Poster_alt.src,
           width: 900,
           height: 900,
           alt: 'Aleksandra Skirnevskaia - Portfolio',
-        },
-        {
-          url: Poster.src,
-          width: 1200,
-          height: 630,
         },
       ],
     },
