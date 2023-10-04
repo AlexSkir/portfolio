@@ -125,33 +125,35 @@ export default async function RootLayout({ children, params: { lng } }) {
       <body className={defaultTheme}>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">
-          <Wrapper>
-            <div className="container-mainWrapper">
-              <Suspense fallback={<LoadingBlock width="100%" height="42px" />}>
-                <Header lng={lng} t={layout} />
-              </Suspense>
-              <Suspense
-                fallback={
-                  <LoadingBlock
-                    width="100%"
-                    height="100px"
-                    variant="rounded"
-                    style={{ maxWidth: '500px' }}
-                  />
-                }
-              >
-                <Navbar lng={lng} t={layout} />
-              </Suspense>
+          <Suspense fallback={<LoadingApp />}>
+            <Wrapper>
+              <div className="container-mainWrapper">
+                <Suspense fallback={<LoadingBlock width="100%" height="42px" />}>
+                  <Header lng={lng} t={layout} />
+                </Suspense>
+                <Suspense
+                  fallback={
+                    <LoadingBlock
+                      width="100%"
+                      height="100px"
+                      variant="rounded"
+                      style={{ maxWidth: '500px' }}
+                    />
+                  }
+                >
+                  <Navbar lng={lng} t={layout} />
+                </Suspense>
 
-              <div className="container-mainWrapper__main-layout">
-                <ScrollTop />
-                <Suspense fallback={<Loading />}>{children}</Suspense>
+                <div className="container-mainWrapper__main-layout">
+                  <ScrollTop />
+                  <Suspense fallback={<Loading />}>{children}</Suspense>
+                </div>
+                <Suspense fallback={<LoadingBlock width="100%" height="300px" variant="rounded" />}>
+                  <Footer lng={lng} t={layout} />
+                </Suspense>
               </div>
-              <Suspense fallback={<LoadingBlock width="100%" height="300px" variant="rounded" />}>
-                <Footer lng={lng} t={layout} />
-              </Suspense>
-            </div>
-          </Wrapper>
+            </Wrapper>
+          </Suspense>
         </div>
       </body>
     </html>
