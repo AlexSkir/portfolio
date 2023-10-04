@@ -1,16 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+import LoadingBlock from '../common/LoadingBlock';
 
-import NavbarButton from './NavbarButton';
-import Home from '../../assets/svg/Home.svg';
-import Resume from '../../assets/svg/Resume.svg';
-import Portfolio from '../../assets/svg/Portfolio.svg';
-import Contact from '../../assets/svg/Contact.svg';
+const NavbarButton = lazy(() => import('./NavbarButton'));
+const Home = lazy(() => import('../../assets/svg/Home.svg'));
+const Resume = lazy(() => import('../../assets/svg/Resume.svg'));
+const Portfolio = lazy(() => import('../../assets/svg/Portfolio.svg'));
+const Contact = lazy(() => import('../../assets/svg/Contact.svg'));
 
 export default function Navbar(props) {
   const { t, lng } = props;
@@ -38,10 +37,10 @@ export default function Navbar(props) {
 
   return (
     <>
-      <AppBar position="static" className="navbar-block" elevation={0}>
-        <Toolbar disableGutters>
-          <div className="navbar-block__top-btns-wrapper">
-            {pages.map((page) => (
+      <div className="navbar-block">
+        <div className="navbar-block__top-btns-wrapper">
+          {pages.map((page) => (
+            <Suspense fallback={<LoadingBlock width="80px" height="80px" variant="rounded" />}>
               <NavbarButton
                 key={page.name}
                 title={page.name}
@@ -51,23 +50,25 @@ export default function Navbar(props) {
               >
                 {page.icon}
               </NavbarButton>
-            ))}
-          </div>
-        </Toolbar>
-      </AppBar>
+            </Suspense>
+          ))}
+        </div>
+      </div>
 
       <div className="navbar-block__bottom-block">
         <div className="navbar-block__bottom-btns-wrapper">
           {pages.map((page) => (
-            <NavbarButton
-              key={page.name}
-              title={page.name}
-              href={page.path}
-              status={pathname === page.path}
-              classes="navbar-block__bottom-btn"
-            >
-              {page.icon}
-            </NavbarButton>
+            <Suspense fallback={<LoadingBlock width="25%" height="56px" variant="rounded" />}>
+              <NavbarButton
+                key={page.name}
+                title={page.name}
+                href={page.path}
+                status={pathname === page.path}
+                classes="navbar-block__bottom-btn"
+              >
+                {page.icon}
+              </NavbarButton>
+            </Suspense>
           ))}
         </div>
       </div>

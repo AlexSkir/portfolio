@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Skeleton from '@mui/material/Skeleton';
 
 export default function LoadingBlock(props) {
-  const { width, height, variant = 'square' } = props;
+  const { width, height, variant = 'rectangular' } = props;
   return (
     <div className="skeleton-block__wrapper" style={{ width, height }}>
       <Skeleton

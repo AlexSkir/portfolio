@@ -124,18 +124,16 @@ export default async function RootLayout({ children, params: { lng } }) {
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root">
           <Wrapper>
-            <Suspense fallback={<LoadingApp />}>
-              <div className="container-mainWrapper">
-                <Header lng={lng} t={layout} />
-                <Navbar lng={lng} t={layout} />
+            <div className="container-mainWrapper">
+              <Header lng={lng} t={layout} />
+              <Navbar lng={lng} t={layout} />
 
-                <div className="container-mainWrapper__main-layout">
-                  <ScrollTop />
-                  <Suspense fallback={<Loading />}>{children}</Suspense>
-                </div>
-                <Footer lng={lng} t={layout} />
+              <div className="container-mainWrapper__main-layout">
+                <ScrollTop />
+                {children}
               </div>
-            </Suspense>
+              <Footer lng={lng} t={layout} />
+            </div>
           </Wrapper>
         </div>
       </body>

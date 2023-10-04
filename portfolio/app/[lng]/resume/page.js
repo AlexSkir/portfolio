@@ -1,10 +1,8 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import getDictionary from '../../i18n/dictionaries';
-import LoadingBlock from '../components/common/LoadingBlock';
 import PageLayout from '../components/PageLayout';
-
-const Resume = lazy(() => import('./Resume'));
+import Resume from './Resume';
 
 export default async function Page({ params: { lng } }) {
   const tResume = await getDictionary(lng, 'resume');

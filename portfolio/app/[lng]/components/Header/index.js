@@ -10,14 +10,16 @@ const ThemeSwitcher = lazy(() => import('./MyThemeSwitcher'));
 export default function Header({ lng, t }) {
   return (
     <div className="container-mainWrapper__header-section">
-      <Link href={`/${lng}`} className="header-section__logo-link">
-        <Typography variant="h1" classes="header-section__logo">
-          {t.header.name}
-        </Typography>
-        <Typography variant="h1" classes="gradientText header-section__logo">
-          {t.header.name2}
-        </Typography>
-      </Link>
+      <Suspense fallback={<LoadingBlock width="263px" height="42px" variant="rectangular" />}>
+        <Link href={`/${lng}`} className="header-section__logo-link">
+          <Typography variant="h1" classes="header-section__logo">
+            {t.header.name}
+          </Typography>
+          <Typography variant="h1" classes="gradientText header-section__logo">
+            {t.header.name2}
+          </Typography>
+        </Link>
+      </Suspense>
 
       <Suspense fallback={<LoadingBlock width="56px" height="56px" variant="circular" />}>
         <ThemeSwitcher t={t} />
