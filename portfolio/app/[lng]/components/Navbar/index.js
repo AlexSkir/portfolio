@@ -40,9 +40,11 @@ export default function Navbar(props) {
       <div className="navbar-block">
         <div className="navbar-block__top-btns-wrapper">
           {pages.map((page) => (
-            <Suspense fallback={<LoadingBlock width="80px" height="80px" variant="rounded" />}>
+            <Suspense
+              key={page.name}
+              fallback={<LoadingBlock width="80px" height="80px" variant="rounded" />}
+            >
               <NavbarButton
-                key={page.name}
                 title={page.name}
                 href={page.path}
                 status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
@@ -58,9 +60,11 @@ export default function Navbar(props) {
       <div className="navbar-block__bottom-block">
         <div className="navbar-block__bottom-btns-wrapper">
           {pages.map((page) => (
-            <Suspense fallback={<LoadingBlock width="25%" height="56px" variant="rounded" />}>
+            <Suspense
+              key={page.name}
+              fallback={<LoadingBlock width="25%" height="56px" variant="rounded" />}
+            >
               <NavbarButton
-                key={page.name}
                 title={page.name}
                 href={page.path}
                 status={pathname === page.path}

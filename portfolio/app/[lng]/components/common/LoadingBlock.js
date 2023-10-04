@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import Skeleton from '@mui/material/Skeleton';
 
 export default function LoadingBlock(props) {
-  const { width, height, variant = 'rectangular' } = props;
+  const { width, height, variant = 'rectangular', ...other } = props;
   return (
-    <div className="skeleton-block__wrapper" style={{ width, height }}>
+    <div className="skeleton-block__wrapper" style={{ width, height, ...other }}>
       <Skeleton
         variant={variant}
         sx={{ height: '100%', width: '100%', backgroundColor: 'primary.accent' }}

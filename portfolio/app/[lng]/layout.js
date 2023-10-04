@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { dir } from 'i18next';
@@ -11,6 +12,7 @@ import getDictionary from '../i18n/dictionaries';
 import Poster from './assets/projects/share/portfolio.png';
 import Poster_alt from './assets/projects/share/portfolio_alt.png';
 import './style.scss';
+import LoadingBlock from './components/common/LoadingBlock';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -125,14 +127,29 @@ export default async function RootLayout({ children, params: { lng } }) {
         <div id="root">
           <Wrapper>
             <div className="container-mainWrapper">
-              <Header lng={lng} t={layout} />
-              <Navbar lng={lng} t={layout} />
+              <Suspense fallback={<LoadingBlock width="100%" height="42px" />}>
+                <Header lng={lng} t={layout} />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <LoadingBlock
+                    width="100%"
+                    height="100px"
+                    variant="rounded"
+                    style={{ maxWidth: '500px' }}
+                  />
+                }
+              >
+                <Navbar lng={lng} t={layout} />
+              </Suspense>
 
               <div className="container-mainWrapper__main-layout">
                 <ScrollTop />
-                {children}
+                <Suspense fallback={<Loading />}>{children}</Suspense>
               </div>
-              <Footer lng={lng} t={layout} />
+              <Suspense fallback={<LoadingBlock width="100%" height="300px" variant="rounded" />}>
+                <Footer lng={lng} t={layout} />
+              </Suspense>
             </div>
           </Wrapper>
         </div>

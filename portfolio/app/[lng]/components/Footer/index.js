@@ -6,6 +6,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Link from 'next/link';
 import Image from 'next/image';
 import LoadingBlock from '../common/LoadingBlock';
+import Render from '../../assets/icons/render.png';
 
 // import ShareBar from '../common/Share';
 
@@ -20,7 +21,6 @@ const I18nIcon = lazy(() => import('../../assets/svg/i18n.svg'));
 const EmailJs = lazy(() => import('../../assets/svg/emailJs.svg'));
 const Recaptcha = lazy(() => import('../../assets/svg/recaptcha.svg'));
 const Npm = lazy(() => import('../../assets/svg/npm.svg'));
-const Render = lazy(() => import('../../assets/icons/render.png'));
 
 const ShareBar = lazy(() => import('../common/Share'));
 const Typography = lazy(() => import('../Typography'));
@@ -107,8 +107,8 @@ export default function Footer(props) {
         </Suspense>
         <div className="footer-section__techs-wrapper">
           {techIcons.map((item, i) => (
-            <Suspense fallback={<LoadingBlock width="40px" height="40px" />}>
-              <Tooltip key={i} title={item.tooltip}>
+            <Suspense key={i} fallback={<LoadingBlock width="40px" height="40px" />}>
+              <Tooltip title={item.tooltip}>
                 <a
                   className="footer-section__tech-link"
                   href={item.href}
