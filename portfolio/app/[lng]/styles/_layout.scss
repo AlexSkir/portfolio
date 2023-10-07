@@ -332,21 +332,6 @@
   height: 100%;
 }
 
-.page-container__ShareBar-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  button {
-    margin: 0;
-    background-color: var(--primary-paper);
-
-    &:hover {
-      background-color: var(--primary-paper);
-    }
-  }
-}
-
 .page-container__title-block {
   display: flex;
   justify-content: flex-start;
@@ -367,7 +352,8 @@
 }
 
 .page-container__divider {
-  width: 252px;
+  width: 100%;
+  max-width: 252px;
   height: 2px;
   background: var(--secondary-gradientBG);
   margin-top: 10px;
@@ -401,6 +387,13 @@
   }
 }
 
+
+.page-container__ShareBar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .share-container {
   display: flex;
   justify-content: center;
@@ -412,7 +405,11 @@
     margin: 0;
     border-radius: 8px;
     overflow: hidden;
-    margin: 10px;
+    background-color: var(--primary-paper);
+
+    &:hover {
+      background-color: var(--primary-paper);
+    }
 
     svg {
       width: 100%;

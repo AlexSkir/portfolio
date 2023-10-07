@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { dir } from 'i18next';
 import { cookies } from 'next/headers';
 import { languages } from '../i18n/settings';
-import Wrapper from './components/Wrapper';
 import ScrollTop from './components/common/ScrollTop';
 import LoadingApp from './components/common/LoadingApp';
 import Loading from './loading';
@@ -17,6 +16,7 @@ import LoadingBlock from './components/common/LoadingBlock';
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
 const Navbar = lazy(() => import('./components/Navbar'));
+const Wrapper = lazy(() => import('./components/Wrapper'));
 
 const keywords = [
   'Frontend',

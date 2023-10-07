@@ -1,0 +1,78 @@
+@import 'variables';
+@import 'mixins';
+
+.contact-page__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  column-gap: 20px;
+  row-gap: 0;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.contact-page__name {
+  margin: 15px 0;
+  white-space: nowrap;
+}
+
+.contact-page__position {
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+.contact-page__contact-items {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: 630px;
+
+  @include media($sm) {
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  @include media($md) {
+    gap: 30px;
+  }
+}
+
+.contact-page__contact-item {
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: unset;
+  min-width: unset;
+  height: auto;
+  padding: 10px;
+  padding-left: 0;
+  border-radius: 8px;
+  background-color: unset;
+
+  & * {
+    opacity: 1
+  }
+
+  @include media($sm) {
+    max-width: 45%;
+    background-color: var(--secondary-pinkBox);
+  }
+
+  @include media($md) {
+    min-width: 270px;
+    background-color: var(--secondary-pinkBox);
+    height: 100px;
+    padding: 30px;
+    padding-left: 20px;
+  }
+}
+
+.contact-page__hh-icon {
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  border-radius: 50%;
+}

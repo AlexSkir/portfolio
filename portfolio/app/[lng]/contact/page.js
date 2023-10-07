@@ -1,15 +1,16 @@
-'use client';
-
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import useTranslation from '../../i18n/client';
+import getDictionary from '../../i18n/dictionaries';
+import PageLayout from '../components/PageLayout';
 import Contact from './Contact';
 
-export default function Page({ params }) {
-  const { lng } = params;
-  const { t } = useTranslation(lng, 'contact');
-  return <Contact lng={lng} t={t} />;
+export default async function Page({ params: { lng } }) {
+  const tContact = await getDictionary(lng, 'contact');
+  return (
+    <PageLayout avatar="heart" title={tContact.title} lng={lng}>
+      <Contact lng={lng} />
+    </PageLayout>
+  );
 }
 
 Page.propTypes = {

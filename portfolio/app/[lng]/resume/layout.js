@@ -22,11 +22,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ContactLayout({ children, params }) {
+export default function ContactLayout({ children }) {
   return <>{children}</>;
 }
 
 ContactLayout.propTypes = {
-  params: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 };
