@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import getDictionary from '../../i18n/dictionaries';
-import Link from 'next/link';
 import LoadingBlock from '../components/common/LoadingBlock';
 
 import '../styles/Contact.scss';
@@ -16,15 +15,28 @@ export default async function Contact(props) {
   return (
     <>
       <div className="contact-page__section">
-        <Typography variant="h4" align="left" classes="contact-page__name">
-          {tContact.name}
-        </Typography>
-        <Typography variant="h6" classes="contact-page__position">
-          {tContact.position}
-        </Typography>
+        <div className="contact-page__name-wrapper">
+          <Suspense fallback={<LoadingBlock width="100%" height="35px" />}>
+            <Typography variant="h4" align="left" classes="contact-page__name">
+              {tContact.name}
+            </Typography>
+          </Suspense>
+        </div>
+
+        <div className="contact-page__name-wrapper">
+          <Suspense fallback={<LoadingBlock width="100%" height="35px" />}>
+            <Typography variant="h6" classes="contact-page__position">
+              {tContact.position}
+            </Typography>
+          </Suspense>
+        </div>
       </div>
-      <ContactItems t={tContact} />
-      <Form t={tContact} />
+      <Suspense fallback={<LoadingBlock width="100%" height="300px" />}>
+        <ContactItems t={tContact} />
+      </Suspense>
+      <Suspense fallback={<LoadingBlock width="100%" height="300px" />}>
+        <Form t={tContact} />
+      </Suspense>
     </>
   );
 }

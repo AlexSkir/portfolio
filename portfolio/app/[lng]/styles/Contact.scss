@@ -17,14 +17,13 @@
   margin-bottom: 20px;
 }
 
-.contact-page__name {
-  margin: 15px 0;
-  white-space: nowrap;
+.contact-page__name-wrapper {
+  margin-top: 15px;
+  width: 100%;
 }
 
 .contact-page__position {
   opacity: 0.5;
-  white-space: nowrap;
 }
 
 .contact-page__contact-items {
