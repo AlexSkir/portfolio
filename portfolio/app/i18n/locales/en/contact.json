@@ -8,7 +8,7 @@
   "form": {
     "success": "Email sent!",
     "error": "Something went wrong, please, try later!",
-    "warning": "Please, check the box!",
+    "warning": "Please, check the box if you are not a robot!",
     "title": [
       "I am always open to discussing new projects, opportunities in tech world or offers",
       "from potential employers. Any feedbacks are always welcome!"
@@ -28,11 +28,5 @@
     "map": "Show on map",
     "location": "Location",
     "address": "Moscow, Russia"
-  },
-  "seo": {
-    "title": "Hey! Let's talk business!",
-    "description": [
-      "Have any feedbacks, ideas in tech world or job offer? Don't hesitate to contact me :)"
-    ]
   }
 }

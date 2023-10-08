@@ -1,31 +1,32 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import MuiAlert from '@mui/material/Alert';
-import Snackbar from '@mui/material/Snackbar';
-import { useTranslation } from 'react-i18next';
 
-const Alert = function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-};
+const Snackbar = lazy(() => import('@mui/material/Snackbar'));
+const Alert = lazy(() => import('@mui/material/Alert'));
 
 export default function SimpleAlert(props) {
-  const { type, onCloseHandle, open } = props;
-  const { t } = useTranslation();
+  const { type, onCloseHandle, open = false, severity } = props;
 
   return (
-    <Snackbar open={open} autoHideDuration={6000} onClose={onCloseHandle}>
-      <Alert onClose={onCloseHandle} severity={type} sx={{ width: '100%' }}>
-        {t(`contact.form.${type}`)}
-      </Alert>
-    </Snackbar>
+    <Suspense fallback={<div>.</div>}>
+      <Snackbar open={open} autoHideDuration={6000} onClose={onCloseHandle}>
+        <Alert
+          elevation={6}
+          variant="filled"
+          onClose={onCloseHandle}
+          severity={severity}
+          sx={{ width: '100%' }}
+        >
+          {type}
+        </Alert>
+      </Snackbar>
+    </Suspense>
   );
 }
+
 SimpleAlert.propTypes = {
   type: PropTypes.string.isRequired,
   onCloseHandle: PropTypes.func.isRequired,
+  severity: PropTypes.string.isRequired,
   open: PropTypes.bool,
-};
-
-SimpleAlert.defaultProps = {
-  open: false,
 };

@@ -9,7 +9,7 @@ import LightMode from '../../assets/svg/Light-mode.svg';
 
 export default function ThemeSwitcher(props) {
   const { t } = props;
-  const [cookies, setCookie] = useCookies(['myColorMode']);
+  const [cookies, setCookie] = useCookies('myColorMode');
   const defaultTheme = typeof window !== 'undefined' ? document.body.className : 'light';
 
   const [mode, setMode] = React.useState(defaultTheme);

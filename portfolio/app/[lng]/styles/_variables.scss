@@ -13,6 +13,8 @@ $lg: 1200px;
   --contrastText: black;
   --default: rgb(242, 245, 249);
   --placeholder: #eeeeee;
+  --textfield-base: rgba(0, 0, 0, 0.42);
+  --textfield-hover: rgba(0, 0, 0, 0.87);
 
   --secondary-light: #FFEBD1;
   --secondary-main: #FF9C1B;
@@ -75,4 +77,6 @@ $lg: 1200px;
   --contrastText: #e1e3e6;
   --default: rgb(35, 35, 35);
   --placeholder: #eeeeee;
+  --textfield-base: rgba(255, 255, 255, 0.7);
+  --textfield-hover: rgb(255, 255, 255);
 }

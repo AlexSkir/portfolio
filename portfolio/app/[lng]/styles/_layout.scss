@@ -399,6 +399,10 @@
   justify-content: center;
   flex-wrap: wrap;
 
+  .react-share__ShareButton {
+    margin-right: 10px;
+  }
+
   button {
     width: 35px;
     height: 35px;

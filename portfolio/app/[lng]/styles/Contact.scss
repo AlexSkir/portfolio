@@ -1,6 +1,12 @@
 @import 'variables';
 @import 'mixins';
 
+.dark {
+  .contact-page__contact-item {
+    background-color: var(--primary-main) !important;
+  }
+}
+
 .contact-page__section {
   display: flex;
   flex-direction: column;
@@ -23,13 +29,12 @@
 
 .contact-page__contact-items {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 0;
   max-width: 630px;
 
   @include media($sm) {
-    flex-direction: row;
     gap: 10px;
   }
 
@@ -38,14 +43,39 @@
   }
 }
 
-.contact-page__contact-item {
+.contact-page__contacts-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-width: 270px;
+  gap: 0;
+  margin-bottom: 0;
 
+  @include media($sm) {
+    gap: 10px;
+  }
+
+  @include media($md) {
+    gap: 30px;
+  }
+
+  @include media($sm) {
+    &.contacts_odd .contact-page__contact-item:nth-child(odd) {
+      background-color: var(--secondary-pinkBox);
+    }
+
+    &.contacts_even .contact-page__contact-item:nth-child(even) {
+      background-color: var(--secondary-pinkBox);
+    }
+  }
+}
+
+.contact-page__contact-item {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  max-width: unset;
-  min-width: unset;
   height: auto;
   padding: 10px;
   padding-left: 0;
@@ -57,13 +87,10 @@
   }
 
   @include media($sm) {
-    max-width: 45%;
-    background-color: var(--secondary-pinkBox);
+    background-color: var(--secondary-blueBox);
   }
 
   @include media($md) {
-    min-width: 270px;
-    background-color: var(--secondary-pinkBox);
     height: 100px;
     padding: 30px;
     padding-left: 20px;
@@ -75,4 +102,133 @@
   height: 24px;
   background-size: contain;
   border-radius: 50%;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 630px;
+  background-color: var(--primary-background);
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 30px;
+
+  @include media($sm) {
+    padding: 30px;
+  }
+
+  .contact-form__title {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 10px;
+  }
+
+  .contact-form__textfield {
+    position: relative;
+    display: flex;
+    width: 100%;
+
+    &.is_open {
+      .contact-form__label {
+        transform: translate(0, -1.5px) scale(0.75);
+      }
+    }
+
+    &.is_focused {
+      .contact-form__label {
+        transform: translate(0, -1.5px) scale(0.75);
+      }
+
+      .contact-form__input-wrapper::after {
+        transform: scaleX(1) translateX(0px);
+        border-bottom: 3px solid var(--default);
+      }
+
+      .contact-form__input-wrapper::before {
+        height: 3px;
+      }
+    }
+
+    &:hover {
+      .contact-form__input-wrapper::before {
+        border: 1px solid var(--textfield-hover);
+      }
+    }
+  }
+
+  .contact-form__label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--contrastText);
+    letter-spacing: 0.4px;
+    cursor: default;
+    transform: translate(0, 20px) scale(1);
+    transform-origin: top left;
+    transition: color 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms, max-width 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+  }
+
+  .contact-form__input {
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    padding: 4px 0px 5px;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    color: var(--contrastText);
+  }
+
+  .contact-form__input-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 16px;
+
+    &::before {
+      border-bottom: 1px solid var(--textfield-base);
+      left: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      right: 0;
+      transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      pointer-events: none;
+    }
+
+    &::after {
+      border-bottom: 2px solid var(--default);
+      left: 0;
+      bottom: 0;
+      content: "";
+      position: absolute;
+      right: 0;
+      transform: scaleX(0);
+      transition: transform 200ms cubic-bezier(0.0, 0, 0.2, 1) 0ms;
+      pointer-events: none;
+    }
+  }
+
+  .contact-form__submit-btn {
+    margin-top: 30px;
+    padding: 10px 30px;
+    color: var(--contrastText);
+    border: 1px solid;
+    border-color: var(--secondary-main);
+    border-radius: 20px;
+  }
 }
