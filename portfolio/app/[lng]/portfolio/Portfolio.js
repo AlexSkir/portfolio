@@ -4,7 +4,6 @@ import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { poppins } from '../components/Typography';
 import LoadingBlock from '../components/common/LoadingBlock';
-import projectArr from './projectsArray';
 import '../styles/Portfolio.scss';
 
 const TabPanel = lazy(() => import('./TabPanel'));
@@ -23,10 +22,8 @@ function a11yProps(index) {
 }
 
 export default function Portfolio(props) {
-  const { t, lng } = props;
+  const { t, lng, data } = props;
   const [value, setValue] = React.useState('all');
-
-  const memoObjValue = React.useMemo(() => Object.values(projectArr(t)), []);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -61,7 +58,7 @@ export default function Portfolio(props) {
         <Suspense key={i} fallback={<LoadingBlock width="100%" height="300px" />}>
           <TabPanel index={item} value={value}>
             <ul className="project-gallery__list">
-              {memoObjValue
+              {data
                 .filter((project) => project.tabs.includes(item))
                 .map((item, i) => (
                   <li key={i} className="project-gallery__list-item">
@@ -89,4 +86,5 @@ export default function Portfolio(props) {
 Portfolio.propTypes = {
   t: PropTypes.object.isRequired,
   lng: PropTypes.string.isRequired,
+  data: PropTypes.array.isRequired,
 };
