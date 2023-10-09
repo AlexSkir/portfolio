@@ -18,6 +18,7 @@ export default function GalleryItem(props) {
             alt={name}
             className="project-gallery__item-image"
             placeholder="blur"
+            priority
           />
         </Suspense>
       </div>
