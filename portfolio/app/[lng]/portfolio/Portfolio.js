@@ -71,7 +71,7 @@ export default function Portfolio(props) {
                       <GalleryItem
                         key={i}
                         path={item.path}
-                        image={item.image}
+                        thumb={item.thumb}
                         name={item.name}
                         type={item.type}
                         tool={item.mainTool}

@@ -78,20 +78,14 @@
 
 .project-gallery__list {
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 4px;
   margin: 14px 0;
-  $breakpoint: 600px;
-  --multiplier: calc(#{$breakpoint} - 100%);
 
   .project-gallery__list-item {
     min-width: 320px;
     max-width: 100%;
-    flex-grow: 1;
-    flex-basis: calc(var(--multiplier) * 999);
   }
 
   .project-gallery__item-link {
