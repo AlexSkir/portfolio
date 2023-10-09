@@ -8,16 +8,17 @@ const Typography = lazy(() => import('../components/Typography'));
 const Image = lazy(() => import('next/image'));
 
 export default function GalleryItem(props) {
-  const { path, thumb, name, type, tool, lng } = props;
+  const { path, image, name, type, tool, lng } = props;
   return (
     <Link href={`/${lng}/portfolio/${path}`} className="project-gallery__item-link" target="_blank">
       <div className="project-gallery__item-image-wrapper">
         <Suspense fallback={<LoadingBlock width="100%" height="100%" />}>
           <Image
-            src={thumb}
+            src={image}
             alt={name}
             className="project-gallery__item-image"
             placeholder="blur"
+            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
           />
         </Suspense>
@@ -38,7 +39,7 @@ export default function GalleryItem(props) {
 
 GalleryItem.propTypes = {
   path: PropTypes.string.isRequired,
-  thumb: PropTypes.object.isRequired,
+  image: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   tool: PropTypes.array.isRequired,

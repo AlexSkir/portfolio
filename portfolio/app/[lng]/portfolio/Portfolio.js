@@ -2,18 +2,14 @@
 
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-// import Image from 'next/image';
-import '../styles/Portfolio.scss';
 import { poppins } from '../components/Typography';
 import LoadingBlock from '../components/common/LoadingBlock';
 import projectArr from './projectsArray';
+import '../styles/Portfolio.scss';
 
 const TabPanel = lazy(() => import('./TabPanel'));
 const Tabs = lazy(() => import('@mui/material/Tabs'));
 const Tab = lazy(() => import('@mui/material/Tab'));
-const Typography = lazy(() => import('../components/Typography'));
-const Image = lazy(() => import('next/image'));
 const GalleryItem = lazy(() => import('./Gallery'));
 
 const tabs = ['all', 'landings', 'app', 'cms', 'school'];
@@ -63,7 +59,7 @@ export default function Portfolio(props) {
         <Suspense key={i} fallback={<LoadingBlock width="100%" height="300px" />}>
           <TabPanel index={item} value={value}>
             <ul className="project-gallery__list">
-              {Object.values(projectArr(proj, lng))
+              {Object.values(projectArr(proj))
                 .filter((project) => project.tabs.includes(item))
                 .map((item, i) => (
                   <li key={i} className="project-gallery__list-item">
@@ -71,7 +67,7 @@ export default function Portfolio(props) {
                       <GalleryItem
                         key={i}
                         path={item.path}
-                        thumb={item.thumb}
+                        image={item.image}
                         name={item.name}
                         type={item.type}
                         tool={item.mainTool}
