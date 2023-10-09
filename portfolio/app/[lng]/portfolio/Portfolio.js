@@ -59,7 +59,7 @@ export default function Portfolio(props) {
         <Suspense key={i} fallback={<LoadingBlock width="100%" height="300px" />}>
           <TabPanel index={item} value={value}>
             <ul className="project-gallery__list">
-              {Object.values(galleryArray(t))
+              {galleryArray(t)
                 .filter((project) => project.tabs.includes(item))
                 .map((item, i) => (
                   <li key={i} className="project-gallery__list-item">

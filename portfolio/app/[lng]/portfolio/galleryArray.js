@@ -13,8 +13,8 @@ import yagoCMSImage from '../assets/projects/yagoCms.webp';
 
 export default function galleryArray(t) {
   const { landing, adaptive, responsive, fixed, app, phptempl, shop, forum } = t;
-  return {
-    'yandex-go-cms': {
+  return [
+    {
       name: 'Yandex Go',
       tabs: ['all', 'landings', 'cms'],
       mainTool: [t.constr, 'CMS'],
@@ -22,7 +22,7 @@ export default function galleryArray(t) {
       path: 'yandex-go-cms',
       image: yagoCMSImage,
     },
-    'yandex-go-sass': {
+    {
       name: 'Yandex Go SASS',
       tabs: ['all', 'landings'],
       mainTool: ['SASS', adaptive],
@@ -30,7 +30,7 @@ export default function galleryArray(t) {
       path: 'yandex-go-sass',
       image: yagoImage,
     },
-    zoo: {
+    {
       name: 'Online Zoo',
       tabs: ['all', 'landings'],
       mainTool: ['SASS', adaptive],
@@ -38,7 +38,7 @@ export default function galleryArray(t) {
       path: 'zoo',
       image: zooImage,
     },
-    'culture-portal': {
+    {
       name: 'Culture Portal',
       tabs: ['all', 'app', 'react', 'school'],
       mainTool: ['React/redux', 'Material-UI'],
@@ -46,7 +46,7 @@ export default function galleryArray(t) {
       path: 'culture-portal',
       image: CultureImg,
     },
-    'awesome-chat': {
+    {
       name: 'Awesome Chat',
       tabs: ['all', 'app', 'react', 'school'],
       mainTool: ['React/redux', 'Material-UI', 'Bootstrap'],
@@ -54,7 +54,7 @@ export default function galleryArray(t) {
       path: 'awesome-chat',
       image: ChatImg,
     },
-    youtube: {
+    {
       name: 'Youtube App',
       tabs: ['all', 'js', 'app', 'school'],
       mainTool: ['JS', 'Youtube api'],
@@ -62,7 +62,7 @@ export default function galleryArray(t) {
       path: 'youtube',
       image: YoutubeImg,
     },
-    fesco: {
+    {
       name: 'Fesco',
       tabs: ['all', 'landings'],
       mainTool: ['SASS', responsive],
@@ -70,7 +70,7 @@ export default function galleryArray(t) {
       path: 'fesco',
       image: fescoImg,
     },
-    piskel: {
+    {
       name: 'Piskel Clone',
       tabs: ['all', 'app', 'react', 'school'],
       mainTool: ['React/redux', 'API'],
@@ -78,7 +78,7 @@ export default function galleryArray(t) {
       path: 'piskel',
       image: PiskelImg,
     },
-    alexis: {
+    {
       name: 'Alexis',
       tabs: ['all', 'landings'],
       mainTool: ['CSS', responsive],
@@ -86,7 +86,7 @@ export default function galleryArray(t) {
       path: 'alexis',
       image: AlexisImg,
     },
-    hexal: {
+    {
       name: 'Hexal',
       tabs: ['all', 'landings', 'school'],
       mainTool: ['CSS', fixed],
@@ -94,7 +94,7 @@ export default function galleryArray(t) {
       path: 'hexal',
       image: HexalImg,
     },
-    gofuck: {
+    {
       name: 'GoFuckBiz Forum',
       tabs: ['all'],
       mainTool: ['CSS', phptempl],
@@ -102,7 +102,7 @@ export default function galleryArray(t) {
       path: 'gofuck',
       image: GofuckImg,
     },
-    gritella: {
+    {
       name: 'Gritella lingerie',
       warning: t.gritella.warning.join(' '),
       tabs: ['all', 'cms'],
@@ -111,5 +111,5 @@ export default function galleryArray(t) {
       path: 'gritella',
       image: GritellaImg,
     },
-  };
+  ];
 }
