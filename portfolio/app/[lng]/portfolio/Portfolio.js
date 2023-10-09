@@ -4,7 +4,6 @@ import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { poppins } from '../components/Typography';
 import LoadingBlock from '../components/common/LoadingBlock';
-import '../styles/Portfolio.scss';
 
 const TabPanel = lazy(() => import('./TabPanel'));
 const Tabs = lazy(() => import('@mui/material/Tabs'));
