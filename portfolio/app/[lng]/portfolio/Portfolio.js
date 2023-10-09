@@ -4,7 +4,7 @@ import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { poppins } from '../components/Typography';
 import LoadingBlock from '../components/common/LoadingBlock';
-import projectArr from './projectsArray';
+import galleryArray from './galleryArray';
 import '../styles/Portfolio.scss';
 
 const TabPanel = lazy(() => import('./TabPanel'));
@@ -59,7 +59,7 @@ export default function Portfolio(props) {
         <Suspense key={i} fallback={<LoadingBlock width="100%" height="300px" />}>
           <TabPanel index={item} value={value}>
             <ul className="project-gallery__list">
-              {Object.values(projectArr(t))
+              {Object.values(galleryArray(t))
                 .filter((project) => project.tabs.includes(item))
                 .map((item, i) => (
                   <li key={i} className="project-gallery__list-item">
