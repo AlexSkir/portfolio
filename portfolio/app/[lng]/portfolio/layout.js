@@ -14,8 +14,8 @@ export async function generateMetadata({ params }) {
   // const previousTitle = (await parent).openGraph?.images || []
 
   return {
-    title: seo.portfolio.title,
-    description: seo.portfolio.description,
+    title: seo.portfolio.title.join(' '),
+    description: seo.portfolio.description.join(' '),
     /* openGraph: {
       images: ['/some-specific-page-image.jpg', ...previousImages],
     }, */

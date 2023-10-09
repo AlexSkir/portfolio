@@ -25,10 +25,10 @@ export default function GalleryItem(props) {
       </div>
       <div className="project-gallery__item-bar">
         <Suspense fallback={<LoadingBlock width="100%" height="100%" />}>
-          <Typography variant="subtitle2" classes="project-gallery__title">
+          <Typography variant="subtitle2" component="h3" classes="project-gallery__title">
             {type}
           </Typography>
-          <Typography variant="subtitle2" classes="project-gallery__tools">
+          <Typography variant="subtitle2" component="h4" classes="project-gallery__tools">
             {tool.join(` • `)}
           </Typography>
         </Suspense>

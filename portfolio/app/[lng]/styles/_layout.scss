@@ -874,23 +874,21 @@
 
   .footer-section__light-link {
     margin-right: 10px;
-    color: var(--secondary-main);
     text-decoration: underline;
-    text-decoration-color: var(--secondary-main);
 
     &:hover {
-      opacity: 0.7;
+      color: var(--secondary-main);
+      text-decoration-color: var(--secondary-main);
     }
   }
 
   .footer-section__dark-link {
     margin-left: 10px;
-    color: var(--secondary-dark);
     text-decoration: underline;
-    text-decoration-color: var(--secondary-dark);
 
     &:hover {
-      opacity: 0.7;
+      color: var(--secondary-dark);
+      text-decoration-color: var(--secondary-dark);
     }
   }
 
