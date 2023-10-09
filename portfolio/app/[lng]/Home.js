@@ -17,61 +17,77 @@ export default function Home(props) {
 
   return (
     <div className="home-page__block">
-      <Typography variant="body2">{t.intro.join(' ')}</Typography>
-      <Typography variant="h3" classes="home-page__top-subtitle">
-        {t.subtitle}
-      </Typography>
+      <Suspense fallback={<LoadingBlock width="100%" height="80px" />}>
+        <Typography variant="body2">{t.intro.join(' ')}</Typography>
+      </Suspense>
+      <div className="home-page__subtitle-wrapper">
+        <Suspense fallback={<LoadingBlock width="300px" height="40px" />}>
+          <Typography variant="h3" classes="home-page__top-subtitle">
+            {t.subtitle}
+          </Typography>
+        </Suspense>
+      </div>
 
       <div className="home-page__body">
-        <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
+        <div className="home-page__activity-item-wrapper">
           <div className="home-page__activity-item is_pink">
-            <div className="home-page__subtitle-block">
-              <div className="home-page__icon-wrapper">
-                <CodeIcon className="MySvg-icon home-page__icon activity-icon_dark" />
+            <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+              <div className="home-page__subtitle-block">
+                <div className="home-page__icon-wrapper">
+                  <CodeIcon className="MySvg-icon home-page__icon activity-icon_dark" />
+                </div>
+                <Typography variant="h5" classes="home-page__subtitle">
+                  {t.activity1.subtitle}
+                </Typography>
               </div>
-              <Typography variant="h5" classes="home-page__subtitle">
-                {t.activity1.subtitle}
-              </Typography>
-            </div>
-            <Typography variant="body1">{t.activity1.body.join(' ')}</Typography>
+              <Typography variant="body1">{t.activity1.body.join(' ')}</Typography>
+            </Suspense>
           </div>
 
           <div className="home-page__activity-item">
-            <div className="home-page__subtitle-block">
-              <div className="home-page__icon-wrapper">
-                <AppIcon className="MySvg-icon home-page__icon activity-icon_main" />
+            <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+              <div className="home-page__subtitle-block">
+                <div className="home-page__icon-wrapper">
+                  <AppIcon className="MySvg-icon home-page__icon activity-icon_main" />
+                </div>
+                <Typography variant="h5" classes="home-page__subtitle">
+                  {t.activity2.subtitle}
+                </Typography>
               </div>
-              <Typography variant="h5" classes="home-page__subtitle">
-                {t.activity2.subtitle}
-              </Typography>
-            </div>
-            <Typography variant="body1">{t.activity2.body.join(' ')}</Typography>
+              <Typography variant="body1">{t.activity2.body.join(' ')}</Typography>
+            </Suspense>
           </div>
+        </div>
 
+        <div className="home-page__activity-item-wrapper is_reverse">
           <div className="home-page__activity-item">
-            <div className="home-page__subtitle-block">
-              <div className="home-page__icon-wrapper">
-                <FreelanceIcon className="MySvg-icon home-page__icon activity-icon_main" />
+            <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+              <div className="home-page__subtitle-block">
+                <div className="home-page__icon-wrapper">
+                  <FreelanceIcon className="MySvg-icon home-page__icon activity-icon_main" />
+                </div>
+                <Typography variant="h5" classes="home-page__subtitle">
+                  {t.activity3.subtitle}
+                </Typography>
               </div>
-              <Typography variant="h5" classes="home-page__subtitle">
-                {t.activity3.subtitle}
-              </Typography>
-            </div>
-            <Typography variant="body1">{t.activity3.body.join(' ')}</Typography>
+              <Typography variant="body1">{t.activity3.body.join(' ')}</Typography>
+            </Suspense>
           </div>
 
           <div className="home-page__activity-item is_pink">
-            <div className="home-page__subtitle-block">
-              <div className="home-page__icon-wrapper">
-                <SeoIcon className="MySvg-icon home-page__icon activity-icon_dark" />
+            <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+              <div className="home-page__subtitle-block">
+                <div className="home-page__icon-wrapper">
+                  <SeoIcon className="MySvg-icon home-page__icon activity-icon_dark" />
+                </div>
+                <Typography variant="h5" classes="home-page__subtitle">
+                  {t.activity4.subtitle}
+                </Typography>
               </div>
-              <Typography variant="h5" classes="home-page__subtitle">
-                {t.activity4.subtitle}
-              </Typography>
-            </div>
-            <Typography variant="body1">{t.activity4.body.join(' ')}</Typography>
+              <Typography variant="body1">{t.activity4.body.join(' ')}</Typography>
+            </Suspense>
           </div>
-        </Suspense>
+        </div>
       </div>
     </div>
   );

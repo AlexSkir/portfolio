@@ -1,18 +1,6 @@
 @import 'variables';
 @import 'mixins';
 
-.dark {
-  .resume-section__resume-item {
-    background-color: var(--primary-main);
-  }
-
-  .resume-section__education-block {
-    .resume-section__resume-item {
-      background-color: var(--primary-main);
-    }
-  }
-}
-
 .resume-section__info-block {
   display: flex;
   flex-direction: row;
@@ -30,7 +18,7 @@
   flex-direction: column;
 
   .resume-section__resume-item {
-    background-color: var(--secondary-pinkBox);
+    background-color: var(--primary-pinkBox);
   }
 }
 
@@ -60,7 +48,7 @@
   max-width: 290px;
   min-height: 90px;
   padding: 10px;
-  background-color: var(--secondary-blueBox);
+  background-color: var(--primary-blueBox);
   border-radius: 8px;
 
   .resume-section__item-date {

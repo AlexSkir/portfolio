@@ -17,7 +17,7 @@ export default async function Contact(props) {
       <div className="contact-page__section">
         <div className="contact-page__name-wrapper">
           <Suspense fallback={<LoadingBlock width="100%" height="35px" />}>
-            <Typography variant="h4" align="left" classes="contact-page__name">
+            <Typography variant="h4" align="left" component="h3">
               {tContact.name}
             </Typography>
           </Suspense>
@@ -25,7 +25,7 @@ export default async function Contact(props) {
 
         <div className="contact-page__name-wrapper">
           <Suspense fallback={<LoadingBlock width="100%" height="35px" />}>
-            <Typography variant="h6" classes="contact-page__position">
+            <Typography variant="h6" classes="contact-page__position" component="h4">
               {tContact.position}
             </Typography>
           </Suspense>

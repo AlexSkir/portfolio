@@ -113,4 +113,12 @@
     text-transform: initial;
     line-height: 1.75;
   }
+
+  &.MyTypography-tab-btn {
+    font-family: var(--font-poppins), sans-serif !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: initial;
+    line-height: normal;
+  }
 }

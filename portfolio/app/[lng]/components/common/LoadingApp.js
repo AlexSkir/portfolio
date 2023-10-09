@@ -36,7 +36,6 @@ export default function LoadingApp() {
   const [cookies, setCookie] = useCookies(['sideBlockOpen']);
   let sideBlockOpen = typeof window !== 'undefined' ? window.screen.width > 1200 : true;
   sideBlockOpen = typeof cookies.sideBlockOpen !== 'undefined' ? cookies.sideBlockOpen : true;
-  console.log(cookies.sideBlockOpen);
   const [open, setOpen] = React.useState(sideBlockOpen);
 
   return (

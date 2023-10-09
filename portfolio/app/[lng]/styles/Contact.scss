@@ -1,12 +1,6 @@
 @import 'variables';
 @import 'mixins';
 
-.dark {
-  .contact-page__contact-item {
-    background-color: var(--primary-main) !important;
-  }
-}
-
 .contact-page__section {
   display: flex;
   flex-direction: column;
@@ -61,11 +55,11 @@
 
   @include media($sm) {
     &.contacts_odd .contact-page__contact-item:nth-child(odd) {
-      background-color: var(--secondary-pinkBox);
+      background-color: var(--primary-pinkBox);
     }
 
     &.contacts_even .contact-page__contact-item:nth-child(even) {
-      background-color: var(--secondary-pinkBox);
+      background-color: var(--primary-pinkBox);
     }
   }
 }
@@ -86,7 +80,7 @@
   }
 
   @include media($sm) {
-    background-color: var(--secondary-blueBox);
+    background-color: var(--primary-blueBox);
   }
 
   @include media($md) {

@@ -45,7 +45,6 @@ export default function ResumeDownload(props) {
   const handleClose = (value) => {
     setOpen(false);
     if (value) {
-      console.log(value);
       handleDownloadResume(value);
     }
   };

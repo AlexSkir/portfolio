@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Roboto, Raleway, Pacifico, Poppins } from 'next/font/google';
+import { /* Roboto */ Raleway, Pacifico, Poppins } from 'next/font/google';
 
 /* const roboto = Roboto({
   weight: '500',
@@ -21,7 +21,7 @@ const raleway = Raleway({
 const poppins = Poppins({
   weight: '500',
   subsets: ['latin-ext'],
-  /* fallback: ['Inter', 'san-serif'],
+  /* fallback: ['Roboto', 'san-serif'],
   adjustFontFallback: false, */
   variable: '--font-poppins',
 });
@@ -69,18 +69,42 @@ const variantMapping = (variant, children, classes, align, component) => {
         </h3>
       );
     case 'h4':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.h4} ${raleway.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <h4 className={`${myClasses.h4} ${raleway.variable}${customClass}${customAlign}`}>
           {children}
         </h4>
       );
     case 'h5':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.h5} ${poppins.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <h5 className={`${myClasses.h5} ${poppins.variable}${customClass}${customAlign}`}>
           {children}
         </h5>
       );
     case 'h6':
+      if (component) {
+        const Tag = component;
+        return (
+          <Tag className={`${myClasses.h6} ${raleway.variable}${customClass}${customAlign}`}>
+            {children}
+          </Tag>
+        );
+      }
       return (
         <h6 className={`${myClasses.h6} ${raleway.variable}${customClass}${customAlign}`}>
           {children}

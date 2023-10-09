@@ -1,15 +1,20 @@
 import React, { Suspense, lazy } from 'react';
 import Link from 'next/link';
+import PageLayout from '../../components/PageLayout';
+import Project from './Project';
+import getDictionary from '../../../i18n/dictionaries';
+import projectArr from '../projectsArray';
 // import { useTranslation } from '../i18n';
 
-export default async function Page({ params: { project, lng } }) {
-  // const { t } = await useTranslation(lng);
+export default async function Page({ params }) {
+  const { lng, project } = params;
+  const t = await getDictionary(lng, 'projects');
+  const allData = projectArr(t);
+  const projectData = allData[project];
+
   return (
-    <>
-      <h1>{project}</h1>
-      <Link href={`/${lng}/portfolio`}>back</Link>
-      <br />
-      <Link href={`/${lng}`}>home</Link>
-    </>
+    <PageLayout title={projectData.name} avatar="ok" lng={lng}>
+      <Project data={projectData} />
+    </PageLayout>
   );
 }

@@ -21,7 +21,7 @@ export default function ContactItems(props) {
     <div className="contact-page__contact-items">
       <div className="contact-page__contacts-wrapper contacts_odd">
         <div className="contact-page__contact-item">
-          <Suspense fallback={<LoadingBlock width="45%" height="100px" variant="rounded" />}>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
             <ContactItemCopieble
               link="tel:+79938996716"
               copyText="+79938996716"
@@ -32,7 +32,7 @@ export default function ContactItems(props) {
         </div>
 
         <div className="contact-page__contact-item">
-          <Suspense fallback={<LoadingBlock width="45%" height="100px" variant="rounded" />}>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
             <ContactItemCopieble
               link="https://wa.me/+79938996716"
               copyText="+79938996716"
@@ -43,7 +43,7 @@ export default function ContactItems(props) {
         </div>
 
         <div className="contact-page__contact-item">
-          <Suspense fallback={<LoadingBlock width="45%" height="100px" variant="rounded" />}>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
             <ContactItemCopieble
               link="https://t.me/alexskir"
               copyText="alexskir"
@@ -56,7 +56,7 @@ export default function ContactItems(props) {
 
       <div className="contact-page__contacts-wrapper contacts_even">
         <div className="contact-page__contact-item">
-          <Suspense fallback={<LoadingBlock width="45%" height="100px" variant="rounded" />}>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
             <ContactItemCopieble
               link="mailto:a.skirnevskaia@gmail.com"
               copyText="a.skirnevskaia@gmail.com"
@@ -67,7 +67,7 @@ export default function ContactItems(props) {
         </div>
 
         <div className="contact-page__contact-item">
-          <Suspense fallback={<LoadingBlock width="45%" height="100px" variant="rounded" />}>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
             <ContactItemCopieble
               link="https://github.com/AlexSkir"
               copyText="AlexSkir"
@@ -78,7 +78,7 @@ export default function ContactItems(props) {
         </div>
 
         <div className="contact-page__contact-item">
-          <Suspense fallback={<LoadingBlock width="45%" height="100px" variant="rounded" />}>
+          <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rounded" />}>
             <ContactItemCopieble
               link={
                 lng === 'en'

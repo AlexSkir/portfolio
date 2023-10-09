@@ -44,8 +44,6 @@ export default function Form(props) {
       message: msg,
       'g-recaptcha-response': recaptchaValue,
     };
-    console.log('sent', letter);
-    clearAll();
     emailjs.send('portfolio_email', 'template_portfolio', letter, user_id).then(
       (response) => {
         console.log('SUCCESS!', response.status, response.text);

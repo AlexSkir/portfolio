@@ -1,18 +1,17 @@
-'use client';
-
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import useTranslation from '../../i18n/client';
-// import { Footer } from '../components/Footer/client';
-// import { Footer } from '../components/Footer';
-import Loading from '../loading';
+import getDictionary from '../../i18n/dictionaries';
+import PageLayout from '../components/PageLayout';
+import Portfolio from './Portfolio';
 
-export default function Page({ params: { lng } }) {
-  const { t } = useTranslation(lng, 'projects');
-  const [counter, setCounter] = React.useState(0);
-  return <Loading />;
+export default async function Page({ params: { lng } }) {
+  const tPortfolio = await getDictionary(lng, 'portfolio');
+  const tProjects = await getDictionary(lng, 'projects');
+  return (
+    <PageLayout avatar="ok" title={tPortfolio.title} lng={lng}>
+      <Portfolio t={tPortfolio} lng={lng} proj={tProjects} />
+    </PageLayout>
+  );
 }
 
 Page.propTypes = {
