@@ -26,19 +26,6 @@ import zooShare from '../assets/projects/share/zoo.png';
 import yagoShare from '../assets/projects/share/yago.png';
 import yagoCMSShare from '../assets/projects/share/yagoCms.png';
 
-/* import fescoThumbnail from '../assets/projects/thumbnail/fesco.webp';
-import AlexisThumbnail from '../assets/projects/thumbnail/alexis.webp';
-import HexalThumbnail from '../assets/projects/thumbnail/hexal.webp';
-import YoutubeThumbnail from '../assets/projects/thumbnail/youtube.webp';
-import PiskelThumbnail from '../assets/projects/thumbnail/piskel.webp';
-import CultureThumbnail from '../assets/projects/thumbnail/culturePortal.webp';
-import ChatThumbnail from '../assets/projects/thumbnail/chat.webp';
-import GofuckThumbnail from '../assets/projects/thumbnail/gofuck.webp';
-import GritellaThumbnail from '../assets/projects/thumbnail/gritella.webp';
-import zooThumbnail from '../assets/projects/thumbnail/zoo.webp';
-import yagoThumbnail from '../assets/projects/thumbnail/yago.webp';
-import yagoCMSThumbnail from '../assets/projects/thumbnail/yagoCms.webp'; */
-
 import reactIcon from '../assets/icons/react.png';
 import sassIcon from '../assets/icons/sass.png';
 import jsIcon from '../assets/icons/js.png';
@@ -67,7 +54,6 @@ export default function projectArr(t) {
       path: 'yandex-go-cms',
       image: yagoCMSImage,
       share: yagoShare,
-      /* thumb: yagoCMSThumbnail, */
       links: [
         {
           name: 'demo',
@@ -91,7 +77,6 @@ export default function projectArr(t) {
       path: 'yandex-go-sass',
       image: yagoImage,
       share: yagoCMSShare,
-      /* thumb: yagoThumbnail, */
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/yago/' },
         { name: 'github', url: 'https://github.com/AlexSkir/yago' },
@@ -113,7 +98,6 @@ export default function projectArr(t) {
       path: 'zoo',
       image: zooImage,
       share: zooShare,
-      /* thumb: zooThumbnail, */
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/online-zoo/index.html' },
         { name: 'github', url: 'https://github.com/AlexSkir/online-zoo' },
@@ -138,7 +122,6 @@ export default function projectArr(t) {
       path: 'culture-portal',
       image: CultureImg,
       share: CultureShare,
-      /* thumb: CultureThumbnail, */
       links: [
         { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
         { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
@@ -161,7 +144,6 @@ export default function projectArr(t) {
       path: 'awesome-chat',
       image: ChatImg,
       share: ChatShare,
-      /* thumb: ChatThumbnail, */
       links: [
         { name: 'demo', url: 'https://chat-render-9rxz.onrender.com/' },
         { name: 'github', url: 'https://github.com/AlexSkir/chat/tree/project' },
@@ -182,7 +164,6 @@ export default function projectArr(t) {
       path: 'youtube',
       image: YoutubeImg,
       share: YoutubeShare,
-      /* thumb: YoutubeThumbnail, */
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/youtube-app/' },
         { name: 'github', url: 'https://github.com/AlexSkir/youtube-app/tree/gh-pages' },
@@ -208,7 +189,6 @@ export default function projectArr(t) {
       path: 'fesco',
       image: fescoImg,
       share: fescoShare,
-      /* thumb: fescoThumbnail, */
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/restaurant-fesco/' },
         { name: 'github', url: 'https://github.com/AlexSkir/restaurant-fesco' },
@@ -229,7 +209,6 @@ export default function projectArr(t) {
       path: 'piskel',
       image: PiskelImg,
       share: PiskelShare,
-      /* thumb: PiskelThumbnail, */
       links: [
         { name: 'demo', url: 'http://alexskir.github.io/clown/' },
         { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
@@ -251,7 +230,6 @@ export default function projectArr(t) {
       path: 'alexis',
       image: AlexisImg,
       share: AlexisShare,
-      /* thumb: AlexisThumbnail, */
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/alexis-homepage/' },
         { name: 'github', url: 'https://github.com/AlexSkir/alexis-homepage' },
@@ -272,7 +250,6 @@ export default function projectArr(t) {
       path: 'hexal',
       image: HexalImg,
       share: HexalShare,
-      /* thumb: HexalThumbnail, */
       links: [
         { name: 'demo', url: 'https://alexskir.github.io/hexal/' },
         { name: 'github', url: 'https://github.com/AlexSkir/hexal/tree/gh-pages' },
@@ -289,7 +266,6 @@ export default function projectArr(t) {
       path: 'gofuck',
       image: GofuckImg,
       share: GofuckShare,
-      /* thumb: GofuckThumbnail, */
       links: [
         { name: 'website', url: 'https://www.gofuckbiz.com/' },
         { name: 'github', url: 'https://github.com/AlexSkir/gofuck/blob/master/wireless_css.txt' },
@@ -316,7 +292,6 @@ export default function projectArr(t) {
       path: 'gritella',
       image: GritellaImg,
       share: GritellaShare,
-      /* thumb: GritellaThumbnail, */
       links: [
         { name: 'demo', url: 'http://d97714j6.beget.tech/' },
         { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
