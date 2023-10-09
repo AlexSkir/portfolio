@@ -127,11 +127,11 @@ export default function projectArr(t) {
         { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
         { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
       ],
-      more: (
-        <Suspense fallback={<LoadingMore />}>
-          {/* <CulturePortal /> */}
-        </Suspense>
-      ),
+      more: {
+        /* <Suspense fallback={<LoadingMore />}>
+          <CulturePortal />
+        </Suspense> */
+      },
     },
     'awesome-chat': {
       name: 'Awesome Chat',
@@ -172,11 +172,11 @@ export default function projectArr(t) {
           url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
         },
       ],
-      more: (
-        <Suspense fallback={<LoadingMore />}>
-          {/* <YoutubeApp /> */}
-        </Suspense>
-      ),
+      more: {
+        /* <Suspense fallback={<LoadingMore />}>
+          <YoutubeApp />
+        </Suspense> */
+      },
     },
     fesco: {
       name: 'Fesco',
@@ -213,11 +213,11 @@ export default function projectArr(t) {
         { name: 'demo', url: 'http://alexskir.github.io/clown/' },
         { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
       ],
-      more: (
-        <Suspense fallback={<LoadingMore />}>
-          {/* <Piskel /> */}
-        </Suspense>
-      ),
+      more: {
+        /* <Suspense fallback={<LoadingMore />}>
+          <Piskel />
+        </Suspense> */
+      },
     },
     alexis: {
       name: 'Alexis',
@@ -296,11 +296,11 @@ export default function projectArr(t) {
         { name: 'demo', url: 'http://d97714j6.beget.tech/' },
         { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
       ],
-      more: (
-        <Suspense fallback={<LoadingMore />}>
-          {/* <GritellaProject /> */}
-        </Suspense>
-      ),
-    }
+      more: {
+        /* <Suspense fallback={<LoadingMore />}>
+          <GritellaProject />
+        </Suspense> */
+      },
+    },
   };
 }
