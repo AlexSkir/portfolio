@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Typography from '@mui/material/Typography';
-import CollapsibleTable from './[project]/CollapsibleTable';
+import CollapsibleTable from './CollapsibleTable';
 
 /* t('projects.chat.description', { joinArrays: ' ', ns: 'projects' }) */
 const withTranslation = (t) => {

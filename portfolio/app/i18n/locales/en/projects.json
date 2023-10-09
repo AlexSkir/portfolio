@@ -1,4 +1,12 @@
 {
+  "title": "Portfolio",
+  "tabs": {
+    "all": "All",
+    "landings": "Landings",
+    "app": "Apps",
+    "cms": "CMS",
+    "school": "RSS School"
+  },
   "project": "Look at my project:",
   "responsive": "Responsive layout",
   "adaptive": "Adaptive layout",

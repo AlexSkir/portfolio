@@ -5,11 +5,10 @@ import PageLayout from '../components/PageLayout';
 import Portfolio from './Portfolio';
 
 export default async function Page({ params: { lng } }) {
-  const tPortfolio = await getDictionary(lng, 'portfolio');
   const tProjects = await getDictionary(lng, 'projects');
   return (
-    <PageLayout avatar="ok" title={tPortfolio.title} lng={lng}>
-      <Portfolio t={tPortfolio} lng={lng} proj={tProjects} />
+    <PageLayout avatar="ok" title={tProjects.title} lng={lng}>
+      <Portfolio t={tProjects} lng={lng} />
     </PageLayout>
   );
 }

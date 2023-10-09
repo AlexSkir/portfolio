@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Typography from '@mui/material/Typography';
-import SimpleTable from './[project]/SimpleTable';
+import SimpleTable from './SimpleTable';
 
 export default function YoutubeApp() {
   const { t } = useTranslation();

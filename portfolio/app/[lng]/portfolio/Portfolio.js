@@ -23,7 +23,7 @@ function a11yProps(index) {
 }
 
 export default function Portfolio(props) {
-  const { t, proj, lng } = props;
+  const { t, lng } = props;
   const [value, setValue] = React.useState('all');
 
   const handleChange = (event, newValue) => {
@@ -59,7 +59,7 @@ export default function Portfolio(props) {
         <Suspense key={i} fallback={<LoadingBlock width="100%" height="300px" />}>
           <TabPanel index={item} value={value}>
             <ul className="project-gallery__list">
-              {Object.values(projectArr(proj))
+              {Object.values(projectArr(t))
                 .filter((project) => project.tabs.includes(item))
                 .map((item, i) => (
                   <li key={i} className="project-gallery__list-item">
@@ -86,6 +86,5 @@ export default function Portfolio(props) {
 
 Portfolio.propTypes = {
   t: PropTypes.object.isRequired,
-  proj: PropTypes.object.isRequired,
   lng: PropTypes.string.isRequired,
 };
