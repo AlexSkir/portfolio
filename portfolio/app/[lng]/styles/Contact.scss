@@ -27,6 +27,9 @@
   gap: 0;
   max-width: 630px;
 
+  $breakpoint: 570px;
+  --multiplier: calc(#{$breakpoint} - 100%);
+
   @include media($sm) {
     gap: 10px;
   }
@@ -40,10 +43,13 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-width: 100%;
-  min-width: 270px;
   gap: 0;
   margin-bottom: 0;
+
+  min-width: 270px;
+  max-width: 100%;
+  flex-grow: 1;
+  flex-basis: calc(var(--multiplier) * 999);
 
   @include media($sm) {
     gap: 10px;

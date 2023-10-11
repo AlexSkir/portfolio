@@ -15,7 +15,7 @@ export default function Form(props) {
   const recaptchaRef = React.createRef();
   const [name, setName] = React.useState(localStorage.getItem('form-name') || '');
   const [mail, setMail] = React.useState(localStorage.getItem('form-email') || '');
-  const [msg, setMsg] = React.useState(localStorage.getItem('form-msg') || '');
+  const [msg, setMsg] = React.useState(localStorage.getItem('form-text') || '');
   const [alert, setAlert] = React.useState('success');
   const [open, setOpen] = React.useState(false);
   const site_key = process.env.NEXT_PUBLIC_captcha_site_key;
