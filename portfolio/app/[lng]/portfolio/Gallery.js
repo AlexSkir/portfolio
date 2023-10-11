@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-wrap-multilines */
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
@@ -10,7 +9,7 @@ const Image = lazy(() => import('next/image'));
 export default function GalleryItem(props) {
   const { path, image, name, type, tool, lng } = props;
   return (
-    <Link href={`/${lng}/portfolio/${path}`} className="project-gallery__item-link" target="_blank">
+    <Link href={`/${lng}/portfolio/${path}`} className="project-gallery__item-link">
       <div className="project-gallery__item-image-wrapper">
         <Suspense fallback={<LoadingBlock width="100%" height="100%" />}>
           <Image

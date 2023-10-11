@@ -2,11 +2,9 @@ import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import getDictionary from '../../i18n/dictionaries';
 import PageLayout from '../components/PageLayout';
-// import Portfolio from './Portfolio';
+import Portfolio from './Portfolio';
 import projectArr from './projectsArray';
 import '../styles/Portfolio.scss';
-
-const Portfolio = lazy(() => import('./Portfolio'));
 
 export async function generateMetadata({ params: { lng } }) {
   const seo = await getDictionary(lng, 'seo');

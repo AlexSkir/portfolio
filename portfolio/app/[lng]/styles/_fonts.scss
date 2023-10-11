@@ -11,7 +11,7 @@
   &.h2-variant {
     font-family: var(--font-poppins), sans-serif;
     font-size: 40px;
-    font-size: clamp(var(--h2-min) * 1px, 4vw, var(--h2-max) *1px);
+    font-size: clamp(var(--h2-min) * 1px, 3.5vw, var(--h2-max) *1px);
     font-weight: 500;
     letter-spacing: 1px;
     line-height: 100%;
