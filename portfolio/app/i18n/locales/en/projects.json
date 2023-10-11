@@ -23,6 +23,7 @@
   "features": "Main features:",
   "library": "Library",
   "link": "Link",
+  "more1": "Main features: ...",
   "yandexGo": {
     "description": [
       "Yandex Go is a one-page website (landing) promoting scooters.",
@@ -131,7 +132,7 @@
     "description": [
       "The app is created with pure JS, using JS DOM manipulation, AJAX enquiries, youtube API, Babel,",
       "Webpack. It is a web app for searching the YouTube content by keywords. The search result is",
-      "presented in the form of cards with the detailed information about the video clips. Main features: ..."
+      "presented in the form of cards with the detailed information about the video clips."
     ],
     "more": {
       "features": [
@@ -154,7 +155,7 @@
     "description": [
       "Piskel Clone is a simplified clone of Piskel, a web-based tool for creating animated sprites",
       "& pixel art. The app is created with React/redux libraries, Google API, Firebase database,",
-      "Canvas element with canvas scripting API for drawing graphics and animations. Main features:..."
+      "Canvas element with canvas scripting API for drawing graphics and animations."
     ],
     "more": {
       "google": {
@@ -261,7 +262,7 @@
   "gritella": {
     "description": [
       "Gritella lingerie is an eCommerce website which is made with WordPress and WooCommerce plugin.",
-      "Content is manageable through the CMS admin panel of the website. The data stored with MySQL. Main features: ..."
+      "Content is manageable through the CMS admin panel of the website. The data stored with MySQL."
     ],
     "warning": [
       "The project was closed in Aug 2021, the website is now stored in a free web hosting and some",
@@ -270,6 +271,10 @@
     "more": {
       "homePage": {
         "name": "Home Page",
+        "link": {
+          "url": "http://d97714j6.beget.tech/",
+          "title": "visit page"
+        },
         "features": [
           {
             "name": "Mini-header with contact info, User page, WishList and Cart counters"
@@ -293,6 +298,10 @@
       },
       "productPage": {
         "name": "Product Page",
+        "link": {
+          "url": "http://d97714j6.beget.tech/catalog/anil-5526/",
+          "title": "visit page"
+        },
         "features": [
           {
             "name": "Product images are shown in Image Galery"
@@ -316,6 +325,10 @@
       },
       "userPage": {
         "name": "User Page",
+        "link": {
+          "url": "http://d97714j6.beget.tech/profile/",
+          "title": "visit page"
+        },
         "features": [
           {
             "name": "Register/Log-in with Email and password, or using third parties (FB, VK, Google)"
@@ -333,6 +346,10 @@
       },
       "gift": {
         "name": "Gift Card page",
+        "link": {
+          "url": "http://d97714j6.beget.tech/about-giftcard/",
+          "title": "visit page"
+        },
         "features": [
           {
             "name": "Users can buy and present Virtual Gift Cards with different amount of money"
@@ -350,6 +367,10 @@
       },
       "order": {
         "name": "Cart/Order Page",
+        "link": {
+          "url": "http://d97714j6.beget.tech/order/",
+          "title": "visit page"
+        },
         "features": [
           {
             "name": "There is a table with products in cart and action buttons (remove/undo, product, quantity)"
@@ -379,6 +400,7 @@
       },
       "misc": {
         "name": "Miscellaneous",
+        "type": "Link",
         "features": [
           {
             "name": "Installed and modified Plugins (ATUM Inventory Management for WooCommerce, Jetpack, UpdraftPlus - Backup/Restore, Mailchimp etc)",

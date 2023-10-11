@@ -42,7 +42,9 @@ export default function Navbar(props) {
           {pages.map((page) => (
             <Suspense
               key={page.name}
-              fallback={<LoadingBlock width="80px" height="80px" variant="rounded" />}
+              fallback={
+                <LoadingBlock width="80px" height="80px" borderRadius="20px" overflow="hidden" />
+              }
             >
               <NavbarButton
                 title={page.name}

@@ -9,7 +9,7 @@
   }
 
   &.h2-variant {
-    font-family: var(--font-poppins), sans-serif;
+    font-family: var(--font-poppins), var(--font-roboto), sans-serif;
     font-size: 40px;
     font-size: clamp(var(--h2-min) * 1px, 3.5vw, var(--h2-max) *1px);
     font-weight: 500;
@@ -18,7 +18,7 @@
   }
 
   &.h3-variant {
-    font-family: var(--font-poppins), sans-serif;
+    font-family: var(--font-poppins), var(--font-roboto), sans-serif;
     font-size: 32px;
     font-size: clamp(var(--h3-min) * 1px, 3vw, var(--h3-max) *1px);
     font-weight: 500;
@@ -35,7 +35,7 @@
   }
 
   &.h5-variant {
-    font-family: var(--font-poppins), sans-serif;
+    font-family: var(--font-poppins), var(--font-roboto), sans-serif;
     font-size: 24px;
     font-size: clamp(var(--h5-min) * 1px, 2.5vw, var(--h5-max) *1px);
     font-weight: 600;
@@ -52,7 +52,7 @@
   }
 
   &.subtitle1-variant {
-    font-family: var(--font-poppins), sans-serif;
+    font-family: var(--font-poppins), var(--font-roboto), sans-serif;
     font-size: 28px;
     font-size: clamp(var(--subtitle1-min) * 1px, 2.5vw, var(--subtitle1-max) *1px);
     line-height: 120%;
@@ -61,7 +61,7 @@
   }
 
   &.subtitle2-variant {
-    font-family: var(--font-poppins), sans-serif;
+    font-family: var(--font-poppins), var(--font-roboto), sans-serif;
     font-size: 16px;
     font-size: clamp(var(--subtitle2-min) * 1px, 2.5vw, var(--subtitle2-max) *1px);
     line-height: 120%;
@@ -115,7 +115,7 @@
   }
 
   &.MyTypography-tab-btn {
-    font-family: var(--font-poppins), sans-serif !important;
+    font-family: var(--font-poppins), var(--font-roboto), sans-serif !important;
     font-size: 16px;
     font-weight: 500;
     text-transform: initial;

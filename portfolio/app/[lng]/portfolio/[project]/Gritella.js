@@ -1,10 +1,14 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Typography from '@mui/material/Typography';
+'use client';
+
+import React, { Suspense, lazy } from 'react';
+import PropTypes from 'prop-types';
 import CollapsibleTable from './CollapsibleTable';
+import LoadingBlock from '../../components/common/LoadingBlock';
+
+const Typography = lazy(() => import('../../components/Typography'));
 
 /* t('projects.chat.description', { joinArrays: ' ', ns: 'projects' }) */
-const withTranslation = (t) => {
+/* const withTranslation = (t) => {
   return [
     {
       name: t('projects.gritella.more.homePage.name', { ns: 'projects' }),
@@ -70,14 +74,28 @@ const withTranslation = (t) => {
       type: t('projects.link', { ns: 'projects' }),
     },
   ];
-};
+}; */
 
-export default function GritellaProject() {
-  const { t } = useTranslation();
+export default function GritellaProject(props) {
+  const { more, t } = props;
+  console.log('gritella more: ', more);
+
   return (
     <>
-      <Typography variant="h6">{t('projects.features', { ns: 'projects' })}</Typography>
-      <CollapsibleTable features={withTranslation(t)} />
+      <Suspense fallback={<LoadingBlock width="200px" height="30px" />}>
+        <Typography variant="h6">{t.features}</Typography>
+      </Suspense>
+
+      <Suspense fallback={<LoadingBlock width="100%" height="66px" />}>
+        <CollapsibleTable features={more} t={t} />
+      </Suspense>
+      {/* <Typography variant="h6">{t('projects.features', { ns: 'projects' })}</Typography>
+      <CollapsibleTable features={withTranslation(t)} /> */}
     </>
   );
 }
+
+GritellaProject.propTypes = {
+  more: PropTypes.array.isRequired,
+  t: PropTypes.object.isRequired,
+};

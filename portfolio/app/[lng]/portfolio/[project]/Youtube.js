@@ -1,21 +1,31 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Typography from '@mui/material/Typography';
-import SimpleTable from './SimpleTable';
+'use client';
 
-export default function YoutubeApp() {
-  const { t } = useTranslation();
+import React, { Suspense, lazy } from 'react';
+import PropTypes from 'prop-types';
+import LoadingBlock from '../../components/common/LoadingBlock';
+import LoadingMore from '../../components/common/LoadingMore';
+
+const Typography = lazy(() => import('../../components/Typography'));
+const SimpleTable = lazy(() => import('./SimpleTable'));
+
+export default function YoutubeApp(props) {
+  const { more, title } = props;
+
   return (
     <>
-      <Typography variant="h6" sx={{ mb: '20px' }}>
-        {t('projects.features', { ns: 'projects' })}
-      </Typography>
-      <SimpleTable
-        features={t('projects.youtube.more.features', {
-          returnObjects: true,
-          ns: 'projects',
-        })}
-      />
+      <Suspense fallback={<LoadingBlock width="200px" height="30px" marginBottom="20px" />}>
+        <Typography variant="h6" classes="project-more__subtitle">
+          {title}
+        </Typography>
+      </Suspense>
+      <Suspense fallback={<LoadingMore />}>
+        <SimpleTable features={more} />
+      </Suspense>
     </>
   );
 }
+
+YoutubeApp.propTypes = {
+  more: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+};

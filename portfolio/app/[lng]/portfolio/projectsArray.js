@@ -33,7 +33,8 @@ import cssIcon from '../assets/icons/css.png';
 import wpIcon from '../assets/icons/wordpress.png';
 import wixIcon from '../assets/icons/wix.png';
 
-import LoadingMore from '../components/common/LoadingMore';
+const GritellaProject = lazy(() => import('./[project]/Gritella'));
+const YoutubeApp = lazy(() => import('./[project]/Youtube'));
 
 /* const GritellaProject = lazy(() => import('./Gritella'));
 const CulturePortal = lazy(() => import('./CulturePortal'));
@@ -132,6 +133,7 @@ export default function projectArr(t) {
           <CulturePortal />
         </Suspense> */
       },
+      more1: t.more1,
     },
     'awesome-chat': {
       name: 'Awesome Chat',
@@ -172,11 +174,8 @@ export default function projectArr(t) {
           url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
         },
       ],
-      more: {
-        /* <Suspense fallback={<LoadingMore />}>
-          <YoutubeApp />
-        </Suspense> */
-      },
+      more: <YoutubeApp more={t.youtube.more.features} title={t.features} />,
+      more1: t.more1,
     },
     fesco: {
       name: 'Fesco',
@@ -218,6 +217,7 @@ export default function projectArr(t) {
           <Piskel />
         </Suspense> */
       },
+      more1: t.more1,
     },
     alexis: {
       name: 'Alexis',
@@ -296,11 +296,8 @@ export default function projectArr(t) {
         { name: 'demo', url: 'http://d97714j6.beget.tech/' },
         { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
       ],
-      more: {
-        /* <Suspense fallback={<LoadingMore />}>
-          <GritellaProject />
-        </Suspense> */
-      },
+      more: <GritellaProject more={Object.values(t.gritella.more)} t={t} />,
+      more1: t.more1,
     },
   };
 }

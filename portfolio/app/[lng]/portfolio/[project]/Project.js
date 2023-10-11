@@ -3,29 +3,13 @@
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import Image from 'next/image';
-import { styled } from '@mui/material/styles';
-import Link from '@mui/material/Link';
-import Avatar from '@mui/material/Avatar';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import IconButton from '@mui/material/IconButton';
-import CardMedia from '@mui/material/CardMedia';
 import LoadingBlock from '../../components/common/LoadingBlock';
+import LoadingMore from '../../components/common/LoadingMore';
 
-const CardContent = lazy(() => import('@mui/material/CardContent'));
-const CardActions = lazy(() => import('@mui/material/CardActions'));
 const Collapse = lazy(() => import('@mui/material/Collapse'));
+const IconButton = lazy(() => import('@mui/material/IconButton'));
 const Typography = lazy(() => import('../../components/Typography'));
-
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+const More = lazy(() => import('../../assets/svg/More.svg'));
 
 export default function Project(props) {
   const { data, children = '<></>' } = props;
@@ -76,41 +60,53 @@ export default function Project(props) {
         <Suspense fallback={<LoadingBlock width="100%" height="90px" margin="10px 0" />}>
           <Typography variant="body2">{description}</Typography>
         </Suspense>
+        {data.more1 ? (
+          <Suspense fallback={<LoadingBlock width="100%" height="30px" margin="10px 0" />}>
+            <Typography variant="body2">{data.more1}</Typography>
+          </Suspense>
+        ) : (
+          <></>
+        )}
       </div>
-      <Suspense fallback={<LoadingBlock width="100%" height="100px" variant="rectangular" />}>
-        <CardActions sx={{ p: '16px', flexDirection: 'row', flexWrap: 'wrap' }}>
-          {links.map((item) => (
-            <Link
-              key={item.name}
-              href={item.url}
-              sx={{ p: '4px 10px', textTransform: 'uppercase' }}
-              target="_blank"
-            >
-              <Typography variant="subtitle2" sx={{ color: 'secondary.dark' }}>
-                {item.name}
-              </Typography>
-            </Link>
-          ))}
-          {data.more ? (
-            <ExpandMore
-              expand={expanded}
+
+      <div className="project-card__card-actions">
+        {links.map((item) => (
+          <a
+            className="project-card__action-link"
+            key={item.name}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Suspense fallback={<LoadingBlock width="100px" height="30px" />}>
+              <Typography variant="subtitle2">{item.name}</Typography>
+            </Suspense>
+          </a>
+        ))}
+
+        {data.more ? (
+          <Suspense
+            fallback={
+              <LoadingBlock width="40px" height="40px" marginLeft="auto" variant="circular" />
+            }
+          >
+            <IconButton
+              className={`project-card__icon-button ${expanded ? 'is_expanded' : ''}`}
               onClick={handleExpandClick}
               aria-expanded={expanded}
               aria-label="show more"
               sx={{ color: 'secondary.dark' }}
             >
-              <ExpandMoreIcon className={expanded ? '' : 'bounce2'} />
-            </ExpandMore>
-          ) : (
-            <></>
-          )}
-        </CardActions>
-      </Suspense>
-      <Suspense fallback={<LoadingBlock width="100%" height="200px" variant="rectangular" />}>
-        <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <CardContent>{data.more}</CardContent>
-        </Collapse>
-      </Suspense>
+              <More className={`MySvg-icon project-card__icon ${expanded ? '' : 'bounce2'}`} />
+            </IconButton>
+          </Suspense>
+        ) : (
+          <></>
+        )}
+      </div>
+      <Collapse in={expanded} timeout="auto" unmountOnExit>
+        <div className="project-card__content-wrapper">{data.more}</div>
+      </Collapse>
     </div>
   );
 }

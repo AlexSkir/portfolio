@@ -9,6 +9,7 @@ const TabPanel = lazy(() => import('./TabPanel'));
 const Tabs = lazy(() => import('@mui/material/Tabs'));
 const Tab = lazy(() => import('@mui/material/Tab'));
 const GalleryItem = lazy(() => import('./Gallery'));
+const Typography = lazy(() => import('../components/Typography'));
 
 const tabs = ['all', 'landings', 'app', 'cms', 'school'];
 
@@ -43,7 +44,7 @@ export default function Portfolio(props) {
             {tabs.map((item, i) => (
               <Tab
                 key={i}
-                label={t.tabs[item]}
+                label={<Typography variant="subtitle2">{t.tabs[item]}</Typography>}
                 className={`MyTypography MyTypography-tab-btn tab-btn ${poppins.variable}
               ${value === item ? ' is_selected' : ''}`}
                 {...a11yProps(item)}
