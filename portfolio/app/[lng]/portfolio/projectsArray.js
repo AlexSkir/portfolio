@@ -300,7 +300,13 @@ export default function projectArr(t) {
       image: GritellaImg,
       share: GritellaShare,
       links: gritellaLinks,
-      more: <GritellaProject more={Object.values(t.gritella.more)} t={t} links={gritellaLinks} />,
+      more: (
+        <GritellaProject
+          more={Object.values(t.gritella.more)}
+          title={t.features}
+          links={gritellaLinks}
+        />
+      ),
       more1: t.more1,
     },
   };

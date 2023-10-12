@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import LoadingBlock from '../../components/common/LoadingBlock';
 import LoadingMore from '../../components/common/LoadingMore';
 
 const Row = lazy(() => import('./Row'));
