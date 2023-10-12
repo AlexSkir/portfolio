@@ -43,6 +43,20 @@ const YoutubeApp = lazy(() => import('./Youtube')); */
 
 export default function projectArr(t) {
   const { landing, adaptive, responsive, fixed, mobile, app, task, phptempl, shop, forum } = t;
+
+  const youtubeLinks = [
+    { name: 'demo', url: 'https://alexskir.github.io/youtube-app/' },
+    { name: 'github', url: 'https://github.com/AlexSkir/youtube-app/tree/gh-pages' },
+    {
+      name: task,
+      url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
+    },
+  ];
+  const gritellaLinks = [
+    { name: 'demo', url: 'http://d97714j6.beget.tech/' },
+    { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
+  ];
+
   return {
     'yandex-go-cms': {
       name: 'Yandex Go',
@@ -166,15 +180,8 @@ export default function projectArr(t) {
       path: 'youtube',
       image: YoutubeImg,
       share: YoutubeShare,
-      links: [
-        { name: 'demo', url: 'https://alexskir.github.io/youtube-app/' },
-        { name: 'github', url: 'https://github.com/AlexSkir/youtube-app/tree/gh-pages' },
-        {
-          name: task,
-          url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
-        },
-      ],
-      more: <YoutubeApp more={t.youtube.more.features} title={t.features} />,
+      links: youtubeLinks,
+      more: <YoutubeApp more={t.youtube.more.features} title={t.features} links={youtubeLinks} />,
       more1: t.more1,
     },
     fesco: {
@@ -292,11 +299,8 @@ export default function projectArr(t) {
       path: 'gritella',
       image: GritellaImg,
       share: GritellaShare,
-      links: [
-        { name: 'demo', url: 'http://d97714j6.beget.tech/' },
-        { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
-      ],
-      more: <GritellaProject more={Object.values(t.gritella.more)} t={t} />,
+      links: gritellaLinks,
+      more: <GritellaProject more={Object.values(t.gritella.more)} t={t} links={gritellaLinks} />,
       more1: t.more1,
     },
   };
