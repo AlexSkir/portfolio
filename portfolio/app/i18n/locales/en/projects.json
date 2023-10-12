@@ -58,6 +58,11 @@
     "more": {
       "homePage": {
         "name": "Home page",
+        "type": "Library",
+        "link": {
+          "title": "visit page",
+          "url": "https://rss-group10-photographers.netlify.app/"
+        },
         "features": [
           {
             "name": "Content is presented in 3 languages - English, Belarusian, Russian",
@@ -87,6 +92,11 @@
       },
       "persPage": {
         "name": "Photographer page",
+        "type": "Library",
+        "link": {
+          "title": "visit page",
+          "url": "https://rss-group10-photographers.netlify.app/ru/photographers/person1/"
+        },
         "features": [
           {
             "name": "Animated timeline",
@@ -108,6 +118,11 @@
       },
       "allPers": {
         "name": "All photographers page",
+        "type": "Library",
+        "link": {
+          "title": "visit page",
+          "url": "https://rss-group10-photographers.netlify.app/ru/photographers/"
+        },
         "features": [
           {
             "name": "Form for searching a person by Name and/or Place field from the list of photographers",

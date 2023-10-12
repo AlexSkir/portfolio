@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import getDictionary from '../../i18n/dictionaries';
 import PageLayout from '../components/PageLayout';

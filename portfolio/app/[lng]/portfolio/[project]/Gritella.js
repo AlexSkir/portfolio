@@ -51,18 +51,20 @@ export default function GritellaProject(props) {
           </IconButton>
         </Suspense>
       </div>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <div className="project-card__content-wrapper">
-          <Suspense fallback={<LoadingBlock width="200px" height="30px" marginBottom="20px" />}>
-            <Typography variant="h6" classes="project-more__subtitle">
-              {title}
-            </Typography>
-          </Suspense>
-          <Suspense fallback={<LoadingMore />}>
-            <CollapsibleTable features={more} />
-          </Suspense>
-        </div>
-      </Collapse>
+      <Suspense fallback={<LoadingMore />}>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <div className="project-card__content-wrapper">
+            <Suspense fallback={<LoadingBlock width="200px" height="30px" marginBottom="20px" />}>
+              <Typography variant="h6" classes="project-more__subtitle">
+                {title}
+              </Typography>
+            </Suspense>
+            <Suspense fallback={<LoadingMore />}>
+              <CollapsibleTable features={more} />
+            </Suspense>
+          </div>
+        </Collapse>
+      </Suspense>
     </>
   );
 }

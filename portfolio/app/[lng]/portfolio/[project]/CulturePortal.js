@@ -51,18 +51,20 @@ export default function CulturePortal(props) {
           </IconButton>
         </Suspense>
       </div>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <div className="project-card__content-wrapper">
-          <Suspense fallback={<LoadingBlock width="200px" height="30px" marginBottom="20px" />}>
-            <Typography variant="h6" classes="project-more__subtitle">
-              {title}
-            </Typography>
-          </Suspense>
-          <Suspense fallback={<LoadingMore />}>
-            <CollapsibleTable features={more} />
-          </Suspense>
-        </div>
-      </Collapse>
+      <Suspense fallback={<LoadingMore />}>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <div className="project-card__content-wrapper">
+            <Suspense fallback={<LoadingBlock width="200px" height="30px" marginBottom="20px" />}>
+              <Typography variant="h6" classes="project-more__subtitle">
+                {title}
+              </Typography>
+            </Suspense>
+            <Suspense fallback={<LoadingMore />}>
+              <CollapsibleTable features={more} />
+            </Suspense>
+          </div>
+        </Collapse>
+      </Suspense>
     </>
   );
 }
@@ -72,55 +74,3 @@ CulturePortal.propTypes = {
   title: PropTypes.string.isRequired,
   links: PropTypes.array.isRequired,
 };
-
-/* t('projects.chat.description', { joinArrays: ' ', ns: 'projects' }) */
-/* const withTranslation = (t) => {
-  return [
-    {
-      name: t('projects.culturePortal.more.homePage.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'https://rss-group10-photographers.netlify.app/',
-      },
-      features: t('projects.culturePortal.more.homePage.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-      type: t('projects.library', { ns: 'projects' }),
-    },
-    {
-      name: t('projects.culturePortal.more.persPage.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'https://rss-group10-photographers.netlify.app/ru/photographers/person1/',
-      },
-      features: t('projects.culturePortal.more.persPage.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-      type: t('projects.library', { ns: 'projects' }),
-    },
-    {
-      name: t('projects.culturePortal.more.allPers.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'https://rss-group10-photographers.netlify.app/ru/photographers/',
-      },
-      features: t('projects.culturePortal.more.allPers.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-      type: t('projects.library', { ns: 'projects' }),
-    },
-  ];
-}; */
-
-/* export default function CulturePortal() {
-  const { t } = useTranslation();
-  return (
-    <>
-      <Typography variant="h6">{t('projects.features', { ns: 'projects' })}</Typography>
-      <CollapsibleTable features={withTranslation(t)} />
-    </>
-  );
-} */

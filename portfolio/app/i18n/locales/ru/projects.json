@@ -59,6 +59,11 @@
     "more": {
       "homePage": {
         "name": "Главная страница",
+        "type": "Библиотека",
+        "link": {
+          "title": "Открыть страницу",
+          "url": "https://rss-group10-photographers.netlify.app/"
+        },
         "features": [
           {
             "name": "Контент представлен на 3 языках - Английский, Белорусский, Русский",
@@ -88,6 +93,11 @@
       },
       "persPage": {
         "name": "Страница фотографа",
+        "type": "Библиотека",
+        "link": {
+          "title": "Открыть страницу",
+          "url": "https://rss-group10-photographers.netlify.app/ru/photographers/person1/"
+        },
         "features": [
           {
             "name": "Анимированный вертикальный скролл-хронология",
@@ -109,6 +119,11 @@
       },
       "allPers": {
         "name": "Страница всех фотографов",
+        "type": "Библиотека",
+        "link": {
+          "title": "Открыть страницу",
+          "url": "https://rss-group10-photographers.netlify.app/ru/photographers/"
+        },
         "features": [
           {
             "name": "Форма для поиска фотографа по имени и/или месту из списка фотографов",

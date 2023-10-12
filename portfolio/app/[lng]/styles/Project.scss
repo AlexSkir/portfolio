@@ -2,17 +2,25 @@
 @import 'mixins';
 
 .project-card__container {
+  box-shadow: none;
   background-color: var(--primary-card);
-  box-shadow: var(--box-shadow-3);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   border-radius: 4px;
   overflow: hidden;
   background-image: linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05));
 
+  @include media($sm) {
+    box-shadow: var(--box-shadow-3);
+  }
+
   .project-card__header {
     display: flex;
     align-items: center;
-    padding: 16px;
+    padding: 0;
+
+    @include media($sm) {
+      padding: 16px;
+    }
   }
 
   .project-card__avatar-wrapper {
@@ -26,8 +34,13 @@
   }
 
   .project-card__title {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 20px;
+
+    @include media($sm) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   .project-card__subtitle {
@@ -46,8 +59,12 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 16px;
     text-align: justify;
+    padding: 0;
+
+    @include media($sm) {
+      padding: 16px;
+    }
   }
 
   .project-card__content-title {
@@ -67,8 +84,12 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 16px;
     gap: 16px;
+    padding: 0;
+
+    @include media($sm) {
+      padding: 16px;
+    }
   }
 
   .project-card__action-link {
@@ -89,11 +110,13 @@
   .project-card__icon {
     fill: var(--secondary-dark);
   }
+
+  .project-more__subtitle {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
 }
 
-.project-more__subtitle {
-  margin-bottom: 20px;
-}
 
 .collapsible-table__table {
   display: table;
@@ -120,12 +143,17 @@
 
   .collapsible-table__heading {
     padding: 16px;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 16px;
+    line-height: 20px;
     font-weight: 500;
     opacity: 0.87;
     border-bottom: 1px solid rgb(224, 224, 224);
     text-align: left;
+
+    @include media($sm) {
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 
   .collapsible-table__title {
@@ -142,11 +170,12 @@
     display: none;
 
     @include media($sm) {
-      display: table-cell;
+      font-size: 20px;
+      line-height: 30px;
     }
 
-    @include media($md) {
-      font-size: 20px;
+    @include media($sm) {
+      display: table-cell;
     }
   }
 
