@@ -35,11 +35,8 @@ import wixIcon from '../assets/icons/wix.png';
 
 const GritellaProject = lazy(() => import('./[project]/Gritella'));
 const YoutubeApp = lazy(() => import('./[project]/Youtube'));
-
-/* const GritellaProject = lazy(() => import('./Gritella'));
-const CulturePortal = lazy(() => import('./CulturePortal'));
-const YoutubeApp = lazy(() => import('./Youtube')); */
-/* const Piskel = lazy(() => import('./Piskel')); */
+const Piskel = lazy(() => import('./[project]/Piskel'));
+const CulturePortal = lazy(() => import('./[project]/CulturePortal'));
 
 export default function projectArr(t) {
   const { landing, adaptive, responsive, fixed, mobile, app, task, phptempl, shop, forum } = t;
@@ -55,6 +52,15 @@ export default function projectArr(t) {
   const gritellaLinks = [
     { name: 'demo', url: 'http://d97714j6.beget.tech/' },
     { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
+  ];
+  const piskelLinks = [
+    { name: 'demo', url: 'http://alexskir.github.io/clown/' },
+    { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
+  ];
+  const cultureLinks = [
+    { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
+    { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
+    { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
   ];
 
   return {
@@ -137,16 +143,14 @@ export default function projectArr(t) {
       path: 'culture-portal',
       image: CultureImg,
       share: CultureShare,
-      links: [
-        { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
-        { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
-        { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
-      ],
-      more: {
-        /* <Suspense fallback={<LoadingMore />}>
-          <CulturePortal />
-        </Suspense> */
-      },
+      links: cultureLinks,
+      more: (
+        <CulturePortal
+          more={Object.values(t.culturePortal.more)}
+          title={t.features}
+          links={cultureLinks}
+        />
+      ),
       more1: t.more1,
     },
     'awesome-chat': {
@@ -215,15 +219,8 @@ export default function projectArr(t) {
       path: 'piskel',
       image: PiskelImg,
       share: PiskelShare,
-      links: [
-        { name: 'demo', url: 'http://alexskir.github.io/clown/' },
-        { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
-      ],
-      more: {
-        /* <Suspense fallback={<LoadingMore />}>
-          <Piskel />
-        </Suspense> */
-      },
+      links: piskelLinks,
+      more: <Piskel more={Object.values(t.piskel.more)} title={t.features} links={piskelLinks} />,
       more1: t.more1,
     },
     alexis: {
