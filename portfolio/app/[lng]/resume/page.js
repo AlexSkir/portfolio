@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import getDictionary from '../../i18n/dictionaries';
 import PageLayout from '../components/PageLayout';
 import Resume from './Resume';
+import AvatarResume from '../assets/avatar/avatar-base.png';
 import '../styles/Resume.scss';
 
 export async function generateMetadata({ params }) {
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }) {
 export default async function Page({ params: { lng } }) {
   const tResume = await getDictionary(lng, 'resume');
   return (
-    <PageLayout avatar="base" title={tResume.title} lng={lng}>
+    <PageLayout avatar={AvatarResume} title={tResume.title} lng={lng}>
       <Resume t={tResume} lng={lng} />
     </PageLayout>
   );

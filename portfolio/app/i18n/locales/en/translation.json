@@ -17,13 +17,6 @@
     "nomatch": {
       "title": "Ops, this page doesn't exist!",
       "btn": "Go Home"
-    },
-    "seo": {
-      "title": "Check out my website-portfolio!",
-      "description": [
-        "Development of web sites, from simple web pages to complex but reliable, fast,",
-        "and user-friendly web products with JS/React, Mui/Bootstrap and other libraries!"
-      ]
     }
   },
   "footer": {
@@ -48,6 +41,18 @@
     "name": "Aleksandra Skirnevskaia",
     "position": "Frontend Developer",
     "openBtnTooltip": "Expand",
-    "closeBtnTooltip": "Collapse"
+    "closeBtnTooltip": "Collapse",
+    "items": {
+      "call": "Call",
+      "phone": "Phone",
+      "message": "Message",
+      "whatsup": "Open WhatsApp",
+      "telegram": "Open Telegram",
+      "gh": "Open GitHub",
+      "hh": "Open resume",
+      "map": "Show on map",
+      "location": "Location",
+      "address": "Moscow, Russia"
+    }
   }
 }

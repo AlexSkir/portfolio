@@ -4,6 +4,7 @@ import getDictionary from '../../i18n/dictionaries';
 import PageLayout from '../components/PageLayout';
 import Portfolio from './Portfolio';
 import projectArr from './projectsArray';
+import AvatarPortfolio from '../assets/avatar/avatar-ok.png';
 import '../styles/Portfolio.scss';
 
 export async function generateMetadata({ params: { lng } }) {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params: { lng } }) {
 export default async function Page({ params: { lng } }) {
   const tProjects = await getDictionary(lng, 'projects');
   return (
-    <PageLayout avatar="ok" title={tProjects.title} lng={lng}>
+    <PageLayout avatar={AvatarPortfolio} title={tProjects.title} lng={lng}>
       <Portfolio t={tProjects} lng={lng} data={Object.values(projectArr(tProjects))} />
     </PageLayout>
   );

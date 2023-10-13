@@ -506,6 +506,10 @@
   @include media($md) {
     display: block;
   }
+
+  .MyTypography {
+    color: var(--contrastText);
+  }
 }
 
 .drawer-section__container {
@@ -515,6 +519,7 @@
   white-space: nowrap;
   box-sizing: border-box;
   overflow-x: clip;
+  color: var(--contrastText);
 
   &.drawer_is-closed {
     .MuiDrawer-paper {

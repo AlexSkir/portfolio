@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import LoadingBlock from '../components/common/LoadingBlock';
-import HatIcon from './HatGradientIcon';
-import BagIcon from './BagGradientIcon';
 
 import '../styles/Resume.scss';
 
 const Typography = lazy(() => import('../components/Typography'));
 const ResumeDownload = lazy(() => import('../components/common/ResumeDownload'));
 const ResumeCard = lazy(() => import('./ResumeCard'));
+const HatIcon = lazy(() => import('./HatGradientIcon'));
+const BagIcon = lazy(() => import('./BagGradientIcon'));
 
 const workSkills = [
   'JavaScript',

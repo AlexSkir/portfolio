@@ -4,14 +4,14 @@ import React, { Suspense, lazy } from 'react';
 import { useParams } from 'next/navigation';
 import PropTypes from 'prop-types';
 import LoadingBlock from '../components/common/LoadingBlock';
-import CallIcon from '../components/common/iconsJs/CallIconGradient';
-import EmailIcon from '../components/common/iconsJs/EmailIconGradient';
-import WhatsApp from '../assets/svg/Whatsapp.svg';
-import Telegram from '../assets/svg/Telegram.svg';
-import GitHub from '../assets/svg/gh-pages.svg';
 import HeadHunter from '../assets/icons/hh.png';
 
 const ContactItemCopieble = lazy(() => import('../components/common/ContactItemCopieble'));
+const CallIcon = lazy(() => import('../components/common/iconsJs/CallIconGradient'));
+const EmailIcon = lazy(() => import('../components/common/iconsJs/EmailIconGradient'));
+const WhatsApp = lazy(() => import('../assets/svg/Whatsapp.svg'));
+const Telegram = lazy(() => import('../assets/svg/Telegram.svg'));
+const GitHub = lazy(() => import('../assets/svg/gh-pages.svg'));
 
 export default function ContactItems(props) {
   const { t } = props;

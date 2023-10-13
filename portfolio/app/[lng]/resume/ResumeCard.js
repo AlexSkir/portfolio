@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import Typography from '../components/Typography';
+import LoadingBlock from '../components/common/LoadingBlock';
+
+const Typography = lazy(() => import('../components/Typography'));
 
 function ResumeCard(props) {
   const {
@@ -17,21 +19,33 @@ function ResumeCard(props) {
   return (
     <div className="resume-section__resume-item" {...others}>
       <div className="resume-section__item-content">
-        <Typography variant="body1" classes="resume-section__item-date">
-          {date}
-        </Typography>
-        <Typography variant="body3">{position}</Typography>
+        <Suspense fallback={<LoadingBlock width="50%" height="20px" />}>
+          <Typography variant="body1" classes="resume-section__item-date">
+            {date}
+          </Typography>
+        </Suspense>
+
+        <Suspense fallback={<LoadingBlock width="100%" height="20px" margin="5px 0" />}>
+          <Typography variant="body3">{position}</Typography>
+        </Suspense>
+
         {link ? (
-          <a className="resume-section__item-link" href={link} target="_blank" rel="noreferrer">
-            <Typography variant="body1">{place}</Typography>
-          </a>
+          <Suspense fallback={<LoadingBlock width="100%" height="20px" />}>
+            <a className="resume-section__item-link" href={link} target="_blank" rel="noreferrer">
+              <Typography variant="body1">{place}</Typography>
+            </a>
+          </Suspense>
         ) : (
-          <Typography variant="body1">{place}</Typography>
+          <Suspense fallback={<LoadingBlock width="100%" height="20px" />}>
+            <Typography variant="body1">{place}</Typography>
+          </Suspense>
         )}
         {techs ? (
-          <Typography classes="resume-section__item-techs" variant="body1">
-            {techs}
-          </Typography>
+          <Suspense fallback={<LoadingBlock width="100%" height="20px" margin="5px 0" />}>
+            <Typography classes="resume-section__item-techs" variant="body1">
+              {techs}
+            </Typography>
+          </Suspense>
         ) : (
           <></>
         )}
@@ -39,9 +53,11 @@ function ResumeCard(props) {
 
       {CTA ? (
         <div className="resume-section__item-cta">
-          <Link href={projectUrl} target="_blank" className="resume-section__item-cta-link">
-            <Typography variant="subtitle2">{CTA}</Typography>
-          </Link>
+          <Suspense fallback={<LoadingBlock width="50%" height="20px" />}>
+            <Link href={projectUrl} target="_blank" className="resume-section__item-cta-link">
+              <Typography variant="subtitle2">{CTA}</Typography>
+            </Link>
+          </Suspense>
         </div>
       ) : (
         <></>
