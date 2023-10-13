@@ -77,17 +77,21 @@ export default function SideBlock(props) {
             </div>
           </div>
 
-          <Typography
-            variant="h4"
-            align="center"
-            classes={`side-block__name ${open ? 'is_block' : ''}`}
-          >
-            {t.sideblock.name}
-          </Typography>
+          <Suspense fallback={<LoadingBlock width="100%" height="30px" margin="15px 0" />}>
+            <Typography
+              variant="h4"
+              align="center"
+              classes={`side-block__name ${open ? 'is_block' : ''}`}
+            >
+              {t.sideblock.name}
+            </Typography>
+          </Suspense>
 
-          <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
-            {t.sideblock.position}
-          </Typography>
+          <Suspense fallback={<LoadingBlock width="100%" height="30px" />}>
+            <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
+              {t.sideblock.position}
+            </Typography>
+          </Suspense>
 
           <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
             <SocialIconsBlock open={open} />
