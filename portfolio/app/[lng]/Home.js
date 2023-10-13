@@ -3,14 +3,14 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import LoadingBlock from './components/common/LoadingBlock';
-import CodeIcon from './assets/svg/CodeIcon.svg';
-import AppIcon from './assets/svg/App.svg';
-import SeoIcon from './assets/svg/SeoIcon.svg';
-import FreelanceIcon from './assets/svg/Freelance.svg';
 
 import './styles/Home.scss';
 
 const Typography = lazy(() => import('./components/Typography'));
+const CodeIcon = lazy(() => import('./assets/svg/CodeIcon.svg'));
+const AppIcon = lazy(() => import('./assets/svg/App.svg'));
+const SeoIcon = lazy(() => import('./assets/svg/SeoIcon.svg'));
+const FreelanceIcon = lazy(() => import('./assets/svg/Freelance.svg'));
 
 export default function Home(props) {
   const { t } = props;
