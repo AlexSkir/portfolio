@@ -34,75 +34,81 @@ export default function SideBlock(props) {
 
   return (
     <div className="side-block-section">
-      <MuiDrawer
-        className={`drawer-section__container ${open ? 'drawer_is-open' : 'drawer_is-closed'}`}
-        variant="permanent"
+      <Suspense
+        fallback={
+          <LoadingBlock width={open ? '400px' : '70px'} height="500px" variant="rectangular" />
+        }
       >
-        <div className="drawer-section__header">
-          {open ? (
-            <Tooltip title={t.sideblock.closeBtnTooltip}>
-              <button type="button" onClick={handleDrawerClose}>
-                <Collapse className="drawer-section__collapse" />
-              </button>
-            </Tooltip>
-          ) : (
-            <Tooltip title={t.sideblock.openBtnTooltip}>
-              <button type="button" aria-label="open drawer" onClick={handleDrawerOpen}>
-                <Expand className="drawer-section__expand" />
-              </button>
-            </Tooltip>
-          )}
-        </div>
+        <MuiDrawer
+          className={`drawer-section__container ${open ? 'drawer_is-open' : 'drawer_is-closed'}`}
+          variant="permanent"
+        >
+          <div className="drawer-section__header">
+            {open ? (
+              <Tooltip title={t.sideblock.closeBtnTooltip}>
+                <button type="button" onClick={handleDrawerClose}>
+                  <Collapse className="drawer-section__collapse" />
+                </button>
+              </Tooltip>
+            ) : (
+              <Tooltip title={t.sideblock.openBtnTooltip}>
+                <button type="button" aria-label="open drawer" onClick={handleDrawerOpen}>
+                  <Expand className="drawer-section__expand" />
+                </button>
+              </Tooltip>
+            )}
+          </div>
 
-        <div style={{ marginTop: open ? '-130px' : '0' }}>
-          <Suspense fallback={<LoadingBlock width="200px" height="200px" variant="rounded" />}>
-            <div
-              className="side-block__avatar"
-              style={{
-                display: open ? 'block' : 'none',
-              }}
+          <div style={{ marginTop: open ? '-130px' : '0' }}>
+            <Suspense fallback={<LoadingBlock width="200px" height="200px" variant="rounded" />}>
+              <div
+                className="side-block__avatar"
+                style={{
+                  display: open ? 'block' : 'none',
+                }}
+              >
+                <Image
+                  src={avatar}
+                  alt="My avatar"
+                  width={200}
+                  height={200}
+                  placeholder="blur"
+                  priority
+                />
+              </div>
+            </Suspense>
+          </div>
+
+          <Suspense fallback={<LoadingBlock width="100%" height="30px" margin="15px 0" />}>
+            <Typography
+              variant="h4"
+              align="center"
+              classes={`side-block__name ${open ? 'is_block' : ''}`}
             >
-              <Image
-                src={avatar}
-                alt="My avatar"
-                width={200}
-                height={200}
-                placeholder="blur"
-                priority
-              />
-            </div>
+              {t.sideblock.name}
+            </Typography>
           </Suspense>
-        </div>
 
-        <Suspense fallback={<LoadingBlock width="100%" height="30px" margin="15px 0" />}>
-          <Typography
-            variant="h4"
-            align="center"
-            classes={`side-block__name ${open ? 'is_block' : ''}`}
-          >
-            {t.sideblock.name}
-          </Typography>
-        </Suspense>
+          <Suspense fallback={<LoadingBlock width="100%" height="30px" />}>
+            <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
+              {t.sideblock.position}
+            </Typography>
+          </Suspense>
 
-        <Suspense fallback={<LoadingBlock width="100%" height="30px" />}>
-          <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
-            {t.sideblock.position}
-          </Typography>
-        </Suspense>
+          <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
+            <SocialIconsBlock open={open} />
+          </Suspense>
 
-        <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
-          <SocialIconsBlock open={open} />
-        </Suspense>
-
-        <Suspense fallback={<LoadingBlock width="100%" height="350px" variant="rounded" />}>
-          <ContactBlock
-            open={open}
-            phone={t.sideblock.items.phone}
-            address={t.sideblock.items.address}
-            location={t.sideblock.items.location}
-          />
-        </Suspense>
-      </MuiDrawer>
+          <Suspense fallback={<LoadingBlock width="100%" height="350px" variant="rounded" />}>
+            <ContactBlock
+              open={open}
+              phone={t.sideblock.items.phone}
+              address={t.sideblock.items.address}
+              location={t.sideblock.items.location}
+            />
+          </Suspense>
+        </MuiDrawer>
+      </Suspense>
     </div>
   );
 }
