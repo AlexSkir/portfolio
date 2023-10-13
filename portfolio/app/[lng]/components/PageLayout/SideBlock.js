@@ -60,40 +60,34 @@ export default function SideBlock(props) {
           </div>
 
           <div style={{ marginTop: open ? '-130px' : '0' }}>
-            <Suspense fallback={<LoadingBlock width="200px" height="200px" variant="rounded" />}>
-              <div
-                className="side-block__avatar"
-                style={{
-                  display: open ? 'block' : 'none',
-                }}
-              >
-                <Image
-                  src={avatar}
-                  alt="My avatar"
-                  width={200}
-                  height={200}
-                  placeholder="blur"
-                  priority
-                />
-              </div>
-            </Suspense>
+            <div
+              className="side-block__avatar"
+              style={{
+                display: open ? 'block' : 'none',
+              }}
+            >
+              <Image
+                src={avatar}
+                alt="My avatar"
+                width={200}
+                height={200}
+                placeholder="blur"
+                priority
+              />
+            </div>
           </div>
 
-          <Suspense fallback={<LoadingBlock width="100%" height="30px" margin="15px 0" />}>
-            <Typography
-              variant="h4"
-              align="center"
-              classes={`side-block__name ${open ? 'is_block' : ''}`}
-            >
-              {t.sideblock.name}
-            </Typography>
-          </Suspense>
+          <Typography
+            variant="h4"
+            align="center"
+            classes={`side-block__name ${open ? 'is_block' : ''}`}
+          >
+            {t.sideblock.name}
+          </Typography>
 
-          <Suspense fallback={<LoadingBlock width="100%" height="30px" />}>
-            <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
-              {t.sideblock.position}
-            </Typography>
-          </Suspense>
+          <Typography variant="body2" classes={`side-block__position ${open ? 'is_block' : ''}`}>
+            {t.sideblock.position}
+          </Typography>
 
           <Suspense fallback={<LoadingBlock width="100%" height="50px" variant="rounded" />}>
             <SocialIconsBlock open={open} />
