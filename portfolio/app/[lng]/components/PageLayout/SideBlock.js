@@ -36,7 +36,14 @@ export default function SideBlock(props) {
     <div className="side-block-section">
       <Suspense
         fallback={
-          <LoadingBlock width={open ? '400px' : '70px'} height="500px" variant="rectangular" />
+          <LoadingBlock
+            width={open ? '400px' : '70px'}
+            height="500px"
+            variant="rectangular"
+            marginRight={open ? '20px' : '1px'}
+            borderRadius="20px"
+            overflow="hidden"
+          />
         }
       >
         <MuiDrawer

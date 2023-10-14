@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 import LoadingBlock from '../components/common/LoadingBlock';
 
 import '../styles/Resume.scss';
@@ -10,34 +11,63 @@ const ResumeCard = lazy(() => import('./ResumeCard'));
 const HatIcon = lazy(() => import('./HatGradientIcon'));
 const BagIcon = lazy(() => import('./BagGradientIcon'));
 
-const workSkills = [
-  'JavaScript',
-  'React.js',
-  'jQuery',
-  'HTML',
-  'CSS',
-  'SCSS',
-  'MUI',
-  'Bootstrap',
-  <a
-    href="https://www.npmjs.com/package/alexskir-reactplate"
-    className="resume-section__skills-link"
-    target="_blank"
-    rel="noreferrer"
-  >
-    Webpack
-  </a>,
-  'Babel',
-  'Figma',
-  'Photoshop',
-  'GIT',
-  'MySQL',
-  'PHP',
-  'Docker',
-];
-
 export default function Resume(props) {
   const { t, lng } = props;
+
+  const workSkills = [
+    <Link
+      href={`/${lng}/portfolio/youtube`}
+      target="_blank"
+      className="resume-section__skills-link"
+    >
+      <Typography variant="body2" component="span">
+        JavaScript
+      </Typography>
+    </Link>,
+    <Link
+      href={`/${lng}/portfolio/culture-portal`}
+      target="_blank"
+      className="resume-section__skills-link"
+    >
+      React.js
+    </Link>,
+    'jQuery',
+    'HTML',
+    'CSS',
+    <Link href={`/${lng}/portfolio/zoo`} target="_blank" className="resume-section__skills-link">
+      SCSS
+    </Link>,
+    'MUI',
+    'Bootstrap',
+    <a
+      href="https://www.npmjs.com/package/alexskir-reactplate"
+      className="resume-section__skills-link"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Webpack
+    </a>,
+    'Babel',
+    'Figma',
+    'Photoshop',
+    'GIT',
+    <Link
+      href={`/${lng}/portfolio/gritella`}
+      target="_blank"
+      className="resume-section__skills-link"
+    >
+      PHP
+    </Link>,
+    <Link
+      href={`/${lng}/portfolio/yandex-go-cms`}
+      target="_blank"
+      className="resume-section__skills-link"
+    >
+      Editor X
+    </Link>,
+    'MySQL',
+    'Docker',
+  ];
 
   return (
     <>
