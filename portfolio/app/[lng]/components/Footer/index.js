@@ -18,12 +18,14 @@ const I18nIcon = lazy(() => import('../../assets/svg/i18n.svg'));
 const EmailJs = lazy(() => import('../../assets/svg/emailJs.svg'));
 const Recaptcha = lazy(() => import('../../assets/svg/recaptcha.svg'));
 const Npm = lazy(() => import('../../assets/svg/npm.svg'));
+const NextIcon = lazy(() => import('../../assets/svg/Nextjs.svg'));
 
 const ShareBar = lazy(() => import('../common/Share'));
 const Typography = lazy(() => import('../Typography'));
 
 const techIcons = [
-  { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React' },
+  { href: 'https://nextjs.org/', icon: <NextIcon />, tooltip: 'Next.js' },
+  { href: 'https://react.dev/', icon: <ReactIcon />, tooltip: 'React.js' },
   { href: 'https://mui.com/', icon: <MuiIcon />, tooltip: 'Material-UI Design System' },
   { href: 'https://www.figma.com/', icon: <FigmaIcon />, tooltip: 'Figma' },
   { href: 'https://github.com/', icon: <GhIcon />, tooltip: 'Github' },

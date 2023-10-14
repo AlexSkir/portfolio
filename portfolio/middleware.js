@@ -18,7 +18,8 @@ export function middleware(req) {
   // Redirect if lng in path is not supported
   if (
     !req.nextUrl.pathname.startsWith('/_next') &&
-    !req.nextUrl.pathname.startsWith('/robots.txt')
+    !req.nextUrl.pathname.startsWith('/robots.txt') &&
+    !req.nextUrl.pathname.startsWith('/sitemap.xml')
   ) {
     if (!languages.some((loc) => req.nextUrl.pathname.split('/')[1] === loc)) {
       const newPath = req.nextUrl.pathname.split('/');
