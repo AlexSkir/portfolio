@@ -1,7 +1,7 @@
 export default function sitemap() {
   return [
     {
-      url: 'https://nextjs-portfolio-ydgz.onrender.com/',
+      url: 'https://alexskir.ru/',
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 1,

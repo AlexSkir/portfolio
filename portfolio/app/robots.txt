@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://nextjs-portfolio-ydgz.onrender.com/sitemap.xml
+Sitemap: https://alexskir.ru/sitemap.xml

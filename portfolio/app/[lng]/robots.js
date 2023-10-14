@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://nextjs-portfolio-ydgz.onrender.com/sitemap.xml',
+    sitemap: 'https://alexskir.ru/sitemap.xml',
   };
 }
