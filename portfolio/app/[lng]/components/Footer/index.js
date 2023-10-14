@@ -1,14 +1,11 @@
-'use client';
-
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import Tooltip from '@mui/material/Tooltip';
 import Link from 'next/link';
 import Image from 'next/image';
+import getDictionary from '../../../i18n/dictionaries';
 import LoadingBlock from '../common/LoadingBlock';
 import Render from '../../assets/icons/render.png';
-
-// import ShareBar from '../common/Share';
 
 const ReactIcon = lazy(() => import('../../assets/svg/react.svg'));
 const MuiIcon = lazy(() => import('../../assets/svg/mui.svg'));
@@ -48,8 +45,10 @@ const techIcons = [
   },
 ];
 
-export default function Footer(props) {
-  const { t } = props;
+export default async function Footer(props) {
+  const { lng } = props;
+  const t = await getDictionary(lng);
+
   return (
     <div className="container-mainWrapper__footer footer-section">
       <div className="footer__left-block">
@@ -95,7 +94,7 @@ export default function Footer(props) {
         </Suspense>
 
         <Suspense fallback={<LoadingBlock width="350px" height="70px" />}>
-          <ShareBar url="origin" len={4} />
+          <ShareBar url="origin" len={4} t={t} />
         </Suspense>
       </div>
 
@@ -127,5 +126,5 @@ export default function Footer(props) {
 }
 
 Footer.propTypes = {
-  t: PropTypes.object.isRequired,
+  lng: PropTypes.string.isRequired,
 };

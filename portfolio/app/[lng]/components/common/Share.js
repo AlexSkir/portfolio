@@ -21,11 +21,8 @@ import {
   VKIcon,
   WhatsappIcon,
 } from 'react-share';
-import { useParams } from 'next/navigation';
 import Typography, { raleway } from '../Typography';
-import CopyBtn from './CopyBtn';
 import ShareIcon from '../../assets/svg/Share.svg';
-import useTranslation from '../../../i18n/client';
 
 const dialogBlock = {
   ' .MuiDialog-paper': {
@@ -98,10 +95,9 @@ const shareIcons = (url, ...args) => {
 };
 
 export default function ShareBar(props) {
-  const { url, len } = props;
+  const { url, len, t } = props;
   const [open, setOpen] = React.useState(false);
-  const { lng } = useParams();
-  const { t } = useTranslation(lng);
+  const [copySuccess, setCopySuccess] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -109,6 +105,23 @@ export default function ShareBar(props) {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleCopy = async (text) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopySuccess(true);
+      setTimeout(() => {
+        handleClose();
+      }, 500);
+      setTimeout(() => {
+        if (copySuccess) {
+          setCopySuccess(false);
+        }
+      }, 1000);
+    } catch (err) {
+      setCopySuccess(false);
+    }
   };
 
   return (
@@ -120,7 +133,7 @@ export default function ShareBar(props) {
           </Tooltip>
         ))}
 
-        <button onClick={handleClickOpen} type="button" aria-label={t('common.dialogShare')}>
+        <button onClick={handleClickOpen} type="button" aria-label={t.common.dialogShare}>
           <ShareIcon className="MySvg-icon share-btn__icon" />
         </button>
       </div>
@@ -133,7 +146,7 @@ export default function ShareBar(props) {
         sx={dialogBlock}
         className={raleway.variable}
       >
-        <Typography variant="h6">{t('common.dialogShare')}</Typography>
+        <Typography variant="h6">{t.common.dialogShare}</Typography>
         <ul className="share__list">
           {shareIcons(url).map((item, i) => (
             <li
@@ -150,7 +163,16 @@ export default function ShareBar(props) {
           <Typography variant="body3" classes="share__copy-url">
             {typeof window !== 'undefined' ? window.location[url] : ''}
           </Typography>
-          <CopyBtn copyText={window.location[url]} close={() => handleClose()} />
+
+          <Tooltip title={copySuccess ? t.common.copieble.copied : t.common.copieble.copy}>
+            <button
+              type="button"
+              className="copy_btn button_isActive_true"
+              onClick={() => handleCopy(window.location[url])}
+            >
+              <Typography variant="body3">{t.common.copyLink}</Typography>
+            </button>
+          </Tooltip>
         </div>
       </Dialog>
     </>
@@ -160,4 +182,5 @@ export default function ShareBar(props) {
 ShareBar.propTypes = {
   url: PropTypes.string.isRequired,
   len: PropTypes.number.isRequired,
+  t: PropTypes.object.isRequired,
 };

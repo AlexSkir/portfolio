@@ -20,9 +20,7 @@ export default function Resume(props) {
       target="_blank"
       className="resume-section__skills-link"
     >
-      <Typography variant="body2" component="span">
-        JavaScript
-      </Typography>
+      JavaScript
     </Link>,
     <Link
       href={`/${lng}/portfolio/culture-portal`}

@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
+import { notFound } from 'next/navigation';
 import { dir } from 'i18next';
 import { cookies } from 'next/headers';
 import { languages } from '../i18n/settings';
@@ -44,6 +45,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   // read route params
   const { lng } = params;
+  if (languages.indexOf(lng) === -1) {
+    notFound();
+  }
   const seo = await getDictionary(lng, 'seo');
 
   return {
@@ -142,9 +146,7 @@ export default async function RootLayout({ children, params: { lng } }) {
                   <ScrollTop />
                   <Suspense fallback={<Loading />}>{children}</Suspense>
                 </div>
-                <Suspense fallback={<LoadingBlock width="100%" height="300px" variant="rounded" />}>
-                  <Footer lng={lng} t={layout} />
-                </Suspense>
+                <Footer lng={lng} />
               </div>
             </Wrapper>
           </Suspense>

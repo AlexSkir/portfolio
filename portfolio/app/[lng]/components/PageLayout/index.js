@@ -20,7 +20,7 @@ export default async function PageLayout(props) {
         <div className="page-container__wrapper">
           <div className="page-container__ShareBar-wrapper">
             <Suspense fallback={<LoadingBlock width="70px" height="70px" />}>
-              <ShareBar url="href" len={0} />
+              <ShareBar url="href" len={0} t={t} />
             </Suspense>
           </div>
           <div className="page-container__title-block">
@@ -40,7 +40,7 @@ export default async function PageLayout(props) {
 
 PageLayout.propTypes = {
   title: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
+  avatar: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   lng: PropTypes.string.isRequired,
 };

@@ -17,11 +17,18 @@ export function middleware(req) {
 
   // Redirect if lng in path is not supported
   if (
-    !languages.some((loc) => req.nextUrl.pathname.startsWith(`/${loc}`)) &&
     !req.nextUrl.pathname.startsWith('/_next') &&
     !req.nextUrl.pathname.startsWith('/robots.txt')
   ) {
-    return NextResponse.redirect(new URL(`/${lng}${req.nextUrl.pathname}`, req.url));
+    if (!languages.some((loc) => req.nextUrl.pathname.split('/')[1] === loc)) {
+      const newPath = req.nextUrl.pathname.split('/');
+      const startWith = languages.filter((lang) => req.nextUrl.pathname.startsWith(`/${lang}`));
+      if (startWith.length) {
+        newPath[1] = [startWith];
+        return NextResponse.redirect(new URL(newPath.join('/'), req.url));
+      }
+      return NextResponse.redirect(new URL(`/${lng}${req.nextUrl.pathname}`, req.url));
+    }
   }
 
   if (req.headers.has('referer')) {

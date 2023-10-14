@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { cookies } from 'next/headers';
-import Typography from './components/Typography';
-import getDictionary from '../i18n/dictionaries';
+import Typography from '../../components/Typography';
+import getDictionary from '../../../i18n/dictionaries';
 
 export default async function NotFound() {
   let lng = 'ru';
@@ -18,7 +18,7 @@ export default async function NotFound() {
         {t.common.nomatch.title}
       </Typography>
       <button className="not-found__button MyTypography MyTypography-button" type="button">
-        <Link href={`/${lng}`} className="not-found__link">
+        <Link href="/" className="not-found__link">
           <Typography variant="h4">{t.common.nomatch.btn}</Typography>
         </Link>
       </button>

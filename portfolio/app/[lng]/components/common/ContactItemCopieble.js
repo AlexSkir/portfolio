@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
+import { useParams } from 'next/navigation';
 import Typography from '../Typography';
 
 export default function ContactItemCopieble(props) {
-  const { t } = useTranslation();
+  const { lng } = useParams();
   const { link, copyText, icon, contactName } = props;
   const [copySuccess, setCopySuccess] = React.useState(false);
+  const copied = lng === 'en' ? 'Copied!' : 'Скопировано!';
 
   const handleCopy = async (text) => {
     try {
@@ -33,7 +34,7 @@ export default function ContactItemCopieble(props) {
         <Typography variant="body3" classes="copieble-btn__name">
           {contactName}
           <Typography variant="body1" component="span" classes="copieble-btn__status">
-            {copySuccess ? t('common.copieble.copied') : ''}
+            {copySuccess ? copied : ''}
           </Typography>
         </Typography>
 

@@ -3,6 +3,15 @@ import PropTypes from 'prop-types';
 import Dialog from '@mui/material/Dialog';
 import Typography from '../Typography';
 
+const dialogBlock = {
+  ' .MuiDialog-paper': {
+    p: '20px',
+    borderRadius: '20px',
+    backgroundColor: 'var(--primary-paper)',
+    color: 'var(--contrastText)',
+  },
+};
+
 export default function DialogList(props) {
   const { onClose, open, list, title } = props;
 
@@ -15,7 +24,7 @@ export default function DialogList(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog onClose={handleClose} open={open} sx={dialogBlock}>
       <Typography classes="dialog-block__title" variant="h6">
         {title}
       </Typography>

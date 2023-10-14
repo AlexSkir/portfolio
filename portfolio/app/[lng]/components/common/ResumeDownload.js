@@ -1,15 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
 import Tooltip from '@mui/material/Tooltip';
 import resumeEn from '../../assets/files/resume-en.pdf';
 import resumeRu from '../../assets/files/resume-ru.pdf';
 import pdfIcon from '../../assets/icons/pdf.png';
-import Download from '../../assets/svg/Download.svg';
-import DialogList from './DialogList';
-import useTranslation from '../../../i18n/client';
+import LoadingBlock from './LoadingBlock';
+
+const DialogList = lazy(() => import('./DialogList'));
+const Download = lazy(() => import('../../assets/svg/Download.svg'));
 
 const resumeList = [
   {
@@ -27,8 +28,10 @@ const resumeList = [
 export default function ResumeDownload(props) {
   const { short = false } = props;
   const { lng } = useParams();
-  const { t } = useTranslation(lng);
   const [open, setOpen] = React.useState(false);
+
+  const tooltipText = lng === 'en' ? 'Download Resume' : 'Скачать Резюме';
+  const dialogText = lng === 'en' ? 'Choose the language of resume' : 'Выберите язык резюме';
 
   const handleDownloadResume = (value) => {
     const link = document.createElement('a');
@@ -51,23 +54,22 @@ export default function ResumeDownload(props) {
 
   return (
     <>
-      <Tooltip title={t('common.downloadTooltip')}>
+      <Tooltip title={tooltipText}>
         <button
           type="button"
           // eslint-disable-next-line prettier/prettier, max-len
           className={`MyTypography MyTypography-button button_isActive_true download__btn${short ? ' download_short_btn' : ' download_long_btn'}`}
           onClick={handleClickOpen}
         >
-          <Download className="download-svg MySvg-icon" />
-          {short ? '' : t('common.downloadBtn')}
+          <Suspense fallback={<LoadingBlock width="24px" height="24px" />}>
+            <Download className="download-svg MySvg-icon" />
+          </Suspense>
+          {short ? '' : tooltipText}
         </button>
       </Tooltip>
-      <DialogList
-        open={open}
-        onClose={handleClose}
-        list={resumeList}
-        title={t('common.dialogTitleDl')}
-      />
+      <Suspense fallback=".">
+        <DialogList open={open} onClose={handleClose} list={resumeList} title={dialogText} />
+      </Suspense>
     </>
   );
 }
