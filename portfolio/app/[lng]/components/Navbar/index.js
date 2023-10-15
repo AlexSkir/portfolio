@@ -69,7 +69,7 @@ export default function Navbar(props) {
               <NavbarButton
                 title={page.name}
                 href={page.path}
-                status={pathname === page.path}
+                status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
                 classes="navbar-block__bottom-btn"
               >
                 {page.icon}

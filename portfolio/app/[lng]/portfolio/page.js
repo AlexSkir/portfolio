@@ -23,7 +23,8 @@ export async function generateMetadata({ params: { lng } }) {
   };
 }
 
-export default async function Page({ params: { lng } }) {
+export default async function Page({ params }) {
+  const { lng } = params;
   const tProjects = await getDictionary(lng, 'projects');
   return (
     <PageLayout avatar={AvatarPortfolio} title={tProjects.title} lng={lng}>
