@@ -12,10 +12,10 @@ export async function generateMetadata({ params }) {
 
   return {
     title: seo.resume.title,
-    description: seo.resume.description,
+    description: seo.resume.description.join(' '),
     openGraph: {
       title: seo.resume.title,
-      description: seo.resume.description,
+      description: seo.resume.description.join(' '),
     },
   };
 }
