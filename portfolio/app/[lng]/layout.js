@@ -97,8 +97,8 @@ export async function generateMetadata({ params }) {
       { media: '(prefers-color-scheme: dark)', color: 'rgb(35, 35, 35)' },
     ],
     verification: {
-      google: prod === true ? 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU' : '',
-      yandex: prod === true ? 'a7156f0372045afd' : '',
+      google: prod === 'true' ? 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU' : '',
+      yandex: prod === 'true' ? 'a7156f0372045afd' : '',
     },
   };
 }
@@ -138,7 +138,7 @@ export default async function RootLayout({ children, params: { lng } }) {
             }`}
         </style>
         <Script id="94952225" type="text/javascript">
-          {prod === true ? metrika : ''}
+          {prod === 'true' ? metrika : ''}
         </Script>
       </head>
       <body className={defaultTheme}>
@@ -146,7 +146,7 @@ export default async function RootLayout({ children, params: { lng } }) {
           You need to enable JavaScript to run this app.
         </noscript>
         <noscript>
-          {prod === true ? (
+          {prod === 'true' ? (
             <div>
               <img
                 src="https://mc.yandex.ru/watch/94952225"
