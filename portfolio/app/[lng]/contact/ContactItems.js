@@ -92,7 +92,7 @@ export default function ContactItems(props) {
                   style={{ backgroundImage: `url(${HeadHunter.src})` }}
                 />
               }
-              contactName={lng}
+              contactName={t.items.hh}
             />
           </Suspense>
         </div>

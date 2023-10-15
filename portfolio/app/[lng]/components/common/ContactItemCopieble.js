@@ -31,7 +31,7 @@ export default function ContactItemCopieble(props) {
     >
       <div className="copieble-btn__icon">{icon}</div>
       <div className="copieble-btn__body">
-        <Typography variant="body3" classes="copieble-btn__name">
+        <Typography variant="body3" classes="copieble-btn__name" align="left">
           {contactName}
           <Typography variant="body1" component="span" classes="copieble-btn__status">
             {copySuccess ? copied : ''}
