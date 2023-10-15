@@ -65,7 +65,7 @@ export async function generateMetadata({ params }) {
     notFound();
   }
   const seo = await getDictionary(lng, 'seo');
-  const prod = process.env.metrics;
+  const prod = process.env.mode === 'production';
 
   return {
     metadataBase: new URL('https://alexskir.ru'),
@@ -97,8 +97,8 @@ export async function generateMetadata({ params }) {
       { media: '(prefers-color-scheme: dark)', color: 'rgb(35, 35, 35)' },
     ],
     verification: {
-      google: prod === 'true' ? 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU' : '',
-      yandex: prod === 'true' ? 'a7156f0372045afd' : '',
+      google: prod ? 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU' : '',
+      yandex: prod ? 'a7156f0372045afd' : '',
     },
   };
 }
@@ -112,7 +112,7 @@ export default async function RootLayout({ children, params: { lng } }) {
   }
   const layout = await getDictionary(lng);
 
-  const prod = process.env.metrics;
+  const prod = process.env.mode === 'production';
 
   return (
     <html lang={lng} dir={dir(lng)}>
@@ -138,7 +138,7 @@ export default async function RootLayout({ children, params: { lng } }) {
             }`}
         </style>
         <Script id="94952225" type="text/javascript">
-          {prod === 'true' ? metrika : ''}
+          {prod ? metrika : ''}
         </Script>
       </head>
       <body className={defaultTheme}>
@@ -146,7 +146,7 @@ export default async function RootLayout({ children, params: { lng } }) {
           You need to enable JavaScript to run this app.
         </noscript>
         <noscript>
-          {prod === 'true' ? (
+          {prod ? (
             <div>
               <img
                 src="https://mc.yandex.ru/watch/94952225"
