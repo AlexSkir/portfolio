@@ -73,14 +73,18 @@ export default function SideBlock(props) {
                 display: open ? 'block' : 'none',
               }}
             >
-              <Image
-                src={avatar}
-                alt="My avatar"
-                width={200}
-                height={200}
-                placeholder="blur"
-                priority
-              />
+              {open ? (
+                <Image
+                  src={avatar}
+                  alt="My avatar"
+                  width={200}
+                  height={200}
+                  placeholder="blur"
+                  priority={open}
+                />
+              ) : (
+                <></>
+              )}
             </div>
           </div>
 
