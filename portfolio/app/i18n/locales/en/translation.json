@@ -23,7 +23,8 @@
     "link1": "Portfolio template",
     "link2": "is designed by",
     "ref": "This website was built with:",
-    "mobile": "Mobile Version"
+    "mobile": "Mobile Version",
+    "desktop": "Desktop Version"
   },
   "navbar": {
     "home": "Home",
@@ -37,23 +38,5 @@
     "langTooltip": "Change language",
     "darkTheme": "Use dark color mode",
     "lightTheme": "Use light color mode"
-  },
-  "sideblock": {
-    "name": "Aleksandra Skirnevskaia",
-    "position": "Frontend Developer",
-    "openBtnTooltip": "Expand",
-    "closeBtnTooltip": "Collapse",
-    "items": {
-      "call": "Call",
-      "phone": "Phone",
-      "message": "Message",
-      "whatsup": "Open WhatsApp",
-      "telegram": "Open Telegram",
-      "gh": "Open GitHub",
-      "hh": "Open resume",
-      "map": "Show on map",
-      "location": "Location",
-      "address": "Moscow, Russia"
-    }
   }
 }

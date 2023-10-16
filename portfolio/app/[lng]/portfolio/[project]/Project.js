@@ -29,7 +29,15 @@ export default function Project(props) {
         </div>
       </div>
       <div className="project-card__image-wrapper">
-        <Image src={image} alt={name} placeholder="blur" priority fill />
+        <Image
+          src={image}
+          alt={name}
+          width={600}
+          height={300}
+          placeholder="blur"
+          priority
+          className="project-card__image"
+        />
       </div>
       <div className="project-card__content-wrapper">
         <Suspense fallback={<LoadingBlock width="100%" height="50px" margin="10px 0" />}>

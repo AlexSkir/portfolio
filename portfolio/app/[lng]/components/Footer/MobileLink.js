@@ -8,7 +8,8 @@ export default function MobileLink(props) {
   const { children } = props;
   const { protocol, host, pathname, href } = window.location;
 
-  const mobUrl = host.indexOf('m.') === -1 ? `${protocol}//m.${host}${pathname}` : href;
+  const mobUrl =
+    host.indexOf('m.') === -1 ? href : `${protocol}//${host.replace('m.', '')}${pathname}`;
 
   return <Link href={mobUrl}>{children}</Link>;
 }

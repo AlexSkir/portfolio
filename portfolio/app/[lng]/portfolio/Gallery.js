@@ -15,9 +15,10 @@ export default function GalleryItem(props) {
           <Image
             src={image}
             alt={name}
+            width={600}
+            height={300}
             className="project-gallery__item-image"
             placeholder="blur"
-            sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
           />
         </Suspense>
