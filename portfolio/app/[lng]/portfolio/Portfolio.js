@@ -2,7 +2,7 @@
 
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import { poppins } from '../components/Typography';
+import { roboto } from '../components/Typography';
 import LoadingBlock from '../components/common/LoadingBlock';
 
 const TabPanel = lazy(() => import('./TabPanel'));
@@ -45,7 +45,7 @@ export default function Portfolio(props) {
               <Tab
                 key={i}
                 label={<Typography variant="subtitle2">{t.tabs[item]}</Typography>}
-                className={`MyTypography MyTypography-tab-btn tab-btn ${poppins.variable}
+                className={`MyTypography MyTypography-tab-btn tab-btn ${roboto.variable}
               ${value === item ? ' is_selected' : ''}`}
                 {...a11yProps(item)}
               />

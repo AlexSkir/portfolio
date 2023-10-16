@@ -68,7 +68,7 @@ export async function generateMetadata({ params }) {
   const prod = process.env.mode === 'production';
 
   return {
-    metadataBase: new URL('https://alexskir.ru'),
+    metadataBase: new URL('https://m.alexskir.ru'),
     title: seo.common.title,
     description: seo.common.description.join(' '),
     generator: 'Next.js',
@@ -77,7 +77,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: seo.common.title,
       description: seo.common.description,
-      url: 'https://alexskir.ru',
+      url: 'https://m.alexskir.ru',
       siteName: 'Portfolio',
       images: [
         {
@@ -103,7 +103,7 @@ export async function generateMetadata({ params }) {
     alternates: {
       canonical: '/',
       media: {
-        'only screen and (max-width: 900px)': 'https://m.alexskir.ru',
+        'only screen and (min-width: 900px)': 'https://alexskir.ru',
       },
       languages: {
         'en-US': '/en',
@@ -151,8 +151,8 @@ export default async function RootLayout({ children, params: { lng } }) {
           {prod ? metrika : ''}
         </Script>
         <Script type="text/javascript" id="mobile-redirect">
-          {`if (screen.width <= 899) {
-            document.location = "https://m.alexskir.ru";
+          {`if (screen.width >= 900) {
+            document.location = "https://alexskir.ru";
           }`}
         </Script>
       </head>

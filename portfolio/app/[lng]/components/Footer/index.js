@@ -6,6 +6,7 @@ import Image from 'next/image';
 import getDictionary from '../../../i18n/dictionaries';
 import LoadingBlock from '../common/LoadingBlock';
 import Render from '../../assets/icons/render.png';
+import Logo from '../../assets/logo.png';
 
 const ReactIcon = lazy(() => import('../../assets/svg/react.svg'));
 const MuiIcon = lazy(() => import('../../assets/svg/mui.svg'));
@@ -55,16 +56,16 @@ export default async function Footer(props) {
   return (
     <div className="container-mainWrapper__footer footer-section">
       <div className="footer__left-block">
-        <Suspense fallback={<LoadingBlock width="96px" height="42px" />}>
-          <Link href="/" className="footer-section__logo-link">
-            <Typography variant="h1" classes="footer-section__logo">
-              Alex
-            </Typography>
-            <Typography variant="h1" classes="footer-section__logo gradientText">
-              Skir
-            </Typography>
-          </Link>
-        </Suspense>
+        <Link href="/" className="footer-section__logo-link">
+          <Image
+            src={Logo}
+            width={120}
+            height={30}
+            priority
+            placeholder="blur"
+            alt="Aleksandra Skirnevskaia Logo"
+          />
+        </Link>
 
         <Suspense fallback={<LoadingBlock width="100%" height="84px" />}>
           <Typography classes="footer__ref-link" align="left" variant="h6">

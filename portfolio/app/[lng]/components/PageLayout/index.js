@@ -1,8 +1,5 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import SideBlock from './SideBlock';
-// import ShareBar from '../common/Share';
-// import Typography from '../Typography';
 import getDictionary from '../../../i18n/dictionaries';
 import LoadingBlock from '../common/LoadingBlock';
 
@@ -10,12 +7,11 @@ const ShareBar = lazy(() => import('../common/Share'));
 const Typography = lazy(() => import('../Typography'));
 
 export default async function PageLayout(props) {
-  const { title, children, avatar, lng } = props;
+  const { title, children, lng } = props;
   const t = await getDictionary(lng);
 
   return (
     <>
-      <SideBlock avatar={avatar} t={t} />
       <div className="container-mainWrapper__content-wrapper">
         <div className="page-container__wrapper">
           <div className="page-container__ShareBar-wrapper">
@@ -40,7 +36,6 @@ export default async function PageLayout(props) {
 
 PageLayout.propTypes = {
   title: PropTypes.string.isRequired,
-  avatar: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
   lng: PropTypes.string.isRequired,
 };

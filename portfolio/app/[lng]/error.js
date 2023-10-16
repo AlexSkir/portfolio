@@ -6,7 +6,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
 import PageLayout from './components/PageLayout';
-import ErrorAvatar from './assets/avatar/avatar-404.2.png';
 import Typography from './components/Typography';
 
 export default function Error({ error, reset }) {
@@ -17,7 +16,7 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <PageLayout avatar={ErrorAvatar} title="Error" lng={lng}>
+    <PageLayout title="Error" lng={lng}>
       <div>
         <Typography variant="h3">Something went wrong!</Typography>
         <button

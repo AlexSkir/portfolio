@@ -4,7 +4,6 @@ import PageLayout from '../../components/PageLayout';
 import Project from './Project';
 import getDictionary from '../../../i18n/dictionaries';
 import projectArr from '../projectsArray';
-import AvatarPortfolio from '../../assets/avatar/avatar-ok.png';
 import '../../styles/Project.scss';
 import NotFound from './not-found';
 
@@ -56,7 +55,7 @@ export default async function Page({ params }) {
   }
 
   return (
-    <PageLayout title={t.title} avatar={AvatarPortfolio} lng={lng}>
+    <PageLayout title={t.title} lng={lng}>
       {Object.keys(allData).indexOf(project) === -1 ? (
         <NotFound />
       ) : (

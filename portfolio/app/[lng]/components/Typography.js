@@ -1,29 +1,17 @@
 'use client';
 
 import React from 'react';
-import { Roboto, Raleway, Pacifico, Poppins } from 'next/font/google';
+import { Roboto, Raleway } from 'next/font/google';
 
 const roboto = Roboto({
   weight: '500',
-  subsets: ['cyrillic'],
+  subsets: ['latin', 'cyrillic'],
   variable: '--font-roboto',
 });
-const pacifico = Pacifico({
+const raleway = Raleway({
   weight: '400',
   subsets: ['latin-ext', 'cyrillic-ext'],
-  adjustFontFallback: false,
-  variable: '--font-pacifico',
-});
-const raleway = Raleway({
-  subsets: ['latin-ext', 'cyrillic-ext'],
   variable: '--font-raleway',
-});
-const poppins = Poppins({
-  weight: '500',
-  subsets: ['latin-ext'],
-  fallback: ['Roboto', 'san-serif'],
-  adjustFontFallback: false,
-  variable: '--font-poppins',
 });
 
 const sharedClass = 'MyTypography';
@@ -52,25 +40,19 @@ const variantMapping = (variant, children, classes, align, component) => {
   switch (variant) {
     case 'h1':
       return (
-        <h1 className={`${myClasses.h1} ${pacifico.variable}${customClass}${customAlign}`}>
+        <h1 className={`${myClasses.h1} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </h1>
       );
     case 'h2':
       return (
-        <h2
-          className={`${myClasses.h2} ${roboto.variable} 
-          ${poppins.variable}${customClass}${customAlign}`}
-        >
+        <h2 className={`${myClasses.h2} ${roboto.variable} ${customClass}${customAlign}`}>
           {children}
         </h2>
       );
     case 'h3':
       return (
-        <h3
-          className={`${myClasses.h3} ${roboto.variable} 
-          ${poppins.variable}${customClass}${customAlign}`}
-        >
+        <h3 className={`${myClasses.h3} ${roboto.variable} ${customClass}${customAlign}`}>
           {children}
         </h3>
       );
@@ -92,19 +74,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag
-            className={`${myClasses.h5} ${roboto.variable} 
-            ${poppins.variable}${customClass}${customAlign}`}
-          >
+          <Tag className={`${myClasses.h5} ${roboto.variable} ${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <h5
-          className={`${myClasses.h5} ${roboto.variable} 
-          ${poppins.variable}${customClass}${customAlign}`}
-        >
+        <h5 className={`${myClasses.h5} ${roboto.variable} ${customClass}${customAlign}`}>
           {children}
         </h5>
       );
@@ -126,19 +102,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag
-            className={`${myClasses.subtitle1} ${roboto.variable} 
-            ${poppins.variable}${customClass}${customAlign}`}
-          >
+          <Tag className={`${myClasses.subtitle1} ${roboto.variable} ${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <h4
-          className={`${myClasses.subtitle1} ${roboto.variable} 
-          ${poppins.variable}${customClass}${customAlign}`}
-        >
+        <h4 className={`${myClasses.subtitle1} ${roboto.variable} ${customClass}${customAlign}`}>
           {children}
         </h4>
       );
@@ -146,19 +116,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag
-            className={`${myClasses.subtitle2} ${roboto.variable} 
-            ${poppins.variable}${customClass}${customAlign}`}
-          >
+          <Tag className={`${myClasses.subtitle2} ${roboto.variable} ${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <p
-          className={`${myClasses.subtitle2} ${roboto.variable} 
-          ${poppins.variable}${customClass}${customAlign}`}
-        >
+        <p className={`${myClasses.subtitle2} ${roboto.variable} ${customClass}${customAlign}`}>
           {children}
         </p>
       );
@@ -213,7 +177,7 @@ const variantMapping = (variant, children, classes, align, component) => {
   }
 };
 
-export { pacifico, raleway, poppins, roboto };
+export { raleway, roboto };
 
 export default function Typography(props) {
   const { variant = '', children, classes = false, align = false, component = false } = props;
