@@ -94,11 +94,21 @@ export async function generateMetadata({ params }) {
     },
     themeColor: [
       { media: '(prefers-color-scheme: light)', color: '#F2F5F9' },
-      { media: '(prefers-color-scheme: dark)', color: 'rgb(35, 35, 35)' },
+      { media: '(prefers-color-scheme: dark)', color: '#232323' },
     ],
     verification: {
       google: prod ? 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU' : '',
       yandex: prod ? 'a7156f0372045afd' : '',
+    },
+    alternates: {
+      canonical: '/',
+      media: {
+        'only screen and (max-width: 900px)': 'https://m.alexskir.ru',
+      },
+      languages: {
+        'en-US': '/en',
+        'ru-RU': '/ru',
+      },
     },
   };
 }
@@ -139,6 +149,11 @@ export default async function RootLayout({ children, params: { lng } }) {
         </style>
         <Script id="94952225" type="text/javascript">
           {prod ? metrika : ''}
+        </Script>
+        <Script type="text/javascript" id="mobile-redirect">
+          {`if (screen.width <= 899) {
+            document.location = "https://m.alexskir.ru";
+          }`}
         </Script>
       </head>
       <body className={defaultTheme}>

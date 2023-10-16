@@ -22,6 +22,7 @@ const NextIcon = lazy(() => import('../../assets/svg/Nextjs.svg'));
 
 const ShareBar = lazy(() => import('../common/Share'));
 const Typography = lazy(() => import('../Typography'));
+const MobileLink = lazy(() => import('./MobileLink'));
 
 const techIcons = [
   { href: 'https://nextjs.org/', icon: <NextIcon />, tooltip: 'Next.js' },
@@ -89,6 +90,11 @@ export default async function Footer(props) {
       </div>
 
       <div className="footer__right-block">
+        <MobileLink>
+          <Typography variant="h6" align="right" classes="footer__mobile-link">
+            {t.footer.mobile}
+          </Typography>
+        </MobileLink>
         <Suspense fallback={<LoadingBlock width="100%" height="56px" />}>
           <Typography variant="h6" align="right">
             {t.common.shareTitle}
