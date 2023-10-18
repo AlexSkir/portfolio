@@ -7,7 +7,6 @@ import LoadingBlock from '../common/LoadingBlock';
 import Logo from '../../assets/logo.png';
 
 const LangSwitcher = lazy(() => import('./MyLangSwitcher'));
-const ThemeSwitcher = lazy(() => import('./MyThemeSwitcher'));
 
 export default function Header({ lng, t }) {
   return (
@@ -22,10 +21,6 @@ export default function Header({ lng, t }) {
           alt="Aleksandra Skirnevskaia Logo"
         />
       </Link>
-
-      <Suspense fallback={<LoadingBlock width="56px" height="56px" variant="circular" />}>
-        <ThemeSwitcher t={t} />
-      </Suspense>
 
       <Suspense fallback={<LoadingBlock width="56px" height="56px" variant="circular" />}>
         <LangSwitcher t={t} />

@@ -3,14 +3,18 @@
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import LoadingBlock from '../common/LoadingBlock';
 
 const NavbarButton = lazy(() => import('./NavbarButton'));
 const Home = lazy(() => import('../../assets/svg/Home.svg'));
-const Resume = lazy(() => import('../../assets/svg/Resume.svg'));
+const Person = lazy(() => import('../../assets/svg/Person.svg'));
 const Portfolio = lazy(() => import('../../assets/svg/Portfolio.svg'));
-const Contact = lazy(() => import('../../assets/svg/Contact.svg'));
+const Phone = lazy(() => import('../../assets/svg/Phone.svg'));
+const Resume = lazy(() => import('../../assets/svg/Resume.svg'));
+const Typography = lazy(() => import('../Typography'));
 
+const classname = 'MyTypography MyTypography-navbar';
 export default function Navbar(props) {
   const { t, lng } = props;
   const pathname = usePathname();
@@ -20,7 +24,7 @@ export default function Navbar(props) {
     {
       name: t.navbar.resume,
       path: `/${lng}/resume`,
-      icon: <Resume className="navbar-svg MySvg-icon" />,
+      icon: <Person className="navbar-svg MySvg-icon" />,
     },
     {
       name: t.navbar.portfolio,
@@ -31,49 +35,39 @@ export default function Navbar(props) {
     {
       name: t.navbar.contact,
       path: `/${lng}/contact`,
-      icon: <Contact className="navbar-svg MySvg-icon" />,
+      icon: <Phone className="navbar-svg MySvg-icon" />,
     },
   ];
 
+  const checkPath = (page) => {
+    if (page.portfolio) {
+      if (pathname.includes('portfolio')) {
+        return 'is_active';
+      }
+    } else if (pathname === page.path) {
+      return 'is_active';
+    }
+    return '';
+  };
+
   return (
     <>
-      <div className="navbar-block">
-        <div className="navbar-block__top-btns-wrapper">
-          {pages.map((page) => (
-            <Suspense
-              key={page.name}
-              fallback={
-                <LoadingBlock width="80px" height="80px" borderRadius="20px" overflow="hidden" />
-              }
-            >
-              <NavbarButton
-                title={page.name}
-                href={page.path}
-                status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
-                classes="navbar-block__top-btn"
-              >
-                {page.icon}
-              </NavbarButton>
-            </Suspense>
-          ))}
-        </div>
+      <div className="navbar-block__top-block">
+        {pages.map((page) => (
+          <Link key={page.name} href={page.path} className={`${classname} ${checkPath(page)}`}>
+            <Typography variant="body3">{page.name}</Typography>
+          </Link>
+        ))}
       </div>
 
-      <div className="navbar-block__bottom-block">
-        <div className="navbar-block__bottom-btns-wrapper">
+      <div className="navbar-block__side-block">
+        <div className="navbar-block__side-links-wrapper">
           {pages.map((page) => (
-            <Suspense
-              key={page.name}
-              fallback={<LoadingBlock width="25%" height="56px" variant="rounded" />}
-            >
-              <NavbarButton
-                title={page.name}
-                href={page.path}
-                status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
-                classes="navbar-block__bottom-btn"
-              >
+            <Suspense key={page.name} fallback={<LoadingBlock width="10px" height="10px" />}>
+              <Link href={page.path} className={`${classname} ${checkPath(page)}`}>
+                <div className="navbar-parabola navbar-parabola-top" />
                 {page.icon}
-              </NavbarButton>
+              </Link>
             </Suspense>
           ))}
         </div>

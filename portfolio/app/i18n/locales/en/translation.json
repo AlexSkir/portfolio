@@ -28,6 +28,7 @@
   },
   "navbar": {
     "home": "Home",
+    "about": "About me",
     "resume": "Resume",
     "portfolio": "Portfolio",
     "contact": "Contact"

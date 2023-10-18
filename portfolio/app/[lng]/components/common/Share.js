@@ -21,7 +21,7 @@ import {
   VKIcon,
   WhatsappIcon,
 } from 'react-share';
-import Typography, { raleway } from '../Typography';
+import Typography, { roboto } from '../Typography';
 import ShareIcon from '../../assets/svg/Share.svg';
 
 const dialogBlock = {
@@ -144,7 +144,7 @@ export default function ShareBar(props) {
         fullWidth
         maxWidth="sm"
         sx={dialogBlock}
-        className={raleway.variable}
+        className={roboto.variable}
       >
         <Typography variant="h6">{t.common.dialogShare}</Typography>
         <ul className="share__list">

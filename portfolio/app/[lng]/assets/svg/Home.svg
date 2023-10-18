@@ -1,3 +1,10 @@
-<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 25 25" data-testid="HomeOutlinedIcon" width="24" height="24">
-  <path d="m12 5.69 5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3 2 12h3v8h6v-6h2v6h6v-8h3L12 3z"></path>
+<svg width="24" height="24" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>Layer 1</title>
+  <path stroke="null" id="svg_1" d="m11.1674,3.34969l5.2083,4.6875l0,8.13541l-2.0833,0l0,-6.24999l-6.25,0l0,6.24999l-2.08333,0l0,-8.13541l5.20833,-4.6875zm0,-2.80208l-10.41667,9.375l3.125,0l0,8.33329l6.24997,0l0,-6.25l2.0834,0l0,6.25l6.25,0l0,-8.33329l3.125,0l-10.4167,-9.375z"/>
+  <path id="svg_2" d="m2.97834,9.43646l8.25,-7.33333l8.25,7.33333l-16.5,0z"/>
+  <rect id="svg_3" height="8.83333" width="3.5" y="8.41667" x="5.66667" stroke="null"/>
+  <rect id="svg_4" height="8.5" width="3" y="8.25" x="14.16667" stroke="null"/>
+ </g>
 </svg>

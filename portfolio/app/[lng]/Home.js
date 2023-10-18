@@ -1,5 +1,3 @@
-'use client';
-
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import LoadingBlock from './components/common/LoadingBlock';

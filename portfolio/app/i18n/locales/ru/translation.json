@@ -28,6 +28,7 @@
   },
   "navbar": {
     "home": "О себе",
+    "about": "Обо мне",
     "resume": "Резюме",
     "portfolio": "Портфолио",
     "contact": "Контакты"

@@ -24,7 +24,7 @@
   }
 
   &.h4-variant {
-    font-family: var(--font-raleway), sans-serif;
+    font-family: var(--font-roboto), sans-serif;
     font-size: var(--h4-min);
     font-weight: 400;
     line-height: 125%;
@@ -38,7 +38,7 @@
   }
 
   &.h6-variant {
-    font-family: var(--font-raleway), sans-serif;
+    font-family: var(--font-roboto), sans-serif;
     font-size: var(--h6-min);
     font-weight: 400;
     letter-spacing: 0.8px;
@@ -62,7 +62,7 @@
   }
 
   &.body1-variant {
-    font-family: var(--font-raleway), sans-serif;
+    font-family: var(--font-roboto), sans-serif;
     font-size: 14px;
     line-height: 142%;
     font-weight: 400;
@@ -70,16 +70,19 @@
   }
 
   &.body2-variant {
-    font-family: var(--font-raleway), sans-serif;
-    font-size: 16px;
-    line-height: 187%;
+    font-family: var(--font-roboto), sans-serif !important;
+    font-size: 14px;
     font-weight: 400;
+    text-transform: initial;
+    line-height: normal;
   }
 
   &.body3-variant {
-    font-family: var(--font-raleway), sans-serif;
-    font-size: 14px;
+    font-family: var(--font-roboto), sans-serif !important;
+    font-size: 12px;
     font-weight: 400;
+    text-transform: initial;
+    line-height: normal;
   }
 
   &.MyAlignText-left {
@@ -99,7 +102,7 @@
   }
 
   &.MyTypography-button {
-    font-family: var(--font-raleway), sans-serif !important;
+    font-family: var(--font-roboto), sans-serif !important;
     font-size: 12px;
     font-weight: 400;
     text-transform: initial;

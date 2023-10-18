@@ -92,16 +92,12 @@ export async function generateMetadata({ params }) {
       card: 'summary_large_image',
       creator: '@alex_skir',
     },
-    themeColor: [
-      { media: '(prefers-color-scheme: light)', color: '#F2F5F9' },
-      { media: '(prefers-color-scheme: dark)', color: '#232323' },
-    ],
     verification: {
       google: prod ? 'tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU' : '',
       yandex: prod ? 'a7156f0372045afd' : '',
     },
     alternates: {
-      canonical: '/',
+      canonical: 'https://alexskir.ru',
       media: {
         'only screen and (min-width: 900px)': 'https://alexskir.ru',
       },
@@ -113,13 +109,6 @@ export async function generateMetadata({ params }) {
   };
 }
 export default async function RootLayout({ children, params: { lng } }) {
-  let defaultTheme = 'light';
-  if (typeof window !== 'undefined') {
-    defaultTheme = window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? 'dark' : 'light';
-  }
-  if (cookies().get('myColorMode')) {
-    defaultTheme = cookies().get('myColorMode').value;
-  }
   const layout = await getDictionary(lng);
 
   const prod = process.env.mode === 'production';
@@ -127,26 +116,6 @@ export default async function RootLayout({ children, params: { lng } }) {
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
-        <style>
-          {`@media (prefers-color-scheme: dark) {
-              body {
-                background: rgb(35, 35, 35);
-              }
-            }
-            @media (prefers-color-scheme: light) {
-              body {
-                background: #F2F5F9;
-              }
-            }
-
-            body.light {
-              background: #F2F5F9;
-            }
-
-            body.dark {
-              background: rgb(35, 35, 35);
-            }`}
-        </style>
         <Script id="94952225" type="text/javascript">
           {prod ? metrika : ''}
         </Script>
@@ -156,7 +125,7 @@ export default async function RootLayout({ children, params: { lng } }) {
           }`}
         </Script>
       </head>
-      <body className={defaultTheme}>
+      <body>
         <noscript style={{ display: 'block', margin: '50px auto', textAlign: 'center' }}>
           You need to enable JavaScript to run this app.
         </noscript>

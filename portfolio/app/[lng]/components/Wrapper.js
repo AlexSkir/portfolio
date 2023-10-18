@@ -2,7 +2,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { raleway } from './Typography';
 
 export default function Wrapper({ children }) {
   const [mounted, setMounted] = React.useState(false);
@@ -13,7 +12,7 @@ export default function Wrapper({ children }) {
 
   if (!mounted) return null;
 
-  return <div className={`app_appContainer ${raleway.variable}`}>{children}</div>;
+  return <div className="app_appContainer">{children}</div>;
 }
 
 Wrapper.propTypes = {

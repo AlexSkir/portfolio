@@ -4,14 +4,9 @@ import React from 'react';
 import { Roboto, Raleway } from 'next/font/google';
 
 const roboto = Roboto({
-  weight: '500',
+  weight: ['400', '700'],
   subsets: ['latin', 'cyrillic'],
   variable: '--font-roboto',
-});
-const raleway = Raleway({
-  weight: '400',
-  subsets: ['latin-ext', 'cyrillic-ext'],
-  variable: '--font-raleway',
 });
 
 const sharedClass = 'MyTypography';
@@ -60,13 +55,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag className={`${myClasses.h4} ${raleway.variable}${customClass}${customAlign}`}>
+          <Tag className={`${myClasses.h4} ${roboto.variable}${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <h4 className={`${myClasses.h4} ${raleway.variable}${customClass}${customAlign}`}>
+        <h4 className={`${myClasses.h4} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </h4>
       );
@@ -88,13 +83,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag className={`${myClasses.h6} ${raleway.variable}${customClass}${customAlign}`}>
+          <Tag className={`${myClasses.h6} ${roboto.variable}${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <h6 className={`${myClasses.h6} ${raleway.variable}${customClass}${customAlign}`}>
+        <h6 className={`${myClasses.h6} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </h6>
       );
@@ -130,13 +125,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag className={`${myClasses.body1} ${raleway.variable}${customClass}${customAlign}`}>
+          <Tag className={`${myClasses.body1} ${roboto.variable}${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <p className={`${myClasses.body1} ${raleway.variable}${customClass}${customAlign}`}>
+        <p className={`${myClasses.body1} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </p>
       );
@@ -144,13 +139,13 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag className={`${myClasses.body2} ${raleway.variable}${customClass}${customAlign}`}>
+          <Tag className={`${myClasses.body2} ${roboto.variable}${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <p className={`${myClasses.body2} ${raleway.variable}${customClass}${customAlign}`}>
+        <p className={`${myClasses.body2} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </p>
       );
@@ -158,26 +153,26 @@ const variantMapping = (variant, children, classes, align, component) => {
       if (component) {
         const Tag = component;
         return (
-          <Tag className={`${myClasses.body3} ${raleway.variable}${customClass}${customAlign}`}>
+          <Tag className={`${myClasses.body3} ${roboto.variable}${customClass}${customAlign}`}>
             {children}
           </Tag>
         );
       }
       return (
-        <p className={`${myClasses.body3} ${raleway.variable}${customClass}${customAlign}`}>
+        <p className={`${myClasses.body3} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </p>
       );
     default:
       return (
-        <p className={`${myClasses.body1} ${raleway.variable}${customClass}${customAlign}`}>
+        <p className={`${myClasses.body1} ${roboto.variable}${customClass}${customAlign}`}>
           {children}
         </p>
       );
   }
 };
 
-export { raleway, roboto };
+export { roboto };
 
 export default function Typography(props) {
   const { variant = '', children, classes = false, align = false, component = false } = props;
