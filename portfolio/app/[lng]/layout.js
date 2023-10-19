@@ -8,7 +8,6 @@ import { dir } from 'i18next';
 import { cookies } from 'next/headers';
 import Script from 'next/script';
 import { languages } from '../i18n/settings';
-import ScrollTop from './components/common/ScrollTop';
 import LoadingApp from './components/common/LoadingApp';
 import Loading from './loading';
 import getDictionary from '../i18n/dictionaries';
@@ -19,7 +18,7 @@ import LoadingBlock from './components/common/LoadingBlock';
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
 const Navbar = lazy(() => import('./components/Navbar'));
-const Wrapper = lazy(() => import('./components/Wrapper'));
+const ScrollTop = lazy(() => import('./components/common/ScrollTop'));
 
 const keywords = [
   'Frontend',
@@ -144,31 +143,29 @@ export default async function RootLayout({ children, params: { lng } }) {
         </noscript>
         <div id="root">
           <Suspense fallback={<LoadingApp />}>
-            <Wrapper>
-              <div className="container-mainWrapper">
-                <Suspense fallback={<LoadingBlock width="100%" height="42px" />}>
-                  <Header lng={lng} t={layout} />
-                </Suspense>
-                <Suspense
-                  fallback={
-                    <LoadingBlock
-                      width="100%"
-                      height="100px"
-                      variant="rounded"
-                      style={{ maxWidth: '500px' }}
-                    />
-                  }
-                >
-                  <Navbar lng={lng} t={layout} />
-                </Suspense>
+            <div className="container-mainWrapper">
+              <Suspense fallback={<LoadingBlock width="100%" height="42px" />}>
+                <Header lng={lng} t={layout} />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <LoadingBlock
+                    width="100%"
+                    height="100px"
+                    variant="rounded"
+                    style={{ maxWidth: '500px' }}
+                  />
+                }
+              >
+                <Navbar lng={lng} t={layout} />
+              </Suspense>
 
-                <div className="container-mainWrapper__main-layout">
-                  <ScrollTop />
-                  <Suspense fallback={<Loading />}>{children}</Suspense>
-                </div>
-                <Footer lng={lng} />
+              <div className="container-mainWrapper__main-layout">
+                <Suspense fallback=".">{/* <ScrollTop /> */}</Suspense>
+                <Suspense fallback={<Loading />}>{children}</Suspense>
               </div>
-            </Wrapper>
+              <Footer lng={lng} />
+            </div>
           </Suspense>
         </div>
       </body>

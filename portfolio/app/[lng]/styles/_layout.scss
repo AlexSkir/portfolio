@@ -2,6 +2,7 @@
 body {
   background: var(--body);
   color: var(--contrastText);
+  text-align: justify;
 }
 .app_appContainer {
   width: 100%;
@@ -9,12 +10,11 @@ body {
 }
 
 .container-mainWrapper {
-  max-width: 1300px;
   display: flex;
   flex-direction: column;
   position: relative;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 10px 0 45px;
 
   font-family: var(--font-raleway), sans-serif;
   font-size: 14px;
@@ -22,10 +22,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.35px;
   color: var(--contrastText);
-
-  @include media($sm) {
-    padding: 0 24px;
-  }
 }
 
 .container-mainWrapper__main-layout {

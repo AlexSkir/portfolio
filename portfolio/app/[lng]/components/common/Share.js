@@ -168,7 +168,7 @@ export default function ShareBar(props) {
             <button
               type="button"
               className="copy_btn button_isActive_true"
-              onClick={() => handleCopy(window.location[url])}
+              onClick={() => handleCopy(typeof window !== 'undefined' ? window.location[url] : '')}
             >
               <Typography variant="body3">{t.common.copyLink}</Typography>
             </button>

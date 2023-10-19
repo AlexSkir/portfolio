@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 
 export default function MobileLink(props) {
   const { children } = props;
-  const { protocol, host } = window.location;
+  const { protocol, host } = typeof window !== 'undefined' ? window.location : {};
   const pathname = usePathname();
 
   const mobUrl =
