@@ -17,7 +17,6 @@ import LoadingBlock from './components/common/LoadingBlock';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
-const Navbar = lazy(() => import('./components/Navbar'));
 const ScrollTop = lazy(() => import('./components/common/ScrollTop'));
 
 const keywords = [
@@ -146,18 +145,6 @@ export default async function RootLayout({ children, params: { lng } }) {
             <div className="container-mainWrapper">
               <Suspense fallback={<LoadingBlock width="100%" height="42px" />}>
                 <Header lng={lng} t={layout} />
-              </Suspense>
-              <Suspense
-                fallback={
-                  <LoadingBlock
-                    width="100%"
-                    height="100px"
-                    variant="rounded"
-                    style={{ maxWidth: '500px' }}
-                  />
-                }
-              >
-                <Navbar lng={lng} t={layout} />
               </Suspense>
 
               <div className="container-mainWrapper__main-layout">

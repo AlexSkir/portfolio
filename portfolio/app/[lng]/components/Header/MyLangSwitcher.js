@@ -25,20 +25,18 @@ export default function LangSwitcher(props) {
   };
 
   return (
-    <div className="lang-switcher__wrapper">
-      <Tooltip title={t.header.langTooltip}>
-        <button
-          className="lang-switcher__button"
-          aria-controls={open ? 'basic-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
-          onClick={handleClick}
-          type="button"
-          aria-label={t.common.langswitch}
-        >
-          <Lang className="MySvg-icon" />
-        </button>
-      </Tooltip>
+    <>
+      <button
+        className="lang-switcher__button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+        type="button"
+        aria-label={t.common.langswitch}
+      >
+        <Lang className="MySvg-icon" />
+      </button>
       <Menu
         className="lang-switcher__menu"
         id="basic-menu"
@@ -64,7 +62,7 @@ export default function LangSwitcher(props) {
           </MenuItem>
         </Link>
       </Menu>
-    </div>
+    </>
   );
 }
 

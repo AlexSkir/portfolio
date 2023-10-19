@@ -6,12 +6,10 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import LoadingBlock from '../common/LoadingBlock';
 
-const NavbarButton = lazy(() => import('./NavbarButton'));
 const Home = lazy(() => import('../../assets/svg/Home.svg'));
 const Person = lazy(() => import('../../assets/svg/Person.svg'));
 const Portfolio = lazy(() => import('../../assets/svg/Portfolio.svg'));
 const Phone = lazy(() => import('../../assets/svg/Phone.svg'));
-const Resume = lazy(() => import('../../assets/svg/Resume.svg'));
 const Typography = lazy(() => import('../Typography'));
 
 const classname = 'MyTypography MyTypography-navbar';
@@ -65,7 +63,7 @@ export default function Navbar(props) {
           {pages.map((page) => (
             <Suspense key={page.name} fallback={<LoadingBlock width="10px" height="10px" />}>
               <Link href={page.path} className={`${classname} ${checkPath(page)}`}>
-                <div className="navbar-parabola navbar-parabola-top" />
+                <div className="navbar-parabola" />
                 {page.icon}
               </Link>
             </Suspense>

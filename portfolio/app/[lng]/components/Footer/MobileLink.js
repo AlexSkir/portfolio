@@ -7,15 +7,19 @@ import { usePathname } from 'next/navigation';
 
 export default function MobileLink(props) {
   const { children } = props;
-  const { protocol, host } = typeof window !== 'undefined' ? window.location : {};
+  const [url, setUrl] = React.useState('');
   const pathname = usePathname();
 
-  const mobUrl =
-    host.indexOf('m.') === -1
-      ? `${protocol}//${host}${pathname}`
-      : `${protocol}//${host.replace('m.', '')}${pathname}`;
+  React.useEffect(() => {
+    const { protocol, host } = window.location;
+    const mobUrl =
+      host.indexOf('m.') === -1
+        ? `${protocol}//${host}${pathname}`
+        : `${protocol}//${host.replace('m.', '')}${pathname}`;
+    setUrl(mobUrl);
+  });
 
-  return <Link href={mobUrl}>{children}</Link>;
+  return <Link href={url}>{children}</Link>;
 }
 
 MobileLink.propTypes = {

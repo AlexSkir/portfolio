@@ -34,11 +34,10 @@ const dialogBlock = {
 };
 
 const shareIcons = (url, ...args) => {
-  const Url = typeof window !== 'undefined' ? window.location[url] : '';
   const socialButtons = [
     {
       item: (
-        <LinkedinShareButton url={Url}>
+        <LinkedinShareButton url={url}>
           <LinkedinIcon />
           LinkedIn
         </LinkedinShareButton>
@@ -47,7 +46,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <TelegramShareButton url={Url}>
+        <TelegramShareButton url={url}>
           <TelegramIcon />
           Telegram
         </TelegramShareButton>
@@ -56,7 +55,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <WhatsappShareButton url={Url}>
+        <WhatsappShareButton url={url}>
           <WhatsappIcon />
           WhatsApp
         </WhatsappShareButton>
@@ -65,7 +64,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <FacebookShareButton url={Url}>
+        <FacebookShareButton url={url}>
           <FacebookIcon />
           Facebook
         </FacebookShareButton>
@@ -74,7 +73,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <TwitterShareButton url={Url}>
+        <TwitterShareButton url={url}>
           <TwitterIcon />
           Twitter
         </TwitterShareButton>
@@ -83,7 +82,7 @@ const shareIcons = (url, ...args) => {
     },
     {
       item: (
-        <VKShareButton url={Url}>
+        <VKShareButton url={url}>
           <VKIcon />
           VKontakte
         </VKShareButton>
@@ -98,6 +97,7 @@ export default function ShareBar(props) {
   const { url, len, t } = props;
   const [open, setOpen] = React.useState(false);
   const [copySuccess, setCopySuccess] = React.useState(false);
+  const [shareUrl, setShareUrl] = React.useState('');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -124,10 +124,14 @@ export default function ShareBar(props) {
     }
   };
 
+  React.useEffect(() => {
+    setShareUrl(window.location[url]);
+  });
+
   return (
     <>
       <div className="share-container">
-        {shareIcons(url, 0, len).map((item) => (
+        {shareIcons(shareUrl, 0, len).map((item) => (
           <Tooltip key={item.tooltip} title={item.tooltip}>
             {item.item}
           </Tooltip>
@@ -148,7 +152,7 @@ export default function ShareBar(props) {
       >
         <Typography variant="h6">{t.common.dialogShare}</Typography>
         <ul className="share__list">
-          {shareIcons(url).map((item, i) => (
+          {shareIcons(shareUrl).map((item, i) => (
             <li
               className="MyTypography MyTypography-button"
               key={i}
@@ -161,14 +165,14 @@ export default function ShareBar(props) {
 
         <div className="share__copy-block">
           <Typography variant="body3" classes="share__copy-url">
-            {typeof window !== 'undefined' ? window.location[url] : ''}
+            {shareUrl}
           </Typography>
 
           <Tooltip title={copySuccess ? t.common.copieble.copied : t.common.copieble.copy}>
             <button
               type="button"
               className="copy_btn button_isActive_true"
-              onClick={() => handleCopy(typeof window !== 'undefined' ? window.location[url] : '')}
+              onClick={() => handleCopy(shareUrl)}
             >
               <Typography variant="body3">{t.common.copyLink}</Typography>
             </button>

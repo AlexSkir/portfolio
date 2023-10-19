@@ -13,13 +13,19 @@ const MyAlert = lazy(() => import('./Alert'));
 export default function Form(props) {
   const { t } = props;
   const recaptchaRef = React.createRef();
-  const [name, setName] = React.useState(localStorage.getItem('form-name') || '');
-  const [mail, setMail] = React.useState(localStorage.getItem('form-email') || '');
-  const [msg, setMsg] = React.useState(localStorage.getItem('form-text') || '');
+  const [name, setName] = React.useState('');
+  const [mail, setMail] = React.useState('');
+  const [msg, setMsg] = React.useState('');
   const [alert, setAlert] = React.useState('success');
   const [open, setOpen] = React.useState(false);
   const site_key = process.env.NEXT_PUBLIC_captcha_site_key;
   const user_id = process.env.NEXT_PUBLIC_emailjs_user_id;
+
+  React.useEffect(() => {
+    setName(localStorage.getItem('form-name') || '');
+    setMail(localStorage.getItem('form-email') || '');
+    setMsg(localStorage.getItem('form-text') || '');
+  });
 
   const clearAll = () => {
     setName('');
@@ -123,7 +129,7 @@ export default function Form(props) {
       {msg ? (
         <div style={{ marginTop: '20px' }}>
           <Suspense fallback={<LoadingBlock width="300px" height="74px" variant="rectangular" />}>
-            <ReCAPTCHA ref={recaptchaRef} sitekey={site_key} theme={document.body.className} />
+            <ReCAPTCHA ref={recaptchaRef} sitekey={site_key} />
           </Suspense>
         </div>
       ) : (

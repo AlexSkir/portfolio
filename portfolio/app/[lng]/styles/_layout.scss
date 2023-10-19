@@ -14,9 +14,9 @@ body {
   flex-direction: column;
   position: relative;
   margin: 0 auto;
-  padding: 0 10px 0 45px;
+  padding: 0;
 
-  font-family: var(--font-raleway), sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -72,44 +72,9 @@ body {
 .container-mainWrapper__header-section {
   position: relative;
   width: 100%;
-  height: 104px;
+  height: 50px;
   margin: 0;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-
-  .header-section__logo-link {
-    display: flex;
-    align-items: center;
-    height: 42px;
-    cursor: pointer;
-    flex-direction: column;
-    text-decoration: none;
-
-    @include media($sm) {
-      flex-direction: row;
-    }
-  }
-
-  .header-section__logo {
-    margin-right: 10px;
-  }
-}
-
-.lang-switcher__wrapper {
-  position: absolute;
-  top: 25px;
-  right: 100px;
-  z-index: 100;
-  width: 56px;
-  height: 56px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  background-color: var(--primary-accent);
 }
 
 .lang-switcher__link {
@@ -130,34 +95,21 @@ body {
 }
 
 .lang-switcher__button {
-  color: var(--contrastText);
-  height: 100%;
-
-  .MySvg-icon {
-    color: var(--contrastText);
-  }
-}
-
-.theme-switcher-wrapper {
   position: absolute;
-  top: 25px;
-  right: 0;
-  z-index: 100;
-  width: 56px;
-  height: 56px;
+  top: 13px;
+  left: 13px;
+  color: var(--contrastText);
+  height: 25px;
+  width: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--primary-accent);
-  border-radius: 50%;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-}
 
-.theme-switch__icon-btn {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+  .MySvg-icon {
+    color: var(--contrastText);
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .navbar-button {
@@ -190,12 +142,11 @@ body {
 /*#region-----------------------------------Navbar------------------------------------------*/
 .navbar-block__top-block {
   display: flex;
-  width: fit-content;
-  max-width: 100%;
-  position: absolute;
-  top: 33px;
-  right: 0px;
-  padding: 0 19px;
+  justify-content: flex-end;
+  align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
 
   .MyTypography-navbar {
     margin-left: 14px;
@@ -236,6 +187,7 @@ body {
     svg {
       fill: var(--dark-blue);
       color: var(--dark-blue);
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     }
   }
 
@@ -251,7 +203,7 @@ body {
 
     &.is_active {
       background: var(--navbar-active-bg);
-      filter: drop-shadow(3px 0px 17px rgba(69, 42, 124, 1));
+      filter: drop-shadow(3px 0px 17px rgba(69, 42, 124, 0.25));
       border-left: 0.5px solid rgba(255, 255, 255, 0.60);
 
       .navbar-parabola {
@@ -264,24 +216,25 @@ body {
           content: "";
           position: absolute;
           display: block;
-          width: 100%;
-          height: 100%;
+          width: 120%;
+          height: 120%;
           right: 0;
         }
         &:before {
-          top: -24px;
-          border-bottom-right-radius: 85%;
-          box-shadow: 11px 6px 0 0 var(--navbar-active-bg);
+          top: -26px;
+          border-bottom-right-radius: 160%;
+          box-shadow: 12px 6px 0 0 var(--navbar-active-bg);
         }
         &:after {
-          bottom: -24px;
-          border-top-right-radius: 85%;
-          box-shadow: 11px -6px 0 0 var(--navbar-active-bg);
+          bottom: -26px;
+          border-top-right-radius: 160%;
+          box-shadow: 12px -6px 0 0 var(--navbar-active-bg);
         }
       }
       svg {
         color: var(--contrastText);
         fill: var(--contrastText);
+        z-index: 100;
       }
     }
   }
