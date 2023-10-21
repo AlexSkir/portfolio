@@ -3,7 +3,6 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
 import { useParams } from 'next/navigation';
-import Tooltip from '@mui/material/Tooltip';
 import resumeEn from '../../assets/files/resume-en.pdf';
 import resumeRu from '../../assets/files/resume-ru.pdf';
 import pdfIcon from '../../assets/icons/pdf.png';
@@ -26,7 +25,7 @@ const resumeList = [
 ];
 
 export default function ResumeDownload(props) {
-  const { short = false } = props;
+  const { classes = '', children = '<></>' } = props;
   const { lng } = useParams();
   const [open, setOpen] = React.useState(false);
 
@@ -54,19 +53,12 @@ export default function ResumeDownload(props) {
 
   return (
     <>
-      <Tooltip title={tooltipText}>
-        <button
-          type="button"
-          // eslint-disable-next-line prettier/prettier, max-len
-          className={`MyTypography MyTypography-button button_isActive_true download__btn${short ? ' download_short_btn' : ' download_long_btn'}`}
-          onClick={handleClickOpen}
-        >
-          <Suspense fallback={<LoadingBlock width="24px" height="24px" />}>
-            <Download className="download-svg MySvg-icon" />
-          </Suspense>
-          {short ? '' : tooltipText}
-        </button>
-      </Tooltip>
+      <button type="button" className={`download__btn ${classes}`} onClick={handleClickOpen}>
+        <Suspense fallback={<LoadingBlock width="24px" height="24px" />}>
+          <Download className="download-svg MySvg-icon" />
+        </Suspense>
+        {children}
+      </button>
       <Suspense fallback=".">
         <DialogList open={open} onClose={handleClose} list={resumeList} title={dialogText} />
       </Suspense>
@@ -75,5 +67,6 @@ export default function ResumeDownload(props) {
 }
 
 ResumeDownload.propTypes = {
-  short: PropTypes.bool,
+  children: PropTypes.node,
+  classes: PropTypes.string,
 };

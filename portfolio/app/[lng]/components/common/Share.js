@@ -6,7 +6,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dialog from '@mui/material/Dialog';
-import Tooltip from '@mui/material/Tooltip';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -26,9 +25,11 @@ import ShareIcon from '../../assets/svg/Share.svg';
 
 const dialogBlock = {
   ' .MuiDialog-paper': {
-    p: '20px',
+    p: '16px',
+    m: '16px',
+    width: 'calc(100% - 32px)',
     borderRadius: '20px',
-    backgroundColor: 'var(--primary-paper)',
+    backgroundColor: 'var(--navbar-active-bg)',
     color: 'var(--contrastText)',
   },
 };
@@ -42,7 +43,6 @@ const shareIcons = (url, ...args) => {
           LinkedIn
         </LinkedinShareButton>
       ),
-      tooltip: 'LinkedIn',
     },
     {
       item: (
@@ -51,7 +51,6 @@ const shareIcons = (url, ...args) => {
           Telegram
         </TelegramShareButton>
       ),
-      tooltip: 'Telegram',
     },
     {
       item: (
@@ -60,7 +59,6 @@ const shareIcons = (url, ...args) => {
           WhatsApp
         </WhatsappShareButton>
       ),
-      tooltip: 'Whatsapp',
     },
     {
       item: (
@@ -69,7 +67,6 @@ const shareIcons = (url, ...args) => {
           Facebook
         </FacebookShareButton>
       ),
-      tooltip: 'Facebook',
     },
     {
       item: (
@@ -78,7 +75,6 @@ const shareIcons = (url, ...args) => {
           Twitter
         </TwitterShareButton>
       ),
-      tooltip: 'Twitter',
     },
     {
       item: (
@@ -87,7 +83,6 @@ const shareIcons = (url, ...args) => {
           VKontakte
         </VKShareButton>
       ),
-      tooltip: 'VKontakte',
     },
   ];
   return socialButtons.slice(...args);
@@ -131,10 +126,8 @@ export default function ShareBar(props) {
   return (
     <>
       <div className="share-container">
-        {shareIcons(shareUrl, 0, len).map((item) => (
-          <Tooltip key={item.tooltip} title={item.tooltip}>
-            {item.item}
-          </Tooltip>
+        {shareIcons(shareUrl, 0, len).map((item, i) => (
+          <div key={i}>{item.item}</div>
         ))}
 
         <button onClick={handleClickOpen} type="button" aria-label={t.common.dialogShare}>
@@ -146,7 +139,7 @@ export default function ShareBar(props) {
         onClose={handleClose}
         open={open}
         fullWidth
-        maxWidth="sm"
+        maxWidth="xs"
         sx={dialogBlock}
         className={roboto.variable}
       >
@@ -168,15 +161,13 @@ export default function ShareBar(props) {
             {shareUrl}
           </Typography>
 
-          <Tooltip title={copySuccess ? t.common.copieble.copied : t.common.copieble.copy}>
-            <button
-              type="button"
-              className="copy_btn button_isActive_true"
-              onClick={() => handleCopy(shareUrl)}
-            >
-              <Typography variant="body3">{t.common.copyLink}</Typography>
-            </button>
-          </Tooltip>
+          <button
+            type="button"
+            className="copy_btn button_isActive_true"
+            onClick={() => handleCopy(shareUrl)}
+          >
+            <Typography variant="body3">{t.common.copyLink}</Typography>
+          </button>
         </div>
       </Dialog>
     </>

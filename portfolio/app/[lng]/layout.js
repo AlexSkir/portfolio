@@ -1,19 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable max-len */
-/* eslint-disable react/jsx-wrap-multilines */
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { notFound } from 'next/navigation';
-import { dir } from 'i18next';
-import { cookies } from 'next/headers';
 import Script from 'next/script';
+import { dir } from 'i18next';
 import { languages } from '../i18n/settings';
-import LoadingApp from './components/common/LoadingApp';
-import Loading from './loading';
 import getDictionary from '../i18n/dictionaries';
+import LoadingApp from './components/common/LoadingApp';
+import LoadingBlock from './components/common/LoadingBlock';
+import Loading from './loading';
 import Poster from './assets/projects/share/portfolio.png';
 import './style.scss';
-import LoadingBlock from './components/common/LoadingBlock';
 
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer'));
@@ -148,7 +146,9 @@ export default async function RootLayout({ children, params: { lng } }) {
               </Suspense>
 
               <div className="container-mainWrapper__main-layout">
-                <Suspense fallback=".">{/* <ScrollTop /> */}</Suspense>
+                <Suspense fallback=".">
+                  <ScrollTop />
+                </Suspense>
                 <Suspense fallback={<Loading />}>{children}</Suspense>
               </div>
               <Footer lng={lng} />

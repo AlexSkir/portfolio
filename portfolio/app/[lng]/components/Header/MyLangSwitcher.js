@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Link from 'next/link';
-import Tooltip from '@mui/material/Tooltip';
 import Lang from '../../assets/svg/Lang.svg';
 import Typography from '../Typography';
 

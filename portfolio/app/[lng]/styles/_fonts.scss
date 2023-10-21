@@ -1,77 +1,74 @@
 .MyTypography {
   &.h1-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--h1-min);
-    font-weight: 500;
-    letter-spacing: 0;
+    font-size: 25px;
+    font-weight: 700;
     line-height: normal;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.92);
   }
 
   &.h2-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--h2-min);
-    font-weight: 500;
-    letter-spacing: 1px;
-    line-height: 100%;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 130%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.92);
   }
 
   &.h3-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--h3-min);
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    line-height: 125%;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
   }
 
   &.h4-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--h4-min);
-    font-weight: 400;
+    font-size: 14px;
+    font-weight: 700;
     line-height: 125%;
   }
 
   &.h5-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--h5-min);
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     line-height: 83%;
   }
 
   &.h6-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--h6-min);
-    font-weight: 400;
+    font-size: 12;
+    font-weight: 700;
     letter-spacing: 0.8px;
     line-height: 200%;
   }
 
   &.subtitle1-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--subtitle1-min);
-    line-height: 120%;
-    font-weight: 500;
-    letter-spacing: 0.693px;
+    font-size: 20px;
+    line-height: normal;
+    font-weight: 400;
   }
 
   &.subtitle2-variant {
     font-family: var(--font-roboto), sans-serif;
-    font-size: var(--subtitle2-min);
-    line-height: 120%;
-    font-weight: 500;
-    letter-spacing: 0.693px;
+    font-size: 18px;
+    line-height: 130%;
+    font-weight: 700;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   &.body1-variant {
     font-family: var(--font-roboto), sans-serif;
     font-size: 14px;
-    line-height: 142%;
+    line-height: 130%;
     font-weight: 400;
-    letter-spacing: 0.35px;
   }
 
   &.body2-variant {
     font-family: var(--font-roboto), sans-serif !important;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     text-transform: initial;
     line-height: normal;
@@ -79,7 +76,7 @@
 
   &.body3-variant {
     font-family: var(--font-roboto), sans-serif !important;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 400;
     text-transform: initial;
     line-height: normal;

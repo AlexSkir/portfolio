@@ -1,4 +1,4 @@
-/* 'use client';
+'use client';
 
 import React from 'react';
 import ScrollUp from '../../assets/svg/ScrollUp.svg';
@@ -60,4 +60,3 @@ export default function ScrollTop() {
     </div>
   );
 }
- */
