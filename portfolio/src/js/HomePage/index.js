@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import LoadingBlock from '../common/LoadingBlock';
 import Content from '../Layout/Content';
 import AvatarHi from '../../assets/avatar/avatar-hi.png';
-import '../../css/pages/Home.css';
 
 const Typography = lazy(() => import('../common/Typography'));
 const CodeIcon = lazy(() => import('../../assets/svg/CodeIcon.svg'));

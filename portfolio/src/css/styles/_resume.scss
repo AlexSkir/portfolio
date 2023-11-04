@@ -1,6 +1,3 @@
-@import '../styles/variables';
-@import '../styles/mixins';
-
 .resume-section__info-block {
   display: flex;
   flex-direction: row;
@@ -91,9 +88,19 @@
 
 .resume-section__skills-block {
   @extend .resume-section__info-block;
-  margin: 10px -50px -30px -70px;
-  padding: 0 50px 30px 70px;
+  position: relative;
+  left: -15px;
+  width: calc(100% + 30px);
+  margin-top: 10px;
+  margin-bottom: -32px;
+  padding: 15px;
   background-color: var(--primary-background);
+
+  @include media($lg) {
+    left: -70px;
+    width: calc(100% + 120px);
+    padding: 0 50px 30px 70px;
+  }
 
   .resume-section__skills-subtitle {
     line-height: 1.75;

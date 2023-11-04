@@ -9,7 +9,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import ContactItemCopieble from '../common/ContactItemCopieble';
 import CallIcon from '../common/icons/CallIconGradient';
 import EmailIcon from '../common/icons/EmailIconGradient';
-import HeadHunter from '../../assets/images/icons/hh.png';
+import HeadHunter from '../../assets/icons/Hh.png';
 
 const contactItem = {
   display: 'flex',
