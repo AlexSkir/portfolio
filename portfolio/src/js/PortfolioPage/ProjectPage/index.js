@@ -13,7 +13,6 @@ import CardActions from '@mui/material/CardActions';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
 import Collapse from '@mui/material/Collapse';
-import SEO from '../../common/SEO';
 import ErrorBoundary from '../../common/ErrorBoundary';
 import LoadingLayout from '../../Suspense/LoadingMainlayout';
 
@@ -53,12 +52,6 @@ export default function Project(props) {
     <Suspense fallback={<LoadingLayout />}>
       <PageLayout title={t('portfolio.title')} avatar="ok">
         <ErrorBoundary ErrorComponent={ErrorMsg}>
-          <SEO
-            // eslint-disable-next-line prettier/prettier, max-len
-            title={`${t('portfolio.project')} ${data.name} - ${data.type} (${data.technologies.join(' • ')})`}
-            image={data.share}
-            description={data.description}
-          />
           <Card>
             <CardHeader
               sx={{ p: '16px' }}

@@ -124,7 +124,7 @@ const config = {
 module.exports = (env, argv) => {
   config.mode = argv.mode;
   if (argv.mode === 'development') {
-    config.entry = ['react-hot-loader/patch', './src/js/index.js', './src/css/index.scss'];
+    config.entry = ['react-hot-loader/patch', './src/js/index.js', './src/css/index.css'];
     config.devtool = 'inline-source-map';
     config.resolve.alias['react-dom'] = '@hot-loader/react-dom';
     config.stats.errorDetails = true;
@@ -139,7 +139,7 @@ module.exports = (env, argv) => {
 
   if (argv.mode === 'production') {
     config.entry = {
-      index: ['./src/js/index.js', './src/css/index.scss'],
+      index: ['./src/js/index.js', './src/css/index.css'],
     };
     config.devtool = 'source-map';
     config.output.filename = '[name].[chunkhash].bundle.js';

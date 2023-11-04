@@ -1,4 +1,54 @@
-@import 'mixins';
+@import 'styles';
+
+.hithere {
+  animation: hithere 1s ease infinite;
+}
+
+@keyframes hithere {
+  30% {
+    transform: scale(1.2);
+  }
+
+  40%,
+  60% {
+    transform: rotate(-20deg) scale(1.2);
+  }
+
+  50% {
+    transform: rotate(20deg) scale(1.2);
+  }
+
+  70% {
+    transform: rotate(0deg) scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bounce2 {
+  animation: bounce2 2s ease infinite;
+}
+
+@keyframes bounce2 {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-20px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
 
 @font-face {
   font-family: 'Raleway';
@@ -70,58 +120,4 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-}
-
-.flexPos {
-  @include flexPos(var(--justify), var(--align));
-}
-
-.hithere {
-  animation: hithere 1s ease infinite;
-}
-
-@keyframes hithere {
-  30% {
-    transform: scale(1.2);
-  }
-
-  40%,
-  60% {
-    transform: rotate(-20deg) scale(1.2);
-  }
-
-  50% {
-    transform: rotate(20deg) scale(1.2);
-  }
-
-  70% {
-    transform: rotate(0deg) scale(1.2);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-.bounce2 {
-  animation: bounce2 2s ease infinite;
-}
-
-@keyframes bounce2 {
-
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-
-  40% {
-    transform: translateY(-20px);
-  }
-
-  60% {
-    transform: translateY(-10px);
-  }
 }

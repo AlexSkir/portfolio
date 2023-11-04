@@ -5,7 +5,7 @@ import Link from '@mui/material/Link';
 import ImageList from '@mui/material/ImageList';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Typography from '@mui/material/Typography';
-import LoadingBlock from '../Suspense/LoadingBlock';
+import LoadingBlock from '../common/LoadingBlock';
 
 const ImageListItem = lazy(() => import('@mui/material/ImageListItem'));
 
@@ -58,12 +58,12 @@ function ProjectsListGallery(props) {
               />
               <ImageListItemBar
                 position="below"
-                title={(
+                title={
                   <Typography variant="subtitle2" sx={subt2}>
                     {item.type}
                   </Typography>
-                )}
-                subtitle={(
+                }
+                subtitle={
                   <Typography
                     variant="subtitle2"
                     sx={{
@@ -73,7 +73,7 @@ function ProjectsListGallery(props) {
                   >
                     {item.mainTool.join(` • `)}
                   </Typography>
-                )}
+                }
               />
             </ImageListItem>
           </Suspense>

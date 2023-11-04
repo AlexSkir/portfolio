@@ -62,6 +62,13 @@
           "todo"
         ]
       }
+    ],
+    "react/require-default-props": "off",
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "prop": "ignore"
+      }
     ]
   }
 }

@@ -1,13 +1,14 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import Button from '@mui/material/Button';
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
+import { useTranslation } from 'react-i18next';
 import Tooltip from '@mui/material/Tooltip';
 import resumeEn from '../../assets/files/resume-en.pdf';
 import resumeRu from '../../assets/files/resume-ru.pdf';
-import pdfIcon from '../../assets/images/icons/pdf.png';
-import DialogList from './DialogList';
+import LoadingBlock from './LoadingBlock';
+import pdfIcon from '../../assets/icons/Pdf.png';
+
+const DialogList = lazy(() => import('./DialogList'));
+const Download = lazy(() => import('../../assets/svg/Download.svg'));
 
 const resumeList = [
   {
@@ -23,8 +24,8 @@ const resumeList = [
 ];
 
 export default function ResumeDownload(props) {
+  const { short = false } = props;
   const { t } = useTranslation();
-  const { title, btnStyle } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleDownloadResume = (value) => {
@@ -42,7 +43,6 @@ export default function ResumeDownload(props) {
   const handleClose = (value) => {
     setOpen(false);
     if (value) {
-      console.log(value);
       handleDownloadResume(value);
     }
   };
@@ -50,30 +50,30 @@ export default function ResumeDownload(props) {
   return (
     <>
       <Tooltip title={t('common.downloadTooltip')}>
-        <Button className="button_isActive_true" sx={btnStyle} onClick={handleClickOpen}>
-          <FileDownloadOutlinedIcon
-            sx={{
-              color: 'secondary.contrastText',
-            }}
-          />
-          {title}
-        </Button>
+        <button
+          type="button"
+          // eslint-disable-next-line prettier/prettier, max-len
+          className={`MyTypography MyTypography-button button_isActive_true download__btn${short ? ' download_short_btn' : ' download_long_btn'}`}
+          onClick={handleClickOpen}
+        >
+          <Suspense fallback={<LoadingBlock width="24px" height="24px" />}>
+            <Download className="download-svg MySvg-icon" />
+          </Suspense>
+          {short ? '' : t('common.downloadTooltip')}
+        </button>
       </Tooltip>
-      <DialogList
-        open={open}
-        onClose={handleClose}
-        list={resumeList}
-        title={t('common.dialogTitleDl')}
-      />
+      <Suspense fallback=".">
+        <DialogList
+          open={open}
+          onClose={handleClose}
+          list={resumeList}
+          title={t('common.dialogTitleDl')}
+        />
+      </Suspense>
     </>
   );
 }
 
 ResumeDownload.propTypes = {
-  title: PropTypes.string,
-  btnStyle: PropTypes.object.isRequired,
-};
-
-ResumeDownload.defaultProps = {
-  title: '',
+  short: PropTypes.bool,
 };

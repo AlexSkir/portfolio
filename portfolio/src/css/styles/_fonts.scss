@@ -1,0 +1,124 @@
+.MyTypography {
+  &.h1-variant {
+    font-family: var(--font-pacifico);
+    font-size: 24px;
+    font-size: clamp(var(--h1-min) * 1px, 2.5vw, var(--h1-max) *1px);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+
+  &.h2-variant {
+    font-family: var(--font-poppins);
+    font-size: 40px;
+    font-size: clamp(var(--h2-min) * 1px, 3.5vw, var(--h2-max) *1px);
+    font-weight: 500;
+    letter-spacing: 1px;
+    line-height: 100%;
+  }
+
+  &.h3-variant {
+    font-family: var(--font-poppins);
+    font-size: 32px;
+    font-size: clamp(var(--h3-min) * 1px, 3vw, var(--h3-max) *1px);
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    line-height: 125%;
+  }
+
+  &.h4-variant {
+    font-family: var(--font-raleway);
+    font-size: 28px;
+    font-size: clamp(var(--h4-min) * 1px, 2.5vw, var(--h4-max) *1px);
+    font-weight: 700;
+    line-height: 125%;
+  }
+
+  &.h5-variant {
+    font-family: var(--font-poppins);
+    font-size: 24px;
+    font-size: clamp(var(--h5-min) * 1px, 2.5vw, var(--h5-max) *1px);
+    font-weight: 600;
+    line-height: 83%;
+  }
+
+  &.h6-variant {
+    font-family: var(--font-raleway);
+    font-size: 20px;
+    font-size: clamp(var(--h6-min) * 1px, 2vw, var(--h6-max) *1px);
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    line-height: 200%;
+  }
+
+  &.subtitle1-variant {
+    font-family: var(--font-poppins);
+    font-size: 28px;
+    font-size: clamp(var(--subtitle1-min) * 1px, 2.5vw, var(--subtitle1-max) *1px);
+    line-height: 120%;
+    font-weight: 500;
+    letter-spacing: 0.693px;
+  }
+
+  &.subtitle2-variant {
+    font-family: var(--font-poppins);
+    font-size: 16px;
+    font-size: clamp(var(--subtitle2-min) * 1px, 2.5vw, var(--subtitle2-max) *1px);
+    line-height: 120%;
+    font-weight: 500;
+    letter-spacing: 0.693px;
+  }
+
+  &.body1-variant {
+    font-family: var(--font-raleway);
+    font-size: 14px;
+    line-height: 142%;
+    font-weight: 400;
+    letter-spacing: 0.35px;
+  }
+
+  &.body2-variant {
+    font-family: var(--font-raleway);
+    font-size: 16px;
+    line-height: 187%;
+    font-weight: 500;
+  }
+
+  &.body3-variant {
+    font-family: var(--font-raleway);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &.MyAlignText-left {
+    text-align: left;
+  }
+
+  &.MyAlignText-right {
+    text-align: right;
+  }
+
+  &.MyAlignText-center {
+    text-align: center;
+  }
+
+  &.MyAlignText-justify {
+    text-align: justify;
+  }
+
+  &.MyTypography-button {
+    font-family: var(--font-raleway) !important;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: initial;
+    line-height: 1.75;
+  }
+
+  &.MyTypography-tab-btn {
+    font-family: var(--font-poppins) !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: initial;
+    line-height: normal;
+  }
+}

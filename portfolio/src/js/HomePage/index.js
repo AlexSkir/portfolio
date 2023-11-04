@@ -1,104 +1,103 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
+import LoadingBlock from '../common/LoadingBlock';
+import Content from '../Layout/Content';
+import AvatarHi from '../../assets/avatar/avatar-hi.png';
+import '../../css/pages/Home.css';
 
-import CodeIcon from '../../assets/images/svg/code.svg';
-import App from '../../assets/images/svg/App.svg';
-import Seo from '../../assets/images/svg/seo.svg';
-import LoadingLayout from '../Suspense/LoadingMainlayout';
+const Typography = lazy(() => import('../common/Typography'));
+const CodeIcon = lazy(() => import('../../assets/svg/CodeIcon.svg'));
+const AppIcon = lazy(() => import('../../assets/svg/App.svg'));
+const SeoIcon = lazy(() => import('../../assets/svg/SeoIcon.svg'));
+const FreelanceIcon = lazy(() => import('../../assets/svg/Freelance.svg'));
 
-import ActivityItem from './Activity';
-
-const PageLayout = lazy(() => import('../PageLayout'));
-
-const rowWrapper = {
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  gap: '25px',
-  justifyContent: 'flex-start',
-};
-
-function Home() {
+export default function Home() {
   const { t } = useTranslation();
-  const elementRef = React.useRef();
-  const [width, setWidth] = React.useState(600);
-
-  React.useEffect(() => {
-    const element = elementRef.current;
-
-    if (!element) return;
-
-    const observer = new ResizeObserver((entries) => {
-      // Wrap it in requestAnimationFrame to avoid ResizeObserver loop limit exceeded error
-      window.requestAnimationFrame(() => {
-        if (!Array.isArray(entries) || !entries.length) {
-          return;
-        }
-        setWidth(element.offsetWidth);
-      });
-    });
-
-    observer.observe(element);
-
-    // eslint-disable-next-line consistent-return
-    return () => {
-      window.ResizeObserver = 0;
-    };
-  }, []);
 
   return (
-    <Suspense fallback={<LoadingLayout />}>
-      <PageLayout title={t('home.title')} avatar="hi">
-        <Box>
+    <Content avatar={AvatarHi} title={t('home.title')}>
+      <div className="home-page__block">
+        <Suspense fallback={<LoadingBlock width="100%" height="80px" />}>
           <Typography variant="body2">{t('home.intro', { joinArrays: ' ' })}</Typography>
+        </Suspense>
+        <div className="home-page__subtitle-wrapper">
+          <Suspense fallback={<LoadingBlock width="300px" height="40px" />}>
+            <Typography variant="h3" classes="home-page__top-subtitle">
+              {t('home.subtitle')}
+            </Typography>
+          </Suspense>
+        </div>
 
-          <Typography variant="h3" sx={{ my: '25px' }}>
-            {t('home.subtitle')}
-          </Typography>
+        <div className="home-page__body">
+          <div className="home-page__activity-item-wrapper">
+            <div className="home-page__activity-item is_pink">
+              <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+                <div className="home-page__subtitle-block">
+                  <div className="home-page__icon-wrapper">
+                    <CodeIcon className="MySvg-icon home-page__icon activity-icon_dark" />
+                  </div>
+                  <Typography variant="h5" classes="home-page__subtitle">
+                    {t('home.activity1.subtitle')}
+                  </Typography>
+                </div>
+                <Typography variant="body1">
+                  {t('home.activity1.body', { joinArrays: ' ' })}
+                </Typography>
+              </Suspense>
+            </div>
 
-          <Box sx={rowWrapper} ref={elementRef}>
-            <ActivityItem
-              icon={<CodeIcon className="homepage-section__activity-icon activity-icon_dark" />}
-              title={t('home.activity1.subtitle')}
-              color="pink"
-              width={width > 600 ? '45%' : '100%'}
-            >
-              {t('home.activity1.body', { joinArrays: ' ' })}
-            </ActivityItem>
-            <ActivityItem
-              icon={<App className="homepage-section__activity-icon activity-icon_main" />}
-              title={t('home.activity2.subtitle')}
-              color="blue"
-              width={width > 600 ? '45%' : '100%'}
-            >
-              {t('home.activity2.body', { joinArrays: ' ' })}
-            </ActivityItem>
-            <ActivityItem
-              icon={
-                <StoreOutlinedIcon className="homepage-section__activity-icon activity-icon_main" />
-              }
-              title={t('home.activity3.subtitle')}
-              color="blue"
-              width={width > 600 ? '45%' : '100%'}
-            >
-              {t('home.activity3.body', { joinArrays: ' ' })}
-            </ActivityItem>
-            <ActivityItem
-              icon={<Seo className="homepage-section__activity-icon activity-icon_dark" />}
-              title={t('home.activity4.subtitle')}
-              color="pink"
-              width={width > 600 ? '45%' : '100%'}
-            >
-              {t('home.activity4.body', { joinArrays: ' ' })}
-            </ActivityItem>
-          </Box>
-        </Box>
-      </PageLayout>
-    </Suspense>
+            <div className="home-page__activity-item">
+              <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+                <div className="home-page__subtitle-block">
+                  <div className="home-page__icon-wrapper">
+                    <AppIcon className="MySvg-icon home-page__icon activity-icon_main" />
+                  </div>
+                  <Typography variant="h5" classes="home-page__subtitle">
+                    {t('home.activity2.subtitle')}
+                  </Typography>
+                </div>
+                <Typography variant="body1">
+                  {t('home.activity2.body', { joinArrays: ' ' })}
+                </Typography>
+              </Suspense>
+            </div>
+          </div>
+
+          <div className="home-page__activity-item-wrapper is_reverse">
+            <div className="home-page__activity-item">
+              <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+                <div className="home-page__subtitle-block">
+                  <div className="home-page__icon-wrapper">
+                    <FreelanceIcon className="MySvg-icon home-page__icon activity-icon_main" />
+                  </div>
+                  <Typography variant="h5" classes="home-page__subtitle">
+                    {t('home.activity3.subtitle')}
+                  </Typography>
+                </div>
+                <Typography variant="body1">
+                  {t('home.activity3.body', { joinArrays: ' ' })}
+                </Typography>
+              </Suspense>
+            </div>
+
+            <div className="home-page__activity-item is_pink">
+              <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+                <div className="home-page__subtitle-block">
+                  <div className="home-page__icon-wrapper">
+                    <SeoIcon className="MySvg-icon home-page__icon activity-icon_dark" />
+                  </div>
+                  <Typography variant="h5" classes="home-page__subtitle">
+                    {t('home.activity4.subtitle')}
+                  </Typography>
+                </div>
+                <Typography variant="body1">
+                  {t('home.activity4.body', { joinArrays: ' ' })}
+                </Typography>
+              </Suspense>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Content>
   );
 }
-
-export default Home;

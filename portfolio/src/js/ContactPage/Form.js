@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
 import SimpleAlert from './Alert';
-import LoadingBlock from '../Suspense/LoadingBlock';
+import LoadingBlock from '../common/LoadingBlock';
 
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
 const TextField = lazy(() => import('@mui/material/TextField'));

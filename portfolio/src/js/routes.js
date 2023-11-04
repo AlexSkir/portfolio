@@ -1,10 +1,10 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import MainLayout from './MainLayout';
+import Layout from './Layout';
 import NoMatch from './common/NoMatchPage';
 import projectArr from './PortfolioPage/projectsArray';
-import LoadingApp from './Suspense/LoadingApp';
+import LoadingApp from './common/LoadingApp';
 import LoadingLayout from './Suspense/LoadingMainlayout';
 
 const Home = lazy(() => import('./HomePage'));
@@ -19,7 +19,7 @@ const AppRouter = () => {
     <BrowserRouter>
       <Suspense fallback={<LoadingApp />}>
         <Routes>
-          <Route path="/" element={<MainLayout />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="resume" element={<Resume />} />
             <Route path="portfolio">

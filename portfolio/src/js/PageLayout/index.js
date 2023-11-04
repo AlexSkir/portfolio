@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import SideBlock from './SideBlock';
-import ShareBar from '../MainLayout/Share';
+import ShareBar from '../common/Share';
 
 const contentWrapper = {
   backgroundColor: 'primary.paper',

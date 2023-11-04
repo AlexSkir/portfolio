@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Avatar from '@mui/material/Avatar';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import DialogTitle from '@mui/material/DialogTitle';
 import Dialog from '@mui/material/Dialog';
+import Typography from './Typography';
+
+const dialogBlock = {
+  ' .MuiDialog-paper': {
+    p: '20px',
+    borderRadius: '20px',
+    backgroundColor: 'var(--primary-paper)',
+    color: 'var(--contrastText)',
+  },
+};
 
 export default function DialogList(props) {
   const { onClose, open, list, title } = props;
@@ -21,20 +24,31 @@ export default function DialogList(props) {
   };
 
   return (
-    <Dialog onClose={handleClose} open={open}>
-      <DialogTitle>{title}</DialogTitle>
-      <List sx={{ pt: 0 }}>
+    <Dialog onClose={handleClose} open={open} sx={dialogBlock}>
+      <Typography classes="dialog-block__title" variant="h6">
+        {title}
+      </Typography>
+      <ul className="dialog-block__list">
         {list.map((item) => (
-          <ListItem disableGutters key={item.name}>
-            <ListItemButton onClick={() => handleListItemClick(item)}>
-              <ListItemAvatar>
-                <Avatar sx={{ bgcolor: 'primary.light' }} src={item.icon} />
-              </ListItemAvatar>
-              <ListItemText primary={item?.name} />
-            </ListItemButton>
-          </ListItem>
+          <li className="dialog-block__list-item" key={item.name}>
+            <button
+              type="button"
+              className="dialog-block__button"
+              onClick={() => handleListItemClick(item)}
+            >
+              <div className="dialog-block__avatar-wrapper">
+                <div
+                  className="dialog-block__avatar"
+                  style={{ backgroundImage: `url(${item.icon})` }}
+                />
+              </div>
+              <Typography variant="body1" component="span">
+                {item?.name}
+              </Typography>
+            </button>
+          </li>
         ))}
-      </List>
+      </ul>
     </Dialog>
   );
 }

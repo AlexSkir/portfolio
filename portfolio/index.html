@@ -12,11 +12,17 @@
       }
     }
 
-    body.lightTheme {
-      background: unset;
+    @media (prefers-color-scheme: light) {
+      body {
+        background: #F2F5F9;
+      }
     }
 
-    body.darkTheme {
+    body.light {
+      background: #F2F5F9;
+    }
+
+    body.dark {
       background: rgb(35, 35, 35);
     }
   </style>
@@ -44,24 +50,52 @@
   <meta name="twitter:image:src" content="https://alexskir.ru/assets/images/portfolio.png">
   <meta name="twitter:image:alt"
     content="Development of web sites, from simple web pages to complex but reliable, fast, and user-friendly web products with JS/React, Mui/Bootstrap and other libraries!">
-  <meta name="keywords" content="Frontend, React, JS, Javascript, Web development, AlexSkir, create website, freelance,
-  Skirnevskaia, Aleksandra Skirnevskaia, разработка сайтов, фронтенд разработчик, веб разработка, фриланс,
-  Александра Скирневская, Скирневская">
+  <meta name="keywords" content="'Frontend', 'React', 'JS', 'Javascript', 'Web development', 'AlexSkir',
+  'create website', 'freelance', 'Skirnevskaia', 'Aleksandra Skirnevskaia', 'разработка сайтов',
+  'фронтенд разработчик', 'веб разработка', 'фриланс', 'Александра Скирневская', 'Скирневская',">
   <meta property="vk:image" content="https://alexskir.ru/assets/images/portfolio.png">
   <meta name="yandex-verification" content="a7156f0372045afd">
   <meta name="google-site-verification" content="tW9sgpMF9kIZXz9Y_mfT00e-37QuSdFSdkirRNUNhIU">
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    {
+      `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(94952225, "init", {
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true
+        });`}
+  </script>
+  <!-- /Yandex.Metrika counter -->
 </head>
 
 <body>
   <script>
-    const selectedTheme = localStorage.getItem('myColorMode');
-    if (selectedTheme === 'dark') {
-      document.body.classList.add('darkTheme')
-    } else if (selectedTheme === 'light') {
-      document.body.classList.add('lightTheme')
+    let defaultTheme = 'light';
+    if (typeof window !== 'undefined') {
+      defaultTheme = window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? 'dark' : 'light';
     }
+    if (localStorage.getItem('myColorMode')) {
+      defaultTheme = localStorage.getItem('myColorMode');
+    }
+
+    if (defaultTheme) {
+      document.body.className = defaultTheme;
+    } 
   </script>
   <noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>
+    <div>
+      <img src="https://mc.yandex.ru/watch/94952225" style="position: absolute; left: -9999px" alt="" />
+    </div>
+  </noscript>
+
   <section id="root"></section>
 </body>
 

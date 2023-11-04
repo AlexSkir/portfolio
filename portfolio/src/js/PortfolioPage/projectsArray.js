@@ -33,7 +33,7 @@ import cssIcon from '../../assets/images/icons/css.png';
 import wpIcon from '../../assets/images/icons/wordpress.png';
 import wixIcon from '../../assets/images/icons/wix.png';
 
-import LoadingMore from '../Suspense/LoadingMore';
+import LoadingMore from '../common/LoadingMore';
 
 const GritellaProject = lazy(() => import('./ProjectPage/Gritella'));
 const CulturePortal = lazy(() => import('./ProjectPage/CulturePortal'));

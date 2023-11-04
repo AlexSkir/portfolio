@@ -4,7 +4,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
-import SEO from '../common/SEO';
 import Contacts from './Contacts';
 import Form from './Form';
 import Avatar from '../../assets/images/avatar/avatar-heart.png';
@@ -18,11 +17,6 @@ function Contact() {
   return (
     <Suspense fallback={<LoadingLayout />}>
       <PageLayout title={t('contact.title')} avatar="heart">
-        <SEO
-          title={t('contact.seo.title')}
-          description={t('contact.seo.description', { joinArrays: ' ' })}
-          image={Avatar}
-        />
         <Box
           sx={{
             display: 'flex',

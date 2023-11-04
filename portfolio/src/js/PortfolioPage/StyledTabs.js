@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import { styled } from '@mui/material/styles';
-import LoadingBlock from '../Suspense/LoadingBlock';
+import LoadingBlock from '../common/LoadingBlock';
 
 const Tabs = lazy(() => import('@mui/material/Tabs'));
 
