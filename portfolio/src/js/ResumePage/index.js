@@ -1,12 +1,10 @@
 import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import LoadingBlock from '../common/LoadingBlock';
-import Drawer from '../Layout/Drawer';
 import PageWrapper from '../Layout/PageWrapper';
 import Skills from './Skills';
 import Experience from './Exp';
 import Education from './Education';
-import AvatarResume from '../../assets/avatar/avatar-base.png';
 
 const ResumeDownload = lazy(() => import('../common/ResumeDownload'));
 
@@ -15,7 +13,6 @@ export default function Resume() {
 
   return (
     <>
-      <Drawer avatar={AvatarResume} />
       <PageWrapper title={t('resume.title')}>
         <div className="resume-section__info-block">
           <Education />

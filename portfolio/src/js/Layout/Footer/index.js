@@ -86,7 +86,7 @@ export default function Footer() {
       <div className="footer__right-block">
         <MobileLink>
           <Typography variant="h6" align="right" classes="footer__mobile-link">
-            {t('footer.mobile')}
+            {t('footer.desktop')}
           </Typography>
         </MobileLink>
         <Suspense fallback={<LoadingBlock width="100%" height="56px" />}>

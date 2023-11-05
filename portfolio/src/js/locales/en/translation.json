@@ -181,7 +181,8 @@
     "link1": "Portfolio template",
     "link2": "is designed by",
     "ref": "This website was built with:",
-    "mobile": "Mobile Version"
+    "mobile": "Mobile Version",
+    "desktop": "Desktop Version"
   },
   "navbar": {
     "home": "Home",

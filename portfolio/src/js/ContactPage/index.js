@@ -1,8 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
-import Drawer from '../Layout/Drawer';
 import PageWrapper from '../Layout/PageWrapper';
-import AvatarContact from '../../assets/avatar/avatar-heart.png';
 import LoadingBlock from '../common/LoadingBlock';
 
 const Typography = lazy(() => import('../common/Typography'));
@@ -14,7 +12,6 @@ export default function Page() {
 
   return (
     <>
-      <Drawer avatar={AvatarContact} />
       <PageWrapper title={t('contact.title')}>
         <div className="contact-page__section">
           <div className="contact-page__name-wrapper">

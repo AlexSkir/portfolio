@@ -1,9 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
-import Drawer from '../../Layout/Drawer';
 import PageWrapper from '../../Layout/PageWrapper';
-import AvatarPortfolio from '../../../assets/avatar/avatar-ok.png';
 import LoadingBlock from '../../common/LoadingBlock';
 
 const Typography = lazy(() => import('../../common/Typography'));
@@ -16,7 +14,6 @@ export default function Page(props) {
 
   return (
     <>
-      <Drawer avatar={AvatarPortfolio} />
       <PageWrapper title={t('portfolio.title')}>
         <div className="project-card__container">
           <div className="project-card__header">

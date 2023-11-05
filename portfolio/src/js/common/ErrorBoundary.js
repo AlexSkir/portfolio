@@ -1,8 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Drawer from '../Layout/Drawer';
-import ErrorAvatar from '../../assets/avatar/avatar-404.2.png';
 import Typography from './Typography';
 import PageWrapper from '../Layout/PageWrapper';
 
@@ -26,7 +24,6 @@ export default class ErrorBoundary extends React.Component {
       // Error path
       return (
         <>
-          <Drawer avatar={ErrorAvatar} title="Error" />
           <PageWrapper title="Error">
             <div>
               <Typography variant="h3">Something went wrong!</Typography>

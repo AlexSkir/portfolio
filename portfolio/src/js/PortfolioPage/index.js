@@ -1,9 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
-import Drawer from '../Layout/Drawer';
 import PageWrapper from '../Layout/PageWrapper';
 import projectArr from './projectsArray';
-import AvatarPortfolio from '../../assets/avatar/avatar-ok.png';
 import LoadingBlock from '../common/LoadingBlock';
 
 const TabPanel = lazy(() => import('./TabPanel'));
@@ -35,7 +33,6 @@ export default function Page() {
 
   return (
     <>
-      <Drawer avatar={AvatarPortfolio} />
       <PageWrapper title={t('portfolio.title')}>
         <div className="tab-buttons__container">
           <Suspense fallback={<LoadingBlock width="100%" height="50px" />}>
