@@ -33,48 +33,24 @@ export default function Navbar() {
   ];
 
   return (
-    <>
-      <div className="navbar-block">
-        <div className="navbar-block__top-btns-wrapper">
-          {pages.map((page) => (
-            <Suspense
-              key={page.name}
-              fallback={
-                <LoadingBlock width="80px" height="80px" borderRadius="20px" overflow="hidden" />
-              }
+    <div className="navbar-block__bottom-block">
+      <div className="navbar-block__bottom-btns-wrapper">
+        {pages.map((page) => (
+          <Suspense
+            key={page.name}
+            fallback={<LoadingBlock width="25%" height="56px" variant="rounded" />}
+          >
+            <NavbarButton
+              title={page.name}
+              href={page.path}
+              status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
+              classes="navbar-block__bottom-btn"
             >
-              <NavbarButton
-                title={page.name}
-                href={page.path}
-                status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
-                classes="navbar-block__top-btn"
-              >
-                {page.icon}
-              </NavbarButton>
-            </Suspense>
-          ))}
-        </div>
+              {page.icon}
+            </NavbarButton>
+          </Suspense>
+        ))}
       </div>
-
-      <div className="navbar-block__bottom-block">
-        <div className="navbar-block__bottom-btns-wrapper">
-          {pages.map((page) => (
-            <Suspense
-              key={page.name}
-              fallback={<LoadingBlock width="25%" height="56px" variant="rounded" />}
-            >
-              <NavbarButton
-                title={page.name}
-                href={page.path}
-                status={page.portfolio ? pathname.includes('portfolio') : pathname === page.path}
-                classes="navbar-block__bottom-btn"
-              >
-                {page.icon}
-              </NavbarButton>
-            </Suspense>
-          ))}
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

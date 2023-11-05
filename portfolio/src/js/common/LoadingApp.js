@@ -2,8 +2,8 @@ import React from 'react';
 import Skeleton from '@mui/material/Skeleton';
 
 const skeletonLogo = {
-  height: { xs: '48%', sm: '100%' },
-  width: { xs: '100%', sm: '48%' },
+  height: '30px',
+  width: '120px',
   backgroundColor: 'primary.accent',
 };
 
@@ -42,7 +42,6 @@ export default function LoadingApp() {
     <div className="loading-app__wrapper">
       <div className="loading-app__header">
         <div className="loading-app__logo">
-          <Skeleton variant="text" sx={skeletonLogo} />
           <Skeleton variant="text" sx={skeletonLogo} />
         </div>
         <div className="loading-app_btns">

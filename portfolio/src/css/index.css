@@ -101,8 +101,7 @@ legend {
 }
 
 :root {
-  --font-pacifico: "Pacifico", cursive;
-  --font-poppins: "Poppins", "Roboto", sans-serif;
+  --font-poppins: "Roboto", sans-serif;
   --font-raleway: "Raleway", sans-serif;
   --primary-light: #F2F7FC;
   --primary-main: #F2F5F9;
@@ -186,63 +185,55 @@ legend {
 }
 
 .MyTypography.h1-variant {
-  font-family: var(--font-pacifico);
-  font-size: 24px;
-  font-size: clamp(var(--h1-min) * 1px, 2.5vw, var(--h1-max) * 1px);
+  font-family: cursive;
+  font-size: var(--h1-min);
   font-weight: 400;
   letter-spacing: 0;
   line-height: normal;
 }
 .MyTypography.h2-variant {
   font-family: var(--font-poppins);
-  font-size: 40px;
-  font-size: clamp(var(--h2-min) * 1px, 3.5vw, var(--h2-max) * 1px);
+  font-size: var(--h2-min);
   font-weight: 500;
   letter-spacing: 1px;
   line-height: 100%;
 }
 .MyTypography.h3-variant {
   font-family: var(--font-poppins);
-  font-size: 32px;
-  font-size: clamp(var(--h3-min) * 1px, 3vw, var(--h3-max) * 1px);
+  font-size: var(--h3-min);
   font-weight: 500;
   letter-spacing: 0.8px;
   line-height: 125%;
 }
 .MyTypography.h4-variant {
   font-family: var(--font-raleway);
-  font-size: 28px;
-  font-size: clamp(var(--h4-min) * 1px, 2.5vw, var(--h4-max) * 1px);
+  font-size: var(--h4-min);
   font-weight: 700;
   line-height: 125%;
 }
 .MyTypography.h5-variant {
   font-family: var(--font-poppins);
-  font-size: 24px;
-  font-size: clamp(var(--h5-min) * 1px, 2.5vw, var(--h5-max) * 1px);
-  font-weight: 600;
+  font-size: var(--h5-min);
+  font-weight: 500;
   line-height: 83%;
 }
 .MyTypography.h6-variant {
   font-family: var(--font-raleway);
-  font-size: 20px;
-  font-size: clamp(var(--h6-min) * 1px, 2vw, var(--h6-max) * 1px);
-  font-weight: 600;
+  font-size: var(--h6-min);
+  font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 200%;
 }
 .MyTypography.subtitle1-variant {
   font-family: var(--font-poppins);
-  font-size: 28px;
-  font-size: clamp(var(--subtitle1-min) * 1px, 2.5vw, var(--subtitle1-max) * 1px);
+  font-size: var(--subtitle1-min);
   line-height: 120%;
   font-weight: 500;
   letter-spacing: 0.693px;
 }
 .MyTypography.subtitle2-variant {
   font-family: var(--font-poppins);
-  font-size: 16px;
-  font-size: clamp(var(--subtitle2-min) * 1px, 2.5vw, var(--subtitle2-max) * 1px);
+  font-size: var(--subtitle2-min);
   line-height: 120%;
   font-weight: 500;
   letter-spacing: 0.693px;
@@ -258,12 +249,12 @@ legend {
   font-family: var(--font-raleway);
   font-size: 16px;
   line-height: 187%;
-  font-weight: 500;
+  font-weight: 400;
 }
 .MyTypography.body3-variant {
   font-family: var(--font-raleway);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 .MyTypography.MyAlignText-left {
   text-align: left;
@@ -280,7 +271,7 @@ legend {
 .MyTypography.MyTypography-button {
   font-family: var(--font-raleway) !important;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: initial;
   line-height: 1.75;
 }
@@ -376,15 +367,8 @@ legend {
 .container-mainWrapper__header-section .header-section__logo-link {
   display: flex;
   align-items: center;
-  height: 42px;
   cursor: pointer;
-  flex-direction: column;
   text-decoration: none;
-}
-@media only screen and (min-width: 600px) {
-  .container-mainWrapper__header-section .header-section__logo-link {
-    flex-direction: row;
-  }
 }
 .container-mainWrapper__header-section .header-section__logo {
   margin-right: 10px;
@@ -403,6 +387,10 @@ legend {
   border-radius: 50%;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: var(--primary-accent);
+}
+
+.lang-switcher__link {
+  text-decoration: none;
 }
 
 .lang-switcher__menu ul,
@@ -466,58 +454,6 @@ legend {
 
 /*#endregion*/
 /*#region-----------------------------------Navbar------------------------------------------*/
-.navbar-block {
-  display: none;
-  width: 90%;
-  max-width: 500px;
-  height: 50px;
-  position: absolute;
-  top: 95px;
-  right: 16px;
-  padding: 0 30px;
-  border-radius: 20px;
-  background-color: var(--primary-light);
-  box-shadow: 0px 0px 4px 0px var(--primary-accent);
-}
-@media only screen and (min-width: 600px) {
-  .navbar-block {
-    display: flex;
-    height: 100px;
-    top: 145px;
-    right: 24px;
-    padding: 10px 30px;
-  }
-}
-.navbar-block .navbar-block__top-btns-wrapper {
-  flex-grow: 1;
-  justify-content: space-between;
-  display: none;
-}
-@media only screen and (min-width: 600px) {
-  .navbar-block .navbar-block__top-btns-wrapper {
-    display: flex;
-  }
-}
-.navbar-block .navbar-block__top-btn {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
-  background-color: var(--primary-accent);
-}
-.navbar-block .navbar-block__top-btn-link {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: var(--contrastText);
-}
-.navbar-block .navbar-block__top-btn-link svg {
-  font-size: 20px;
-}
-
 .navbar-block__bottom-btns-wrapper {
   display: flex;
   justify-content: center;
@@ -1090,16 +1026,9 @@ legend {
   flex-wrap: wrap;
   margin-top: 20px;
   margin-bottom: 70px;
-  padding: 30px;
+  padding: 15px;
   border-radius: 8px;
   background-color: var(--primary-paper);
-}
-@media only screen and (min-width: 600px) {
-  .container-mainWrapper__footer.footer-section {
-    margin-bottom: 20px;
-    padding: 50px;
-    border-radius: 20px;
-  }
 }
 .container-mainWrapper__footer .footer__left-block {
   display: flex;
@@ -1130,8 +1059,7 @@ legend {
   align-items: center;
   height: 42px;
   cursor: pointer;
-  flex-direction: row;
-  text-decoration: none;
+  margin-bottom: 20px;
 }
 .container-mainWrapper__footer .footer-section__light-link {
   margin-right: 10px;
@@ -1518,8 +1446,7 @@ noscript {
 }
 
 :root {
-  --font-pacifico: "Pacifico", cursive;
-  --font-poppins: "Poppins", "Roboto", sans-serif;
+  --font-poppins: "Roboto", sans-serif;
   --font-raleway: "Raleway", sans-serif;
   --primary-light: #F2F7FC;
   --primary-main: #F2F5F9;
@@ -1716,8 +1643,7 @@ noscript {
 }
 
 :root {
-  --font-pacifico: "Pacifico", cursive;
-  --font-poppins: "Poppins", "Roboto", sans-serif;
+  --font-poppins: "Roboto", sans-serif;
   --font-raleway: "Raleway", sans-serif;
   --primary-light: #F2F7FC;
   --primary-main: #F2F5F9;
@@ -2043,8 +1969,7 @@ noscript {
 }
 
 :root {
-  --font-pacifico: "Pacifico", cursive;
-  --font-poppins: "Poppins", "Roboto", sans-serif;
+  --font-poppins: "Roboto", sans-serif;
   --font-raleway: "Raleway", sans-serif;
   --primary-light: #F2F7FC;
   --primary-main: #F2F5F9;
@@ -2379,29 +2304,8 @@ noscript {
 }
 @font-face {
   font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Raleway";
   src: url("../assets/fonts/Raleway-Regular.ttf") format("truetype");
   font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Raleway";
-  src: url("../assets/fonts/Raleway-SemiBold.ttf") format("truetype");
-  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -2410,20 +2314,6 @@ noscript {
   src: url("../assets/fonts/Raleway-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pacifico";
-  src: url("../assets/fonts/Pacifico-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
   font-display: swap;
 }
 @font-face {

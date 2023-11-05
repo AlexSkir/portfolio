@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Tooltip from '@mui/material/Tooltip';
 import LoadingBlock from '../../common/LoadingBlock';
 import Render from '../../../assets/icons/Render.png';
+import Logo from '../../../assets/Logo.png';
 
 const ReactIcon = lazy(() => import('../../../assets/svg/React.svg'));
 const MuiIcon = lazy(() => import('../../../assets/svg/Mui.svg'));
@@ -38,7 +39,7 @@ const techIcons = [
   { href: 'https://www.npmjs.com/', icon: <Npm />, tooltip: 'Node Package Manager' },
   {
     href: 'https://render.com/',
-    icon: <img src={Render} alt="Render.com" />,
+    icon: <img src={Render} alt="Render.com" loading="lazy" />,
     tooltip: 'Render (Cloud Application Hosting)',
   },
 ];
@@ -51,12 +52,7 @@ export default function Footer() {
       <div className="footer__left-block">
         <Suspense fallback={<LoadingBlock width="96px" height="42px" />}>
           <a href="/" className="footer-section__logo-link">
-            <Typography variant="h1" classes="footer-section__logo">
-              Alex
-            </Typography>
-            <Typography variant="h1" classes="footer-section__logo gradientText">
-              Skir
-            </Typography>
+            <img src={Logo} alt="AlexSkir" loading="lazy" width="70px" />
           </a>
         </Suspense>
 
