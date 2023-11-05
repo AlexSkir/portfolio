@@ -4,10 +4,6 @@
   flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 25px;
-
-  @include media($md) {
-    gap: 60px;
-  }
 }
 
 .resume-section__education-block {
@@ -23,10 +19,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-
-  @include media($md) {
-    margin-bottom: 30px;
-  }
 }
 
 .resume-section__block-subtitle {
@@ -95,12 +87,6 @@
   margin-bottom: -32px;
   padding: 15px;
   background-color: var(--primary-background);
-
-  @include media($lg) {
-    left: -70px;
-    width: calc(100% + 120px);
-    padding: 0 50px 30px 70px;
-  }
 
   .resume-section__skills-subtitle {
     line-height: 1.75;

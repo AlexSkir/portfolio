@@ -123,7 +123,12 @@ export default function Form() {
       {msg ? (
         <div style={{ marginTop: '20px' }}>
           <Suspense fallback={<LoadingBlock width="300px" height="74px" variant="rectangular" />}>
-            <ReCAPTCHA ref={recaptchaRef} sitekey={site_key} theme={document.body.className} />
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              sitekey={site_key}
+              theme={document.body.className}
+              size="compact"
+            />
           </Suspense>
         </div>
       ) : (

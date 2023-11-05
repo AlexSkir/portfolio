@@ -258,10 +258,6 @@
   @include media($sm) {
     border-radius: 20px;
   }
-
-  @include media($lg) {
-    padding: 30px 50px 30px 70px;
-  }
 }
 
 .page-container__wrapper {
@@ -296,10 +292,6 @@
   height: 2px;
   background: var(--secondary-gradientBG);
   margin-top: 10px;
-
-  @include media($md) {
-    margin-top: 0;
-  }
 }
 
 .page-container__content {
@@ -307,25 +299,6 @@
   flex-direction: column;
   height: 100%;
 }
-
-.side-block__name {
-  margin: 15px 0;
-  display: none;
-
-  &.is_block {
-    display: block;
-  }
-}
-
-.side-block__position {
-  opacity: 0.5;
-  display: none;
-
-  &.is_block {
-    display: block;
-  }
-}
-
 
 .page-container__ShareBar-wrapper {
   position: absolute;
@@ -440,126 +413,8 @@
 /*#endregion*/
 
 /*#region-----------------------------------Sideblock------------------------------------------*/
-.side-block-section {
-  display: none;
 
-  @include media($md) {
-    display: block;
-  }
 
-  .MyTypography {
-    color: var(--contrastText);
-  }
-}
-
-.drawer-section__container {
-  position: relative;
-  height: 100%;
-  flex-shrink: 0;
-  white-space: nowrap;
-  box-sizing: border-box;
-  overflow-x: clip;
-  color: var(--contrastText);
-
-  &.drawer_is-closed {
-    .MuiDrawer-paper {
-      transition: width 195ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
-      position: relative;
-      overflow-x: hidden;
-      width: 70px;
-      height: 100%;
-      background-color: var(--primary-paper);
-      overflow-y: visible;
-      padding: 0;
-      margin-right: 0;
-      border-radius: 20px;
-    }
-  }
-
-  &.drawer_is-open {
-    .MuiDrawer-paper {
-      position: relative;
-      width: 400px;
-      height: 100%;
-      padding: 30px;
-      margin-right: 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: visible;
-      overflow-y: visible;
-      border-radius: 20px;
-      background-color: var(--primary-paper);
-      transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
-    }
-  }
-}
-
-.drawer-section__header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 25px;
-  right: 13px;
-
-  @include media($lg) {
-    top: 30px;
-  }
-}
-
-.drawer-section__collapse {
-  fill: var(--secondary-dark);
-  width: 40px;
-  height: 40px;
-}
-
-.drawer-section__expand {
-  fill: var(--secondary-main);
-  width: 40px;
-  height: 40px;
-}
-
-.side-block__avatar {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 8px;
-  background-color: var(--secondary-main);
-
-  @include media($sm) {
-    border-radius: 20px;
-  }
-}
-
-.side-block__contact-card {
-  flex-direction: column;
-  width: 100%;
-  height: auto;
-  padding: 0;
-  justify-content: space-between;
-  border-radius: 20px;
-  background-color: var(--primary-main);
-
-  @include media($md) {
-    width: 350px;
-    height: 350px;
-    padding: 30px;
-  }
-}
-
-.side-block__contact-item {
-  display: none;
-  width: 256px;
-
-  @include media($md) {
-    display: flex;
-  }
-}
 
 .secondary_main {
   fill: var(--secondary-main);

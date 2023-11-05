@@ -33,10 +33,6 @@
   @include media($sm) {
     gap: 10px;
   }
-
-  @include media($md) {
-    gap: 30px;
-  }
 }
 
 .contact-page__contacts-wrapper {
@@ -53,10 +49,6 @@
 
   @include media($sm) {
     gap: 10px;
-  }
-
-  @include media($md) {
-    gap: 30px;
   }
 
   @include media($sm) {
@@ -87,12 +79,6 @@
 
   @include media($sm) {
     background-color: var(--primary-blueBox);
-  }
-
-  @include media($md) {
-    height: 100px;
-    padding: 30px;
-    padding-left: 20px;
   }
 }
 

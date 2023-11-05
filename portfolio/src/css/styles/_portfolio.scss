@@ -16,12 +16,6 @@
 }
 
 .tab-buttons__container {
-  .MuiTabs-scrollButtons {
-    @include media($lg) {
-      display: none;
-    }
-  }
-
   .MuiTabs-scroller {
     display: grid;
   }

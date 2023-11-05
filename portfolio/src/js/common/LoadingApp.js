@@ -15,13 +15,6 @@ const skeletonNavbar = {
   backgroundColor: 'primary.accent',
 };
 
-const skeletonLeft = {
-  height: '100%',
-  display: { xs: 'none', md: 'block' },
-  borderRadius: { xs: '8px', sm: '20px' },
-  backgroundColor: 'primary.accent',
-};
-
 const skeletonRight = {
   width: '100%',
   height: '100%',
@@ -30,14 +23,6 @@ const skeletonRight = {
 };
 
 export default function LoadingApp() {
-  const localSt =
-    typeof localStorage.getItem('sideBlockOpen') !== 'undefined'
-      ? localStorage.getItem('sideBlockOpen') === 'true'
-      : undefined;
-  const screenWidth = typeof window !== 'undefined' ? window.screen.width > 1200 : true;
-  const sideBlockOpen = localSt || screenWidth;
-  const [open, setOpen] = React.useState(sideBlockOpen);
-
   return (
     <div className="loading-app__wrapper">
       <div className="loading-app__header">
@@ -52,16 +37,7 @@ export default function LoadingApp() {
       <div className="loading-app__navbar">
         <Skeleton variant="rounded" sx={skeletonNavbar} />
       </div>
-      <div className={`loading-app__body ${open ? 'open' : ''}`}>
-        <Skeleton
-          variant="rounded"
-          sx={{
-            width: open ? '400px' : '70px',
-            minWidth: open ? '400px' : '70px',
-            mr: open ? '20px' : '2px',
-            ...skeletonLeft,
-          }}
-        />
+      <div className="loading-app__body">
         <Skeleton variant="rounded" sx={skeletonRight} />
       </div>
     </div>
