@@ -26,6 +26,8 @@
       background: rgb(35, 35, 35);
     }
   </style>
+  <link rel="canonical" href="https://alexskir.ru/">
+  <link rel="alternate" media="only screen and (max-width: 900px)" href="https://m.alexskir.ru/">
   <title>Check out my portfolio!</title>
   <meta name="description"
     content="Development of web sites, from simple web pages to complex but reliable, fast, and user-friendly web products with JS/React, Mui/Bootstrap and other libraries!">
@@ -89,6 +91,11 @@
       document.body.className = defaultTheme;
     } 
   </script>
+  <script type="text/javascript" id="mobile-redirect">
+    if (screen.width <= 899) {
+      document.location = "https://m.alexskir.ru";
+    }
+  </Script>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <noscript>
     <div>
