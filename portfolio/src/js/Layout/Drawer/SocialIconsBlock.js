@@ -12,7 +12,6 @@ const ResumeDownload = lazy(() => import('../../common/ResumeDownload'));
 
 export default function SocialIconsBlock(props) {
   const { open } = props;
-  console.log(HeadHunter);
 
   return (
     <div

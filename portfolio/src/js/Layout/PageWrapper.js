@@ -1,17 +1,15 @@
 import React, { Suspense, lazy } from 'react';
 import PropTypes from 'prop-types';
-import SideBlock from './SideBlock';
-import LoadingBlock from '../../common/LoadingBlock';
+import LoadingBlock from '../common/LoadingBlock';
 
-const ShareBar = lazy(() => import('../../common/Share'));
-const Typography = lazy(() => import('../../common/Typography'));
+const ShareBar = lazy(() => import('../common/Share'));
+const Typography = lazy(() => import('../common/Typography'));
 
-export default function PageLayout(props) {
-  const { title, children, avatar } = props;
+export default function PageWrapper(props) {
+  const { title, children } = props;
 
   return (
     <>
-      <SideBlock avatar={avatar} />
       <div className="container-mainWrapper__content-wrapper">
         <div className="page-container__wrapper">
           <div className="page-container__ShareBar-wrapper">
@@ -34,8 +32,7 @@ export default function PageLayout(props) {
   );
 }
 
-PageLayout.propTypes = {
+PageWrapper.propTypes = {
   title: PropTypes.string.isRequired,
-  avatar: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 };

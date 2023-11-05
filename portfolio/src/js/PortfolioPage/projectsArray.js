@@ -1,72 +1,93 @@
 /* eslint-disable max-len */
-import React, { lazy, Suspense } from 'react';
-import fescoImg from '../../assets/images/projects/fesco.webp';
-import AlexisImg from '../../assets/images/projects/alexis.webp';
-import HexalImg from '../../assets/images/projects/hexal.webp';
-import YoutubeImg from '../../assets/images/projects/youtube.webp';
-import PiskelImg from '../../assets/images/projects/piskel.webp';
-import CultureImg from '../../assets/images/projects/culturePortal.webp';
-import ChatImg from '../../assets/images/projects/chat.webp';
-import GofuckImg from '../../assets/images/projects/gofuck.webp';
-import GritellaImg from '../../assets/images/projects/gritella.webp';
-import zooImage from '../../assets/images/projects/zoo.webp';
-import yagoImage from '../../assets/images/projects/yago.webp';
-import yagoCMSImage from '../../assets/images/projects/yagoCms.webp';
+import React, { lazy } from 'react';
+import fescoImg from '../../assets/projects/fesco.webp';
+import AlexisImg from '../../assets/projects/alexis.webp';
+import HexalImg from '../../assets/projects/hexal.webp';
+import YoutubeImg from '../../assets/projects/youtube.webp';
+import PiskelImg from '../../assets/projects/piskel.webp';
+import CultureImg from '../../assets/projects/culturePortal.webp';
+import ChatImg from '../../assets/projects/chat.webp';
+import GofuckImg from '../../assets/projects/gofuck.webp';
+import GritellaImg from '../../assets/projects/gritella.webp';
+import zooImage from '../../assets/projects/zoo.webp';
+import yagoImage from '../../assets/projects/yago.webp';
+import yagoCMSImage from '../../assets/projects/yagoCms.webp';
 
-import fescoShare from '../../assets/images/projects/share/fesco.png';
-import AlexisShare from '../../assets/images/projects/share/alexis.png';
-import HexalShare from '../../assets/images/projects/share/hexal.png';
-import YoutubeShare from '../../assets/images/projects/share/youtube.png';
-import PiskelShare from '../../assets/images/projects/share/piskel.jpg';
-import CultureShare from '../../assets/images/projects/share/culturePortal.png';
-import ChatShare from '../../assets/images/projects/share/chat.png';
-import GofuckShare from '../../assets/images/projects/share/gofuck.png';
-import GritellaShare from '../../assets/images/projects/share/gritella.png';
-import zooShare from '../../assets/images/projects/share/zoo.png';
-import yagoShare from '../../assets/images/projects/share/yago.png';
-import yagoCMSShare from '../../assets/images/projects/share/yagoCms.png';
+import fescoShare from '../../assets/projects/share/fesco.png';
+import AlexisShare from '../../assets/projects/share/alexis.png';
+import HexalShare from '../../assets/projects/share/hexal.png';
+import YoutubeShare from '../../assets/projects/share/youtube.png';
+import PiskelShare from '../../assets/projects/share/piskel.jpg';
+import CultureShare from '../../assets/projects/share/culturePortal.png';
+import ChatShare from '../../assets/projects/share/chat.png';
+import GofuckShare from '../../assets/projects/share/gofuck.png';
+import GritellaShare from '../../assets/projects/share/gritella.png';
+import zooShare from '../../assets/projects/share/zoo.png';
+import yagoShare from '../../assets/projects/share/yago.png';
+import yagoCMSShare from '../../assets/projects/share/yagoCms.png';
 
-import reactIcon from '../../assets/images/icons/react.png';
-import sassIcon from '../../assets/images/icons/sass.png';
-import jsIcon from '../../assets/images/icons/js.png';
-import cssIcon from '../../assets/images/icons/css.png';
-import wpIcon from '../../assets/images/icons/wordpress.png';
-import wixIcon from '../../assets/images/icons/wix.png';
-
-import LoadingMore from '../common/LoadingMore';
+import reactIcon from '../../assets/icons/React.png';
+import sassIcon from '../../assets/icons/Sass.png';
+import jsIcon from '../../assets/icons/Js.png';
+import cssIcon from '../../assets/icons/Css.png';
+import wpIcon from '../../assets/icons/Wordpress.png';
+import wixIcon from '../../assets/icons/Wix.png';
 
 const GritellaProject = lazy(() => import('./ProjectPage/Gritella'));
-const CulturePortal = lazy(() => import('./ProjectPage/CulturePortal'));
 const YoutubeApp = lazy(() => import('./ProjectPage/Youtube'));
 const Piskel = lazy(() => import('./ProjectPage/Piskel'));
+const CulturePortal = lazy(() => import('./ProjectPage/CulturePortal'));
 
 export default function projectArr(t) {
-  const land = t('projects.landing', { ns: 'projects' });
-  const adapt = t('projects.adaptive', { ns: 'projects' });
-  const resp = t('projects.responsive', { ns: 'projects' });
-  const statLay = t('projects.static', { ns: 'projects' });
-  const mobile = t('projects.mobile', { ns: 'projects' });
-  const app = t('projects.app', { ns: 'projects' });
-  const task = t('projects.task', { ns: 'projects' });
-  const phptempl = t('projects.phptempl', { ns: 'projects' });
-  const shop = t('projects.shop', { ns: 'projects' });
-  const forum = t('projects.forum', { ns: 'projects' });
+  const landing = t('landing', { ns: 'projects' });
+  const adaptive = t('adaptive', { ns: 'projects' });
+  const responsive = t('responsive', { ns: 'projects' });
+  const fixed = t('fixed', { ns: 'projects' });
+  const mobile = t('mobile', { ns: 'projects' });
+  const app = t('app', { ns: 'projects' });
+  const task = t('task', { ns: 'projects' });
+  const phptempl = t('phptempl', { ns: 'projects' });
+  const shop = t('shop', { ns: 'projects' });
+  const forum = t('forum', { ns: 'projects' });
+
+  const youtubeLinks = [
+    { name: 'demo', url: 'https://alexskir.github.io/youtube-app/' },
+    { name: 'github', url: 'https://github.com/AlexSkir/youtube-app/tree/gh-pages' },
+    {
+      name: task,
+      url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
+    },
+  ];
+  const gritellaLinks = [
+    { name: 'demo', url: 'http://d97714j6.beget.tech/' },
+    { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
+  ];
+  const piskelLinks = [
+    { name: 'demo', url: 'http://alexskir.github.io/clown/' },
+    { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
+  ];
+  const cultureLinks = [
+    { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
+    { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
+    { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
+  ];
+
   return {
-    yandexGo: {
+    'yandex-go-cms': {
       name: 'Yandex Go',
-      description: t('projects.yandexGo.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('yandexGo.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'landings', 'cms'],
-      mainTool: [land, 'CMS'],
+      mainTool: [t('constr', { ns: 'projects' }), 'CMS'],
       avatar: wixIcon,
       technologies: [
         'CMS',
         'JS',
-        adapt,
+        adaptive,
         'Perfect Pixel',
-        t('projects.constr', { ns: 'projects' }),
+        t('constr', { ns: 'projects' }),
         'API',
       ],
-      type: land,
+      type: landing,
       path: 'yandex-go-cms',
       image: yagoCMSImage,
       share: yagoShare,
@@ -82,14 +103,14 @@ export default function projectArr(t) {
         },
       ],
     },
-    yandexGoSASS: {
+    'yandex-go-sass': {
       name: 'Yandex Go SASS',
-      description: t('projects.yandexGoSASS.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('yandexGoSASS.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'landings'],
-      mainTool: ['SASS', adapt],
+      mainTool: ['SASS', adaptive],
       avatar: sassIcon,
-      technologies: ['HTML', 'SASS', 'jQuery', adapt, 'Perfect Pixel'],
-      type: land,
+      technologies: ['HTML', 'SASS', 'jQuery', adaptive, 'Perfect Pixel'],
+      type: landing,
       path: 'yandex-go-sass',
       image: yagoImage,
       share: yagoCMSShare,
@@ -105,12 +126,12 @@ export default function projectArr(t) {
     },
     zoo: {
       name: 'Online Zoo',
-      description: t('projects.zoo.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('zoo.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'landings'],
-      mainTool: ['SASS', adapt],
+      mainTool: ['SASS', adaptive],
       avatar: sassIcon,
-      technologies: ['HTML', 'SASS', 'jQuery', adapt, 'Perfect Pixel'],
-      type: land,
+      technologies: ['HTML', 'SASS', 'jQuery', adaptive, 'Perfect Pixel'],
+      type: landing,
       path: 'zoo',
       image: zooImage,
       share: zooShare,
@@ -120,9 +141,9 @@ export default function projectArr(t) {
         { name: 'figma', url: 'https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online' },
       ],
     },
-    culturePortal: {
+    'culture-portal': {
       name: 'Culture Portal',
-      description: t('projects.culturePortal.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('culturePortal.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'app', 'react', 'school'],
       mainTool: ['React/redux', 'Material-UI'],
       avatar: reactIcon,
@@ -138,24 +159,23 @@ export default function projectArr(t) {
       path: 'culture-portal',
       image: CultureImg,
       share: CultureShare,
-      links: [
-        { name: 'demo', url: 'https://rss-group10-photographers.netlify.com/' },
-        { name: 'github (gatsby)', url: 'https://github.com/AlexSkir/RSS-group10-gatsbyNetlify' },
-        { name: 'github (react)', url: 'https://github.com/AlexSkir/CodeJam-Culture-Portal' },
-      ],
+      links: cultureLinks,
       more: (
-        <Suspense fallback={<LoadingMore />}>
-          <CulturePortal />
-        </Suspense>
+        <CulturePortal
+          more={Object.values(t('culturePortal.more', { ns: 'projects', returnObjects: true }))}
+          title={t('features', { ns: 'projects' })}
+          links={cultureLinks}
+        />
       ),
+      more1: t('more1', { ns: 'projects' }),
     },
-    chat: {
+    'awesome-chat': {
       name: 'Awesome Chat',
-      description: t('projects.chat.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('chat.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'app', 'react', 'school'],
       mainTool: ['React/redux', 'Material-UI', 'Bootstrap'],
       avatar: reactIcon,
-      technologies: ['React', 'Redux', 'WebSocket', 'Material-UI', 'Bootstrap', resp],
+      technologies: ['React', 'Redux', 'WebSocket', 'Material-UI', 'Bootstrap', responsive],
       type: app,
       path: 'awesome-chat',
       image: ChatImg,
@@ -171,37 +191,33 @@ export default function projectArr(t) {
     },
     youtube: {
       name: 'Youtube App',
-      description: t('projects.youtube.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('youtube.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'js', 'app', 'school'],
       mainTool: ['JS', 'Youtube api'],
       avatar: jsIcon,
-      technologies: ['Pure JS', 'AJAX', 'Youtube API', 'HTML', 'CSS', resp],
+      technologies: ['Pure JS', 'AJAX', 'Youtube API', 'HTML', 'CSS', responsive],
       type: app,
       path: 'youtube',
       image: YoutubeImg,
       share: YoutubeShare,
-      links: [
-        { name: 'demo', url: 'https://alexskir.github.io/youtube-app/' },
-        { name: 'github', url: 'https://github.com/AlexSkir/youtube-app/tree/gh-pages' },
-        {
-          name: task,
-          url: 'https://github.com/rolling-scopes-school/tasks/blob/2018-Q3/tasks/youtube.md',
-        },
-      ],
+      links: youtubeLinks,
       more: (
-        <Suspense fallback={<LoadingMore />}>
-          <YoutubeApp />
-        </Suspense>
+        <YoutubeApp
+          more={t('youtube.more.features', { ns: 'projects', returnObjects: true })}
+          title={t('features', { ns: 'projects' })}
+          links={youtubeLinks}
+        />
       ),
+      more1: t('more1', { ns: 'projects' }),
     },
     fesco: {
       name: 'Fesco',
-      description: t('projects.fesco.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('fesco.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'landings'],
-      mainTool: ['SASS', resp],
+      mainTool: ['SASS', responsive],
       avatar: sassIcon,
-      technologies: ['HTML', 'SASS', 'JS', resp, 'Perfect Pixel'],
-      type: land,
+      technologies: ['HTML', 'SASS', 'JS', responsive, 'Perfect Pixel'],
+      type: landing,
       path: 'fesco',
       image: fescoImg,
       share: fescoShare,
@@ -216,7 +232,7 @@ export default function projectArr(t) {
     },
     piskel: {
       name: 'Piskel Clone',
-      description: t('projects.piskel.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('piskel.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'app', 'react', 'school'],
       mainTool: ['React/redux', 'API'],
       avatar: reactIcon,
@@ -225,24 +241,24 @@ export default function projectArr(t) {
       path: 'piskel',
       image: PiskelImg,
       share: PiskelShare,
-      links: [
-        { name: 'demo', url: 'http://alexskir.github.io/clown/' },
-        { name: 'github', url: 'https://github.com/AlexSkir/clown/' },
-      ],
+      links: piskelLinks,
       more: (
-        <Suspense fallback={<LoadingMore />}>
-          <Piskel />
-        </Suspense>
+        <Piskel
+          more={Object.values(t('piskel.more', { ns: 'projects', returnObjects: true }))}
+          title={t('features', { ns: 'projects' })}
+          links={piskelLinks}
+        />
       ),
+      more1: t('more1', { ns: 'projects' }),
     },
     alexis: {
       name: 'Alexis',
-      description: t('projects.alexis.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('alexis.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'landings'],
-      mainTool: ['CSS', resp],
+      mainTool: ['CSS', responsive],
       avatar: cssIcon,
-      technologies: ['HTML', 'CSS', 'JS', resp, 'Perfect Pixel'],
-      type: land,
+      technologies: ['HTML', 'CSS', 'JS', responsive, 'Perfect Pixel'],
+      type: landing,
       path: 'alexis',
       image: AlexisImg,
       share: AlexisShare,
@@ -257,12 +273,12 @@ export default function projectArr(t) {
     },
     hexal: {
       name: 'Hexal',
-      description: t('projects.hexal.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('hexal.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'landings', 'school'],
-      mainTool: ['CSS', statLay],
+      mainTool: ['CSS', fixed],
       avatar: cssIcon,
-      technologies: ['HTML', 'CSS', statLay, 'Perfect Pixel'],
-      type: land,
+      technologies: ['HTML', 'CSS', fixed, 'Perfect Pixel'],
+      type: landing,
       path: 'hexal',
       image: HexalImg,
       share: HexalShare,
@@ -273,7 +289,7 @@ export default function projectArr(t) {
     },
     gofuck: {
       name: 'GoFuckBiz Forum',
-      description: t('projects.gofuck.description', { joinArrays: ' ', ns: 'projects' }),
+      description: t('gofuck.description', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all'],
       mainTool: ['CSS', phptempl],
       avatar: cssIcon,
@@ -289,8 +305,8 @@ export default function projectArr(t) {
     },
     gritella: {
       name: 'Gritella lingerie',
-      description: t('projects.gritella.description', { joinArrays: ' ', ns: 'projects' }),
-      warning: t('projects.gritella.warning', { joinArrays: ' ', ns: 'projects' }),
+      description: t('gritella.description', { ns: 'projects', joinArrays: ' ' }),
+      warning: t('gritella.warning', { ns: 'projects', joinArrays: ' ' }),
       tabs: ['all', 'cms'],
       mainTool: ['WordPress', 'WooCommerce'],
       avatar: wpIcon,
@@ -308,15 +324,15 @@ export default function projectArr(t) {
       path: 'gritella',
       image: GritellaImg,
       share: GritellaShare,
-      links: [
-        { name: 'demo', url: 'http://d97714j6.beget.tech/' },
-        { name: 'github', url: 'https://github.com/AlexSkir/gritella-lingerie' },
-      ],
+      links: gritellaLinks,
       more: (
-        <Suspense fallback={<LoadingMore />}>
-          <GritellaProject />
-        </Suspense>
+        <GritellaProject
+          more={Object.values(t('gritella.more', { ns: 'projects', returnObjects: true }))}
+          title={t('features', { ns: 'projects' })}
+          links={gritellaLinks}
+        />
       ),
+      more1: t('more1', { ns: 'projects' }),
     },
   };
 }

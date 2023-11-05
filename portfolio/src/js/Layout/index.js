@@ -5,11 +5,12 @@ import ScrollTop from '../common/ScrollTop';
 import LoadingApp from '../common/LoadingApp';
 import LoadingBlock from '../common/LoadingBlock';
 import LoadingContent from '../common/LoadingContent';
+import ErrorBoundary from '../common/ErrorBoundary';
 
 const Header = lazy(() => import('./Header'));
 const Footer = lazy(() => import('./Footer'));
 const Navbar = lazy(() => import('./Navbar'));
-const Wrapper = lazy(() => import('./Wrapper'));
+const Wrapper = lazy(() => import('./AppWrapper'));
 
 function Layout() {
   return (
@@ -35,7 +36,9 @@ function Layout() {
           <div className="container-mainWrapper__main-layout">
             <ScrollTop />
             <Suspense fallback={<LoadingContent />}>
-              <Outlet />
+              <ErrorBoundary>
+                <Outlet />
+              </ErrorBoundary>
             </Suspense>
           </div>
           <Footer />

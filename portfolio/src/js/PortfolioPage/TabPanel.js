@@ -1,30 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-
-const tabWrapper = {
-  width: '100%',
-  height: '100%',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: { xs: 'center', lg: 'space-between' },
-};
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children = '<p>No projects</p>', value, index } = props;
 
   return (
-    <Box
+    <div
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      sx={{ display: value !== index ? 'none' : 'flex' }}
-      {...other}
+      className={`tab-panel__main-panel ${value !== index ? 'is_hidden' : 'is_flexed'}`}
     >
-      {value === index && <Box sx={{ width: '100%' }}>{children}</Box>}
-    </Box>
+      {value === index && <div className="tab-panel__children-wrapper">{children}</div>}
+    </div>
   );
 }
 
@@ -32,10 +21,6 @@ TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-};
-
-TabPanel.defaultProps = {
-  children: <Typography>No projects</Typography>,
 };
 
 export default TabPanel;

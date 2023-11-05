@@ -1,83 +1,74 @@
-import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Typography from '@mui/material/Typography';
-import CollapsibleTable from './CollapsibleTable';
+import React, { Suspense, lazy } from 'react';
+import PropTypes from 'prop-types';
+import LoadingBlock from '../../common/LoadingBlock';
+import LoadingMore from '../../common/LoadingMore';
 
-/* t('projects.chat.description', { joinArrays: ' ', ns: 'projects' }) */
-const withTranslation = (t) => {
-  return [
-    {
-      name: t('projects.gritella.more.homePage.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'http://d97714j6.beget.tech/',
-      },
-      features: t('projects.gritella.more.homePage.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-    },
-    {
-      name: t('projects.gritella.more.productPage.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'http://d97714j6.beget.tech/catalog/anil-5526/',
-      },
-      features: t('projects.gritella.more.productPage.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-    },
-    {
-      name: t('projects.gritella.more.userPage.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'http://d97714j6.beget.tech/profile/',
-      },
-      features: t('projects.gritella.more.userPage.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-    },
-    {
-      name: t('projects.gritella.more.order.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'http://d97714j6.beget.tech/order/',
-      },
-      features: t('projects.gritella.more.order.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-    },
-    {
-      name: t('projects.gritella.more.gift.name', { ns: 'projects' }),
-      link: {
-        title: t('projects.visit', { ns: 'projects' }),
-        url: 'http://d97714j6.beget.tech/about-giftcard/',
-      },
-      features: t('projects.gritella.more.gift.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-    },
-    {
-      name: t('projects.gritella.more.misc.name', { ns: 'projects' }),
-      features: t('projects.gritella.more.misc.features', {
-        returnObjects: true,
-        ns: 'projects',
-      }),
-      type: t('projects.link', { ns: 'projects' }),
-    },
-  ];
-};
+const Typography = lazy(() => import('../../common/Typography'));
+const More = lazy(() => import('../../../assets/svg/More.svg'));
+const Collapse = lazy(() => import('@mui/material/Collapse'));
+const IconButton = lazy(() => import('@mui/material/IconButton'));
+const CollapsibleTable = lazy(() => import('./CollapsibleTable'));
 
-export default function GritellaProject() {
-  const { t } = useTranslation();
+export default function GritellaProject(props) {
+  const { more, title, links } = props;
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   return (
     <>
-      <Typography variant="h6">{t('projects.features', { ns: 'projects' })}</Typography>
-      <CollapsibleTable features={withTranslation(t)} />
+      <div className="project-card__card-actions">
+        {links.map((item) => (
+          <a
+            className="project-card__action-link"
+            key={item.name}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <Suspense fallback={<LoadingBlock width="100px" height="30px" />}>
+              <Typography variant="subtitle2">{item.name}</Typography>
+            </Suspense>
+          </a>
+        ))}
+        <Suspense
+          fallback={
+            <LoadingBlock width="40px" height="40px" marginLeft="auto" variant="circular" />
+          }
+        >
+          <IconButton
+            className={`project-card__icon-button ${expanded ? 'is_expanded' : ''}`}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+            sx={{ color: 'secondary.dark' }}
+          >
+            <More className={`MySvg-icon project-card__icon ${expanded ? '' : 'bounce2'}`} />
+          </IconButton>
+        </Suspense>
+      </div>
+      <Suspense fallback={<LoadingMore />}>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <div className="project-card__content-wrapper">
+            <Suspense fallback={<LoadingBlock width="200px" height="30px" marginBottom="20px" />}>
+              <Typography variant="h6" classes="project-more__subtitle">
+                {title}
+              </Typography>
+            </Suspense>
+            <Suspense fallback={<LoadingMore />}>
+              <CollapsibleTable features={more} />
+            </Suspense>
+          </div>
+        </Collapse>
+      </Suspense>
     </>
   );
 }
+
+GritellaProject.propTypes = {
+  more: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
+  links: PropTypes.array.isRequired,
+};

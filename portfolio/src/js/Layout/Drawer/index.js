@@ -11,7 +11,7 @@ const Typography = lazy(() => import('../../common/Typography'));
 const Collapse = lazy(() => import('../../../assets/svg/Collapse.svg'));
 const Expand = lazy(() => import('../../../assets/svg/Expand.svg'));
 
-export default function SideBlock(props) {
+export default function Drawer(props) {
   const { avatar } = props;
   const { t } = useTranslation();
 
@@ -120,6 +120,6 @@ export default function SideBlock(props) {
   );
 }
 
-SideBlock.propTypes = {
+Drawer.propTypes = {
   avatar: PropTypes.string.isRequired,
 };

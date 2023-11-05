@@ -1,27 +1,36 @@
 import React, { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import emailjs from 'emailjs-com';
-import SimpleAlert from './Alert';
 import LoadingBlock from '../common/LoadingBlock';
 
 const ReCAPTCHA = lazy(() => import('react-google-recaptcha'));
-const TextField = lazy(() => import('@mui/material/TextField'));
+const Typography = lazy(() => import('../common/Typography'));
+const MyTextField = lazy(() => import('./Textfiled'));
+const MyAlert = lazy(() => import('./Alert'));
 
 export default function Form() {
   const { t } = useTranslation();
   const recaptchaRef = React.createRef();
-  const [name, setName] = React.useState('');
-  const [mail, setMail] = React.useState('');
-  const [msg, setMsg] = React.useState('');
+  const [name, setName] = React.useState(localStorage.getItem('form-name') || '');
+  const [mail, setMail] = React.useState(localStorage.getItem('form-email') || '');
+  const [msg, setMsg] = React.useState(localStorage.getItem('form-text') || '');
   const [alert, setAlert] = React.useState('success');
   const [open, setOpen] = React.useState(false);
+  const site_key = process.env.captcha_site_key;
+  const user_id = process.env.emailjs_user_id;
+
+  const clearAll = () => {
+    setName('');
+    setMail('');
+    setMsg('');
+    localStorage.removeItem('form-name');
+    localStorage.removeItem('form-email');
+    localStorage.removeItem('form-text');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const recaptchaValue = recaptchaRef.current.getValue();
+    const recaptchaValue = recaptchaRef?.current?.getValue();
     if (!recaptchaValue) {
       setAlert('warning');
       setOpen(true);
@@ -33,12 +42,10 @@ export default function Form() {
       message: msg,
       'g-recaptcha-response': recaptchaValue,
     };
-    emailjs.send('portfolio_email', 'template_portfolio', letter, process.env.emailjs_user_id).then(
+    emailjs.send('portfolio_email', 'template_portfolio', letter, user_id).then(
       (response) => {
         console.log('SUCCESS!', response.status, response.text);
-        setName('');
-        setMail('');
-        setMsg('');
+        clearAll();
         setAlert('success');
         setOpen(true);
       },
@@ -59,81 +66,75 @@ export default function Form() {
   };
 
   return (
-    <Box
-      component="form"
-      sx={{
-        width: '100%',
-        maxWidth: '630px',
-        backgroundColor: 'primary.background',
-        borderRadius: '20px',
-        p: { xs: '10px', sm: '30px' },
-        mt: '30px',
-      }}
-      noValidate={false}
-      autoComplete="off"
-      onSubmit={handleSubmit}
-    >
-      <Typography sx={{ fontSize: '16px', lineHeight: '30px', p: '10px' }}>
-        {t('contact.form.title', { joinArrays: ' ' })}
-      </Typography>
-      <Suspense fallback={<LoadingBlock width="100%" height="150px" variant="rectangular" />}>
-        <TextField
-          id="formName"
-          label={t('contact.form.name')}
-          variant="standard"
-          fullWidth
-          value={name}
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        <TextField
-          id="formEmail"
-          label="Email:"
-          variant="standard"
-          type="email"
-          fullWidth
-          value={mail}
-          onChange={(event) => {
-            setMail(event.target.value);
-          }}
-        />
-        <TextField
-          id="formText"
-          label={t('contact.form.msg')}
-          variant="standard"
-          required
-          fullWidth
-          multiline
-          minRows={1}
-          value={msg}
-          onChange={(event) => {
-            setMsg(event.target.value);
-          }}
-        />
-        {msg ? (
-          <Suspense fallback={<LoadingBlock width="300px" height="74px" variant="rectangular" />}>
-            <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.captcha_site_key} />
-          </Suspense>
-        ) : (
-          <></>
-        )}
-        <Button
-          type="submit"
-          role="button"
-          sx={{
-            mt: '30px',
-            p: '10px 30px',
-            color: 'primary.contrastText',
-            border: '1px solid',
-            borderColor: 'secondary.main',
-            borderRadius: '20px',
-          }}
-        >
-          {t('contact.form.btn')}
-        </Button>
+    <form className="contact-form" autoComplete="off" onSubmit={handleSubmit}>
+      <Suspense fallback={<LoadingBlock width="100%" height="100px" />}>
+        <Typography classes="contact-form__title">
+          {t('contact.form.title', { joinArrays: ' ' })}
+        </Typography>
       </Suspense>
-      <SimpleAlert type={alert} onCloseHandle={handleClose} open={open} />
-    </Box>
+
+      <div style={{ marginTop: '16px' }}>
+        <Suspense
+          fallback={<LoadingBlock width="100%" height="32px" style={{ marginTop: '16px' }} />}
+        >
+          <MyTextField
+            id="formName"
+            label={t('contact.form.name')}
+            value={name}
+            onChange={(event) => {
+              localStorage.setItem('form-name', event.target.value);
+              setName(event.target.value);
+            }}
+          />
+        </Suspense>
+      </div>
+
+      <div style={{ marginTop: '16px' }}>
+        <Suspense fallback={<LoadingBlock width="100%" height="32px" />}>
+          <MyTextField
+            id="formEmail"
+            label="Email:"
+            value={mail}
+            type="email"
+            onChange={(event) => {
+              localStorage.setItem('form-email', event.target.value);
+              setMail(event.target.value);
+            }}
+          />
+        </Suspense>
+      </div>
+
+      <div style={{ marginTop: '16px' }}>
+        <Suspense fallback={<LoadingBlock width="100%" height="32px" />}>
+          <MyTextField
+            id="formText"
+            label={t('contact.form.msg')}
+            value={msg}
+            component="textarea"
+            required
+            onChange={(event) => {
+              localStorage.setItem('form-text', event.target.value);
+              setMsg(event.target.value);
+            }}
+          />
+        </Suspense>
+      </div>
+
+      {msg ? (
+        <div style={{ marginTop: '20px' }}>
+          <Suspense fallback={<LoadingBlock width="300px" height="74px" variant="rectangular" />}>
+            <ReCAPTCHA ref={recaptchaRef} sitekey={site_key} theme={document.body.className} />
+          </Suspense>
+        </div>
+      ) : (
+        <></>
+      )}
+      <button className="contact-form__submit-btn MyTypography MyTypography-button" type="submit">
+        {t('contact.form.btn')}
+      </button>
+      <Suspense fallback={<div>.</div>}>
+        <MyAlert severity={alert} onCloseHandle={handleClose} open={open} />
+      </Suspense>
+    </form>
   );
 }

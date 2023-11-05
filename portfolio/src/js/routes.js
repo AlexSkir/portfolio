@@ -5,7 +5,6 @@ import Layout from './Layout';
 import NoMatch from './common/NoMatchPage';
 import projectArr from './PortfolioPage/projectsArray';
 import LoadingApp from './common/LoadingApp';
-import LoadingLayout from './Suspense/LoadingMainlayout';
 
 const Home = lazy(() => import('./HomePage'));
 const Resume = lazy(() => import('./ResumePage'));
@@ -15,6 +14,7 @@ const Contact = lazy(() => import('./ContactPage'));
 
 const AppRouter = () => {
   const { t } = useTranslation();
+
   return (
     <BrowserRouter>
       <Suspense fallback={<LoadingApp />}>

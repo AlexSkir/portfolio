@@ -1,31 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MuiAlert from '@mui/material/Alert';
-import Snackbar from '@mui/material/Snackbar';
 import { useTranslation } from 'react-i18next';
-
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 export default function SimpleAlert(props) {
-  const { type, onCloseHandle, open } = props;
+  const { onCloseHandle, open = false, severity } = props;
   const { t } = useTranslation();
 
   return (
     <Snackbar open={open} autoHideDuration={6000} onClose={onCloseHandle}>
-      <Alert onClose={onCloseHandle} severity={type} sx={{ width: '100%' }}>
-        {t(`contact.form.${type}`)}
+      <Alert
+        elevation={6}
+        variant="filled"
+        onClose={onCloseHandle}
+        severity={severity}
+        sx={{ width: '100%' }}
+      >
+        {t(`contact.form.${severity}`)}
       </Alert>
     </Snackbar>
   );
 }
-SimpleAlert.propTypes = {
-  type: PropTypes.string.isRequired,
-  onCloseHandle: PropTypes.func.isRequired,
-  open: PropTypes.bool,
-};
 
-SimpleAlert.defaultProps = {
-  open: false,
+SimpleAlert.propTypes = {
+  onCloseHandle: PropTypes.func.isRequired,
+  severity: PropTypes.string.isRequired,
+  open: PropTypes.bool,
 };
